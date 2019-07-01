@@ -1,4 +1,4 @@
-import "typeface-open-sans";
+import "typeface-lato";
 import FontFaceObserver from "fontfaceobserver";
 import PropTypes from "prop-types";
 import React from "react";
@@ -27,8 +27,8 @@ class Layout extends React.Component {
     };
 
     if (typeof window !== `undefined`) {
-      this.loadFont("font400", "Open Sans", 400);
-      this.loadFont("font600", "Open Sans", 600);
+      this.loadFont("font400", "Lato", 400);
+      this.loadFont("font600", "Lato", 600);
     }
   }
 
@@ -142,7 +142,7 @@ class Layout extends React.Component {
                       }
                       body {
                         font-family: ${this.state.font400loaded
-                          ? "'Open Sans', sans-serif;"
+                          ? "Lato, sans-serif;"
                           : "Arial, sans-serif;"};
                       }
                       h1,
