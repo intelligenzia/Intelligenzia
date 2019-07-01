@@ -9,7 +9,7 @@ module.exports = [{
       options: {"plugins":[]},
     },{
       plugin: require('/Users/perttu/Projects/intelligenzia/node_modules/gatsby-plugin-google-analytics/gatsby-browser'),
-      options: {"plugins":[]},
+      options: {"plugins":[],"trackingId":"UA-63351583-1"},
     },{
       plugin: require('/Users/perttu/Projects/intelligenzia/gatsby-browser.js'),
       options: {"plugins":[]},

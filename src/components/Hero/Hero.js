@@ -9,9 +9,8 @@ const Hero = props => {
   return (
     <React.Fragment>
       <section className="hero">
-        <h1>
-          This is a demo site of&nbsp;the <strong>heroBlog</strong> GatsbyJS starter
-        </h1>
+        <h1>Intelligenzia</h1>
+        <h2>Kognitiotieteen ainejärjestö</h2>
         <button onClick={scrollToContent} aria-label="scroll">
           <FaArrowDown />
         </button>
@@ -20,7 +19,7 @@ const Hero = props => {
       {/* --- STYLES --- */}
       <style jsx>{`
         .hero {
-          align-items: center;
+          align-items: left;
           background: ${theme.hero.background};
           background-image: url(${backgrounds.mobile});
           background-size: cover;
