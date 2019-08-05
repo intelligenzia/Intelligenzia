@@ -4,16 +4,13 @@ import PropTypes from "prop-types";
 import { FaArrowDown } from "react-icons/fa/";
 
 const Hero = props => {
-  const { scrollToContent, backgrounds, theme } = props;
+  const { backgrounds, theme } = props;
 
   return (
     <React.Fragment>
       <section className="hero">
         <h1>Intelligenzia</h1>
         <h2>Kognitiotieteen ainejärjestö</h2>
-        <button onClick={scrollToContent} aria-label="scroll">
-          <FaArrowDown />
-        </button>
       </section>
 
       {/* --- STYLES --- */}
@@ -27,14 +24,44 @@ const Hero = props => {
           display: flex;
           flex-flow: column nowrap;
           justify-content: center;
-          min-height: 100vh;
-          height: 100px;
+          min-height: 500px;
+          max-height: 50vh;
+          height: 300px;
           padding: ${theme.space.inset.l};
           padding-top: ${theme.header.height.homepage};
         }
 
         h1 {
-          text-align: center;
+          text-align: left;
+          text-transform: uppercase;
+          font-weight: 900;
+          font-size: ${theme.hero.h1.size};
+          margin: ${theme.space.stack.l};
+          color: ${theme.hero.h1.color};
+          line-height: ${theme.hero.h1.lineHeight};
+          text-remove-gap: both 0 "Lato";
+
+          :global(strong) {
+            position: relative;
+
+            &::after,
+            &::before {
+              content: "›";
+              color: ${theme.text.color.attention};
+              margin: 0 ${theme.space.xs} 0 0;
+              text-shadow: 0 0 ${theme.space.s} ${theme.color.neutral.gray.k};
+            }
+            &::after {
+              content: "‹";
+              margin: 0 0 0 ${theme.space.xs};
+            }
+          }
+        }
+
+        h2 {
+          text-align: left;
+          text-transform: uppercase;
+          font-weight: 900;
           font-size: ${theme.hero.h1.size};
           margin: ${theme.space.stack.l};
           color: ${theme.hero.h1.color};
@@ -132,7 +159,6 @@ const Hero = props => {
 };
 
 Hero.propTypes = {
-  scrollToContent: PropTypes.func.isRequired,
   backgrounds: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired
 };

@@ -1,5 +1,6 @@
 ---
 title: Jäseneksi
+menuTitle: Jäseneksi
 ---
 
 ### Jäseneksi:

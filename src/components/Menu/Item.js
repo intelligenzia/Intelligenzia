@@ -53,7 +53,7 @@ const Item = props => {
             }
 
             :global(.homepage):not(.fixed) & :global(a) {
-              color: ${theme.color.neutral.white};
+              color: ${theme.text.color.primary};
             }
 
             :global(a:hover) {

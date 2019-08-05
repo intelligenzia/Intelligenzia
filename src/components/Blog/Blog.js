@@ -31,6 +31,9 @@ const Blog = props => {
         ul {
           list-style: none;
           margin: 0 auto;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: normal;
           padding: ${`calc(${theme.space.default} * 1.5) 0 calc(${theme.space.default} * 0.5)`};
         }
 

@@ -1,14 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
+import { Highlight } from "react-instantsearch/dom";
 
 const Hit = props => {
   const { hit } = props;
-
+  console.log(hit);
   return (
     <React.Fragment>
       <Link to={hit.slug}>{hit.title}</Link>
-
+      <Highlight hit={hit} />
+      <p>{hit.content}</p>
       {/* --- STYLES --- */}
       <style jsx global>{`
         .ais-Hits-item {
