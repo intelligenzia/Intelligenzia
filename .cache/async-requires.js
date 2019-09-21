@@ -13,5 +13,3 @@ exports.components = {
   "component---src-pages-search-js": () => import("/Users/perttu/Projects/intelligenzia/src/pages/search.js" /* webpackChunkName: "component---src-pages-search-js" */)
 }
 
-exports.data = () => import("/Users/perttu/Projects/intelligenzia/.cache/data.json")
-

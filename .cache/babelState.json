@@ -1,70 +1,76 @@
 {
+  "stages": {
     "develop": {
-        "plugins": [
-            {
-                "name": "styled-jsx/babel",
-                "options": {
-                    "plugins": [
-                        "styled-jsx-plugin-postcss"
-                    ]
-                }
-            }
-        ],
-        "presets": [],
-        "options": {
-            "cacheDirectory": true,
-            "sourceType": "unambiguous"
+      "plugins": [
+        {
+          "name": "styled-jsx/babel",
+          "options": {
+            "plugins": [
+              "styled-jsx-plugin-postcss"
+            ]
+          }
         }
+      ],
+      "presets": [],
+      "options": {
+        "cacheDirectory": true,
+        "sourceType": "unambiguous"
+      }
     },
     "develop-html": {
-        "plugins": [
-            {
-                "name": "styled-jsx/babel",
-                "options": {
-                    "plugins": [
-                        "styled-jsx-plugin-postcss"
-                    ]
-                }
-            }
-        ],
-        "presets": [],
-        "options": {
-            "cacheDirectory": true,
-            "sourceType": "unambiguous"
+      "plugins": [
+        {
+          "name": "styled-jsx/babel",
+          "options": {
+            "plugins": [
+              "styled-jsx-plugin-postcss"
+            ]
+          }
         }
+      ],
+      "presets": [],
+      "options": {
+        "cacheDirectory": true,
+        "sourceType": "unambiguous"
+      }
     },
     "build-html": {
-        "plugins": [
-            {
-                "name": "styled-jsx/babel",
-                "options": {
-                    "plugins": [
-                        "styled-jsx-plugin-postcss"
-                    ]
-                }
-            }
-        ],
-        "presets": [],
-        "options": {
-            "cacheDirectory": true,
-            "sourceType": "unambiguous"
+      "plugins": [
+        {
+          "name": "styled-jsx/babel",
+          "options": {
+            "plugins": [
+              "styled-jsx-plugin-postcss"
+            ]
+          }
         }
+      ],
+      "presets": [],
+      "options": {
+        "cacheDirectory": true,
+        "sourceType": "unambiguous"
+      }
     },
     "build-javascript": {
-        "plugins": [
-            {
-                "name": "styled-jsx/babel",
-                "options": {
-                    "plugins": [
-                        "styled-jsx-plugin-postcss"
-                    ]
-                }
-            }
-        ],
-        "presets": [],
-        "options": {
-            "cacheDirectory": true,
-            "sourceType": "unambiguous"
+      "plugins": [
+        {
+          "name": "styled-jsx/babel",
+          "options": {
+            "plugins": [
+              "styled-jsx-plugin-postcss"
+            ]
+          }
         }
+      ],
+      "presets": [],
+      "options": {
+        "cacheDirectory": true,
+        "sourceType": "unambiguous"
+      }
     }
+  },
+  "browserslist": [
+    ">0.25%",
+    "not dead"
+  ]
 }
