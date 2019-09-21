@@ -1,10 +1,11 @@
 module.exports = {
   siteTitle: "Intelligenzia – Kognitiotieteen opiskelijajärjestö", // <title>
   shortSiteTitle: "Intelligenzia – Kognitiotieteen opiskelijajärjestö", // <title> ending for posts and pages
-  siteDescription: "Intelligenzia – Kognitiotieteen opiskelijajärjestö",
+  siteDescription:
+    "Intelligenzia Ry on Helsingin yliopiston kognitiotieteen opiskelijoiden vuonna 1989 perustettu yhdistys. Yhdistys valvoo kognitiotieteen opiskelijoiden etuja ja  ylläpitää kognitiotieteen opetusta Suomessa.",
   siteUrl: "https://intelligenzia.fi",
   // pathPrefix: "",
-  siteImage: "preview.jpg",
+  siteImage: "preview.jpeg",
   siteLanguage: "fi",
 
   /* author */
@@ -35,5 +36,7 @@ module.exports = {
     { name: "github", url: "https://github.com/intelligenzia" },
     { name: "twitter", url: "https://twitter.com/intelligenzia" },
     { name: "facebook", url: "http://facebook.com/intelligenzia" }
+    { name: "instagram", url: "https://www.instagram.com/intelligenzia/" }
+
   ]
 };
