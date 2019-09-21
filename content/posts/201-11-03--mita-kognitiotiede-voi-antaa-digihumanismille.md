@@ -2,7 +2,7 @@
 title: Mitä kognitiotiede voi antaa digihumanismille?
 date: 2016-11-06T18:22:45.085Z
 category: kognitiotiede
-cover: penkere.jpeg
+cover: /images/intelligenzia.jpg
 author: 'Jussi Palomäki, konnari, Moralities of Intelligent Machines'
 ---
 
