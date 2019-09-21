@@ -5,6 +5,11 @@
         "path": "/"
     },
     {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "jsonName": "2015-02-06-tiedote-kognitiotieteen-tilasta-342",
+        "path": "/2015-02-06-tiedote-kognitiotieteen-tilasta/"
+    },
+    {
         "componentChunkName": "component---src-pages-404-js",
         "jsonName": "404-html-516",
         "path": "/404.html"
@@ -28,11 +33,6 @@
         "componentChunkName": "component---src-templates-category-template-js",
         "jsonName": "category-kognitiotiede-ec6",
         "path": "/category/kognitiotiede/"
-    },
-    {
-        "componentChunkName": "component---src-templates-category-template-js",
-        "jsonName": "category-sayings-2fb",
-        "path": "/category/sayings/"
     },
     {
         "componentChunkName": "component---src-templates-category-template-js",
@@ -73,6 +73,11 @@
         "componentChunkName": "component---src-templates-page-template-js",
         "jsonName": "kognitiotiede-2f8",
         "path": "/kognitiotiede/"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "jsonName": "kognitiotieteelle-perustettu-oma-maisteriopintosuunta-956",
+        "path": "/kognitiotieteelle-perustettu-oma-maisteriopintosuunta/"
     },
     {
         "componentChunkName": "component---src-templates-page-template-js",

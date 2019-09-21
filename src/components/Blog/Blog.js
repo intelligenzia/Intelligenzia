@@ -32,8 +32,8 @@ const Blog = props => {
           list-style: none;
           margin: 0 auto;
           display: flex;
-          flex-direction: row;
-          flex-wrap: normal;
+          flex-direction: column;
+          flex-wrap: wrap;
           padding: ${`calc(${theme.space.default} * 1.5) 0 calc(${theme.space.default} * 0.5)`};
         }
 
@@ -42,12 +42,14 @@ const Blog = props => {
             padding: 0 ${`0 calc(${theme.space.default} * 1.5)`};
           }
           ul {
-            max-width: ${theme.text.maxWidth.tablet};
+            // max-width: ${theme.text.maxWidth.tablet};
+            flex-direction: column;
           }
         }
         @above desktop {
           ul {
-            max-width: ${theme.text.maxWidth.desktop};
+            flex-direction: row;
+            // max-width: ${theme.text.maxWidth.desktop};
           }
         }
       `}</style>

@@ -60,6 +60,7 @@ const Item = props => {
 
         li {
           border: 1px solid transparent;
+          max-width: 33%;
           border-radius: ${theme.size.radius.default};
           margin: ${`calc(${theme.space.default} * 2) 0 calc(${theme.space.default} * 3)`};
           padding: ${theme.space.inset.s};
@@ -74,18 +75,6 @@ const Item = props => {
           }
           :global(.gatsby-image-outer-wrapper img) {
             z-index: -1;
-          }
-
-          &::after {
-            border-top: 1px solid ${theme.line.color};
-            content: "";
-            height: 0;
-            position: absolute;
-            bottom: ${`calc(${theme.space.default} * -1.5)`};
-            left: 50%;
-            transform: translateX(-50%);
-            transition: all ${theme.time.duration.default};
-            width: 50%;
           }
 
           &:first-child {
@@ -105,8 +94,8 @@ const Item = props => {
 
         h1 {
           padding: ${theme.space.m} ${theme.space.s} 0;
-          line-height: ${theme.blog.h1.lineHeight};
-          font-size: ${theme.blog.h1.size};
+          line-height: ${theme.blog.h2.lineHeight};
+          font-size: ${theme.blog.h2.size};
           text-remove-gap: both;
 
           :global(.arrow) {
@@ -143,7 +132,7 @@ const Item = props => {
 
         @from-width tablet {
           li {
-            margin: ${`calc(${theme.space.default} * 3) 0 calc(${theme.space.default} * 4)`};
+            margin: ${`calc(${theme.space.default} * 1) 0 calc(${theme.space.default} * 2)`};
             padding: ${theme.space.default};
 
             &::after {
@@ -171,7 +160,7 @@ const Item = props => {
         }
         @from-width desktop {
           li {
-            margin: ${`calc(${theme.space.default} * 4) 0 calc(${theme.space.default} * 5)`};
+            margin: ${`calc(${theme.space.default} * 2) 0 calc(${theme.space.default} * 2)`};
             padding: 0 0 ${`calc(${theme.space.default} * 2)`};
 
             &::after {

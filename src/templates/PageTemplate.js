@@ -36,10 +36,13 @@ const PageTemplate = props => {
     <React.Fragment>
       <ThemeContext.Consumer>
         {theme => (
-          <Article theme={theme}>
-            <Hero theme={theme} />
-            <Page page={page} backgrounds={backgrounds} theme={theme} />
-          </Article>
+          <>
+            <Hero backgrounds={backgrounds} theme={theme} />
+
+            <Article theme={theme}>
+              <Page page={page} theme={theme} />
+            </Article>
+          </>
         )}
       </ThemeContext.Consumer>
 

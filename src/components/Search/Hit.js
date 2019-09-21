@@ -10,7 +10,7 @@ const Hit = props => {
     <React.Fragment>
       <Link to={hit.slug}>{hit.title}</Link>
       <Highlight hit={hit} />
-      <p>{hit.content}</p>
+      {/* <p>{hit.content}</p> */}
       {/* --- STYLES --- */}
       <style jsx global>{`
         .ais-Hits-item {

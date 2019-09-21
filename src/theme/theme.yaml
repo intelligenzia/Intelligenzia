@@ -111,7 +111,7 @@ text:
     default: *font-line-height-l
   maxWidth:
     tablet: 650px
-    desktop: 700px
+    desktop: 1024px
 heading:
   family: *font-family-target
   size:
@@ -138,6 +138,10 @@ hero:
 blog:
   h1:
     size: *font-size-l
+    lineHeight: *font-line-height-xs
+    hoverColor: *color-brand-primary
+  h2:
+    size: *font-size-m
     lineHeight: *font-line-height-xs
     hoverColor: *color-brand-primary
 header:

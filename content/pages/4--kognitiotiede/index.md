@@ -19,26 +19,49 @@ Helsingin yliopistossa kognitiotieteen kandi- ja maisteritason opetusta annetaan
 ## Historiikki
 
 Kognitiotiede aloitti toimintansa usean oppiaineen yhteisenä koulutusohjelmana 1980-luvun lopulla. Se on sittemmin kehittynyt itsenäiseksi oppiaineeksi seuraavien vaiheiden kautta. Läheistä yhteistyötä on tehty koko ajan psykologian oppiaineen kanssa.
+
 **1988** Kognitiotieteen koulutusohjelma perustetaan. Ensimmäiset kognitiotieteen opiskelijat (n = 5) aloittavat humanistisessa tiedekunnassa. Opetuksen järjestävät yhdessä psykologian, filosofian ja kielitieteen laitokset. Hallinnollisesti kognitiotiede on psykologian laitoksen alaisuudessa, dosentti Göte Nymanin ohjauksessa.
+
 **1988** Intelligenzian esiasteenakin pidetty Simpleksi ry perustetaan.
+
 **1991** Ensimmäinen kognitiotieteen maisteri, Patrick May, valmistuu.
+
 **1994** Intelligenziasta tulee rekisteröity yhdistys.
+
 **1997** Kognitiotieteen professuuri perustetaan psykologian laitokselle. Se on ensimmäinen laatuaan Suomessa. Yhteiskuntatieteiden tohtori Pertti Saariluoma valitaan tehtävään viisivuotiskaudeksi.
+
 **1997** Helsingin yliopiston, Teknillisen korkeakoulun ja Taideteollisen korkeakoulun yhteinen Käytettävyyskoulu perustetaan. Tavoitteena on tarjota opiskelijoille asiantuntijuutta käytettävyydessä ja vahva perusta jatko-opinnoille.
+
 **1998** Vuosittainen sisäänpääsykiintiö nostetaan 10 opiskelijaan.
+
 **2002** Filosofian tohtori Christina M. Krause valitaan kognitiotieteen professoriksi viisivuotiskaudeksi. **2002** Psykologian laitos muuttaa nykyiseen sijaintiinsa Siltavuorenpenkereelle.
+
 **2003** Kognitiotieteen amanuenssin virka perustetaan; filosofian maisteri Otto Lappi aloittaa tehtävässä. **2003** Ensimmäinen kognitiotieteen tohtorintutkinto valmistuu. Pauli Salo (nykyisin Pauli Brattico) väittelee otsikolla \_Causatives and the Empty Lexicon: A Minimalist Perspective_vastaväittäjänään professori Ernest Lepore (Rutgers University).
+
 **2004** Käyttäytymistieteellinen tiedekunta perustetaan; psykologian laitos siirtyy uuteen tiedekuntaan ja kognitiotiede sen mukana.
+
 **2005** Koulutusohjelma käy läpi mittavan uudistuksen Bolognan prosessin yhteydessä.
+
 **2007** Professori Christina M. Krausen virka muutetaan pysyväksi.
+
 **2007** Vuosittainen sisäänottokiintiö nostetaan 12 opiskelijaan.
+
 **2008** Kognitiotieteen yliopisto-opettajana (ma.) toimii Otto Lappi.
+
 **2009** Kognitiotiede saa 50-prosenttisen yliopistonlehtorin, kun kognitiivisen ja havaintopsykologian lehtoraatti (Jussi Saarinen) jaetaan psykologian ja kognitiotieteen kesken.
+
 **2010** Psykologian, kasvatustieteen ja puhetieteiden laitokset yhdistävä käyttäytymistieteiden laitos perustetaan. Kognitiotiede siirtyy uuden laitoksen alle osana psykologian ja kognitiotieteen oppiaineryhmää. **2011** Vuosittainen sisäänottokiintiö nostetaan 15 opiskelijaan.
+
 **2011** Professorin sijaisena toimii FT Pauli Brattico.
+
 **2012** Professorin sijaisena toimii dos. Minna Huotilainen. Amanuenssin tehtäviä hoitaa FM Henri Kauhanen. **2013** Professuurin ollessa täyttämättä hoitaa tehtäviä lukuvuonna 2013–2014 yliopistonlehtori (ma.) FT Alina Leminen.
+
 **2014** 2014 – 2016 tehtäviä hoitaa yliopistonlehtori (ma.) FT Otto Lappi.
+
 **2016** Pääaineopiskelijoiden sisäänotto lakkautetaan koulutusohjelmauudistuksen ajaksi. Yliopistonlehtori Otto Lappi jatkaa täyttämättömään professuuriin kuuluvien tehtävien hoitamista.
+
 **2017**Kognitiotiede siirtyy takaisin humanistiseen tiedekuntaan. Väliaikainen sijoituspaikka löytyy nykykielten laitoksen alta.
+
 **2018** Kognitiotiede siirtyy vasta perustettuun digitaalisten ihmistieteiden osastoon. Professuurin ollessa täyttämättä tehtäviä hoitamaan palkataan Otto Lapin lisäksi toinen yliopistonlehtori (ma.). Tehtävään valitaan FT Alina Leminen.
+
 **2019** Humanistisen tiedekunnan tiedekuntaneuvosto päättää 26.3.2019 kognitiotieteen maisterivaiheen opintosuunnan perustamisesta ja sisäänoton avaamisesta syksyllä 2020.

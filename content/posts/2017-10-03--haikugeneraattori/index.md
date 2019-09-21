@@ -1,6 +1,5 @@
 ---
-title: Be who you are and say what you feel
-category: "sayings"
+title: Haikugeneraattori
 cover: photo-1489824904134-891ab64532f1.jpg
 author: Pietari Nurmi
 ---
