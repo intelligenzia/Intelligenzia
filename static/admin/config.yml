@@ -6,8 +6,8 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
+  - name: "Post"
+    label: "Posts"
     folder: "content/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -20,3 +20,17 @@ collections:
       - { label: "Cover", name: "cover", widget: "image" }
       - { label: "Author", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+  # - name: "Page"
+  #   label: "Pages"
+  #   folder: "content/pages"
+  #   create: true
+  #   slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  #   editor:
+  #    preview: false
+  #   fields:
+  #     - { label: "Title", name: "title", widget: "string" }
+  #     - { label: "Publish Date", name: "date", widget: "datetime" }
+  #     - { label: "Category", name: "category", widget: "string" }
+  #     - { label: "Cover", name: "cover", widget: "image" }
+  #     - { label: "Author", name: "description", widget: "string" }
+  #     - { label: "Body", name: "body", widget: "markdown" }
