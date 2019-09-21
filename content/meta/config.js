@@ -35,8 +35,7 @@ module.exports = {
   authorSocialLinks: [
     { name: "github", url: "https://github.com/intelligenzia" },
     { name: "twitter", url: "https://twitter.com/intelligenzia" },
-    { name: "facebook", url: "http://facebook.com/intelligenzia" }
+    { name: "facebook", url: "http://facebook.com/intelligenzia" },
     { name: "instagram", url: "https://www.instagram.com/intelligenzia/" }
-
   ]
 };
