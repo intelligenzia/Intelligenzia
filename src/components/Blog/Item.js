@@ -204,11 +204,6 @@ const Item = props => {
               h1 {
                 color: ${theme.blog.h1.hoverColor};
               }
-              :global(.arrow) {
-                opacity: 1;
-                stroke: ${theme.color.special.attention};
-                transform: translateX(0);
-              }
             }
             :global(.gatsby-image-wrapper) {
               transition: all ${theme.time.duration.default};
