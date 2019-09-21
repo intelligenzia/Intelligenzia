@@ -34,9 +34,13 @@ Kognitiotiede aloitti toimintansa usean oppiaineen yhteisenä koulutusohjelmana 
 
 **1998** Vuosittainen sisäänpääsykiintiö nostetaan 10 opiskelijaan.
 
-**2002** Filosofian tohtori Christina M. Krause valitaan kognitiotieteen professoriksi viisivuotiskaudeksi. **2002** Psykologian laitos muuttaa nykyiseen sijaintiinsa Siltavuorenpenkereelle.
+**2002** Filosofian tohtori Christina M. Krause valitaan kognitiotieteen professoriksi viisivuotiskaudeksi.
 
-**2003** Kognitiotieteen amanuenssin virka perustetaan; filosofian maisteri Otto Lappi aloittaa tehtävässä. **2003** Ensimmäinen kognitiotieteen tohtorintutkinto valmistuu. Pauli Salo (nykyisin Pauli Brattico) väittelee otsikolla \_Causatives and the Empty Lexicon: A Minimalist Perspective_vastaväittäjänään professori Ernest Lepore (Rutgers University).
+**2002** Psykologian laitos muuttaa nykyiseen sijaintiinsa Siltavuorenpenkereelle.
+
+**2003** Kognitiotieteen amanuenssin virka perustetaan; filosofian maisteri Otto Lappi aloittaa tehtävässä.
+
+**2003** Ensimmäinen kognitiotieteen tohtorintutkinto valmistuu. Pauli Salo (nykyisin Pauli Brattico) väittelee otsikolla \_Causatives and the Empty Lexicon: A Minimalist Perspective_vastaväittäjänään professori Ernest Lepore (Rutgers University).
 
 **2004** Käyttäytymistieteellinen tiedekunta perustetaan; psykologian laitos siirtyy uuteen tiedekuntaan ja kognitiotiede sen mukana.
 
@@ -50,11 +54,15 @@ Kognitiotiede aloitti toimintansa usean oppiaineen yhteisenä koulutusohjelmana 
 
 **2009** Kognitiotiede saa 50-prosenttisen yliopistonlehtorin, kun kognitiivisen ja havaintopsykologian lehtoraatti (Jussi Saarinen) jaetaan psykologian ja kognitiotieteen kesken.
 
-**2010** Psykologian, kasvatustieteen ja puhetieteiden laitokset yhdistävä käyttäytymistieteiden laitos perustetaan. Kognitiotiede siirtyy uuden laitoksen alle osana psykologian ja kognitiotieteen oppiaineryhmää. **2011** Vuosittainen sisäänottokiintiö nostetaan 15 opiskelijaan.
+**2010** Psykologian, kasvatustieteen ja puhetieteiden laitokset yhdistävä käyttäytymistieteiden laitos perustetaan. Kognitiotiede siirtyy uuden laitoksen alle osana psykologian ja kognitiotieteen oppiaineryhmää.
+
+**2011** Vuosittainen sisäänottokiintiö nostetaan 15 opiskelijaan.
 
 **2011** Professorin sijaisena toimii FT Pauli Brattico.
 
-**2012** Professorin sijaisena toimii dos. Minna Huotilainen. Amanuenssin tehtäviä hoitaa FM Henri Kauhanen. **2013** Professuurin ollessa täyttämättä hoitaa tehtäviä lukuvuonna 2013–2014 yliopistonlehtori (ma.) FT Alina Leminen.
+**2012** Professorin sijaisena toimii dos. Minna Huotilainen. Amanuenssin tehtäviä hoitaa FM Henri Kauhanen.
+
+**2013** Professuurin ollessa täyttämättä hoitaa tehtäviä lukuvuonna 2013–2014 yliopistonlehtori (ma.) FT Alina Leminen.
 
 **2014** 2014 – 2016 tehtäviä hoitaa yliopistonlehtori (ma.) FT Otto Lappi.
 

@@ -60,6 +60,11 @@
         "path": "/hallitus-2019/"
     },
     {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "jsonName": "intelligenzian-jasenyys-avautuu-kaikille-opiskelijoille-35a",
+        "path": "/intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/"
+    },
+    {
         "componentChunkName": "component---src-templates-page-template-js",
         "jsonName": "jaseneksi-292",
         "path": "/jäseneksi/"
@@ -78,6 +83,11 @@
         "componentChunkName": "component---src-templates-post-template-js",
         "jsonName": "kognitiotieteelle-perustettu-oma-maisteriopintosuunta-956",
         "path": "/kognitiotieteelle-perustettu-oma-maisteriopintosuunta/"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "jsonName": "kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta-4dc",
+        "path": "/kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/"
     },
     {
         "componentChunkName": "component---src-templates-page-template-js",

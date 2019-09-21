@@ -4745,7 +4745,7 @@
       ],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "b6e2a4ee74cbb2225ca71419ce31a922",
+        "contentDigest": "b26d56d4aff7c4503b104658acec47fe",
         "type": "File",
         "mediaType": "text/markdown",
         "description": "File \"content/pages/4--kognitiotiede/index.md\"",
@@ -4755,11 +4755,11 @@
       "absolutePath": "/Users/perttu/Projects/intelligenzia/content/pages/4--kognitiotiede/index.md",
       "relativePath": "4--kognitiotiede/index.md",
       "extension": "md",
-      "size": 7126,
+      "size": 7130,
       "prettySize": "7.13 kB",
-      "modifiedTime": "2019-09-21T13:16:44.743Z",
-      "accessTime": "2019-09-21T13:16:44.740Z",
-      "changeTime": "2019-09-21T13:16:44.743Z",
+      "modifiedTime": "2019-09-21T13:36:05.913Z",
+      "accessTime": "2019-09-21T13:36:05.913Z",
+      "changeTime": "2019-09-21T13:36:05.913Z",
       "birthTime": "2019-07-01T11:04:00.716Z",
       "root": "/",
       "dir": "/Users/perttu/Projects/intelligenzia/content/pages/4--kognitiotiede",
@@ -4776,13 +4776,13 @@
       "blksize": 4096,
       "ino": 7461200,
       "blocks": 16,
-      "atimeMs": 1569071804739.8545,
-      "mtimeMs": 1569071804742.634,
-      "ctimeMs": 1569071804742.634,
+      "atimeMs": 1569072965912.7773,
+      "mtimeMs": 1569072965913.486,
+      "ctimeMs": 1569072965913.486,
       "birthtimeMs": 1561979040716.3982,
-      "atime": "2019-09-21T13:16:44.740Z",
-      "mtime": "2019-09-21T13:16:44.743Z",
-      "ctime": "2019-09-21T13:16:44.743Z",
+      "atime": "2019-09-21T13:36:05.913Z",
+      "mtime": "2019-09-21T13:36:05.913Z",
+      "ctime": "2019-09-21T13:36:05.913Z",
       "birthtime": "2019-07-01T11:04:00.716Z"
     },
     "e612ebf7-5bf4-56fa-bb26-5cbc0f33dade": {
@@ -4839,7 +4839,7 @@
       ],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "e347ef7817acb3c014abcf933b39c2be",
+        "contentDigest": "6f3b8e0ae6eaa95e0f59bb4349ebd2a3",
         "type": "File",
         "mediaType": "text/markdown",
         "description": "File \"content/pages/5--yhdistys/index.md\"",
@@ -4849,11 +4849,11 @@
       "absolutePath": "/Users/perttu/Projects/intelligenzia/content/pages/5--yhdistys/index.md",
       "relativePath": "5--yhdistys/index.md",
       "extension": "md",
-      "size": 4009,
-      "prettySize": "4.01 kB",
-      "modifiedTime": "2019-07-01T15:09:58.403Z",
-      "accessTime": "2019-09-01T18:30:38.090Z",
-      "changeTime": "2019-07-01T15:09:58.403Z",
+      "size": 2767,
+      "prettySize": "2.77 kB",
+      "modifiedTime": "2019-09-21T13:35:05.117Z",
+      "accessTime": "2019-09-21T13:35:05.117Z",
+      "changeTime": "2019-09-21T13:35:05.117Z",
       "birthTime": "2019-07-01T11:04:00.717Z",
       "root": "/",
       "dir": "/Users/perttu/Projects/intelligenzia/content/pages/5--yhdistys",
@@ -4870,13 +4870,13 @@
       "blksize": 4096,
       "ino": 7461202,
       "blocks": 8,
-      "atimeMs": 1567362638089.7952,
-      "mtimeMs": 1561993798402.5493,
-      "ctimeMs": 1561993798402.5493,
+      "atimeMs": 1569072905116.7222,
+      "mtimeMs": 1569072905117.2148,
+      "ctimeMs": 1569072905117.2148,
       "birthtimeMs": 1561979040716.6455,
-      "atime": "2019-09-01T18:30:38.090Z",
-      "mtime": "2019-07-01T15:09:58.403Z",
-      "ctime": "2019-07-01T15:09:58.403Z",
+      "atime": "2019-09-21T13:35:05.117Z",
+      "mtime": "2019-09-21T13:35:05.117Z",
+      "ctime": "2019-09-21T13:35:05.117Z",
       "birthtime": "2019-07-01T11:04:00.717Z"
     },
     "d1ca1c9d-6fce-5e3b-964b-e5878e1859af": {
@@ -5500,34 +5500,6 @@
         "source": "pages"
       }
     },
-    "846410d9-d70e-5c72-894e-ad0d3f891bc6": {
-      "id": "846410d9-d70e-5c72-894e-ad0d3f891bc6",
-      "children": [],
-      "parent": "ae765041-2e59-5e0e-9295-f54da8c5bd62",
-      "internal": {
-        "content": "\nIntelligenzia ry (ent. Anti-Kompleksi, Simpleksi) on Helsingin yliopiston kognitiotieteen ainejärjestö, jonka juuret ulottuvat vuoteen 1988 saakka. Ainejärjestön tehtävänä on tuoda yhteen kognitiotieteestä kiinnostuneita ihmisiä, järjestää heille mukavaa tekemistä sekä ajaa kognitiotieteilijän ja kognitiotieteen asemaa yliopistolla ja yhteiskunnassa.\n\n## Lomakkeet ja palaute\n\n### Häirintä- ja ongelmatilannelomake\n\nJos koet Intelligenziassa tai Intelligenzian tapahtumissa häirintää, rasismia tai muuta ikävää toimintaa, ota yhteyttä Intelligenzian häirintä- ja ongelmatilannelomakeella. Yhdenvertaisuusvastaava ja puheenjohtaja käsittelevät asian. Voit lähettää myös sähköpostia joko yhdenvertaisuusvastaavalle tai puheenjohtajalle suoraan.\n\n[https://elomake.helsinki.fi/lomakkeet/94934/lomake.html](https://elomake.helsinki.fi/lomakkeet/94934/lomake.html)\n\n##\n\n### Yleinen palautelomake\n\nTässä linkki palautelomakkeeseen.\n\n[https://docs.google.com/forms/d/e/1FAIpQLSfZ1_Z1q3uMwAGG4wE4eXL2ElaoAaV5igvm-Mwpz_DfcvUaUQ/viewform](https://docs.google.com/forms/d/e/1FAIpQLSfZ1_Z1q3uMwAGG4wE4eXL2ElaoAaV5igvm-Mwpz_DfcvUaUQ/viewform)\n\n##\n\n### Rekisteriseloste\n\nLue jäsenistön rekisteriseloste tästä.\n\n[https://docs.google.com/document/d/1cIGnR-HY6lfk9xvvCPAKJLNOuV0-OrDyblIsn4DAKLQ/edit](https://docs.google.com/document/d/1cIGnR-HY6lfk9xvvCPAKJLNOuV0-OrDyblIsn4DAKLQ/edit)\n\n##\n\n### Pöytäkirjat\n\nHallitusten ja yleiskokousten pöytäkirjat löydät täältä.\n\n[https://drive.google.com/drive/u/1/folders/1tDhF2m7HfFSk3Ab3L-8dUu9DCqLj5QTH](https://drive.google.com/drive/u/1/folders/1tDhF2m7HfFSk3Ab3L-8dUu9DCqLj5QTH)\n\n## Hallitus 2019 & yhteystiedot\n\n<span style=\"color: #333333;\">Koko hallituksen tavoittaa sähköpostilla</span>**<span style=\"color: #333333;\"> intelligenzia-hallitus[]helsinki.fi</span>**\n\n![](http://intelligenzia.fi/wp-content/uploads/2016/10/PJ_dominoi-238x300.jpg)\n\n**Puheenjohtaja, Ympäristövastaava**\n\nPaavo Rinkkala\npaavo.rinkkala[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2018/04/DSC00996-202x300.jpg)\n\n**Varapuheenjohtaja, Opintopiirivastaava, KVIT-vastaava**\n\nSaara Halmetoja\nsaara.halmetoja[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2018/04/silva-200x300.jpg)\n\n**Rahastonhoitaja, Webmaster\n**\n\nSilva Perander\nsilva.perander[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2016/10/047-HYAL-ry-Edustajistovaalit-2018-02Oct18-c-Alejandro-Lorenzo-200x300.jpg)\n\n**Sihteeri, Sivuainesatelliitti**\n\nLovisa Hirvonen\nlovisa.hirvonen[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2016/10/DSC01101-195x300.jpg)\n\n**Viestintävastaava**\n\nOttilia Nikula\nottilia.nikula[]helsinki.fi\n\n**![](http://intelligenzia.fi/wp-content/uploads/2018/04/DSC00901-200x300.jpg)**\n\n**Tilavastaava, Koulutuspolitiikka-vastaava, Liikuntavastaava\n**\n\nMiska Nurmi\nmiska.nurmi[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2016/10/IMG_2005-300x300.jpg)\n\n**Yhdenvertaisuusvastaava, Yläkulttuurivastaava**\n\nKaisa Elovaara\nkaisa.elovaara[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2016/10/Juho-225x300.jpg)\n\n**Kevyt Panos -vastaava**\n\nJuho Halonen\njuho.halonen[]helsinki.fi\n\n## Toimihenkilöt:\n\n![](http://intelligenzia.fi/wp-content/uploads/2018/04/DSC00931-200x300.jpg)\n\n**Käsienheiluttelukonsultti, Jäsenrekisterivastaava\n**\n\nPietari Nurmi\npietari.nurmi[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2018/04/DSC00979-200x300.jpg)\n\n**Kopokummi\n**\n\nMari Räsänen\nmari.rasanen[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2018/04/minna-200x300.jpg)\n\n**Viestintäassistentti**\n\nMinna Harju\nminna.harju[]helsinki.fi\n\n**Filosofinen zombi**\n\nEmmi Makkonen\n\n**Alakulttuurivastaava**\n\nJuho Ylen\n\n**Sitsikoordinaattorit**\n\nSilva Perander\n\nOttilia Nikula\n\n**Konnarilistan majorpomot**\n\nPaavo Rinkkala\nSaara Halmetoja\nPietari Nurmi\n\n## Postiosoite\n\n> Intelligenzia ry\n> Oppimiskeskus Minerva PL 9\n> 00014 Helsingin yliopisto\n",
-        "type": "MarkdownRemark",
-        "contentDigest": "d77d68a6516572f7b65dee388ad2481a",
-        "owner": "gatsby-transformer-remark",
-        "fieldOwners": {
-          "slug": "default-site-plugin",
-          "prefix": "default-site-plugin",
-          "source": "default-site-plugin"
-        }
-      },
-      "frontmatter": {
-        "title": "Yhdistys",
-        "_PARENT": "ae765041-2e59-5e0e-9295-f54da8c5bd62"
-      },
-      "excerpt": "",
-      "rawMarkdownBody": "\nIntelligenzia ry (ent. Anti-Kompleksi, Simpleksi) on Helsingin yliopiston kognitiotieteen ainejärjestö, jonka juuret ulottuvat vuoteen 1988 saakka. Ainejärjestön tehtävänä on tuoda yhteen kognitiotieteestä kiinnostuneita ihmisiä, järjestää heille mukavaa tekemistä sekä ajaa kognitiotieteilijän ja kognitiotieteen asemaa yliopistolla ja yhteiskunnassa.\n\n## Lomakkeet ja palaute\n\n### Häirintä- ja ongelmatilannelomake\n\nJos koet Intelligenziassa tai Intelligenzian tapahtumissa häirintää, rasismia tai muuta ikävää toimintaa, ota yhteyttä Intelligenzian häirintä- ja ongelmatilannelomakeella. Yhdenvertaisuusvastaava ja puheenjohtaja käsittelevät asian. Voit lähettää myös sähköpostia joko yhdenvertaisuusvastaavalle tai puheenjohtajalle suoraan.\n\n[https://elomake.helsinki.fi/lomakkeet/94934/lomake.html](https://elomake.helsinki.fi/lomakkeet/94934/lomake.html)\n\n##\n\n### Yleinen palautelomake\n\nTässä linkki palautelomakkeeseen.\n\n[https://docs.google.com/forms/d/e/1FAIpQLSfZ1_Z1q3uMwAGG4wE4eXL2ElaoAaV5igvm-Mwpz_DfcvUaUQ/viewform](https://docs.google.com/forms/d/e/1FAIpQLSfZ1_Z1q3uMwAGG4wE4eXL2ElaoAaV5igvm-Mwpz_DfcvUaUQ/viewform)\n\n##\n\n### Rekisteriseloste\n\nLue jäsenistön rekisteriseloste tästä.\n\n[https://docs.google.com/document/d/1cIGnR-HY6lfk9xvvCPAKJLNOuV0-OrDyblIsn4DAKLQ/edit](https://docs.google.com/document/d/1cIGnR-HY6lfk9xvvCPAKJLNOuV0-OrDyblIsn4DAKLQ/edit)\n\n##\n\n### Pöytäkirjat\n\nHallitusten ja yleiskokousten pöytäkirjat löydät täältä.\n\n[https://drive.google.com/drive/u/1/folders/1tDhF2m7HfFSk3Ab3L-8dUu9DCqLj5QTH](https://drive.google.com/drive/u/1/folders/1tDhF2m7HfFSk3Ab3L-8dUu9DCqLj5QTH)\n\n## Hallitus 2019 & yhteystiedot\n\n<span style=\"color: #333333;\">Koko hallituksen tavoittaa sähköpostilla</span>**<span style=\"color: #333333;\"> intelligenzia-hallitus[]helsinki.fi</span>**\n\n![](http://intelligenzia.fi/wp-content/uploads/2016/10/PJ_dominoi-238x300.jpg)\n\n**Puheenjohtaja, Ympäristövastaava**\n\nPaavo Rinkkala\npaavo.rinkkala[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2018/04/DSC00996-202x300.jpg)\n\n**Varapuheenjohtaja, Opintopiirivastaava, KVIT-vastaava**\n\nSaara Halmetoja\nsaara.halmetoja[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2018/04/silva-200x300.jpg)\n\n**Rahastonhoitaja, Webmaster\n**\n\nSilva Perander\nsilva.perander[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2016/10/047-HYAL-ry-Edustajistovaalit-2018-02Oct18-c-Alejandro-Lorenzo-200x300.jpg)\n\n**Sihteeri, Sivuainesatelliitti**\n\nLovisa Hirvonen\nlovisa.hirvonen[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2016/10/DSC01101-195x300.jpg)\n\n**Viestintävastaava**\n\nOttilia Nikula\nottilia.nikula[]helsinki.fi\n\n**![](http://intelligenzia.fi/wp-content/uploads/2018/04/DSC00901-200x300.jpg)**\n\n**Tilavastaava, Koulutuspolitiikka-vastaava, Liikuntavastaava\n**\n\nMiska Nurmi\nmiska.nurmi[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2016/10/IMG_2005-300x300.jpg)\n\n**Yhdenvertaisuusvastaava, Yläkulttuurivastaava**\n\nKaisa Elovaara\nkaisa.elovaara[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2016/10/Juho-225x300.jpg)\n\n**Kevyt Panos -vastaava**\n\nJuho Halonen\njuho.halonen[]helsinki.fi\n\n## Toimihenkilöt:\n\n![](http://intelligenzia.fi/wp-content/uploads/2018/04/DSC00931-200x300.jpg)\n\n**Käsienheiluttelukonsultti, Jäsenrekisterivastaava\n**\n\nPietari Nurmi\npietari.nurmi[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2018/04/DSC00979-200x300.jpg)\n\n**Kopokummi\n**\n\nMari Räsänen\nmari.rasanen[]helsinki.fi\n\n![](http://intelligenzia.fi/wp-content/uploads/2018/04/minna-200x300.jpg)\n\n**Viestintäassistentti**\n\nMinna Harju\nminna.harju[]helsinki.fi\n\n**Filosofinen zombi**\n\nEmmi Makkonen\n\n**Alakulttuurivastaava**\n\nJuho Ylen\n\n**Sitsikoordinaattorit**\n\nSilva Perander\n\nOttilia Nikula\n\n**Konnarilistan majorpomot**\n\nPaavo Rinkkala\nSaara Halmetoja\nPietari Nurmi\n\n## Postiosoite\n\n> Intelligenzia ry\n> Oppimiskeskus Minerva PL 9\n> 00014 Helsingin yliopisto\n",
-      "fileAbsolutePath": "/Users/perttu/Projects/intelligenzia/content/pages/5--yhdistys/index.md",
-      "fields": {
-        "slug": "/yhdistys/",
-        "prefix": "5",
-        "source": "pages"
-      }
-    },
     "5783efdb-d533-5ca2-a354-efe6e812f3d5": {
       "id": "5783efdb-d533-5ca2-a354-efe6e812f3d5",
       "children": [],
@@ -6061,15 +6033,15 @@
       "context": {
         "slug": "/hallitus-2019/",
         "prev": {
-          "id": "5783efdb-d533-5ca2-a354-efe6e812f3d5",
+          "id": "45cfa0a4-03df-5865-a1bc-78b4c2dab25d",
           "fields": {
-            "slug": "/kognitiotiede-humanistiseen/",
-            "prefix": "2017-10-05",
+            "slug": "/kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/",
+            "prefix": "2018-03-23",
             "source": "posts"
           },
           "frontmatter": {
-            "title": "Kognitiotiede humanistiseen tiedekuntaan 2017",
-            "category": "kognitiotiede"
+            "title": "Kognitiotieteeseen toinen yliopistonlehtori — valonpilkahduksia tulevaisuudesta",
+            "category": "yhdistys"
           }
         },
         "next": {
@@ -6094,7 +6066,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "b3c0222ceb234e44fecc587b130c2698",
+        "contentDigest": "e32270d9fc1a1e22d1191c431317dda5",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -6120,14 +6092,14 @@
           }
         },
         "next": {
-          "id": "ec7e46da-8eab-554a-83be-44f7d6eebbeb",
+          "id": "f2019df7-44ce-5cdd-a6e8-5748efdaad9e",
           "fields": {
-            "slug": "/hallitus-2019/",
-            "prefix": "2019-01-01",
+            "slug": "/intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/",
+            "prefix": "2018-01-11",
             "source": "posts"
           },
           "frontmatter": {
-            "title": "Intelligenzian hallitus vuodelle 2019",
+            "title": "Intelligenzian jäsenyys avautuu kaikille opiskelijoille",
             "category": "yhdistys"
           }
         },
@@ -6141,7 +6113,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "062a431aeba811c339f008138dff7c94",
+        "contentDigest": "ebde5fdf47862db3b645c453d76881ce",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -6515,14 +6487,494 @@
         "source": "pages"
       }
     },
+    "4dcaa4f8-5d6b-5d90-bba8-dd234cfe3389": {
+      "id": "4dcaa4f8-5d6b-5d90-bba8-dd234cfe3389",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "42ebe40e9571df194c2760e9a8378bdc",
+        "type": "Directory",
+        "description": "Directory \"content/posts/2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "posts",
+      "absolutePath": "/Users/perttu/Projects/intelligenzia/content/posts/2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta",
+      "relativePath": "2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta",
+      "extension": "",
+      "size": 64,
+      "prettySize": "64 B",
+      "modifiedTime": "2019-09-21T13:27:07.745Z",
+      "accessTime": "2019-09-21T13:27:22.856Z",
+      "changeTime": "2019-09-21T13:27:22.743Z",
+      "birthTime": "2019-09-21T13:27:07.745Z",
+      "root": "/",
+      "dir": "/Users/perttu/Projects/intelligenzia/content/posts",
+      "base": "2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta",
+      "ext": "",
+      "name": "2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta",
+      "relativeDirectory": "",
+      "dev": 16777221,
+      "mode": 16877,
+      "nlink": 2,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 21338360,
+      "blocks": 0,
+      "atimeMs": 1569072442856.4636,
+      "mtimeMs": 1569072427744.7234,
+      "ctimeMs": 1569072442743.0024,
+      "birthtimeMs": 1569072427744.7234,
+      "atime": "2019-09-21T13:27:22.856Z",
+      "mtime": "2019-09-21T13:27:07.745Z",
+      "ctime": "2019-09-21T13:27:22.743Z",
+      "birthtime": "2019-09-21T13:27:07.745Z"
+    },
+    "3fba7077-8e46-58b9-92c3-87e49336a392": {
+      "id": "3fba7077-8e46-58b9-92c3-87e49336a392",
+      "children": [
+        "45cfa0a4-03df-5865-a1bc-78b4c2dab25d"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "a1267b6dd81e29a27be0d739a3d39490",
+        "type": "File",
+        "mediaType": "text/markdown",
+        "description": "File \"content/posts/2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/index.md\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "posts",
+      "absolutePath": "/Users/perttu/Projects/intelligenzia/content/posts/2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/index.md",
+      "relativePath": "2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/index.md",
+      "extension": "md",
+      "size": 5300,
+      "prettySize": "5.3 kB",
+      "modifiedTime": "2019-09-21T13:28:40.076Z",
+      "accessTime": "2019-09-21T13:28:40.075Z",
+      "changeTime": "2019-09-21T13:28:40.076Z",
+      "birthTime": "2019-09-21T13:27:26.843Z",
+      "root": "/",
+      "dir": "/Users/perttu/Projects/intelligenzia/content/posts/2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta",
+      "base": "index.md",
+      "ext": ".md",
+      "name": "index",
+      "relativeDirectory": "2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta",
+      "dev": 16777221,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 21338363,
+      "blocks": 16,
+      "atimeMs": 1569072520075.1985,
+      "mtimeMs": 1569072520075.7817,
+      "ctimeMs": 1569072520075.7817,
+      "birthtimeMs": 1569072446843.4949,
+      "atime": "2019-09-21T13:28:40.075Z",
+      "mtime": "2019-09-21T13:28:40.076Z",
+      "ctime": "2019-09-21T13:28:40.076Z",
+      "birthtime": "2019-09-21T13:27:26.843Z"
+    },
+    "SitePage /kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/": {
+      "jsonName": "kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta-4dc",
+      "internalComponentName": "ComponentKognitiotieteeseenToinenYliopistonlehtoriValonpilkahduksiaTulevaisuudesta",
+      "path": "/kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/",
+      "component": "/Users/perttu/Projects/intelligenzia/src/templates/PostTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {
+        "slug": "/kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/",
+        "prev": {
+          "id": "f2019df7-44ce-5cdd-a6e8-5748efdaad9e",
+          "fields": {
+            "slug": "/intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/",
+            "prefix": "2018-01-11",
+            "source": "posts"
+          },
+          "frontmatter": {
+            "title": "Intelligenzian jäsenyys avautuu kaikille opiskelijoille",
+            "category": "yhdistys"
+          }
+        },
+        "next": {
+          "id": "ec7e46da-8eab-554a-83be-44f7d6eebbeb",
+          "fields": {
+            "slug": "/hallitus-2019/",
+            "prefix": "2019-01-01",
+            "source": "posts"
+          },
+          "frontmatter": {
+            "title": "Intelligenzian hallitus vuodelle 2019",
+            "category": "yhdistys"
+          }
+        },
+        "source": "posts"
+      },
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/Users/perttu/Projects/intelligenzia/src/templates/PostTemplate.js",
+      "id": "SitePage /kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "f007662ec59e6bfd5a7c139993ac2934",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "fa74f82d-0b03-5924-a6ba-8b868befb156": {
+      "id": "fa74f82d-0b03-5924-a6ba-8b868befb156",
+      "children": [
+        "d3c68d0d-bbc8-53ae-a140-29d0c0727272"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "76bfac336727612610fc5777b876b159",
+        "type": "File",
+        "mediaType": "image/png",
+        "description": "File \"content/posts/2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/yliopisto.png\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "posts",
+      "absolutePath": "/Users/perttu/Projects/intelligenzia/content/posts/2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/yliopisto.png",
+      "relativePath": "2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/yliopisto.png",
+      "extension": "png",
+      "size": 5696301,
+      "prettySize": "5.7 MB",
+      "modifiedTime": "2019-09-21T13:28:30.180Z",
+      "accessTime": "2019-09-21T13:28:30.252Z",
+      "changeTime": "2019-09-21T13:28:30.180Z",
+      "birthTime": "2019-09-21T13:28:30.156Z",
+      "root": "/",
+      "dir": "/Users/perttu/Projects/intelligenzia/content/posts/2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta",
+      "base": "yliopisto.png",
+      "ext": ".png",
+      "name": "yliopisto",
+      "relativeDirectory": "2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta",
+      "dev": 16777221,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 21338532,
+      "blocks": 11128,
+      "atimeMs": 1569072510252.4675,
+      "mtimeMs": 1569072510179.5845,
+      "ctimeMs": 1569072510180.1377,
+      "birthtimeMs": 1569072510155.7095,
+      "atime": "2019-09-21T13:28:30.252Z",
+      "mtime": "2019-09-21T13:28:30.180Z",
+      "ctime": "2019-09-21T13:28:30.180Z",
+      "birthtime": "2019-09-21T13:28:30.156Z"
+    },
+    "d3c68d0d-bbc8-53ae-a140-29d0c0727272": {
+      "id": "d3c68d0d-bbc8-53ae-a140-29d0c0727272",
+      "children": [],
+      "parent": "fa74f82d-0b03-5924-a6ba-8b868befb156",
+      "internal": {
+        "contentDigest": "76bfac336727612610fc5777b876b159",
+        "type": "ImageSharp",
+        "owner": "gatsby-transformer-sharp"
+      }
+    },
+    "45cfa0a4-03df-5865-a1bc-78b4c2dab25d": {
+      "id": "45cfa0a4-03df-5865-a1bc-78b4c2dab25d",
+      "children": [],
+      "parent": "3fba7077-8e46-58b9-92c3-87e49336a392",
+      "internal": {
+        "content": "\nTalven purevin kylmyys alkaa jo olla takana päin, ja myös Ison Pyörän vavisuttama yliopistoyhteisö venyttelee kankeita jäseniään uusien käytänteiden alkaessa pikkuhiljaa löytää paikkaansa. Muutoksen myllerryksessä kuulas kevätaurinko paistaa välillä kognitiotieteenkin risukasaan: tieteenalalle nimittäin palkataan toinen yliopistonlehtori.\n\nVuodenvaihteessa kognitiotieteen tieteenala, käytännössä tutkimushenkilöstö, siirtyi nykykielten laitokselta vastaperustettuun digitaalisten ihmistieteiden osastoon (Department of Digital Humanities, DDH) yhdessä fonetiikan kanssa. Siirtymä oli osa alkuperäistä suunnitelmaa — nykykielten laitoksen ei ollut tarkoituskaan olla kognitiotieteen loppusijoituspaikka humanistisessa tiedekunnassa. Laboratoriotilat sijaitsevat toistaiseksi Siltavuorenpenkereellä ja siirtymä keskustakampukselle tapahtuu aikaisintaan vuodenvaihteessa. Näillä näkymin uudet tilat tulevat sijaitsemaan todennäköisesti Topeliassa yhdessä fonetiikan ja musiikkitieteen kanssa.\n\nUudessa järjestelmässä koulutusohjelmat ovat tieteenalasta erillisiä, eikä DDH:n yhteydessä toistaiseksi ole omaa koulutusohjelmaa. Tästä johtuen kognitiotieteen opetusta tarjotaan edelleen LingDA (Linguistic Diversity in the Digital Age) -koulutusohjelman alla. Kevät toi kuitenkin mukanaan hyviä uutisia: kognitiotieteeseen palkataan toinen yliopistonlehtori. Tehtävä asetetaan avoimeen hakuun ja määräaikainen lehtori aloittaa syksyllä 2018. Nähdäksemme tämä on tervetullut askel oikeaan suuntaan ennen professuurin täyttämistä. Kognitiotieteen professuuri on merkitty nykykielten laitoksen henkilöstösuunnitelmaan, josta se todennäköisesti siirtyy myös DDH:n henkilöstösuunnitelmaan. Virallista päätöstä haun avaamisesta ei vielä olla tehty, mutta resursseja ollaan jo hakemassa. Professuurihaku on pitkä prosessi ja parhaimmassakin tapauksessa uusi professori pääsisi aloittamaan vasta vuonna 2020. Nyt hakuun asetettava lehtorin tehtävä jatkuu ainakin vuoden 2019 loppuun.\n\nKognitiotieteen opetuksen tulevaisuudelle on useita mahdollisia skenaarioita. Virallista päätöstä uusien pääaineopiskelijoiden ottamisesta ei olla tehty, mutta uskallamme olla toiveikkaita asian suhteen, sillä halua ja kiinnostusta tälle vaikuttaisi löytyvän tiedekunnan johdon tasolta asti. Siitä missä muodossa opetusta tultaisiin tarjoamaan, ei kuitenkaan ole selvyyttä. Kyseessä on ensisijaisesti resurssikysymys. Ison Pyörän mukaisessa mallissa vaihtoehtoja on ainakin kolme:\n\n1.  Kognitiotiede on (maisterivaiheen) suuntautumisvaihtoehto LingDA:n tai jonkun muun valmiin koulutusohjelman alla. Tieteenalalla on professori ja 1–2 yliopistonlehtoria. Halvin vaihtoehto.\n2.  Digitaalisten ihmistieteiden osastoon perustetaan uusi koulutusohjelma (esimerkiksi ”Digital Humanities”), jossa kognitiotiede on suuntautumisvaihtoehtona. Tieteenalalla on professori ja 1–2 yliopistonlehtoria.\n3.  Kognitiotiede sateenvarjona: digitaalisten ihmistieteiden osastoon perustetaan uusi koulutusohjelma enemmän tai vähemmän kognitiotieteen ympärille. Poikkitieteellinen koulutusohjelma kokoaa useiden lähitieteenalojen opetusta, joiden välillä kognitiotiede toimii siltana. Koulutusohjelman piirissä toimii lukuisia professoreita ja yliopistonlehtoreita eri aloilta. Käsityksemme mukaan juuri kukaan ei halua DDH:n yhteyteen kahta uutta koulutusohjelmaa, joten vahvastikin kognitiotieteeseen nojaava ohjelma saatetaan lanseerata jollain muulla nimellä.\n\n2020 astuvat voimaan uudet tutkintovaatimukset, ja vuoden 2019 aikana kartoitetaan tarve mahdollisten uusien koulutusohjelmien luomiselle. Tämän vuoksi on tärkeää, että kognitiotieteen opetuksen tulevaisuus saataisiin lyötyä lukkoon ja suunniteltua jo vuoden 2019 aikana. Professuurin täyttämistä ei näin ollen voida jäädä odottelemaan, vaan suunnittelutyö on tehtävä nyt.\n\nIntelligenzia pyrkii kaikin mahdollisin tavoin edistämään oman kognitiotieteen opintosisältöjä tarjoavan koulutusohjelman perustamista. Mielestämme on olennaista, että aiheesta kiinnostuneita opiskelijoita otettaisiin sisään jo kandivaiheen opintoihin. Uuden järjestelmän mukaista koulutusohjelmaa ei kuitenkaan tulla perustamaan yhden professorin ja 1–2 lehtorin varaan, sillä nykyisellään koulutusohjelmien viitteellinen minimisisäänottomäärä on useita kymmeniä opiskelijoita vuodessa. Tämän vuoksi keskiöön tulee ottaa kognitiotieteen rooli eri tieteenalojen opetushenkilöstöä yhdistävänä sateenvarjona.\n\nSeuraavaksi tarkoitus on kartoittaa, minkälaista kiinnostusta lähialoilta löytyy tämän tyyppisen ohjelman pyörittämiseen, ja näyttäytyykö ohjelma opiskelijoille kiinnostavana hakukohteena. Kiinnostus kognitiotiedettä ja sen opiskelua kohtaan on kokemuksemme mukaan ollut suurta, ja pienelläkin aktiivisuuden osoituksella jokainen aiheesta kiinnostunut voi omalta osaltaan olla avuksi. Ottaen huomioon mm. pääministeri Sipilän viimeaikaiset visiot Suomesta tekoälyn kärkimaana, resursseja kognitiotieteen koulutukseen luulisi vyöryvän ovista ja ikkunoista.\n",
+        "type": "MarkdownRemark",
+        "contentDigest": "c0552987efa83c54b74f12feb0fc5033",
+        "owner": "gatsby-transformer-remark",
+        "fieldOwners": {
+          "slug": "default-site-plugin",
+          "prefix": "default-site-plugin",
+          "source": "default-site-plugin"
+        }
+      },
+      "frontmatter": {
+        "title": "Kognitiotieteeseen toinen yliopistonlehtori — valonpilkahduksia tulevaisuudesta",
+        "category": "yhdistys",
+        "cover": "yliopisto.png",
+        "author": "Pietari Nurmi",
+        "_PARENT": "3fba7077-8e46-58b9-92c3-87e49336a392"
+      },
+      "excerpt": "",
+      "rawMarkdownBody": "\nTalven purevin kylmyys alkaa jo olla takana päin, ja myös Ison Pyörän vavisuttama yliopistoyhteisö venyttelee kankeita jäseniään uusien käytänteiden alkaessa pikkuhiljaa löytää paikkaansa. Muutoksen myllerryksessä kuulas kevätaurinko paistaa välillä kognitiotieteenkin risukasaan: tieteenalalle nimittäin palkataan toinen yliopistonlehtori.\n\nVuodenvaihteessa kognitiotieteen tieteenala, käytännössä tutkimushenkilöstö, siirtyi nykykielten laitokselta vastaperustettuun digitaalisten ihmistieteiden osastoon (Department of Digital Humanities, DDH) yhdessä fonetiikan kanssa. Siirtymä oli osa alkuperäistä suunnitelmaa — nykykielten laitoksen ei ollut tarkoituskaan olla kognitiotieteen loppusijoituspaikka humanistisessa tiedekunnassa. Laboratoriotilat sijaitsevat toistaiseksi Siltavuorenpenkereellä ja siirtymä keskustakampukselle tapahtuu aikaisintaan vuodenvaihteessa. Näillä näkymin uudet tilat tulevat sijaitsemaan todennäköisesti Topeliassa yhdessä fonetiikan ja musiikkitieteen kanssa.\n\nUudessa järjestelmässä koulutusohjelmat ovat tieteenalasta erillisiä, eikä DDH:n yhteydessä toistaiseksi ole omaa koulutusohjelmaa. Tästä johtuen kognitiotieteen opetusta tarjotaan edelleen LingDA (Linguistic Diversity in the Digital Age) -koulutusohjelman alla. Kevät toi kuitenkin mukanaan hyviä uutisia: kognitiotieteeseen palkataan toinen yliopistonlehtori. Tehtävä asetetaan avoimeen hakuun ja määräaikainen lehtori aloittaa syksyllä 2018. Nähdäksemme tämä on tervetullut askel oikeaan suuntaan ennen professuurin täyttämistä. Kognitiotieteen professuuri on merkitty nykykielten laitoksen henkilöstösuunnitelmaan, josta se todennäköisesti siirtyy myös DDH:n henkilöstösuunnitelmaan. Virallista päätöstä haun avaamisesta ei vielä olla tehty, mutta resursseja ollaan jo hakemassa. Professuurihaku on pitkä prosessi ja parhaimmassakin tapauksessa uusi professori pääsisi aloittamaan vasta vuonna 2020. Nyt hakuun asetettava lehtorin tehtävä jatkuu ainakin vuoden 2019 loppuun.\n\nKognitiotieteen opetuksen tulevaisuudelle on useita mahdollisia skenaarioita. Virallista päätöstä uusien pääaineopiskelijoiden ottamisesta ei olla tehty, mutta uskallamme olla toiveikkaita asian suhteen, sillä halua ja kiinnostusta tälle vaikuttaisi löytyvän tiedekunnan johdon tasolta asti. Siitä missä muodossa opetusta tultaisiin tarjoamaan, ei kuitenkaan ole selvyyttä. Kyseessä on ensisijaisesti resurssikysymys. Ison Pyörän mukaisessa mallissa vaihtoehtoja on ainakin kolme:\n\n1.  Kognitiotiede on (maisterivaiheen) suuntautumisvaihtoehto LingDA:n tai jonkun muun valmiin koulutusohjelman alla. Tieteenalalla on professori ja 1–2 yliopistonlehtoria. Halvin vaihtoehto.\n2.  Digitaalisten ihmistieteiden osastoon perustetaan uusi koulutusohjelma (esimerkiksi ”Digital Humanities”), jossa kognitiotiede on suuntautumisvaihtoehtona. Tieteenalalla on professori ja 1–2 yliopistonlehtoria.\n3.  Kognitiotiede sateenvarjona: digitaalisten ihmistieteiden osastoon perustetaan uusi koulutusohjelma enemmän tai vähemmän kognitiotieteen ympärille. Poikkitieteellinen koulutusohjelma kokoaa useiden lähitieteenalojen opetusta, joiden välillä kognitiotiede toimii siltana. Koulutusohjelman piirissä toimii lukuisia professoreita ja yliopistonlehtoreita eri aloilta. Käsityksemme mukaan juuri kukaan ei halua DDH:n yhteyteen kahta uutta koulutusohjelmaa, joten vahvastikin kognitiotieteeseen nojaava ohjelma saatetaan lanseerata jollain muulla nimellä.\n\n2020 astuvat voimaan uudet tutkintovaatimukset, ja vuoden 2019 aikana kartoitetaan tarve mahdollisten uusien koulutusohjelmien luomiselle. Tämän vuoksi on tärkeää, että kognitiotieteen opetuksen tulevaisuus saataisiin lyötyä lukkoon ja suunniteltua jo vuoden 2019 aikana. Professuurin täyttämistä ei näin ollen voida jäädä odottelemaan, vaan suunnittelutyö on tehtävä nyt.\n\nIntelligenzia pyrkii kaikin mahdollisin tavoin edistämään oman kognitiotieteen opintosisältöjä tarjoavan koulutusohjelman perustamista. Mielestämme on olennaista, että aiheesta kiinnostuneita opiskelijoita otettaisiin sisään jo kandivaiheen opintoihin. Uuden järjestelmän mukaista koulutusohjelmaa ei kuitenkaan tulla perustamaan yhden professorin ja 1–2 lehtorin varaan, sillä nykyisellään koulutusohjelmien viitteellinen minimisisäänottomäärä on useita kymmeniä opiskelijoita vuodessa. Tämän vuoksi keskiöön tulee ottaa kognitiotieteen rooli eri tieteenalojen opetushenkilöstöä yhdistävänä sateenvarjona.\n\nSeuraavaksi tarkoitus on kartoittaa, minkälaista kiinnostusta lähialoilta löytyy tämän tyyppisen ohjelman pyörittämiseen, ja näyttäytyykö ohjelma opiskelijoille kiinnostavana hakukohteena. Kiinnostus kognitiotiedettä ja sen opiskelua kohtaan on kokemuksemme mukaan ollut suurta, ja pienelläkin aktiivisuuden osoituksella jokainen aiheesta kiinnostunut voi omalta osaltaan olla avuksi. Ottaen huomioon mm. pääministeri Sipilän viimeaikaiset visiot Suomesta tekoälyn kärkimaana, resursseja kognitiotieteen koulutukseen luulisi vyöryvän ovista ja ikkunoista.\n",
+      "fileAbsolutePath": "/Users/perttu/Projects/intelligenzia/content/posts/2018-03-23--kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/index.md",
+      "fields": {
+        "slug": "/kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/",
+        "prefix": "2018-03-23",
+        "source": "posts"
+      }
+    },
+    "be9cf0a9-af13-551d-84fa-6225e211c4b1": {
+      "id": "be9cf0a9-af13-551d-84fa-6225e211c4b1",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "6b27e745a188ee0d10a0bde253c39010",
+        "type": "Directory",
+        "description": "Directory \"content/posts/2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "posts",
+      "absolutePath": "/Users/perttu/Projects/intelligenzia/content/posts/2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille",
+      "relativePath": "2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille",
+      "extension": "",
+      "size": 64,
+      "prettySize": "64 B",
+      "modifiedTime": "2019-09-21T13:29:36.880Z",
+      "accessTime": "2019-09-21T13:29:36.960Z",
+      "changeTime": "2019-09-21T13:29:36.880Z",
+      "birthTime": "2019-09-21T13:29:36.880Z",
+      "root": "/",
+      "dir": "/Users/perttu/Projects/intelligenzia/content/posts",
+      "base": "2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille",
+      "ext": "",
+      "name": "2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille",
+      "relativeDirectory": "",
+      "dev": 16777221,
+      "mode": 16877,
+      "nlink": 2,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 21338672,
+      "blocks": 0,
+      "atimeMs": 1569072576959.5664,
+      "mtimeMs": 1569072576880.4714,
+      "ctimeMs": 1569072576880.4714,
+      "birthtimeMs": 1569072576880.4714,
+      "atime": "2019-09-21T13:29:36.960Z",
+      "mtime": "2019-09-21T13:29:36.880Z",
+      "ctime": "2019-09-21T13:29:36.880Z",
+      "birthtime": "2019-09-21T13:29:36.880Z"
+    },
+    "ca9118a7-06c7-53f9-9ab2-4adce6af8182": {
+      "id": "ca9118a7-06c7-53f9-9ab2-4adce6af8182",
+      "children": [
+        "f2019df7-44ce-5cdd-a6e8-5748efdaad9e"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "756de71bac8810b12c9209c7a6841f03",
+        "type": "File",
+        "mediaType": "text/markdown",
+        "description": "File \"content/posts/2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/index.md\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "posts",
+      "absolutePath": "/Users/perttu/Projects/intelligenzia/content/posts/2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/index.md",
+      "relativePath": "2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/index.md",
+      "extension": "md",
+      "size": 1714,
+      "prettySize": "1.71 kB",
+      "modifiedTime": "2019-09-21T13:32:08.816Z",
+      "accessTime": "2019-09-21T13:32:08.816Z",
+      "changeTime": "2019-09-21T13:32:08.816Z",
+      "birthTime": "2019-09-21T13:29:51.787Z",
+      "root": "/",
+      "dir": "/Users/perttu/Projects/intelligenzia/content/posts/2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille",
+      "base": "index.md",
+      "ext": ".md",
+      "name": "index",
+      "relativeDirectory": "2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille",
+      "dev": 16777221,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 21338683,
+      "blocks": 8,
+      "atimeMs": 1569072728815.6116,
+      "mtimeMs": 1569072728816.1855,
+      "ctimeMs": 1569072728816.1855,
+      "birthtimeMs": 1569072591787.329,
+      "atime": "2019-09-21T13:32:08.816Z",
+      "mtime": "2019-09-21T13:32:08.816Z",
+      "ctime": "2019-09-21T13:32:08.816Z",
+      "birthtime": "2019-09-21T13:29:51.787Z"
+    },
+    "SitePage /intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/": {
+      "jsonName": "intelligenzian-jasenyys-avautuu-kaikille-opiskelijoille-35a",
+      "internalComponentName": "ComponentIntelligenzianJasenyysAvautuuKaikilleOpiskelijoille",
+      "path": "/intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/",
+      "component": "/Users/perttu/Projects/intelligenzia/src/templates/PostTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {
+        "slug": "/intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/",
+        "prev": {
+          "id": "5783efdb-d533-5ca2-a354-efe6e812f3d5",
+          "fields": {
+            "slug": "/kognitiotiede-humanistiseen/",
+            "prefix": "2017-10-05",
+            "source": "posts"
+          },
+          "frontmatter": {
+            "title": "Kognitiotiede humanistiseen tiedekuntaan 2017",
+            "category": "kognitiotiede"
+          }
+        },
+        "next": {
+          "id": "45cfa0a4-03df-5865-a1bc-78b4c2dab25d",
+          "fields": {
+            "slug": "/kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/",
+            "prefix": "2018-03-23",
+            "source": "posts"
+          },
+          "frontmatter": {
+            "title": "Kognitiotieteeseen toinen yliopistonlehtori — valonpilkahduksia tulevaisuudesta",
+            "category": "yhdistys"
+          }
+        },
+        "source": "posts"
+      },
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/Users/perttu/Projects/intelligenzia/src/templates/PostTemplate.js",
+      "id": "SitePage /intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "59234f9fc20e3114873891dc97fcac31",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "a7ae3537-c308-5ce5-85a6-f57ed8746ba2": {
+      "id": "a7ae3537-c308-5ce5-85a6-f57ed8746ba2",
+      "children": [
+        "bfc0ea09-477f-57f8-b594-6fb1fbf6dd24"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "545a71d0a0aa88fa280ae9ec6e75baeb",
+        "type": "File",
+        "mediaType": "image/jpeg",
+        "description": "File \"content/posts/2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/hallitus2018.jpeg\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "posts",
+      "absolutePath": "/Users/perttu/Projects/intelligenzia/content/posts/2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/hallitus2018.jpeg",
+      "relativePath": "2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/hallitus2018.jpeg",
+      "extension": "jpeg",
+      "size": 1800349,
+      "prettySize": "1.8 MB",
+      "modifiedTime": "2019-09-21T13:30:06.845Z",
+      "accessTime": "2019-09-21T13:30:07.052Z",
+      "changeTime": "2019-09-21T13:30:06.846Z",
+      "birthTime": "2019-09-21T13:30:06.839Z",
+      "root": "/",
+      "dir": "/Users/perttu/Projects/intelligenzia/content/posts/2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille",
+      "base": "hallitus2018.jpeg",
+      "ext": ".jpeg",
+      "name": "hallitus2018",
+      "relativeDirectory": "2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille",
+      "dev": 16777221,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 21338845,
+      "blocks": 3520,
+      "atimeMs": 1569072607051.6807,
+      "mtimeMs": 1569072606845.204,
+      "ctimeMs": 1569072606845.754,
+      "birthtimeMs": 1569072606839.3452,
+      "atime": "2019-09-21T13:30:07.052Z",
+      "mtime": "2019-09-21T13:30:06.845Z",
+      "ctime": "2019-09-21T13:30:06.846Z",
+      "birthtime": "2019-09-21T13:30:06.839Z"
+    },
+    "bfc0ea09-477f-57f8-b594-6fb1fbf6dd24": {
+      "id": "bfc0ea09-477f-57f8-b594-6fb1fbf6dd24",
+      "children": [],
+      "parent": "a7ae3537-c308-5ce5-85a6-f57ed8746ba2",
+      "internal": {
+        "contentDigest": "545a71d0a0aa88fa280ae9ec6e75baeb",
+        "type": "ImageSharp",
+        "owner": "gatsby-transformer-sharp"
+      }
+    },
+    "f2019df7-44ce-5cdd-a6e8-5748efdaad9e": {
+      "id": "f2019df7-44ce-5cdd-a6e8-5748efdaad9e",
+      "children": [],
+      "parent": "ca9118a7-06c7-53f9-9ab2-4adce6af8182",
+      "internal": {
+        "content": "\nYliopiston tutkintorakenteen muutoksen vuoksi Intelligenzia päätti uudistaa sääntöjään vuonna 2017. Yhdistyksen vanhojen sääntöjen mukaan varsinaisia äänivaltaisia jäseniä ovat voineet olla vain Helsingin yliopiston kognitiotieteen pääaineopiskelijat. Muut kognitiotieteestä kiinnostuneet ovat voineet liittyä kannatusjäseniksi yhdistykseen.\n\nJoulukuussa 2017 voimaan astuivat uudistetut säännöt, jotka avaavat Intelligenzian jäsenyysehtoja. Jatkossa yhdistyksen varsinaiseksi jäseneksi voidaan hyväksyä kuka tahansa kognitiotieteestä kiinnostunut opiskelija, joka on jonkin suomalaisen korkeakoulun ylioppilas- tai opiskelijakunnan jäsen ja hyväksyy yhdistyksen tarkoituksen. Varsinaisella jäsenellä on äänioikeus yhdistyksen kokouksissa ja hän voi asettua ehdolle hallitusvirkaan.\n\nMuut kognitiotieteestä kiinnostuneet (myös muut kuin opiskelijat) voivat edelleen hakea kannatusjäseniksi yhdistykseen. Kannatusjäsenellä on läsnäolo-oikeus yhdistyksen kokouksissa ja hän voi toimia hallituksen ulkopuolisissa viroissa.\nLiittyminen kannattaa!\n\nJäsenenä pysyt parhaiten kartalla Intelligenzian toiminnasta ja olet virallisesti osa Suomen suurinta kognitiotieteellistä yhdistystä. Molemmat jäsenyysmuodot ovat ilmaisia!\n[Hae jäsenyyttä](/jäseneksi).\n\nHallitus käsittelee hakemukset seuraavassa kokouksessa ja päätöksestä ilmoitetaan sähköpostitse. Vanhat kannatusjäsenet, jotka täyttävät uusien sääntöjen mukaiset täysivaltaisen jäsenen ehdot voivat hakea jäsenyytensä päivittämistä samalla lomakkeella.\n",
+        "type": "MarkdownRemark",
+        "contentDigest": "dbfc0aa4638ca318c7f9bde3fa690554",
+        "owner": "gatsby-transformer-remark",
+        "fieldOwners": {
+          "slug": "default-site-plugin",
+          "prefix": "default-site-plugin",
+          "source": "default-site-plugin"
+        }
+      },
+      "frontmatter": {
+        "title": "Intelligenzian jäsenyys avautuu kaikille opiskelijoille",
+        "category": "yhdistys",
+        "cover": "hallitus2018.jpeg",
+        "author": "Pietari Nurmi",
+        "_PARENT": "ca9118a7-06c7-53f9-9ab2-4adce6af8182"
+      },
+      "excerpt": "",
+      "rawMarkdownBody": "\nYliopiston tutkintorakenteen muutoksen vuoksi Intelligenzia päätti uudistaa sääntöjään vuonna 2017. Yhdistyksen vanhojen sääntöjen mukaan varsinaisia äänivaltaisia jäseniä ovat voineet olla vain Helsingin yliopiston kognitiotieteen pääaineopiskelijat. Muut kognitiotieteestä kiinnostuneet ovat voineet liittyä kannatusjäseniksi yhdistykseen.\n\nJoulukuussa 2017 voimaan astuivat uudistetut säännöt, jotka avaavat Intelligenzian jäsenyysehtoja. Jatkossa yhdistyksen varsinaiseksi jäseneksi voidaan hyväksyä kuka tahansa kognitiotieteestä kiinnostunut opiskelija, joka on jonkin suomalaisen korkeakoulun ylioppilas- tai opiskelijakunnan jäsen ja hyväksyy yhdistyksen tarkoituksen. Varsinaisella jäsenellä on äänioikeus yhdistyksen kokouksissa ja hän voi asettua ehdolle hallitusvirkaan.\n\nMuut kognitiotieteestä kiinnostuneet (myös muut kuin opiskelijat) voivat edelleen hakea kannatusjäseniksi yhdistykseen. Kannatusjäsenellä on läsnäolo-oikeus yhdistyksen kokouksissa ja hän voi toimia hallituksen ulkopuolisissa viroissa.\nLiittyminen kannattaa!\n\nJäsenenä pysyt parhaiten kartalla Intelligenzian toiminnasta ja olet virallisesti osa Suomen suurinta kognitiotieteellistä yhdistystä. Molemmat jäsenyysmuodot ovat ilmaisia!\n[Hae jäsenyyttä](/jäseneksi).\n\nHallitus käsittelee hakemukset seuraavassa kokouksessa ja päätöksestä ilmoitetaan sähköpostitse. Vanhat kannatusjäsenet, jotka täyttävät uusien sääntöjen mukaiset täysivaltaisen jäsenen ehdot voivat hakea jäsenyytensä päivittämistä samalla lomakkeella.\n",
+      "fileAbsolutePath": "/Users/perttu/Projects/intelligenzia/content/posts/2018-01-11--intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/index.md",
+      "fields": {
+        "slug": "/intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/",
+        "prefix": "2018-01-11",
+        "source": "posts"
+      }
+    },
+    "846410d9-d70e-5c72-894e-ad0d3f891bc6": {
+      "id": "846410d9-d70e-5c72-894e-ad0d3f891bc6",
+      "children": [],
+      "parent": "ae765041-2e59-5e0e-9295-f54da8c5bd62",
+      "internal": {
+        "content": "\nIntelligenzia ry (ent. Anti-Kompleksi, Simpleksi) on Helsingin yliopiston kognitiotieteen ainejärjestö, jonka juuret ulottuvat vuoteen 1988 saakka. Ainejärjestön tehtävänä on tuoda yhteen kognitiotieteestä kiinnostuneita ihmisiä, järjestää heille mukavaa tekemistä sekä ajaa kognitiotieteilijän ja kognitiotieteen asemaa yliopistolla ja yhteiskunnassa.\n\n## Lomakkeet ja palaute\n\n### Häirintä- ja ongelmatilannelomake\n\nJos koet Intelligenziassa tai Intelligenzian tapahtumissa häirintää, rasismia tai muuta ikävää toimintaa, ota yhteyttä [Intelligenzian häirintä- ja ongelmatilannelomakeella](https://elomake.helsinki.fi/lomakkeet/94934/lomake.html). Yhdenvertaisuusvastaava ja puheenjohtaja käsittelevät asian. Voit lähettää myös sähköpostia joko yhdenvertaisuusvastaavalle tai puheenjohtajalle suoraan.\n\n### Yleinen palautelomake\n\n[Tässä linkki palautelomakkeeseen.](https://docs.google.com/forms/d/e/1FAIpQLSfZ1_Z1q3uMwAGG4wE4eXL2ElaoAaV5igvm-Mwpz_DfcvUaUQ/viewform)\n\n### Rekisteriseloste\n\n[Lue jäsenistön rekisteriseloste tästä.](https://docs.google.com/document/d/1cIGnR-HY6lfk9xvvCPAKJLNOuV0-OrDyblIsn4DAKLQ/edit)\n\n### Pöytäkirjat\n\n[Hallitusten ja yleiskokousten pöytäkirjat löydät täältä.](https://drive.google.com/drive/u/1/folders/1tDhF2m7HfFSk3Ab3L-8dUu9DCqLj5QTH)\n\n## Hallitus 2019 & yhteystiedot\n\n<span style=\"color: #333333;\">Koko hallituksen tavoittaa sähköpostilla</span>**<span style=\"color: #333333;\"> intelligenzia-hallitus[]helsinki.fi</span>**\n\n**Puheenjohtaja, Ympäristövastaava**\n\nPaavo Rinkkala\npaavo.rinkkala[]helsinki.fi\n\n**Varapuheenjohtaja, Opintopiirivastaava, KVIT-vastaava**\n\nSaara Halmetoja\nsaara.halmetoja[]helsinki.fi\n\n**Rahastonhoitaja, Webmaster\n**\n\nSilva Perander\nsilva.perander[]helsinki.fi\n\n**Sihteeri, Sivuainesatelliitti**\n\nLovisa Hirvonen\nlovisa.hirvonen[]helsinki.fi\n\n**Viestintävastaava**\n\nOttilia Nikula\nottilia.nikula[]helsinki.fi\n\n**Tilavastaava, Koulutuspolitiikka-vastaava, Liikuntavastaava\n**\n\nMiska Nurmi\nmiska.nurmi[]helsinki.fi\n\n**Yhdenvertaisuusvastaava, Yläkulttuurivastaava**\n\nKaisa Elovaara\nkaisa.elovaara[]helsinki.fi\n\n**Kevyt Panos -vastaava**\n\nJuho Halonen\njuho.halonen[]helsinki.fi\n\n## Toimihenkilöt:\n\n**Käsienheiluttelukonsultti, Jäsenrekisterivastaava\n**\n\nPietari Nurmi\npietari.nurmi[]helsinki.fi\n\n**Kopokummi\n**\n\nMari Räsänen\nmari.rasanen[]helsinki.fi\n\n**Viestintäassistentti**\n\nMinna Harju\nminna.harju[]helsinki.fi\n\n**Filosofinen zombi**\n\nEmmi Makkonen\n\n**Alakulttuurivastaava**\n\nJuho Ylen\n\n**Sitsikoordinaattorit**\n\nSilva Perander\n\nOttilia Nikula\n\n**Konnarilistan majorpomot**\n\nPaavo Rinkkala\nSaara Halmetoja\nPietari Nurmi\n\n## Postiosoite\n\n> Intelligenzia ry\n> Oppimiskeskus Minerva PL 9\n> 00014 Helsingin yliopisto\n",
+        "type": "MarkdownRemark",
+        "contentDigest": "f503e55ff727ee1dc657781fd8a0a59e",
+        "owner": "gatsby-transformer-remark",
+        "fieldOwners": {
+          "slug": "default-site-plugin",
+          "prefix": "default-site-plugin",
+          "source": "default-site-plugin"
+        }
+      },
+      "frontmatter": {
+        "title": "Yhdistys",
+        "_PARENT": "ae765041-2e59-5e0e-9295-f54da8c5bd62"
+      },
+      "excerpt": "",
+      "rawMarkdownBody": "\nIntelligenzia ry (ent. Anti-Kompleksi, Simpleksi) on Helsingin yliopiston kognitiotieteen ainejärjestö, jonka juuret ulottuvat vuoteen 1988 saakka. Ainejärjestön tehtävänä on tuoda yhteen kognitiotieteestä kiinnostuneita ihmisiä, järjestää heille mukavaa tekemistä sekä ajaa kognitiotieteilijän ja kognitiotieteen asemaa yliopistolla ja yhteiskunnassa.\n\n## Lomakkeet ja palaute\n\n### Häirintä- ja ongelmatilannelomake\n\nJos koet Intelligenziassa tai Intelligenzian tapahtumissa häirintää, rasismia tai muuta ikävää toimintaa, ota yhteyttä [Intelligenzian häirintä- ja ongelmatilannelomakeella](https://elomake.helsinki.fi/lomakkeet/94934/lomake.html). Yhdenvertaisuusvastaava ja puheenjohtaja käsittelevät asian. Voit lähettää myös sähköpostia joko yhdenvertaisuusvastaavalle tai puheenjohtajalle suoraan.\n\n### Yleinen palautelomake\n\n[Tässä linkki palautelomakkeeseen.](https://docs.google.com/forms/d/e/1FAIpQLSfZ1_Z1q3uMwAGG4wE4eXL2ElaoAaV5igvm-Mwpz_DfcvUaUQ/viewform)\n\n### Rekisteriseloste\n\n[Lue jäsenistön rekisteriseloste tästä.](https://docs.google.com/document/d/1cIGnR-HY6lfk9xvvCPAKJLNOuV0-OrDyblIsn4DAKLQ/edit)\n\n### Pöytäkirjat\n\n[Hallitusten ja yleiskokousten pöytäkirjat löydät täältä.](https://drive.google.com/drive/u/1/folders/1tDhF2m7HfFSk3Ab3L-8dUu9DCqLj5QTH)\n\n## Hallitus 2019 & yhteystiedot\n\n<span style=\"color: #333333;\">Koko hallituksen tavoittaa sähköpostilla</span>**<span style=\"color: #333333;\"> intelligenzia-hallitus[]helsinki.fi</span>**\n\n**Puheenjohtaja, Ympäristövastaava**\n\nPaavo Rinkkala\npaavo.rinkkala[]helsinki.fi\n\n**Varapuheenjohtaja, Opintopiirivastaava, KVIT-vastaava**\n\nSaara Halmetoja\nsaara.halmetoja[]helsinki.fi\n\n**Rahastonhoitaja, Webmaster\n**\n\nSilva Perander\nsilva.perander[]helsinki.fi\n\n**Sihteeri, Sivuainesatelliitti**\n\nLovisa Hirvonen\nlovisa.hirvonen[]helsinki.fi\n\n**Viestintävastaava**\n\nOttilia Nikula\nottilia.nikula[]helsinki.fi\n\n**Tilavastaava, Koulutuspolitiikka-vastaava, Liikuntavastaava\n**\n\nMiska Nurmi\nmiska.nurmi[]helsinki.fi\n\n**Yhdenvertaisuusvastaava, Yläkulttuurivastaava**\n\nKaisa Elovaara\nkaisa.elovaara[]helsinki.fi\n\n**Kevyt Panos -vastaava**\n\nJuho Halonen\njuho.halonen[]helsinki.fi\n\n## Toimihenkilöt:\n\n**Käsienheiluttelukonsultti, Jäsenrekisterivastaava\n**\n\nPietari Nurmi\npietari.nurmi[]helsinki.fi\n\n**Kopokummi\n**\n\nMari Räsänen\nmari.rasanen[]helsinki.fi\n\n**Viestintäassistentti**\n\nMinna Harju\nminna.harju[]helsinki.fi\n\n**Filosofinen zombi**\n\nEmmi Makkonen\n\n**Alakulttuurivastaava**\n\nJuho Ylen\n\n**Sitsikoordinaattorit**\n\nSilva Perander\n\nOttilia Nikula\n\n**Konnarilistan majorpomot**\n\nPaavo Rinkkala\nSaara Halmetoja\nPietari Nurmi\n\n## Postiosoite\n\n> Intelligenzia ry\n> Oppimiskeskus Minerva PL 9\n> 00014 Helsingin yliopisto\n",
+      "fileAbsolutePath": "/Users/perttu/Projects/intelligenzia/content/pages/5--yhdistys/index.md",
+      "fields": {
+        "slug": "/yhdistys/",
+        "prefix": "5",
+        "source": "pages"
+      }
+    },
     "6a3ae57c-5e10-590d-a098-915165557d9d": {
       "id": "6a3ae57c-5e10-590d-a098-915165557d9d",
       "children": [],
       "parent": "b2af2f7a-9ce6-5852-9d30-5c9885c1c18a",
       "internal": {
-        "content": "\nKognitiotiede on tieteenala, joka tutkii mieleen ja aivoihin liittyviä tietoilmiöitä, kuten havaitsemista, oppimista, muistia, ajattelua, kieltä ja käsitteitä. Yhteistä kognitiotieteen tutkimille ilmiöille on, että niitä kaikkia voidaan pitää älykkään informaation prosessoinnin muotoina. Nämä perinteiset tutkimuskohteet, kuuluvat myös lähitieteenalojen kuten psykologian, neurotieteen, filosofian ja kielitieteen tutkimuskohteisiin. Kognitiotieteelle omaleimaista on pyrkimys luonnontieteelliseen ja matemaattiseen täsmällisyyteen ilmiöiden mallintamisessa. Kognitiotieteen yhteys tekoälyyn ja tietojenkäsittelytieteeseen onkin perinteisesti kiinteämpi kuin lähialoilla. Tutkimus perustuu empiirisiin luonnontieteellisiin tutkimusmenetelmiin, kuten behavioraalisiin kokeisiin ja neurotieteiden metodeihin, sekä laskennalliseen ja matemaattiseen mallintamiseen. Vaikka pääpaino on usein aikuisen ihmisen kognition ja hermostollisten taustamekanismien tutkimisessa, myös kognitiivisen kehityksen, muiden eläinten kognitiivisten toimintojen ja keinotekoisten järjestelmien informaation prosessoinnin tutkiminen kuuluvat kognitiotieteen piiriin. Kognitiotieteen alaan luetaan myös monet mielenfilosofian, psykologian filosofian ja tekoälyn filosofian välimaastoon asettuvat suuret kysymykset kuten:\n\n> > Miten ihmisaivojen muodostama kuva ulkomaailmasta eroaa objektiivisesta fysikaalisesta todellisuudesta? Mikä on näiden suhde?\n>\n> > Miten tietoisuus ja mentaaliset sisällöt toteutuvat aivojen hermofysiogisissa ja laskennallisissa mekanismeissa?\n>\n> > Miten ihmisen evoluutio on johtanut siihen, että ihmisaivoista on kehittynyt sellaiset, että ne käsittelevät tietoa juuri tällä tavalla? Miksi biologisista hermosoluista koostuvat aivot pyrkivät ja miten ne kykenevät hankkimaan tietoa ulkomaailmasta, kielestä, tai vaikkapa maailmankaikkeuden synnystä joka tapahtui miljardeja vuosia sitten?\n>\n> > Missä ihmismielen tai koneen tietokyvyn rajat tulevat vastaan? Onko täysin ylittämättömiä rajoja edes olemassa? Ovatko ihmismielen ja mekaanisten koneiden tiedonkäsittelyn rajat yhtenevät, vai eroavatko ne jotenkin?\n\n## Opiskelu\n\nHelsingin yliopistossa kognitiotieteen kandi- ja maisteritason opetusta annetaan vuodesta 2017 alkaen humanistisessa tiedekunnassa osana [kielellisen diversiteetin ja digitaalisten menetelmien (LingDA)](https://www.helsinki.fi/en/programmes/master/linguistic-diversity-in-the-digital-age) koulutusohjelmaa (WebOodissa kurssikoodit LDA-C ja KIK-KK). 2020 alkaen kognitiotiedettä voi lukea pääaineena uudessa Linguistic Diversity and Digital Humanities (LingDig) -koulutusohjelmassa. Kognitiotieteen tieteenala ja sen piirissä toimivat tutkimusryhmät kuuluvat vuoden 2018 alusta uuteen [digitaalisten ihmistieteiden osastoon (DDH)](https://www.helsinki.fi/fi/humanistinen-tiedekunta/tutkimus/tieteenalat/digitaaliset-ihmistieteet). Katso lisää [Opiskelu-välilehdeltä](http://intelligenzia.fi/opiskelu), [kognitiotieteen opetussivuilta](https://wiki.helsinki.fi/x/hicGBQ) tai [kognitiotieteen kotisivuilta](https://blogs.helsinki.fi/cognitive-science/).\n\n## Historiikki\n\nKognitiotiede aloitti toimintansa usean oppiaineen yhteisenä koulutusohjelmana 1980-luvun lopulla. Se on sittemmin kehittynyt itsenäiseksi oppiaineeksi seuraavien vaiheiden kautta. Läheistä yhteistyötä on tehty koko ajan psykologian oppiaineen kanssa.\n\n**1988** Kognitiotieteen koulutusohjelma perustetaan. Ensimmäiset kognitiotieteen opiskelijat (n = 5) aloittavat humanistisessa tiedekunnassa. Opetuksen järjestävät yhdessä psykologian, filosofian ja kielitieteen laitokset. Hallinnollisesti kognitiotiede on psykologian laitoksen alaisuudessa, dosentti Göte Nymanin ohjauksessa.\n\n**1988** Intelligenzian esiasteenakin pidetty Simpleksi ry perustetaan.\n\n**1991** Ensimmäinen kognitiotieteen maisteri, Patrick May, valmistuu.\n\n**1994** Intelligenziasta tulee rekisteröity yhdistys.\n\n**1997** Kognitiotieteen professuuri perustetaan psykologian laitokselle. Se on ensimmäinen laatuaan Suomessa. Yhteiskuntatieteiden tohtori Pertti Saariluoma valitaan tehtävään viisivuotiskaudeksi.\n\n**1997** Helsingin yliopiston, Teknillisen korkeakoulun ja Taideteollisen korkeakoulun yhteinen Käytettävyyskoulu perustetaan. Tavoitteena on tarjota opiskelijoille asiantuntijuutta käytettävyydessä ja vahva perusta jatko-opinnoille.\n\n**1998** Vuosittainen sisäänpääsykiintiö nostetaan 10 opiskelijaan.\n\n**2002** Filosofian tohtori Christina M. Krause valitaan kognitiotieteen professoriksi viisivuotiskaudeksi. **2002** Psykologian laitos muuttaa nykyiseen sijaintiinsa Siltavuorenpenkereelle.\n\n**2003** Kognitiotieteen amanuenssin virka perustetaan; filosofian maisteri Otto Lappi aloittaa tehtävässä. **2003** Ensimmäinen kognitiotieteen tohtorintutkinto valmistuu. Pauli Salo (nykyisin Pauli Brattico) väittelee otsikolla \\_Causatives and the Empty Lexicon: A Minimalist Perspective_vastaväittäjänään professori Ernest Lepore (Rutgers University).\n\n**2004** Käyttäytymistieteellinen tiedekunta perustetaan; psykologian laitos siirtyy uuteen tiedekuntaan ja kognitiotiede sen mukana.\n\n**2005** Koulutusohjelma käy läpi mittavan uudistuksen Bolognan prosessin yhteydessä.\n\n**2007** Professori Christina M. Krausen virka muutetaan pysyväksi.\n\n**2007** Vuosittainen sisäänottokiintiö nostetaan 12 opiskelijaan.\n\n**2008** Kognitiotieteen yliopisto-opettajana (ma.) toimii Otto Lappi.\n\n**2009** Kognitiotiede saa 50-prosenttisen yliopistonlehtorin, kun kognitiivisen ja havaintopsykologian lehtoraatti (Jussi Saarinen) jaetaan psykologian ja kognitiotieteen kesken.\n\n**2010** Psykologian, kasvatustieteen ja puhetieteiden laitokset yhdistävä käyttäytymistieteiden laitos perustetaan. Kognitiotiede siirtyy uuden laitoksen alle osana psykologian ja kognitiotieteen oppiaineryhmää. **2011** Vuosittainen sisäänottokiintiö nostetaan 15 opiskelijaan.\n\n**2011** Professorin sijaisena toimii FT Pauli Brattico.\n\n**2012** Professorin sijaisena toimii dos. Minna Huotilainen. Amanuenssin tehtäviä hoitaa FM Henri Kauhanen. **2013** Professuurin ollessa täyttämättä hoitaa tehtäviä lukuvuonna 2013–2014 yliopistonlehtori (ma.) FT Alina Leminen.\n\n**2014** 2014 – 2016 tehtäviä hoitaa yliopistonlehtori (ma.) FT Otto Lappi.\n\n**2016** Pääaineopiskelijoiden sisäänotto lakkautetaan koulutusohjelmauudistuksen ajaksi. Yliopistonlehtori Otto Lappi jatkaa täyttämättömään professuuriin kuuluvien tehtävien hoitamista.\n\n**2017**Kognitiotiede siirtyy takaisin humanistiseen tiedekuntaan. Väliaikainen sijoituspaikka löytyy nykykielten laitoksen alta.\n\n**2018** Kognitiotiede siirtyy vasta perustettuun digitaalisten ihmistieteiden osastoon. Professuurin ollessa täyttämättä tehtäviä hoitamaan palkataan Otto Lapin lisäksi toinen yliopistonlehtori (ma.). Tehtävään valitaan FT Alina Leminen.\n\n**2019** Humanistisen tiedekunnan tiedekuntaneuvosto päättää 26.3.2019 kognitiotieteen maisterivaiheen opintosuunnan perustamisesta ja sisäänoton avaamisesta syksyllä 2020.\n",
+        "content": "\nKognitiotiede on tieteenala, joka tutkii mieleen ja aivoihin liittyviä tietoilmiöitä, kuten havaitsemista, oppimista, muistia, ajattelua, kieltä ja käsitteitä. Yhteistä kognitiotieteen tutkimille ilmiöille on, että niitä kaikkia voidaan pitää älykkään informaation prosessoinnin muotoina. Nämä perinteiset tutkimuskohteet, kuuluvat myös lähitieteenalojen kuten psykologian, neurotieteen, filosofian ja kielitieteen tutkimuskohteisiin. Kognitiotieteelle omaleimaista on pyrkimys luonnontieteelliseen ja matemaattiseen täsmällisyyteen ilmiöiden mallintamisessa. Kognitiotieteen yhteys tekoälyyn ja tietojenkäsittelytieteeseen onkin perinteisesti kiinteämpi kuin lähialoilla. Tutkimus perustuu empiirisiin luonnontieteellisiin tutkimusmenetelmiin, kuten behavioraalisiin kokeisiin ja neurotieteiden metodeihin, sekä laskennalliseen ja matemaattiseen mallintamiseen. Vaikka pääpaino on usein aikuisen ihmisen kognition ja hermostollisten taustamekanismien tutkimisessa, myös kognitiivisen kehityksen, muiden eläinten kognitiivisten toimintojen ja keinotekoisten järjestelmien informaation prosessoinnin tutkiminen kuuluvat kognitiotieteen piiriin. Kognitiotieteen alaan luetaan myös monet mielenfilosofian, psykologian filosofian ja tekoälyn filosofian välimaastoon asettuvat suuret kysymykset kuten:\n\n> > Miten ihmisaivojen muodostama kuva ulkomaailmasta eroaa objektiivisesta fysikaalisesta todellisuudesta? Mikä on näiden suhde?\n>\n> > Miten tietoisuus ja mentaaliset sisällöt toteutuvat aivojen hermofysiogisissa ja laskennallisissa mekanismeissa?\n>\n> > Miten ihmisen evoluutio on johtanut siihen, että ihmisaivoista on kehittynyt sellaiset, että ne käsittelevät tietoa juuri tällä tavalla? Miksi biologisista hermosoluista koostuvat aivot pyrkivät ja miten ne kykenevät hankkimaan tietoa ulkomaailmasta, kielestä, tai vaikkapa maailmankaikkeuden synnystä joka tapahtui miljardeja vuosia sitten?\n>\n> > Missä ihmismielen tai koneen tietokyvyn rajat tulevat vastaan? Onko täysin ylittämättömiä rajoja edes olemassa? Ovatko ihmismielen ja mekaanisten koneiden tiedonkäsittelyn rajat yhtenevät, vai eroavatko ne jotenkin?\n\n## Opiskelu\n\nHelsingin yliopistossa kognitiotieteen kandi- ja maisteritason opetusta annetaan vuodesta 2017 alkaen humanistisessa tiedekunnassa osana [kielellisen diversiteetin ja digitaalisten menetelmien (LingDA)](https://www.helsinki.fi/en/programmes/master/linguistic-diversity-in-the-digital-age) koulutusohjelmaa (WebOodissa kurssikoodit LDA-C ja KIK-KK). 2020 alkaen kognitiotiedettä voi lukea pääaineena uudessa Linguistic Diversity and Digital Humanities (LingDig) -koulutusohjelmassa. Kognitiotieteen tieteenala ja sen piirissä toimivat tutkimusryhmät kuuluvat vuoden 2018 alusta uuteen [digitaalisten ihmistieteiden osastoon (DDH)](https://www.helsinki.fi/fi/humanistinen-tiedekunta/tutkimus/tieteenalat/digitaaliset-ihmistieteet). Katso lisää [Opiskelu-välilehdeltä](http://intelligenzia.fi/opiskelu), [kognitiotieteen opetussivuilta](https://wiki.helsinki.fi/x/hicGBQ) tai [kognitiotieteen kotisivuilta](https://blogs.helsinki.fi/cognitive-science/).\n\n## Historiikki\n\nKognitiotiede aloitti toimintansa usean oppiaineen yhteisenä koulutusohjelmana 1980-luvun lopulla. Se on sittemmin kehittynyt itsenäiseksi oppiaineeksi seuraavien vaiheiden kautta. Läheistä yhteistyötä on tehty koko ajan psykologian oppiaineen kanssa.\n\n**1988** Kognitiotieteen koulutusohjelma perustetaan. Ensimmäiset kognitiotieteen opiskelijat (n = 5) aloittavat humanistisessa tiedekunnassa. Opetuksen järjestävät yhdessä psykologian, filosofian ja kielitieteen laitokset. Hallinnollisesti kognitiotiede on psykologian laitoksen alaisuudessa, dosentti Göte Nymanin ohjauksessa.\n\n**1988** Intelligenzian esiasteenakin pidetty Simpleksi ry perustetaan.\n\n**1991** Ensimmäinen kognitiotieteen maisteri, Patrick May, valmistuu.\n\n**1994** Intelligenziasta tulee rekisteröity yhdistys.\n\n**1997** Kognitiotieteen professuuri perustetaan psykologian laitokselle. Se on ensimmäinen laatuaan Suomessa. Yhteiskuntatieteiden tohtori Pertti Saariluoma valitaan tehtävään viisivuotiskaudeksi.\n\n**1997** Helsingin yliopiston, Teknillisen korkeakoulun ja Taideteollisen korkeakoulun yhteinen Käytettävyyskoulu perustetaan. Tavoitteena on tarjota opiskelijoille asiantuntijuutta käytettävyydessä ja vahva perusta jatko-opinnoille.\n\n**1998** Vuosittainen sisäänpääsykiintiö nostetaan 10 opiskelijaan.\n\n**2002** Filosofian tohtori Christina M. Krause valitaan kognitiotieteen professoriksi viisivuotiskaudeksi.\n\n**2002** Psykologian laitos muuttaa nykyiseen sijaintiinsa Siltavuorenpenkereelle.\n\n**2003** Kognitiotieteen amanuenssin virka perustetaan; filosofian maisteri Otto Lappi aloittaa tehtävässä.\n\n**2003** Ensimmäinen kognitiotieteen tohtorintutkinto valmistuu. Pauli Salo (nykyisin Pauli Brattico) väittelee otsikolla \\_Causatives and the Empty Lexicon: A Minimalist Perspective_vastaväittäjänään professori Ernest Lepore (Rutgers University).\n\n**2004** Käyttäytymistieteellinen tiedekunta perustetaan; psykologian laitos siirtyy uuteen tiedekuntaan ja kognitiotiede sen mukana.\n\n**2005** Koulutusohjelma käy läpi mittavan uudistuksen Bolognan prosessin yhteydessä.\n\n**2007** Professori Christina M. Krausen virka muutetaan pysyväksi.\n\n**2007** Vuosittainen sisäänottokiintiö nostetaan 12 opiskelijaan.\n\n**2008** Kognitiotieteen yliopisto-opettajana (ma.) toimii Otto Lappi.\n\n**2009** Kognitiotiede saa 50-prosenttisen yliopistonlehtorin, kun kognitiivisen ja havaintopsykologian lehtoraatti (Jussi Saarinen) jaetaan psykologian ja kognitiotieteen kesken.\n\n**2010** Psykologian, kasvatustieteen ja puhetieteiden laitokset yhdistävä käyttäytymistieteiden laitos perustetaan. Kognitiotiede siirtyy uuden laitoksen alle osana psykologian ja kognitiotieteen oppiaineryhmää.\n\n**2011** Vuosittainen sisäänottokiintiö nostetaan 15 opiskelijaan.\n\n**2011** Professorin sijaisena toimii FT Pauli Brattico.\n\n**2012** Professorin sijaisena toimii dos. Minna Huotilainen. Amanuenssin tehtäviä hoitaa FM Henri Kauhanen.\n\n**2013** Professuurin ollessa täyttämättä hoitaa tehtäviä lukuvuonna 2013–2014 yliopistonlehtori (ma.) FT Alina Leminen.\n\n**2014** 2014 – 2016 tehtäviä hoitaa yliopistonlehtori (ma.) FT Otto Lappi.\n\n**2016** Pääaineopiskelijoiden sisäänotto lakkautetaan koulutusohjelmauudistuksen ajaksi. Yliopistonlehtori Otto Lappi jatkaa täyttämättömään professuuriin kuuluvien tehtävien hoitamista.\n\n**2017**Kognitiotiede siirtyy takaisin humanistiseen tiedekuntaan. Väliaikainen sijoituspaikka löytyy nykykielten laitoksen alta.\n\n**2018** Kognitiotiede siirtyy vasta perustettuun digitaalisten ihmistieteiden osastoon. Professuurin ollessa täyttämättä tehtäviä hoitamaan palkataan Otto Lapin lisäksi toinen yliopistonlehtori (ma.). Tehtävään valitaan FT Alina Leminen.\n\n**2019** Humanistisen tiedekunnan tiedekuntaneuvosto päättää 26.3.2019 kognitiotieteen maisterivaiheen opintosuunnan perustamisesta ja sisäänoton avaamisesta syksyllä 2020.\n",
         "type": "MarkdownRemark",
-        "contentDigest": "b076dfeeb291e72aa0a3e4d927c2eafa",
+        "contentDigest": "b42abd578ec58e643c9b2c6b9bace7a9",
         "owner": "gatsby-transformer-remark",
         "fieldOwners": {
           "slug": "default-site-plugin",
@@ -6535,7 +6987,7 @@
         "_PARENT": "b2af2f7a-9ce6-5852-9d30-5c9885c1c18a"
       },
       "excerpt": "",
-      "rawMarkdownBody": "\nKognitiotiede on tieteenala, joka tutkii mieleen ja aivoihin liittyviä tietoilmiöitä, kuten havaitsemista, oppimista, muistia, ajattelua, kieltä ja käsitteitä. Yhteistä kognitiotieteen tutkimille ilmiöille on, että niitä kaikkia voidaan pitää älykkään informaation prosessoinnin muotoina. Nämä perinteiset tutkimuskohteet, kuuluvat myös lähitieteenalojen kuten psykologian, neurotieteen, filosofian ja kielitieteen tutkimuskohteisiin. Kognitiotieteelle omaleimaista on pyrkimys luonnontieteelliseen ja matemaattiseen täsmällisyyteen ilmiöiden mallintamisessa. Kognitiotieteen yhteys tekoälyyn ja tietojenkäsittelytieteeseen onkin perinteisesti kiinteämpi kuin lähialoilla. Tutkimus perustuu empiirisiin luonnontieteellisiin tutkimusmenetelmiin, kuten behavioraalisiin kokeisiin ja neurotieteiden metodeihin, sekä laskennalliseen ja matemaattiseen mallintamiseen. Vaikka pääpaino on usein aikuisen ihmisen kognition ja hermostollisten taustamekanismien tutkimisessa, myös kognitiivisen kehityksen, muiden eläinten kognitiivisten toimintojen ja keinotekoisten järjestelmien informaation prosessoinnin tutkiminen kuuluvat kognitiotieteen piiriin. Kognitiotieteen alaan luetaan myös monet mielenfilosofian, psykologian filosofian ja tekoälyn filosofian välimaastoon asettuvat suuret kysymykset kuten:\n\n> > Miten ihmisaivojen muodostama kuva ulkomaailmasta eroaa objektiivisesta fysikaalisesta todellisuudesta? Mikä on näiden suhde?\n>\n> > Miten tietoisuus ja mentaaliset sisällöt toteutuvat aivojen hermofysiogisissa ja laskennallisissa mekanismeissa?\n>\n> > Miten ihmisen evoluutio on johtanut siihen, että ihmisaivoista on kehittynyt sellaiset, että ne käsittelevät tietoa juuri tällä tavalla? Miksi biologisista hermosoluista koostuvat aivot pyrkivät ja miten ne kykenevät hankkimaan tietoa ulkomaailmasta, kielestä, tai vaikkapa maailmankaikkeuden synnystä joka tapahtui miljardeja vuosia sitten?\n>\n> > Missä ihmismielen tai koneen tietokyvyn rajat tulevat vastaan? Onko täysin ylittämättömiä rajoja edes olemassa? Ovatko ihmismielen ja mekaanisten koneiden tiedonkäsittelyn rajat yhtenevät, vai eroavatko ne jotenkin?\n\n## Opiskelu\n\nHelsingin yliopistossa kognitiotieteen kandi- ja maisteritason opetusta annetaan vuodesta 2017 alkaen humanistisessa tiedekunnassa osana [kielellisen diversiteetin ja digitaalisten menetelmien (LingDA)](https://www.helsinki.fi/en/programmes/master/linguistic-diversity-in-the-digital-age) koulutusohjelmaa (WebOodissa kurssikoodit LDA-C ja KIK-KK). 2020 alkaen kognitiotiedettä voi lukea pääaineena uudessa Linguistic Diversity and Digital Humanities (LingDig) -koulutusohjelmassa. Kognitiotieteen tieteenala ja sen piirissä toimivat tutkimusryhmät kuuluvat vuoden 2018 alusta uuteen [digitaalisten ihmistieteiden osastoon (DDH)](https://www.helsinki.fi/fi/humanistinen-tiedekunta/tutkimus/tieteenalat/digitaaliset-ihmistieteet). Katso lisää [Opiskelu-välilehdeltä](http://intelligenzia.fi/opiskelu), [kognitiotieteen opetussivuilta](https://wiki.helsinki.fi/x/hicGBQ) tai [kognitiotieteen kotisivuilta](https://blogs.helsinki.fi/cognitive-science/).\n\n## Historiikki\n\nKognitiotiede aloitti toimintansa usean oppiaineen yhteisenä koulutusohjelmana 1980-luvun lopulla. Se on sittemmin kehittynyt itsenäiseksi oppiaineeksi seuraavien vaiheiden kautta. Läheistä yhteistyötä on tehty koko ajan psykologian oppiaineen kanssa.\n\n**1988** Kognitiotieteen koulutusohjelma perustetaan. Ensimmäiset kognitiotieteen opiskelijat (n = 5) aloittavat humanistisessa tiedekunnassa. Opetuksen järjestävät yhdessä psykologian, filosofian ja kielitieteen laitokset. Hallinnollisesti kognitiotiede on psykologian laitoksen alaisuudessa, dosentti Göte Nymanin ohjauksessa.\n\n**1988** Intelligenzian esiasteenakin pidetty Simpleksi ry perustetaan.\n\n**1991** Ensimmäinen kognitiotieteen maisteri, Patrick May, valmistuu.\n\n**1994** Intelligenziasta tulee rekisteröity yhdistys.\n\n**1997** Kognitiotieteen professuuri perustetaan psykologian laitokselle. Se on ensimmäinen laatuaan Suomessa. Yhteiskuntatieteiden tohtori Pertti Saariluoma valitaan tehtävään viisivuotiskaudeksi.\n\n**1997** Helsingin yliopiston, Teknillisen korkeakoulun ja Taideteollisen korkeakoulun yhteinen Käytettävyyskoulu perustetaan. Tavoitteena on tarjota opiskelijoille asiantuntijuutta käytettävyydessä ja vahva perusta jatko-opinnoille.\n\n**1998** Vuosittainen sisäänpääsykiintiö nostetaan 10 opiskelijaan.\n\n**2002** Filosofian tohtori Christina M. Krause valitaan kognitiotieteen professoriksi viisivuotiskaudeksi. **2002** Psykologian laitos muuttaa nykyiseen sijaintiinsa Siltavuorenpenkereelle.\n\n**2003** Kognitiotieteen amanuenssin virka perustetaan; filosofian maisteri Otto Lappi aloittaa tehtävässä. **2003** Ensimmäinen kognitiotieteen tohtorintutkinto valmistuu. Pauli Salo (nykyisin Pauli Brattico) väittelee otsikolla \\_Causatives and the Empty Lexicon: A Minimalist Perspective_vastaväittäjänään professori Ernest Lepore (Rutgers University).\n\n**2004** Käyttäytymistieteellinen tiedekunta perustetaan; psykologian laitos siirtyy uuteen tiedekuntaan ja kognitiotiede sen mukana.\n\n**2005** Koulutusohjelma käy läpi mittavan uudistuksen Bolognan prosessin yhteydessä.\n\n**2007** Professori Christina M. Krausen virka muutetaan pysyväksi.\n\n**2007** Vuosittainen sisäänottokiintiö nostetaan 12 opiskelijaan.\n\n**2008** Kognitiotieteen yliopisto-opettajana (ma.) toimii Otto Lappi.\n\n**2009** Kognitiotiede saa 50-prosenttisen yliopistonlehtorin, kun kognitiivisen ja havaintopsykologian lehtoraatti (Jussi Saarinen) jaetaan psykologian ja kognitiotieteen kesken.\n\n**2010** Psykologian, kasvatustieteen ja puhetieteiden laitokset yhdistävä käyttäytymistieteiden laitos perustetaan. Kognitiotiede siirtyy uuden laitoksen alle osana psykologian ja kognitiotieteen oppiaineryhmää. **2011** Vuosittainen sisäänottokiintiö nostetaan 15 opiskelijaan.\n\n**2011** Professorin sijaisena toimii FT Pauli Brattico.\n\n**2012** Professorin sijaisena toimii dos. Minna Huotilainen. Amanuenssin tehtäviä hoitaa FM Henri Kauhanen. **2013** Professuurin ollessa täyttämättä hoitaa tehtäviä lukuvuonna 2013–2014 yliopistonlehtori (ma.) FT Alina Leminen.\n\n**2014** 2014 – 2016 tehtäviä hoitaa yliopistonlehtori (ma.) FT Otto Lappi.\n\n**2016** Pääaineopiskelijoiden sisäänotto lakkautetaan koulutusohjelmauudistuksen ajaksi. Yliopistonlehtori Otto Lappi jatkaa täyttämättömään professuuriin kuuluvien tehtävien hoitamista.\n\n**2017**Kognitiotiede siirtyy takaisin humanistiseen tiedekuntaan. Väliaikainen sijoituspaikka löytyy nykykielten laitoksen alta.\n\n**2018** Kognitiotiede siirtyy vasta perustettuun digitaalisten ihmistieteiden osastoon. Professuurin ollessa täyttämättä tehtäviä hoitamaan palkataan Otto Lapin lisäksi toinen yliopistonlehtori (ma.). Tehtävään valitaan FT Alina Leminen.\n\n**2019** Humanistisen tiedekunnan tiedekuntaneuvosto päättää 26.3.2019 kognitiotieteen maisterivaiheen opintosuunnan perustamisesta ja sisäänoton avaamisesta syksyllä 2020.\n",
+      "rawMarkdownBody": "\nKognitiotiede on tieteenala, joka tutkii mieleen ja aivoihin liittyviä tietoilmiöitä, kuten havaitsemista, oppimista, muistia, ajattelua, kieltä ja käsitteitä. Yhteistä kognitiotieteen tutkimille ilmiöille on, että niitä kaikkia voidaan pitää älykkään informaation prosessoinnin muotoina. Nämä perinteiset tutkimuskohteet, kuuluvat myös lähitieteenalojen kuten psykologian, neurotieteen, filosofian ja kielitieteen tutkimuskohteisiin. Kognitiotieteelle omaleimaista on pyrkimys luonnontieteelliseen ja matemaattiseen täsmällisyyteen ilmiöiden mallintamisessa. Kognitiotieteen yhteys tekoälyyn ja tietojenkäsittelytieteeseen onkin perinteisesti kiinteämpi kuin lähialoilla. Tutkimus perustuu empiirisiin luonnontieteellisiin tutkimusmenetelmiin, kuten behavioraalisiin kokeisiin ja neurotieteiden metodeihin, sekä laskennalliseen ja matemaattiseen mallintamiseen. Vaikka pääpaino on usein aikuisen ihmisen kognition ja hermostollisten taustamekanismien tutkimisessa, myös kognitiivisen kehityksen, muiden eläinten kognitiivisten toimintojen ja keinotekoisten järjestelmien informaation prosessoinnin tutkiminen kuuluvat kognitiotieteen piiriin. Kognitiotieteen alaan luetaan myös monet mielenfilosofian, psykologian filosofian ja tekoälyn filosofian välimaastoon asettuvat suuret kysymykset kuten:\n\n> > Miten ihmisaivojen muodostama kuva ulkomaailmasta eroaa objektiivisesta fysikaalisesta todellisuudesta? Mikä on näiden suhde?\n>\n> > Miten tietoisuus ja mentaaliset sisällöt toteutuvat aivojen hermofysiogisissa ja laskennallisissa mekanismeissa?\n>\n> > Miten ihmisen evoluutio on johtanut siihen, että ihmisaivoista on kehittynyt sellaiset, että ne käsittelevät tietoa juuri tällä tavalla? Miksi biologisista hermosoluista koostuvat aivot pyrkivät ja miten ne kykenevät hankkimaan tietoa ulkomaailmasta, kielestä, tai vaikkapa maailmankaikkeuden synnystä joka tapahtui miljardeja vuosia sitten?\n>\n> > Missä ihmismielen tai koneen tietokyvyn rajat tulevat vastaan? Onko täysin ylittämättömiä rajoja edes olemassa? Ovatko ihmismielen ja mekaanisten koneiden tiedonkäsittelyn rajat yhtenevät, vai eroavatko ne jotenkin?\n\n## Opiskelu\n\nHelsingin yliopistossa kognitiotieteen kandi- ja maisteritason opetusta annetaan vuodesta 2017 alkaen humanistisessa tiedekunnassa osana [kielellisen diversiteetin ja digitaalisten menetelmien (LingDA)](https://www.helsinki.fi/en/programmes/master/linguistic-diversity-in-the-digital-age) koulutusohjelmaa (WebOodissa kurssikoodit LDA-C ja KIK-KK). 2020 alkaen kognitiotiedettä voi lukea pääaineena uudessa Linguistic Diversity and Digital Humanities (LingDig) -koulutusohjelmassa. Kognitiotieteen tieteenala ja sen piirissä toimivat tutkimusryhmät kuuluvat vuoden 2018 alusta uuteen [digitaalisten ihmistieteiden osastoon (DDH)](https://www.helsinki.fi/fi/humanistinen-tiedekunta/tutkimus/tieteenalat/digitaaliset-ihmistieteet). Katso lisää [Opiskelu-välilehdeltä](http://intelligenzia.fi/opiskelu), [kognitiotieteen opetussivuilta](https://wiki.helsinki.fi/x/hicGBQ) tai [kognitiotieteen kotisivuilta](https://blogs.helsinki.fi/cognitive-science/).\n\n## Historiikki\n\nKognitiotiede aloitti toimintansa usean oppiaineen yhteisenä koulutusohjelmana 1980-luvun lopulla. Se on sittemmin kehittynyt itsenäiseksi oppiaineeksi seuraavien vaiheiden kautta. Läheistä yhteistyötä on tehty koko ajan psykologian oppiaineen kanssa.\n\n**1988** Kognitiotieteen koulutusohjelma perustetaan. Ensimmäiset kognitiotieteen opiskelijat (n = 5) aloittavat humanistisessa tiedekunnassa. Opetuksen järjestävät yhdessä psykologian, filosofian ja kielitieteen laitokset. Hallinnollisesti kognitiotiede on psykologian laitoksen alaisuudessa, dosentti Göte Nymanin ohjauksessa.\n\n**1988** Intelligenzian esiasteenakin pidetty Simpleksi ry perustetaan.\n\n**1991** Ensimmäinen kognitiotieteen maisteri, Patrick May, valmistuu.\n\n**1994** Intelligenziasta tulee rekisteröity yhdistys.\n\n**1997** Kognitiotieteen professuuri perustetaan psykologian laitokselle. Se on ensimmäinen laatuaan Suomessa. Yhteiskuntatieteiden tohtori Pertti Saariluoma valitaan tehtävään viisivuotiskaudeksi.\n\n**1997** Helsingin yliopiston, Teknillisen korkeakoulun ja Taideteollisen korkeakoulun yhteinen Käytettävyyskoulu perustetaan. Tavoitteena on tarjota opiskelijoille asiantuntijuutta käytettävyydessä ja vahva perusta jatko-opinnoille.\n\n**1998** Vuosittainen sisäänpääsykiintiö nostetaan 10 opiskelijaan.\n\n**2002** Filosofian tohtori Christina M. Krause valitaan kognitiotieteen professoriksi viisivuotiskaudeksi.\n\n**2002** Psykologian laitos muuttaa nykyiseen sijaintiinsa Siltavuorenpenkereelle.\n\n**2003** Kognitiotieteen amanuenssin virka perustetaan; filosofian maisteri Otto Lappi aloittaa tehtävässä.\n\n**2003** Ensimmäinen kognitiotieteen tohtorintutkinto valmistuu. Pauli Salo (nykyisin Pauli Brattico) väittelee otsikolla \\_Causatives and the Empty Lexicon: A Minimalist Perspective_vastaväittäjänään professori Ernest Lepore (Rutgers University).\n\n**2004** Käyttäytymistieteellinen tiedekunta perustetaan; psykologian laitos siirtyy uuteen tiedekuntaan ja kognitiotiede sen mukana.\n\n**2005** Koulutusohjelma käy läpi mittavan uudistuksen Bolognan prosessin yhteydessä.\n\n**2007** Professori Christina M. Krausen virka muutetaan pysyväksi.\n\n**2007** Vuosittainen sisäänottokiintiö nostetaan 12 opiskelijaan.\n\n**2008** Kognitiotieteen yliopisto-opettajana (ma.) toimii Otto Lappi.\n\n**2009** Kognitiotiede saa 50-prosenttisen yliopistonlehtorin, kun kognitiivisen ja havaintopsykologian lehtoraatti (Jussi Saarinen) jaetaan psykologian ja kognitiotieteen kesken.\n\n**2010** Psykologian, kasvatustieteen ja puhetieteiden laitokset yhdistävä käyttäytymistieteiden laitos perustetaan. Kognitiotiede siirtyy uuden laitoksen alle osana psykologian ja kognitiotieteen oppiaineryhmää.\n\n**2011** Vuosittainen sisäänottokiintiö nostetaan 15 opiskelijaan.\n\n**2011** Professorin sijaisena toimii FT Pauli Brattico.\n\n**2012** Professorin sijaisena toimii dos. Minna Huotilainen. Amanuenssin tehtäviä hoitaa FM Henri Kauhanen.\n\n**2013** Professuurin ollessa täyttämättä hoitaa tehtäviä lukuvuonna 2013–2014 yliopistonlehtori (ma.) FT Alina Leminen.\n\n**2014** 2014 – 2016 tehtäviä hoitaa yliopistonlehtori (ma.) FT Otto Lappi.\n\n**2016** Pääaineopiskelijoiden sisäänotto lakkautetaan koulutusohjelmauudistuksen ajaksi. Yliopistonlehtori Otto Lappi jatkaa täyttämättömään professuuriin kuuluvien tehtävien hoitamista.\n\n**2017**Kognitiotiede siirtyy takaisin humanistiseen tiedekuntaan. Väliaikainen sijoituspaikka löytyy nykykielten laitoksen alta.\n\n**2018** Kognitiotiede siirtyy vasta perustettuun digitaalisten ihmistieteiden osastoon. Professuurin ollessa täyttämättä tehtäviä hoitamaan palkataan Otto Lapin lisäksi toinen yliopistonlehtori (ma.). Tehtävään valitaan FT Alina Leminen.\n\n**2019** Humanistisen tiedekunnan tiedekuntaneuvosto päättää 26.3.2019 kognitiotieteen maisterivaiheen opintosuunnan perustamisesta ja sisäänoton avaamisesta syksyllä 2020.\n",
       "fileAbsolutePath": "/Users/perttu/Projects/intelligenzia/content/pages/4--kognitiotiede/index.md",
       "fields": {
         "slug": "/kognitiotiede/",
@@ -6626,7 +7078,9 @@
         "/hallitus-2019/",
         "/kognitiotiede-humanistiseen/",
         "/haikugeneraattori/",
-        "/2015-02-06-tiedote-kognitiotieteen-tilasta/"
+        "/2015-02-06-tiedote-kognitiotieteen-tilasta/",
+        "/kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/",
+        "/intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/"
       ],
       "18a959a3-9947-57cf-9581-2cf83cf94e10": [
         "/category/",
@@ -6670,7 +7124,9 @@
         "/hallitus-2019/",
         "/kognitiotiede-humanistiseen/",
         "/haikugeneraattori/",
-        "/2015-02-06-tiedote-kognitiotieteen-tilasta/"
+        "/2015-02-06-tiedote-kognitiotieteen-tilasta/",
+        "/kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/",
+        "/intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/"
       ],
       "bd87766b-1eb8-5feb-aaa1-28a029b74b75": [
         "/haikugeneraattori/"
@@ -6744,6 +7200,34 @@
       ],
       "ec7e46da-8eab-554a-83be-44f7d6eebbeb": [
         "/hallitus-2019/"
+      ],
+      "45cfa0a4-03df-5865-a1bc-78b4c2dab25d": [
+        "/kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/"
+      ],
+      "fa74f82d-0b03-5924-a6ba-8b868befb156": [
+        null,
+        "/kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/",
+        "/",
+        "/category/"
+      ],
+      "d3c68d0d-bbc8-53ae-a140-29d0c0727272": [
+        "/kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta/",
+        "/",
+        "/category/"
+      ],
+      "f2019df7-44ce-5cdd-a6e8-5748efdaad9e": [
+        "/intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/"
+      ],
+      "a7ae3537-c308-5ce5-85a6-f57ed8746ba2": [
+        null,
+        "/intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/",
+        "/",
+        "/category/"
+      ],
+      "bfc0ea09-477f-57f8-b594-6fb1fbf6dd24": [
+        "/intelligenzian-jäsenyys-avautuu-kaikille-opiskelijoille/",
+        "/",
+        "/category/"
       ]
     },
     "connections": {
@@ -6760,11 +7244,11 @@
   "jsonDataPaths": {
     "contact-26a": "350/path---contact-26-a-cd9-GZeJgjMPxKe34u9Mt8gnk5YY4I",
     "search-a73": "948/path---search-a-73-83d-FSGGqprrrwXd5F6f0nOSblLH7Q",
-    "category-00b": "467/path---category-00-b-7ef-lmrLgdcr5K2MyPAYknLchBec8",
+    "category-00b": "604/path---category-00-b-7ef-Mr9OzJ3VkarvN21jPIDBeJdY",
     "sq--src-layouts-index-js": 1721857271,
-    "index": "266/path---index-6a9-vQ2SJUkwoMl7KphN9gydL2l3RGQ",
-    "yhdistys-0f3": "450/path---yhdistys-0-f-3-6a0-KHhZPdAkuVr7xXT2qIY3MezhpY",
-    "kognitiotiede-2f8": "868/path---kognitiotiede-2-f-8-96b-GwyvCl59z9YdR8zW1JsXNUuDfk",
+    "index": "190/path---index-6a9-eNDKFLhzDiqmqvqm30mq1qyWpEA",
+    "yhdistys-0f3": "176/path---yhdistys-0-f-3-6a0-mW9rIkueBNN5Idy29JCVf1bf5Ls",
+    "kognitiotiede-2f8": "466/path---kognitiotiede-2-f-8-96b-bKnqNsIWMmHqVoH5FDc0EZT4b4U",
     "opiskelu-743": "851/path---opiskelu-743-02a-NEsCoEfsAzVduN69BPSt23qsso",
     "ajankohtaista-e34": "621/path---ajankohtaista-e-34-910-5O7KRGli756DmLWrgr0h5i8XzM",
     "jaseneksi-292": "754/path---jaseneksi-292-e08-uVPkrIo4Tw2ELFBPgHiO91OPD3k",
@@ -6773,14 +7257,16 @@
     "haikugeneraattori-861": "694/path---haikugeneraattori-861-3f8-oydZOZeAPqfGMtzBVP38josGqGw",
     "hallitus-2019-3d2": "700/path---hallitus-2019-3-d-2-822-yD5ViOfGBGSP0xoNa6gP6VeXhU",
     "category-kognitiotiede-ec6": "351/path---category-kognitiotiede-ec-6-0ad-mPyhyw5RzPZVXCPqPfWNKuRFS4",
-    "category-yhdistys-f4f": "362/path---category-yhdistys-f-4-f-fc1-kzezs08B5MFen7i63EyXdCb7EO8",
+    "category-yhdistys-f4f": "766/path---category-yhdistys-f-4-f-fc1-NFAed9H7kv0NilkK5AOq5KDfwow",
     "dev-404-page-5f9": "920/path---dev-404-page-5-f-9-fab-NZuapzHg3X9TaN1iIixfv1W23E",
     "404-22d": "44/path---404-22-d-bce-NZuapzHg3X9TaN1iIixfv1W23E",
     "404-html-516": "164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E",
     "draft-post-a23": "608/path---draft-post-a-23-ed3-rDnPZPBkaSeO9DTcqCeNRIrcU",
     "category-sayings-2fb": "281/path---category-sayings-2-fb-4da-A7gggGhp3pzN46XO3cW2u8LrwR8",
     "2015-02-06-tiedote-kognitiotieteen-tilasta-342": "561/path---2015-02-06-tiedote-kognitiotieteen-tilasta-342-c77-dnRrOTMfX7nAGMyhXwoOF1BnJ8g",
-    "kognitiotieteelle-perustettu-oma-maisteriopintosuunta-956": "313/path---kognitiotieteelle-perustettu-oma-maisteriopintosuunta-956-f0f-mXL7kYEvib3q1qnsE7FAZkAic0"
+    "kognitiotieteelle-perustettu-oma-maisteriopintosuunta-956": "313/path---kognitiotieteelle-perustettu-oma-maisteriopintosuunta-956-f0f-mXL7kYEvib3q1qnsE7FAZkAic0",
+    "kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta-4dc": "896/path---kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta-4-dc-e84-c5iAs28IJm9sWXZ2zgBQlFQA9A",
+    "intelligenzian-jasenyys-avautuu-kaikille-opiskelijoille-35a": "296/path---intelligenzian-jasenyys-avautuu-kaikille-opiskelijoille-35-a-cd4-Ff1SHq2IahCcWvOSgyfsxFNVU"
   },
   "components": {
     "/Users/perttu/Projects/intelligenzia/src/templates/CategoryTemplate.js": {
