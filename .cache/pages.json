@@ -5,11 +5,6 @@
         "path": "/"
     },
     {
-        "componentChunkName": "component---src-templates-post-template-js",
-        "jsonName": "2015-02-06-tiedote-kognitiotieteen-tilasta-342",
-        "path": "/2015-02-06-tiedote-kognitiotieteen-tilasta/"
-    },
-    {
         "componentChunkName": "component---src-pages-404-js",
         "jsonName": "404-html-516",
         "path": "/404.html"
@@ -23,6 +18,11 @@
         "componentChunkName": "component---src-templates-page-template-js",
         "jsonName": "ajankohtaista-e34",
         "path": "/ajankohtaista/"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "jsonName": "avoin-kirje-dekaanille-e51",
+        "path": "/avoin-kirje-dekaanille/"
     },
     {
         "componentChunkName": "component---src-pages-category-js",
@@ -95,6 +95,11 @@
         "path": "/opiskelu/"
     },
     {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "jsonName": "psykologia-ja-kognitiotiede-216",
+        "path": "/psykologia-ja-kognitiotiede/"
+    },
+    {
         "componentChunkName": "component---src-pages-search-js",
         "jsonName": "search-a73",
         "path": "/search/"
@@ -103,6 +108,16 @@
         "componentChunkName": "component---src-templates-page-template-js",
         "jsonName": "success-ca5",
         "path": "/success/"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "jsonName": "tiedote-kognitiotieteen-tilasta-909",
+        "path": "/tiedote-kognitiotieteen-tilasta/"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "jsonName": "tiedote-kognitiotieteilijoille-05c",
+        "path": "/tiedote-kognitiotieteilijoille/"
     },
     {
         "componentChunkName": "component---src-templates-page-template-js",

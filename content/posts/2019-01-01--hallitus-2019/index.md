@@ -1,7 +1,7 @@
 ---
 title: Intelligenzian hallitus vuodelle 2019
 category: "yhdistys"
-cover: photo-1490474418585-ba9bad8fd0ea.jpg
+cover: yliopisto.png
 author: Pietari Nurmi
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Kognitiotiede humanistiseen tiedekuntaan 2017
 category: "kognitiotiede"
-cover: photo-1456518563096-0ff5ee08204e.jpg
+cover: yliopisto.png
 author: Pietari Nurmi
 ---
 

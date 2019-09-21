@@ -60,7 +60,7 @@ const Item = props => {
 
         li {
           border: 1px solid transparent;
-          max-width: 33%;
+          width: 100%;
           border-radius: ${theme.size.radius.default};
           margin: ${`calc(${theme.space.default} * 2) 0 calc(${theme.space.default} * 3)`};
           padding: ${theme.space.inset.s};
@@ -134,7 +134,7 @@ const Item = props => {
           li {
             margin: ${`calc(${theme.space.default} * 1) 0 calc(${theme.space.default} * 2)`};
             padding: ${theme.space.default};
-
+            width: 50%;
             &::after {
               bottom: ${`calc(${theme.space.default} * -2)`};
             }
@@ -160,6 +160,8 @@ const Item = props => {
         }
         @from-width desktop {
           li {
+            width: 33%;
+
             margin: ${`calc(${theme.space.default} * 2) 0 calc(${theme.space.default} * 2)`};
             padding: 0 0 ${`calc(${theme.space.default} * 2)`};
 

@@ -43,7 +43,7 @@ const Blog = props => {
           }
           ul {
             // max-width: ${theme.text.maxWidth.tablet};
-            flex-direction: column;
+            flex-direction: row;
           }
         }
         @above desktop {
