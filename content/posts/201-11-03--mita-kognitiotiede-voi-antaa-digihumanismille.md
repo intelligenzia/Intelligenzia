@@ -2,8 +2,8 @@
 title: Mitä kognitiotiede voi antaa digihumanismille?
 date: 2016-11-06T18:22:45.085Z
 category: kognitiotiede
-cover: /images/intelligenzia.jpg
-author: 'Jussi Palomäki, konnari, Moralities of Intelligent Machines'
+cover: cover.jpeg
+author: "Jussi Palomäki, konnari, Moralities of Intelligent Machines"
 ---
 
 Kognitiotiede ja sen väki, konnarit, ovat muuttamassa osaksi Humanistisen tiedekunnan “Linguistic Diversity in the Digital Age” –koulutusohjelmaa. Kyseinen ohjelma kuuluu niin kutsuttuun digihumanismin tutkimusperinteeseen. Tämä kirjoitus on suunnattu sekä muille konnareille että tuleville digihumanistikollegoillemme.
