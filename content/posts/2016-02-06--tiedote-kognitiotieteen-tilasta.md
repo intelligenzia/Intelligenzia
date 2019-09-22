@@ -2,7 +2,7 @@
 title: Intelligenzia ry:n tiedote Helsingin yliopiston kognitiotieteen tilasta
 category: "kognitiotiede"
 cover: penkere.jpeg
-author: Perttu Lähteenlahti
+author: Mari Räsänen
 ---
 
 Kognitiotieteen tuleva sijoittuminen on ollut avoinna jo keväästä 2015, kun psykologian ja logopedian muuttoa lääketieteelliseen tiedekuntaan alettiin valmistella. Valitettavasti tilanne ei ole edelleenkään selkiytynyt. Neuvotteluja on käyty erityisesti matemaattis-luonnontieteellisen tiedekunnan suuntaan, mutta virallista päätöstä ei ole tehty. Päätöksillä on kiire, koska Iso pyörä -koulutusuudistuksen mukaiset esitykset ovat jokaisessa tiedekunnassa jo valmisteilla, eikä kognitiotiede tällä hetkellä kuulu niistä mihinkään.

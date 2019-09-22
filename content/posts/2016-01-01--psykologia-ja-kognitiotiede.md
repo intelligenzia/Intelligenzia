@@ -15,7 +15,7 @@ Kokouksessa painotettiin sanaa ‘mahdollinen’ puhuttaessa siirtymästä. Mit�
 
 Mitkä ovat sitten lääketieteellisen tiedekunnan tarjomat synergiaedut? Saarisen mukaan psykologia haluaa Helsingin yliopistossa tulevaisuudessa profiloitua aikaisempaa vahvemmin neuropsykologian suuntaan. Lääketieteellinen tiedekunta toimisi mahdollistajana tällä saralla. Toinen tekijä on kliinisen osaamisen kehitys, jota tapahtuisi molemmin puolin. Molemmat edellä mainitut tekijät yhdessä nostaisivat psykologien osaamista ja parantaisivat näiden työllistymistä. Psykologian suunta on neurotieteessä ja lääketieteessä.
 
-Vaikutukset kognitiotieteeseen
+## Vaikutukset kognitiotieteeseen
 
 Psykologian ja logopedian siirtyminen tulee olemaan merkittävä muutos, eivätkä kaikki sitä seuraavat vaikutukset ole vielä edes selvillä. Kuten ylempää lukemalla selviää, on suunnittelun lähtökohtana ollut psykologian opetuksen ja tutkimuksen parantaminen. Muut käyttäytymistieteiden laitoksen oppiaineet ja näiden intressit ovat ainakin jossakin mielessä olleet sekundäärisiä.
 

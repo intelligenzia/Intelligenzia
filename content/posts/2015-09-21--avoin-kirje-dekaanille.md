@@ -22,7 +22,7 @@ Intelligenzia ry:n hallitus toivoo tiedekunnan hallinnolta vastuullisia päätö
 
 Kunnioittaen,
 
-Perttu Lähteenlahti
+[Perttu Lähteenlahti](https://lähteenlahti.fi)
 puheenjohtaja
 
 Iina Ala-Kurikka
