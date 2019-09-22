@@ -2,7 +2,7 @@
 title: Avoin Kirje Käyttäytymistieteellisen Tiedekunnan Dekaanille
 date: 2019-09-21T17:08:08.305Z
 category: kognitiotiede
-cover: cover.jpeg
+cover: one.jpg
 author: Perttu Lähteenlahti
 ---
 

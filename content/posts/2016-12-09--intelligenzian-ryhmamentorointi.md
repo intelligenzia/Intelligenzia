@@ -2,7 +2,7 @@
 title: Intelligenzian ryhmämentoroinnin ilmoittautuminen starttaa nyt!
 date: 2019-09-21T17:32:21.106Z
 category: Opiskelu
-cover: yliopisto.png
+cover: mentoring.jpeg
 author: Mari Räsänen
 ---
 

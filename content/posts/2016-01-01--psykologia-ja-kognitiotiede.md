@@ -1,7 +1,7 @@
 ---
 title: Psykologian siirtyminen lääketieteelliseen tiedekuntaan ja miten tämä vaikuttaa kognitiotieteeseen
 category: "kognitiotiede"
-cover: penkere.jpeg
+cover: two.jpg
 author: Perttu Lähteenlahti
 ---
 

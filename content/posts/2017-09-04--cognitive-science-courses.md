@@ -1,7 +1,7 @@
 ---
 title: Cognitive Science courses at University of Helsinki, fall 2017
 category: Opiskelu
-cover: sarjakuva.jpeg
+cover: studying.jpg
 author: Pietari Nurmi
 ---
 
