@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
+import { ThemeToggler } from "gatsby-plugin-dark-mode";
 
 import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
@@ -64,6 +65,18 @@ class Header extends React.Component {
               </ScreenWidthContext.Consumer>
             )}
           </FontLoadedContext.Consumer>
+          {/* <ThemeToggler>
+            {({ theme, toggleTheme }) => (
+              <label>
+                <input
+                  type="checkbox"
+                  onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
+                  checked={theme === "dark"}
+                />{" "}
+                Dark mode
+              </label>
+            )}
+          </ThemeToggler> */}
         </header>
         <VisibilitySensor onChange={this.visibilitySensorChange}>
           <div className="sensor" />

@@ -170,6 +170,12 @@ class Layout extends React.Component {
                         width: auto;
                         display: block;
                       }
+                      table {
+                        width: 100%;
+                      }
+                      tr {
+                        padding: 0.5rem 0rem;
+                      }
                     `}</style>
                   </React.Fragment>
                 </ScreenWidthContext.Provider>

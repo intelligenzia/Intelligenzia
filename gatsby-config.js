@@ -52,7 +52,7 @@ module.exports = {
     `gatsby-plugin-styled-jsx-postcss`, // as above
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-sitemap`,
-
+    "gatsby-plugin-dark-mode",
     {
       resolve: `gatsby-plugin-layout`,
       options: {

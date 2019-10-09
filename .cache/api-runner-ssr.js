@@ -8,6 +8,9 @@ var plugins = [{
       plugin: require('/Users/perttu/Projects/intelligenzia/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
       options: {"plugins":[]},
     },{
+      plugin: require('/Users/perttu/Projects/intelligenzia/node_modules/gatsby-plugin-dark-mode/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
       plugin: require('/Users/perttu/Projects/intelligenzia/node_modules/gatsby-plugin-layout/gatsby-ssr'),
       options: {"plugins":[],"component":"/Users/perttu/Projects/intelligenzia/src/layouts/index.js"},
     },{

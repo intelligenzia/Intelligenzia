@@ -26,86 +26,30 @@ Jos koet Intelligenziassa tai Intelligenzian tapahtumissa häirintää, rasismia
 
 <span style="color: #333333;">Koko hallituksen tavoittaa sähköpostilla</span>**<span style="color: #333333;"> intelligenzia-hallitus[]helsinki.fi</span>**
 
-**Puheenjohtaja, Ympäristövastaava**
-
-Paavo Rinkkala
-paavo.rinkkala[]helsinki.fi
-
-**Varapuheenjohtaja, Opintopiirivastaava, KVIT-vastaava**
-
-Saara Halmetoja
-saara.halmetoja[]helsinki.fi
-
-**Rahastonhoitaja, Webmaster
-**
-
-Silva Perander
-silva.perander[]helsinki.fi
-
-**Sihteeri, Sivuainesatelliitti**
-
-Lovisa Hirvonen
-lovisa.hirvonen[]helsinki.fi
-
-**Viestintävastaava**
-
-Ottilia Nikula
-ottilia.nikula[]helsinki.fi
-
-**Tilavastaava, Koulutuspolitiikka-vastaava, Liikuntavastaava
-**
-
-Miska Nurmi
-miska.nurmi[]helsinki.fi
-
-**Yhdenvertaisuusvastaava, Yläkulttuurivastaava**
-
-Kaisa Elovaara
-kaisa.elovaara[]helsinki.fi
-
-**Kevyt Panos -vastaava**
-
-Juho Halonen
-juho.halonen[]helsinki.fi
+|                                                                 |                 |                              |
+| :-------------------------------------------------------------- | :-------------- | ---------------------------: |
+| **Puheenjohtaja, Ympäristövastaava**                            | Paavo Rinkkala  |  paavo.rinkkala[]helsinki.fi |
+| **Varapuheenjohtaja, Opintopiirivastaava, KVIT-vastaava**       | Saara Halmetoja | saara.halmetoja[]helsinki.fi |
+| **Rahastonhoitaja, Webmaster**                                  | Silva Perander  |  silva.perander[]helsinki.fi |
+| **Sihteeri, Sivuainesatelliitti**                               | Lovisa Hirvonen | lovisa.hirvonen[]helsinki.fi |
+| **Viestintävastaava**                                           | Ottilia Nikula  |  ottilia.nikula[]helsinki.fi |
+| **Tilavastaava, Koulutuspolitiikka-vastaava, Liikuntavastaava** | Miska Nurmi     |     miska.nurmi[]helsinki.fi |
+| **Yhdenvertaisuusvastaava, Yläkulttuurivastaava**               | Kaisa Elovaara  |  kaisa.elovaara[]helsinki.fi |
+| **Kevyt Panos -vastaava**                                       | Juho Halonen    |    juho.halonen[]helsinki.fi |
+| **Tilavastaava, Koulutuspolitiikka-vastaava, Liikuntavastaava** | Miska Nurmi     |     miska.nurmi[]helsinki.fi |
+| **Tilavastaava, Koulutuspolitiikka-vastaava, Liikuntavastaava** | Miska Nurmi     |     miska.nurmi[]helsinki.fi |
 
 ## Toimihenkilöt:
 
-**Käsienheiluttelukonsultti, Jäsenrekisterivastaava
-**
-
-Pietari Nurmi
-pietari.nurmi[]helsinki.fi
-
-**Kopokummi
-**
-
-Mari Räsänen
-mari.rasanen[]helsinki.fi
-
-**Viestintäassistentti**
-
-Minna Harju
-minna.harju[]helsinki.fi
-
-**Filosofinen zombi**
-
-Emmi Makkonen
-
-**Alakulttuurivastaava**
-
-Juho Ylen
-
-**Sitsikoordinaattorit**
-
-Silva Perander
-
-Ottilia Nikula
-
-**Konnarilistan majorpomot**
-
-Paavo Rinkkala
-Saara Halmetoja
-Pietari Nurmi
+|                                                       |                                              |                            |
+| :---------------------------------------------------- | :------------------------------------------- | -------------------------: |
+| **Käsienheiluttelukonsultti, Jäsenrekisterivastaava** | Pietari Nurmi                                | pietari.nurmi[]helsinki.fi |
+| **Kopokummi**                                         | Mari Räsänen                                 |  mari.rasanen[]helsinki.fi |
+| **Viestintäassistentti**                              | Minna Harju                                  |   minna.harju[]helsinki.fi |
+| **Filosofinen zombi**                                 | Emmi Makkonen                                |                            |
+| **Alakulttuurivastaava**                              | Juho Ylen                                    |                            |
+| **Sitsikoordinaattorit**                              | Silva Perander & Ottilia Nikula              |                            |
+| **Konnarilistan majorpomot**                          | Paavo Rinkkala Saara Halmetoja Pietari Nurmi |                            |
 
 ## Postiosoite
 

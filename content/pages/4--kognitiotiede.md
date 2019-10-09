@@ -34,6 +34,8 @@ Kognitiotiede aloitti toimintansa usean oppiaineen yhteisenä koulutusohjelmana 
 
 **1998** Vuosittainen sisäänpääsykiintiö nostetaan 10 opiskelijaan.
 
+**1998** [Salainen tiedekunta perustetaan](https://tiedekunta.com).
+
 **2002** Filosofian tohtori Christina M. Krause valitaan kognitiotieteen professoriksi viisivuotiskaudeksi.
 
 **2002** Psykologian laitos muuttaa nykyiseen sijaintiinsa Siltavuorenpenkereelle.
