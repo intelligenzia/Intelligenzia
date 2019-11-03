@@ -1,5 +1,6 @@
 ---
 title: Kognitiotiede
+enSlug: cognitive-science
 ---
 
 Kognitiotiede on tieteenala, joka tutkii mieleen ja aivoihin liittyviä tietoilmiöitä, kuten havaitsemista, oppimista, muistia, ajattelua, kieltä ja käsitteitä. Yhteistä kognitiotieteen tutkimille ilmiöille on, että niitä kaikkia voidaan pitää älykkään informaation prosessoinnin muotoina. Nämä perinteiset tutkimuskohteet, kuuluvat myös lähitieteenalojen kuten psykologian, neurotieteen, filosofian ja kielitieteen tutkimuskohteisiin. Kognitiotieteelle omaleimaista on pyrkimys luonnontieteelliseen ja matemaattiseen täsmällisyyteen ilmiöiden mallintamisessa. Kognitiotieteen yhteys tekoälyyn ja tietojenkäsittelytieteeseen onkin perinteisesti kiinteämpi kuin lähialoilla. Tutkimus perustuu empiirisiin luonnontieteellisiin tutkimusmenetelmiin, kuten behavioraalisiin kokeisiin ja neurotieteiden metodeihin, sekä laskennalliseen ja matemaattiseen mallintamiseen. Vaikka pääpaino on usein aikuisen ihmisen kognition ja hermostollisten taustamekanismien tutkimisessa, myös kognitiivisen kehityksen, muiden eläinten kognitiivisten toimintojen ja keinotekoisten järjestelmien informaation prosessoinnin tutkiminen kuuluvat kognitiotieteen piiriin. Kognitiotieteen alaan luetaan myös monet mielenfilosofian, psykologian filosofian ja tekoälyn filosofian välimaastoon asettuvat suuret kysymykset kuten:

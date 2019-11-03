@@ -1,6 +1,7 @@
 //const webpack = require("webpack");
 const _ = require("lodash");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const locales = require("./src/locales/locales");
 const path = require("path");
 const Promise = require("bluebird");
 
@@ -36,7 +37,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage, deletePage } = actions;
 
   return new Promise((resolve, reject) => {
     const postTemplate = path.resolve("./src/templates/PostTemplate.js");
@@ -44,17 +45,20 @@ exports.createPages = ({ graphql, actions }) => {
     const categoryTemplate = path.resolve("./src/templates/CategoryTemplate.js");
 
     // Do not create draft post files in production.
-    let activeEnv = process.env.ACTIVE_ENV || process.env.NODE_ENV || "development"
-    console.log(`Using environment config: '${activeEnv}'`)
+    let activeEnv = process.env.ACTIVE_ENV || process.env.NODE_ENV || "development";
+    console.log(`Using environment config: '${activeEnv}'`);
     let filters = `filter: { fields: { slug: { ne: null } } }`;
-    if (activeEnv == "production") filters = `filter: { fields: { slug: { ne: null } , prefix: { ne: null } } }`
+    if (activeEnv == "production")
+      filters = `filter: { fields: { slug: { ne: null } , prefix: { ne: null } } }`;
 
     resolve(
       graphql(
         `
           {
             allMarkdownRemark(
-              ` + filters + `
+              ` +
+          filters +
+          `
               sort: { fields: [fields___prefix], order: DESC }
               limit: 1000
             ) {
@@ -68,6 +72,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   frontmatter {
                     title
+                    enSlug
                     category
                   }
                 }
@@ -117,15 +122,20 @@ exports.createPages = ({ graphql, actions }) => {
           const prev = index === posts.length - 1 ? undefined : posts[index + 1].node;
           const source = node.fields.source;
 
-          createPage({
-            path: slug,
-            component: postTemplate,
-            context: {
-              slug,
-              prev,
-              next,
-              source
-            }
+          Object.keys(locales).map(lang => {
+            const localizedPath = locales[lang].default ? slug : locales[lang].path + slug;
+
+            createPage({
+              path: localizedPath,
+              component: postTemplate,
+              context: {
+                slug,
+                lang,
+                prev,
+                next,
+                source
+              }
+            });
           });
         });
 
@@ -133,15 +143,21 @@ exports.createPages = ({ graphql, actions }) => {
         const pages = items.filter(item => item.node.fields.source === "pages");
         pages.forEach(({ node }) => {
           const slug = node.fields.slug;
+          const enSlug = node.frontmatter.enSlug;
           const source = node.fields.source;
 
-          createPage({
-            path: slug,
-            component: pageTemplate,
-            context: {
-              slug,
-              source
-            }
+          Object.keys(locales).map(lang => {
+            const localizedPath = locales[lang].default ? slug : enSlug;
+
+            createPage({
+              path: localizedPath,
+              component: pageTemplate,
+              context: {
+                slug,
+                lang,
+                source
+              }
+            });
           });
         });
       })

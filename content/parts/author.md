@@ -2,4 +2,6 @@
 title: author
 ---
 
-**Pietari Nurmi**
+**Intelligenzia**
+
+Organization for Cognitive Science enthusiasts

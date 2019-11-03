@@ -1,5 +1,6 @@
 ---
 title: Ajankohtaista
+enSlug: recent-news
 menuTitle: Ajankohtaista
 ---
 

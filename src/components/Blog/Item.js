@@ -6,7 +6,7 @@ import Img from "gatsby-image";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
-
+import moment from "moment";
 const Item = props => {
   const {
     theme,
@@ -36,7 +36,7 @@ const Item = props => {
           </h1>
           <p className="meta">
             <span>
-              <FaCalendar size={18} /> {prefix}
+              <FaCalendar size={18} /> {moment(prefix).format("DD.MM.YYYY")}
             </span>
             <span>
               <FaUser size={18} /> {author}

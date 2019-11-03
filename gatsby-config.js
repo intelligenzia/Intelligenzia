@@ -59,6 +59,7 @@ module.exports = {
         component: require.resolve(`./src/layouts/`)
       }
     },
+
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
@@ -191,6 +192,14 @@ module.exports = {
             type: "image/png"
           }
         ]
+      }
+    },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/locales`,
+        name: `locale`
       }
     },
     `gatsby-plugin-offline`,

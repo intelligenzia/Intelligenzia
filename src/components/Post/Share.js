@@ -34,7 +34,7 @@ const PostShare = props => {
   return (
     <React.Fragment>
       <div className="share">
-        <span className="label">SHARE</span>
+        <span className="label">JAA</span>
         <div className="links">
           <TwitterShareButton
             url={url}

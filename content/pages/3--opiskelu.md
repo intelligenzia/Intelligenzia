@@ -1,5 +1,6 @@
 ---
 title: Opiskelu
+enSlug: studies
 menuTitle: Opiskelu
 ---
 
