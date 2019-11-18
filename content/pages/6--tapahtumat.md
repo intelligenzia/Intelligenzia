@@ -3,9 +3,15 @@ title: Tapahtumat
 menuTitle: Tapahtumat
 ---
 
+### Kalenteri
+
+Intelligenzian tapahtumakalenterin löydät [täältä](https://calendar.google.com/calendar/b/1?cid=aW50aGFsbGl0dXNAZ21haWwuY29t).
+
 ### Tulevia tapahtumia
 
-**Pelijamit / Game Jam**
+**Pelijamit / Game Jam** ![gamejam][logo]
+
+[logo]: https://github.com/intelligenzia/Intelligenzia/content/public/img/gamejam.jpg "Game Jam Image"
 
 - MITÄ: Pelijamit: tehdään ryhmissä ns. ”peli”
 - MISSÄ Perfektio, Vilhonvuorenkatu 12
