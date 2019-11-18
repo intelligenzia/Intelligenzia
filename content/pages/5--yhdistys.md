@@ -1,5 +1,6 @@
 ---
 title: Yhdistys
+menuTitle: Yhdistys
 ---
 
 Intelligenzia ry (ent. Anti-Kompleksi, Simpleksi) on Helsingin yliopiston kognitiotieteen ainejärjestö, jonka juuret ulottuvat vuoteen 1988 saakka. Ainejärjestön tehtävänä on tuoda yhteen kognitiotieteestä kiinnostuneita ihmisiä, järjestää heille mukavaa tekemistä sekä ajaa kognitiotieteilijän ja kognitiotieteen asemaa yliopistolla ja yhteiskunnassa.
@@ -21,6 +22,15 @@ Jos koet Intelligenziassa tai Intelligenzian tapahtumissa häirintää, rasismia
 ### Pöytäkirjat
 
 [Hallitusten ja yleiskokousten pöytäkirjat löydät täältä.](https://drive.google.com/drive/u/1/folders/1tDhF2m7HfFSk3Ab3L-8dUu9DCqLj5QTH)
+
+### Kirjasto
+
+[Intelligenzian kirjalainaamo](https://forms.gle/Lx69phFtfLXWQ64b9)
+
+### Kalenteri
+
+Intelligenzian tapahtumakalenterin löydät [täältä](https://calendar.google.com/calendar/b/1?cid=aW50aGFsbGl0dXNAZ21haWwuY29t).
+
 
 ## Hallitus 2019 & yhteystiedot
 
