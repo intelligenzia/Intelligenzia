@@ -13,20 +13,20 @@ Polku opiskelemaan kognitiotiedettä Helsinkiin on valitettavasti hieman hankala
 
 - KENELLE: Kaikille kandidaatin suorittaneille (myös eri maista)
 - MITEN: Haku **03.12.2019-10.01.2020** osoitteessa [opintopolku.fi](https://opintopolku.fi/app/#!/korkeakoulu/1.2.246.562.17.19284621422). Hakemus, jossa arvioidaan aiempia opintoja, motivaatiota ja tieteellistä kirjoittamista (esim. kandin tiivistelmä)
-- MITÄ: (päivittyy opintovaatimuksilla, kunhan julkaistaan)
+- SISÄLTÖ: (päivittyy opintovaatimuksilla, kunhan julkaistaan)
 
 **LingDig-maisteriohjelman kognitiotieteen erikoistumislinja optio-oikeuden kautta**
 
 - KENELLE: Helsigin yliopistossa kandidaatin suorittaneille seuraavilta aloilta: **kielet, filosofia, psykologia, tietojenkäsittelytiede, matematiikka, biologia** tai **Bachelor's programme in science**. (huom. ei sosiaalipsykologia)
 - MITEN: Suorita kognitiotieteen moduuli (KIK-KK100 tai LDA-C500) vähintään arvosanalla 4. Kandin papereita hakiessasi voit käyttää optio-oikeutesi menemällä LingDig-maisteriohjelman Kognitiotiede linjalle.
-- MITÄ: (päivittyy opintovaatimuksilla, kunhan julkaistaan)
+- SISÄLTÖ: (päivittyy opintovaatimuksilla, kunhan julkaistaan)
 - HUOMIO: Muille LingDig-maisteriohjelman linjoille on eri vaatimuksia JA jos pääset yhteen, voit vaihtaa linjasi myöhemmin opintojesi lopussa ilmoituksella. Lisäinfoa muiden ohjelmien sisäänpääsykriteereistä tulee olemaan opintopolussa ja opintoneuvojilla (toivottavasti) sekä täällä sitten kun niistä tiedetään.
 
 **Maisteriohjelman vaihtaminen vanhojen opintovaatimusten systeemissä**
 
 - KENELLE: Humanistisessa tiedekunnassa vanhoilla opintovaatimuksilla maisterivaiheessa opiskeleville.
 - MITEN: Pyydä maisteriaineesi vaihtoa kognitiotieteeseen. Kognitiotieteellä on erikoisoikeus jatkaa vanhanmallisia opintoja vuoteen 2022 asti. (Toki tämä voi olla teknisesti vaikeata, kun systeemit yleensä eivät pidä poikkeuksista.)
-- MITÄ: Opiskelet vanhojen vaatimusten mukaisia kursseja, mutta käytännössä korvaat ne kaikki uudenmukaisilla kursseilla. Tee opintosuunnitelma yhteistyössä henkilökunnan kanssa laittamalla sähköpostia osoitteeseen grp-cog-opintoasiat@helsinki.fi.
+- SISÄLTÖ: Opiskelet vanhojen vaatimusten mukaisia kursseja, mutta käytännössä korvaat ne kaikki uudenmukaisilla kursseilla. Tee opintosuunnitelma yhteistyössä henkilökunnan kanssa laittamalla sähköpostia osoitteeseen grp-cog-opintoasiat@helsinki.fi.
 
 Jos sinulla on kysymyksiä esim. opintosuunnitelman tekemisestä, voit kysellä ainejärjestöltämme osoitteesta intelligenzia-hallitus[ät]helsinki.fi, yliopistonlehtori Otto Lapilta (etunimi.sukunimi[ät]helsinki.fi) tai metsätalon opiskelijapalveluista. Yleisiin kysymyksiin löytyy vastauksia myös [wikisivultamme](https://wiki.helsinki.fi/pages/viewpage.action?pageId=84289414).
 
@@ -36,7 +36,7 @@ Jos sinulla on kysymyksiä esim. opintosuunnitelman tekemisestä, voit kysellä 
 
 - KENELLE: Kaikille Helsingin yliopistossa JA muille Joo-opintojen kautta
 - MITEN: Vapaa pääsy
-- MITÄ:
+- SISÄLTÖ:
     - KIK-KK100 Kommunikaatio ja kognitio (suomeksi)
 	- LDA-C500 Cognitive Science (englanniksi tai suomeksi)
     - KIK-KK100 on lievästi enemmän kanditason ja LDA-C500 lievästi maisteritason kokonaisuus
