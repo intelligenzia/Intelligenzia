@@ -31,7 +31,7 @@ Jos koet Intelligenziassa tai Intelligenzian tapahtumissa häirintää, rasismia
 
 Intelligenzian tapahtumakalenterin löydät [täältä](https://calendar.google.com/calendar/b/1?cid=aW50aGFsbGl0dXNAZ21haWwuY29t).
 
-## Hallitus 2019 & yhteystiedot
+## Hallitus 2021 & yhteystiedot
 
 <span style="color: #333333;">Koko hallituksen tavoittaa sähköpostilla</span>**<span style="color: #333333;"> intelligenzia-hallitus[@]helsinki.fi</span>**
 
