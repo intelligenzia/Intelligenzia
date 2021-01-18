@@ -9,7 +9,7 @@ Intelligenzia ry (ent. Anti-Kompleksi, Simpleksi) on Helsingin yliopiston kognit
 
 ### Häirintä- ja ongelmatilannelomake
 
-Jos koet Intelligenziassa tai Intelligenzian tapahtumissa häirintää, rasismia tai muuta ikävää toimintaa, ota yhteyttä [Intelligenzian häirintä- ja ongelmatilannelomakeella](https://elomake.helsinki.fi/lomakkeet/94934/lomake.html). Yhdenvertaisuusvastaava ja puheenjohtaja käsittelevät asian. Voit lähettää myös sähköpostia joko yhdenvertaisuusvastaavalle tai puheenjohtajalle suoraan.
+Jos koet Intelligenziassa tai Intelligenzian tapahtumissa häirintää, rasismia tai muuta ikävää toimintaa, ota yhteyttä [Intelligenzian häirintä- ja ongelmatilannelomakeella](https://elomake.intelligenzia.fi/lomakkeet/94934/lomake.html). Yhdenvertaisuusvastaava ja puheenjohtaja käsittelevät asian. Voit lähettää myös sähköpostia joko yhdenvertaisuusvastaavalle tai puheenjohtajalle suoraan.
 
 ### Yleinen palautelomake
 
@@ -31,35 +31,31 @@ Jos koet Intelligenziassa tai Intelligenzian tapahtumissa häirintää, rasismia
 
 Intelligenzian tapahtumakalenterin löydät [täältä](https://calendar.google.com/calendar/b/1?cid=aW50aGFsbGl0dXNAZ21haWwuY29t).
 
-
 ## Hallitus 2019 & yhteystiedot
 
-<span style="color: #333333;">Koko hallituksen tavoittaa sähköpostilla</span>**<span style="color: #333333;"> intelligenzia-hallitus[]helsinki.fi</span>**
+<span style="color: #333333;">Koko hallituksen tavoittaa sähköpostilla</span>**<span style="color: #333333;"> intelligenzia-hallitus[@]helsinki.fi</span>**
 
-|                                                                 |                 |                              |
-| :-------------------------------------------------------------- | :-------------- | ---------------------------: |
-| **Puheenjohtaja, Ympäristövastaava**                            | Paavo Rinkkala  |  paavo.rinkkala[]helsinki.fi |
-| **Varapuheenjohtaja, Opintopiirivastaava, KVIT-vastaava**       | Saara Halmetoja | saara.halmetoja[]helsinki.fi |
-| **Rahastonhoitaja, Webmaster**                                  | Silva Perander  |  silva.perander[]helsinki.fi |
-| **Sihteeri, Sivuainesatelliitti**                               | Lovisa Hirvonen | lovisa.hirvonen[]helsinki.fi |
-| **Viestintävastaava**                                           | Ottilia Nikula  |  ottilia.nikula[]helsinki.fi |
-| **Tilavastaava, Koulutuspolitiikka-vastaava, Liikuntavastaava** | Miska Nurmi     |     miska.nurmi[]helsinki.fi |
-| **Yhdenvertaisuusvastaava, Yläkulttuurivastaava**               | Kaisa Elovaara  |  kaisa.elovaara[]helsinki.fi |
-| **Kevyt Panos -vastaava**                                       | Juho Halonen    |    juho.halonen[]helsinki.fi |
-| **Tilavastaava, Koulutuspolitiikka-vastaava, Liikuntavastaava** | Miska Nurmi     |     miska.nurmi[]helsinki.fi |
-| **Tilavastaava, Koulutuspolitiikka-vastaava, Liikuntavastaava** | Miska Nurmi     |     miska.nurmi[]helsinki.fi |
+|                       |                   |                                     |
+| :-------------------- | :---------------- | ----------------------------------: |
+| **Puheenjohtaja**     | Julia Kylmälä     |    julia.kylmala[@]intelligenzia.fi |
+| **Varapuheenjohtaja** | Paavo Rinkkala    |   paavo.rinkkala[@]intelligenzia.fi |
+| **Rahastonhoitaja**   | Samuli de Pascale | samuli.depascale[@]intelligenzia.fi |
+| **Sihteeri**          | Iina Ala-Kurikka  | iina.ala-kurikka[@]intelligenzia.fi |
+| **Varsinainen jäsen** | Sara Väätäjä      |     sara.vaataja[@]intelligenzia.fi |
+| **Varsinainen jäsen** | Mari Räsänen      |     mari.rasanen[@]intelligenzia.fi |
 
+<!--
 ## Toimihenkilöt:
 
-|                                                       |                                              |                            |
-| :---------------------------------------------------- | :------------------------------------------- | -------------------------: |
-| **Käsienheiluttelukonsultti, Jäsenrekisterivastaava** | Pietari Nurmi                                | pietari.nurmi[]helsinki.fi |
-| **Kopokummi**                                         | Mari Räsänen                                 |  mari.rasanen[]helsinki.fi |
-| **Viestintäassistentti**                              | Minna Harju                                  |   minna.harju[]helsinki.fi |
-| **Filosofinen zombi**                                 | Emmi Makkonen                                |                            |
-| **Alakulttuurivastaava**                              | Juho Ylen                                    |                            |
-| **Sitsikoordinaattorit**                              | Silva Perander & Ottilia Nikula              |                            |
-| **Konnarilistan majorpomot**                          | Paavo Rinkkala Saara Halmetoja Pietari Nurmi |                            |
+|                                                       |                                              |                                  |
+| :---------------------------------------------------- | :------------------------------------------- | -------------------------------: |
+| **Käsienheiluttelukonsultti, Jäsenrekisterivastaava** | Pietari Nurmi                                | pietari.nurmi[@]intelligenzia.fi |
+| **Kopokummi**                                         | Mari Räsänen                                 |  mari.rasanen[@]intelligenzia.fi |
+| **Viestintäassistentti**                              | Minna Harju                                  |   minna.harju[@]intelligenzia.fi |
+| **Filosofinen zombi**                                 | Emmi Makkonen                                |                                  |
+| **Alakulttuurivastaava**                              | Juho Ylen                                    |                                  |
+| **Sitsikoordinaattorit**                              | Silva Perander & Ottilia Nikula              |                                  |
+| **Konnarilistan majorpomot**                          | Paavo Rinkkala Saara Halmetoja Pietari Nurmi |                                  | -->
 
 ## Postiosoite
 
