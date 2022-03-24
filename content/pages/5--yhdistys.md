@@ -3,7 +3,11 @@ title: Yhdistys
 menuTitle: Yhdistys
 ---
 
-Intelligenzia ry (ent. Anti-Kompleksi, Simpleksi) on Helsingin yliopiston kognitiotieteen ainejärjestö, jonka juuret ulottuvat vuoteen 1988 saakka. Ainejärjestön tehtävänä on tuoda yhteen kognitiotieteestä kiinnostuneita ihmisiä, järjestää heille mukavaa tekemistä sekä ajaa kognitiotieteilijän ja kognitiotieteen asemaa yliopistolla ja yhteiskunnassa.
+Intelligenzia ry on kognitiotieteen alumnien ja muiden kognitiotieteestä kiinnostuneiden etujärjestö. Kognitiotieteen alumneja ovat kaikki, jotka opiskelevat tai ovat opiskelleet kognitiotiedettä. Intelligenzia pyrkii edistämään kognitiotieteen opiskelumahdollisuuksia ja alumnien verkostoitumista, sekä tekemään kognitiotiedettä tunnetuksi. 
+
+Yhdistys toimii yhdyssiteenä mm. kognitiotieteen opiskelijoiden, alumnien, tutkijoiden sekä yritysmaailman välillä ja järjestää esimerkiksi tilaisuuksia ja muuta mukavaa toimintaa jäsenilleen.
+
+Intelligenzia (ent. Anti-Kompleksi, Simpleksi) toimi Helsingin yliopiston kognitiotieteen opiskelijoiden ainejärjestönä vuodesta 1988 vuoteen 2021, jolloin järjestö muutettiin ensisijaisesti alumnijärjestöksi.
 
 ## Lomakkeet ja palaute
 

@@ -7,7 +7,7 @@ menuTitle: Tapahtumat
 
 Intelligenzian tapahtumakalenterin löydät [täältä](https://calendar.google.com/calendar/b/1?cid=aW50aGFsbGl0dXNAZ21haWwuY29t).
 
-### Tulevia tapahtumia
+### Alumnille
 
 **Pelijamit / Game Jam**
 
