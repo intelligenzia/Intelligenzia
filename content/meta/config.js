@@ -1,8 +1,8 @@
 module.exports = {
-  siteTitle: "Intelligenzia – Kognitiotieteen opiskelijajärjestö", // <title>
-  shortSiteTitle: "Intelligenzia – Kognitiotieteen opiskelijajärjestö", // <title> ending for posts and pages
+  siteTitle: "Intelligenzia – Kognitiotieteen alumnijärjestö", // <title>
+  shortSiteTitle: "Intelligenzia – Kognitiotieteen alumnijärjestö", // <title> ending for posts and pages
   siteDescription:
-    "Intelligenzia Ry on Helsingin yliopiston kognitiotieteen opiskelijoiden vuonna 1989 perustettu yhdistys. Yhdistys valvoo kognitiotieteen opiskelijoiden etuja ja  ylläpitää kognitiotieteen opetusta Suomessa.",
+    "Intelligenzia Ry on kognitiotieteen alumnien vuonna 1989 perustettu yhdistys. Yhdistys valvoo kognitiotieteen alumnien etuja ja ylläpitää kognitiotieteen opetusta Suomessa.",
   siteUrl: "https://intelligenzia.fi",
   // pathPrefix: "",
   siteImage: "preview.jpeg",
@@ -14,10 +14,10 @@ module.exports = {
 
   /* info */
   headerTitle: "Intelligenzia",
-  headerSubTitle: "Kognitiotieteen opiskelijajärjestö",
+  headerSubTitle: "Kognitiotieteen alumnijärjestö",
 
   /* manifest.json */
-  manifestName: "Intelligenzia – Kognitiotieteen opiskelijajärjestö",
+  manifestName: "Intelligenzia – Kognitiotieteen alumnijärjestö",
   manifestShortName: "Intelligenzia", // max 12 characters
   manifestStartUrl: "/index.html",
   manifestBackgroundColor: "white",
