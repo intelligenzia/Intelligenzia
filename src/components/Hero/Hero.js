@@ -10,7 +10,7 @@ const Hero = props => {
     <React.Fragment>
       <section className="hero">
         <h1>Intelligenzia</h1>
-        <h2>Kognitiotieteen ainejärjestö</h2>
+        <h2>Kognitiotieteen alumnijärjestö</h2>
       </section>
 
       {/* --- STYLES --- */}
