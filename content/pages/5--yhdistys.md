@@ -35,31 +35,16 @@ Jos koet Intelligenziassa tai Intelligenzian tapahtumissa häirintää, rasismia
 
 Intelligenzian tapahtumakalenterin löydät [täältä](https://calendar.google.com/calendar/b/1?cid=aW50aGFsbGl0dXNAZ21haWwuY29t).
 
-## Hallitus 2021 & yhteystiedot
+## Hallitus 2025 & yhteystiedot
 
 <span style="color: #333333;">Koko hallituksen tavoittaa sähköpostilla</span>**<span style="color: #333333;"> intelligenzia-hallitus[@]helsinki.fi</span>**
 
 |                       |                   |                                     |
 | :-------------------- | :---------------- | ----------------------------------: |
 | **Puheenjohtaja**     | Julia Kylmälä     |    julia.kylmala[@]intelligenzia.fi |
-| **Varapuheenjohtaja** | Paavo Rinkkala    |   paavo.rinkkala[@]intelligenzia.fi |
-| **Rahastonhoitaja**   | Samuli de Pascale | samuli.depascale[@]intelligenzia.fi |
-| **Sihteeri**          | Iina Ala-Kurikka  | iina.ala-kurikka[@]intelligenzia.fi |
-| **Varsinainen jäsen** | Sara Väätäjä      |     sara.vaataja[@]intelligenzia.fi |
-| **Varsinainen jäsen** | Mari Räsänen      |     mari.rasanen[@]intelligenzia.fi |
-
-<!--
-## Toimihenkilöt:
-
-|                                                       |                                              |                                  |
-| :---------------------------------------------------- | :------------------------------------------- | -------------------------------: |
-| **Käsienheiluttelukonsultti, Jäsenrekisterivastaava** | Pietari Nurmi                                | pietari.nurmi[@]intelligenzia.fi |
-| **Kopokummi**                                         | Mari Räsänen                                 |  mari.rasanen[@]intelligenzia.fi |
-| **Viestintäassistentti**                              | Minna Harju                                  |   minna.harju[@]intelligenzia.fi |
-| **Filosofinen zombi**                                 | Emmi Makkonen                                |                                  |
-| **Alakulttuurivastaava**                              | Juho Ylen                                    |                                  |
-| **Sitsikoordinaattorit**                              | Silva Perander & Ottilia Nikula              |                                  |
-| **Konnarilistan majorpomot**                          | Paavo Rinkkala Saara Halmetoja Pietari Nurmi |                                  | -->
+| **Varapuheenjohtaja** | Johanna Reinikainen    |   johanna.reinikainen[@]intelligenzia.fi |
+| **Rahastonhoitaja**   | Perttu Lähteenlahti | perttu[@]intelligenzia.fi |
+| **Sihteeri** | Sara Väätäjä      |     sara.vaataja[@]intelligenzia.fi |
 
 ## Postiosoite
 
