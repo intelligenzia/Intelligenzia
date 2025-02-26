@@ -48,8 +48,14 @@ module.exports = {
     }
   },
   plugins: [
-    `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
-    `gatsby-plugin-styled-jsx-postcss`, // as above
+    {
+      resolve: "gatsby-plugin-mini-css-extract-plugin",
+      options: {
+        ignoreOrder: true // Enable this to remove warnings about conflicting order
+      }
+    },
+    `gatsby-plugin-styled-jsx`,
+    `gatsby-plugin-styled-jsx-postcss`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-sitemap`,
     "gatsby-plugin-dark-mode",
