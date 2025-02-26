@@ -217,6 +217,7 @@ module.exports = {
         `,
         feeds: [
           {
+            title: config.siteTitle,
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
