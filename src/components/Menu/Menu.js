@@ -1,14 +1,9 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 require("core-js/fn/array/from");
 
-import { FaHome } from "react-icons/fa/";
-import { FaSearch } from "react-icons/fa/";
-import { FaEnvelope } from "react-icons/fa/";
-import { FaTag } from "react-icons/fa/";
-
-import Item from "./Item";
 import Expand from "./Expand";
+import Item from "./Item";
 
 class Menu extends React.Component {
   constructor(props) {
@@ -22,7 +17,7 @@ class Menu extends React.Component {
         : page.node.frontmatter.title
     }));
 
-    this.items = [...pages, { to: "/search/", label: "Haku", icon: FaSearch }];
+    this.items = [...pages];
 
     this.renderedItems = []; // will contain references to rendered DOM elements of menu
   }
@@ -145,14 +140,13 @@ class Menu extends React.Component {
             ))}
           </ul>
           {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
-          {open &&
-            screenWidth >= 1024 && (
-              <ul className="hiddenItemList">
-                {this.state.hiddenItems.map(item => (
-                  <Item item={item} key={item.label} hiddenItem theme={theme} />
-                ))}
-              </ul>
-            )}
+          {open && screenWidth >= 1024 && (
+            <ul className="hiddenItemList">
+              {this.state.hiddenItems.map(item => (
+                <Item item={item} key={item.label} hiddenItem theme={theme} />
+              ))}
+            </ul>
+          )}
         </nav>
 
         {/* --- STYLES --- */}

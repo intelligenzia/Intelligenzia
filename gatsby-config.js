@@ -1,6 +1,5 @@
 require("dotenv").config();
 const config = require("./content/meta/config");
-const transformer = require("./src/utils/algolia");
 
 const query = `{
   allMarkdownRemark( filter: { fields: { slug: { ne: null } } }) {
@@ -23,10 +22,7 @@ const query = `{
 
 const queries = [
   {
-    query,
-    transformer: ({ data }) => {
-      return data.allMarkdownRemark.edges.reduce(transformer, []);
-    }
+    query
   }
 ];
 
@@ -36,13 +32,6 @@ module.exports = {
     title: config.siteTitle,
     description: config.siteDescription,
     siteUrl: config.siteUrl,
-    algolia: {
-      appId: process.env.ALGOLIA_APP_ID ? process.env.ALGOLIA_APP_ID : "",
-      searchOnlyApiKey: process.env.ALGOLIA_SEARCH_ONLY_API_KEY
-        ? process.env.ALGOLIA_SEARCH_ONLY_API_KEY
-        : "",
-      indexName: process.env.ALGOLIA_INDEX_NAME ? process.env.ALGOLIA_INDEX_NAME : ""
-    },
     facebook: {
       appId: process.env.FB_APP_ID ? process.env.FB_APP_ID : ""
     }
@@ -217,6 +206,7 @@ module.exports = {
         `,
         feeds: [
           {
+            title: config.siteTitle,
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {

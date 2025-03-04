@@ -1,6 +1,5 @@
 //const webpack = require("webpack");
 const _ = require("lodash");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const path = require("path");
 const Promise = require("bluebird");
 
@@ -44,17 +43,20 @@ exports.createPages = ({ graphql, actions }) => {
     const categoryTemplate = path.resolve("./src/templates/CategoryTemplate.js");
 
     // Do not create draft post files in production.
-    let activeEnv = process.env.ACTIVE_ENV || process.env.NODE_ENV || "development"
-    console.log(`Using environment config: '${activeEnv}'`)
+    let activeEnv = process.env.ACTIVE_ENV || process.env.NODE_ENV || "development";
+    console.log(`Using environment config: '${activeEnv}'`);
     let filters = `filter: { fields: { slug: { ne: null } } }`;
-    if (activeEnv == "production") filters = `filter: { fields: { slug: { ne: null } , prefix: { ne: null } } }`
+    if (activeEnv == "production")
+      filters = `filter: { fields: { slug: { ne: null } , prefix: { ne: null } } }`;
 
     resolve(
       graphql(
         `
           {
             allMarkdownRemark(
-              ` + filters + `
+              ` +
+          filters +
+          `
               sort: { fields: [fields___prefix], order: DESC }
               limit: 1000
             ) {
@@ -153,15 +155,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }, options) => {
   switch (stage) {
     case `build-javascript`:
       actions.setWebpackConfig({
-        plugins: [
-          new BundleAnalyzerPlugin({
-            analyzerMode: "static",
-            reportFilename: "./report/treemap.html",
-            openAnalyzer: true,
-            logLevel: "error",
-            defaultSizes: "gzip"
-          })
-        ]
+        plugins: []
       });
   }
 };
