@@ -42,14 +42,12 @@ const Blog = props => {
             padding: 0 ${`0 calc(${theme.space.default} * 1.5)`};
           }
           ul {
-            // max-width: ${theme.text.maxWidth.tablet};
             flex-direction: row;
           }
         }
         @above desktop {
           ul {
             flex-direction: row;
-            // max-width: ${theme.text.maxWidth.desktop};
           }
         }
       `}</style>

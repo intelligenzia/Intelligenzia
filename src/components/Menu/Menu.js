@@ -112,7 +112,7 @@ class Menu extends React.Component {
   };
 
   closeMenu = e => {
-    //e.preventDefault();
+    // e.preventDefault();
 
     if (this.state.open) {
       this.setState({ open: false });
@@ -159,7 +159,7 @@ class Menu extends React.Component {
             flex-grow: 1;
             left: 0;
             max-height: ${open ? "1000px" : "50px"};
-            padding: 0 ${theme.space.inset.s};
+            padding: 0 10px;
             position: fixed;
             width: 100%;
             z-index: 1;
@@ -172,7 +172,7 @@ class Menu extends React.Component {
             justify-content: center;
             list-style: none;
             margin: 0;
-            padding: 0; /* 0 ${theme.space.s}; */
+            padding: 0;
             position: relative;
             width: 100%;
           }
@@ -229,7 +229,6 @@ class Menu extends React.Component {
               padding: ${theme.space.m};
               border-radius: ${theme.size.radius.small};
               border-top-right-radius: 0;
-
 
               &:after {
                 content: "";

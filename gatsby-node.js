@@ -1,4 +1,3 @@
-//const webpack = require("webpack");
 const _ = require("lodash");
 const path = require("path");
 const Promise = require("bluebird");
@@ -155,7 +154,11 @@ exports.onCreateWebpackConfig = ({ stage, actions }, options) => {
   switch (stage) {
     case `build-javascript`:
       actions.setWebpackConfig({
-        plugins: []
+        resolve: {
+          fallback: {
+            "object.assign/polyfill": require.resolve("object-assign")
+          }
+        }
       });
   }
 };
