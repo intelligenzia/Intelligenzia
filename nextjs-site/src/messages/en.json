@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "title": "Intelligenzia – Cognitive Science Alumni Society",
+    "description": "Intelligenzia is a cognitive science alumni society founded in 1989 at the University of Helsinki."
+  },
+  "nav": {
+    "home": "Home",
+    "membership": "Membership",
+    "news": "News",
+    "studies": "Studies",
+    "cognitiveScience": "Cognitive Science",
+    "organization": "Organization",
+    "events": "Events",
+    "blog": "Blog",
+    "login": "Log in",
+    "myMembership": "My Membership"
+  },
+  "home": {
+    "hero": {
+      "title": "Intelligenzia",
+      "subtitle": "Cognitive Science Alumni Society",
+      "description": "Connecting cognitive science students, researchers, and professionals since 1989.",
+      "cta": "Become a Member",
+      "learnMore": "Learn More"
+    }
+  },
+  "membership": {
+    "title": "Become a Member",
+    "types": {
+      "full": {
+        "title": "Full Member",
+        "description": "For cognitive science majors, minors, and graduates."
+      },
+      "support": {
+        "title": "Supporting Member",
+        "description": "For anyone interested in cognitive science."
+      }
+    },
+    "price": "Membership fee",
+    "perYear": "/ year",
+    "benefits": {
+      "title": "Member Benefits",
+      "networking": "Network with professionals in the field",
+      "events": "Access to member events",
+      "newsletter": "Newsletter and current news",
+      "community": "Active alumni community"
+    },
+    "join": "Join Now",
+    "alreadyMember": "Already a member?",
+    "login": "Log in"
+  },
+  "auth": {
+    "login": "Log in",
+    "logout": "Log out",
+    "email": "Email",
+    "sendMagicLink": "Send magic link",
+    "checkEmail": "Check your email",
+    "magicLinkSent": "We sent a login link to your email."
+  },
+  "footer": {
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "rights": "All rights reserved."
+  },
+  "common": {
+    "readMore": "Read more",
+    "backToHome": "Back to home",
+    "loading": "Loading...",
+    "error": "Error",
+    "notFound": "Page not found"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "title": "Intelligenzia – Kognitiotieteen alumnijärjestö",
+    "description": "Intelligenzia ry on kognitiotieteen alumnien vuonna 1989 perustettu yhdistys Helsingin yliopistossa."
+  },
+  "nav": {
+    "home": "Etusivu",
+    "membership": "Jäseneksi",
+    "news": "Ajankohtaista",
+    "studies": "Opiskelu",
+    "cognitiveScience": "Kognitiotiede",
+    "organization": "Yhdistys",
+    "events": "Tapahtumat",
+    "blog": "Blogi",
+    "login": "Kirjaudu",
+    "myMembership": "Jäsenyyteni"
+  },
+  "home": {
+    "hero": {
+      "title": "Intelligenzia",
+      "subtitle": "Kognitiotieteen alumnijärjestö",
+      "description": "Yhdistämme kognitiotieteen opiskelijat, tutkijat ja alan ammattilaiset vuodesta 1989.",
+      "cta": "Liity jäseneksi",
+      "learnMore": "Lue lisää"
+    }
+  },
+  "membership": {
+    "title": "Liity jäseneksi",
+    "types": {
+      "full": {
+        "title": "Varsinainen jäsen",
+        "description": "Kognitiotieteen pää- tai sivuaineopiskelijoille ja valmistuneille."
+      },
+      "support": {
+        "title": "Kannatusjäsen",
+        "description": "Kaikille kognitiotieteestä kiinnostuneille."
+      }
+    },
+    "price": "Jäsenmaksu",
+    "perYear": "/ vuosi",
+    "benefits": {
+      "title": "Jäsenedut",
+      "networking": "Verkostoituminen alan ammattilaisten kanssa",
+      "events": "Pääsy jäsentapahtumiin",
+      "newsletter": "Jäsenkirje ja ajankohtaiset uutiset",
+      "community": "Aktiivinen alumniyhteisö"
+    },
+    "join": "Liity jäseneksi",
+    "alreadyMember": "Oletko jo jäsen?",
+    "login": "Kirjaudu sisään"
+  },
+  "auth": {
+    "login": "Kirjaudu sisään",
+    "logout": "Kirjaudu ulos",
+    "email": "Sähköposti",
+    "sendMagicLink": "Lähetä kirjautumislinkki",
+    "checkEmail": "Tarkista sähköpostisi",
+    "magicLinkSent": "Lähetimme kirjautumislinkin sähköpostiisi."
+  },
+  "footer": {
+    "about": "Tietoa",
+    "contact": "Yhteystiedot",
+    "privacy": "Tietosuoja",
+    "rights": "Kaikki oikeudet pidätetään."
+  },
+  "common": {
+    "readMore": "Lue lisää",
+    "backToHome": "Takaisin etusivulle",
+    "loading": "Ladataan...",
+    "error": "Virhe",
+    "notFound": "Sivua ei löytynyt"
+  }
+}
