@@ -18,6 +18,11 @@ export async function POST(req: NextRequest) {
 
     const { membershipType, locale, customAmount } = await req.json();
 
+    // Validate locale
+    if (!['fi', 'en'].includes(locale)) {
+      return NextResponse.json({ error: 'Invalid locale' }, { status: 400 });
+    }
+
     // Validate membership type
     if (!['FULL', 'SUPPORTING'].includes(membershipType)) {
       return NextResponse.json(

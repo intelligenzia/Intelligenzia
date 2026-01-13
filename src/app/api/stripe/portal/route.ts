@@ -13,6 +13,11 @@ export async function POST(req: NextRequest) {
 
     const { locale } = await req.json();
 
+    // Validate locale
+    if (!['fi', 'en'].includes(locale)) {
+      return NextResponse.json({ error: 'Invalid locale' }, { status: 400 });
+    }
+
     // Get user's membership with Stripe customer ID
     const membership = await prisma.membership.findUnique({
       where: { userId: session.user.id },
