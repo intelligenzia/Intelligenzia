@@ -7,7 +7,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
   providers: [
     Resend({
-      from: process.env.EMAIL_FROM || 'noreply@intelligenzia.fi',
+      from: process.env.FROM_EMAIL || 'noreply@intelligenzia.fi',
     }),
   ],
   pages: {
