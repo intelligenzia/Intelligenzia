@@ -14,7 +14,7 @@ Intelligenzia (formerly Anti-Kompleksi, Simpleksi) served as the student organiz
 
 ## Board 2025
 
-The entire board can be reached by email at **intelligenzia-hallitus@helsinki.fi**
+The entire board can be reached by email at **hallitys@intelligenzia.fi**
 
 | Role | Name | Email |
 |:-----|:-----|:------|
@@ -25,9 +25,4 @@ The entire board can be reached by email at **intelligenzia-hallitus@helsinki.fi
 
 ## Contact Information
 
-### Postal Address
-
-Intelligenzia ry
-Oppimiskeskus Minerva PL 9
-00014 University of Helsinki
-Finland
+The board can be reached by email at **hallitys@intelligenzia.fi**

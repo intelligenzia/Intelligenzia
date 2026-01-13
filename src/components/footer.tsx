@@ -46,12 +46,7 @@ export function Footer() {
           <div>
             <h3 className="mb-4 font-semibold">{t('contact')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>intelligenzia-hallitus@helsinki.fi</li>
-              <li>
-                Oppimiskeskus Minerva
-                <br />
-                PL 9, 00014 Helsingin yliopisto
-              </li>
+              <li>hallitus@intelligenzia.fi</li>
             </ul>
           </div>
 

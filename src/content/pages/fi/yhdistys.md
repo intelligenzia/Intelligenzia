@@ -14,7 +14,7 @@ Intelligenzia (ent. Anti-Kompleksi, Simpleksi) toimi Helsingin yliopiston kognit
 
 ## Hallitus 2025
 
-Koko hallituksen tavoittaa sähköpostilla **intelligenzia-hallitus@helsinki.fi**
+Koko hallituksen tavoittaa sähköpostilla **hallitys@intelligenzia.fi**
 
 | Rooli | Nimi | Sähköposti |
 |:------|:-----|:-----------|
@@ -25,8 +25,4 @@ Koko hallituksen tavoittaa sähköpostilla **intelligenzia-hallitus@helsinki.fi*
 
 ## Yhteystiedot
 
-### Postiosoite
-
-Intelligenzia ry
-Oppimiskeskus Minerva PL 9
-00014 Helsingin yliopisto
+Hallituksen tavoittaa sähköpostilla **hallitys@intelligenzia.fi**

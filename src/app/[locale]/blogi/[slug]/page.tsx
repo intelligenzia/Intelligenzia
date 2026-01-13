@@ -1,8 +1,10 @@
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
-import { getBlogPost, getAllBlogPosts } from '@/lib/content';
+import { getBlogPost, getAllBlogPosts, slugify } from '@/lib/content';
 import { Markdown } from '@/components/markdown';
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/json-ld';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, User, ArrowLeft } from 'lucide-react';
@@ -25,16 +27,38 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const post = getBlogPost(slug);
 
   if (!post) {
     return {};
   }
 
+  const description = post.content.slice(0, 160).replace(/[#*_\[\]]/g, '');
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://intelligenzia.fi';
+  const ogImage = post.frontmatter.cover
+    ? `${baseUrl}/blog/${post.frontmatter.cover}`
+    : undefined;
+
   return {
     title: post.frontmatter.title,
-    description: post.content.slice(0, 160).replace(/[#*_\[\]]/g, ''),
+    description,
+    authors: post.frontmatter.author ? [{ name: post.frontmatter.author }] : undefined,
+    openGraph: {
+      title: post.frontmatter.title,
+      description,
+      type: 'article',
+      publishedTime: post.frontmatter.date,
+      authors: post.frontmatter.author ? [post.frontmatter.author] : undefined,
+      images: ogImage ? [{ url: ogImage, alt: post.frontmatter.title }] : undefined,
+      locale: locale === 'fi' ? 'fi_FI' : 'en_US',
+    },
+    twitter: {
+      card: ogImage ? 'summary_large_image' : 'summary',
+      title: post.frontmatter.title,
+      description,
+      images: ogImage ? [ogImage] : undefined,
+    },
   };
 }
 
@@ -49,43 +73,73 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   const blogPath = locale === 'fi' ? '/blogi' : '/blog';
+  const authorsPath = locale === 'fi' ? '/kirjoittajat' : '/authors';
+  const coverImage = post.frontmatter.cover;
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://intelligenzia.fi';
+
+  const breadcrumbs = [
+    { name: 'Intelligenzia', url: locale === 'fi' ? baseUrl : `${baseUrl}/en` },
+    { name: locale === 'fi' ? 'Blogi' : 'Blog', url: locale === 'fi' ? `${baseUrl}/blogi` : `${baseUrl}/en/blog` },
+    { name: post.frontmatter.title, url: locale === 'fi' ? `${baseUrl}/blogi/${post.slug}` : `${baseUrl}/en/blog/${post.slug}` },
+  ];
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <article className="mx-auto max-w-3xl">
-        <Button asChild variant="ghost" className="mb-8">
-          <Link href={blogPath}>
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            {locale === 'fi' ? 'Takaisin blogiin' : 'Back to blog'}
-          </Link>
-        </Button>
+    <>
+      <ArticleJsonLd post={post} locale={locale} />
+      <BreadcrumbJsonLd items={breadcrumbs} />
+      <div className="container mx-auto px-4 py-12">
+        <article className="mx-auto max-w-2xl">
+          <Button asChild variant="ghost" className="mb-8">
+            <Link href={blogPath}>
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              {locale === 'fi' ? 'Takaisin blogiin' : 'Back to blog'}
+            </Link>
+          </Button>
 
-        <header className="mb-8">
-          <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1">
-              <Calendar className="h-4 w-4" />
-              {formatDate(post.frontmatter.date, locale)}
-            </span>
-            {post.frontmatter.author && (
+          {/* Cover Image */}
+          {coverImage && (
+            <div className="relative mb-8 aspect-2/1 overflow-hidden rounded-lg">
+              <Image
+                src={`/blog/${coverImage}`}
+                alt={post.frontmatter.title}
+                fill
+                className="object-cover grayscale"
+                priority
+              />
+            </div>
+          )}
+
+          <header className="mb-10">
+            <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
-                <User className="h-4 w-4" />
-                {post.frontmatter.author}
+                <Calendar className="h-4 w-4" />
+                {formatDate(post.frontmatter.date, locale)}
               </span>
-            )}
-            {post.frontmatter.category && (
-              <Badge variant="secondary">{post.frontmatter.category}</Badge>
-            )}
-          </div>
-          <h1 className="text-4xl font-bold tracking-tight">
-            {post.frontmatter.title}
-          </h1>
-        </header>
+              {post.frontmatter.author && (
+                <Link
+                  href={`${authorsPath}/${slugify(post.frontmatter.author)}`}
+                  className="flex items-center gap-1 hover:text-foreground"
+                >
+                  <User className="h-4 w-4" />
+                  {post.frontmatter.author}
+                </Link>
+              )}
+              {post.frontmatter.category && (
+                <Badge variant="secondary">{post.frontmatter.category}</Badge>
+              )}
+            </div>
+            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              {post.frontmatter.title}
+            </h1>
+          </header>
 
-        <div className="prose prose-neutral dark:prose-invert max-w-none">
-          <Markdown content={post.content} />
-        </div>
-      </article>
-    </div>
+          {/* Article content with improved typography */}
+          <div className="prose-article">
+            <Markdown content={post.content} />
+          </div>
+        </article>
+      </div>
+    </>
   );
 }
 

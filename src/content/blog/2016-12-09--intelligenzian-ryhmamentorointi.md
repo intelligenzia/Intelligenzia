@@ -3,7 +3,7 @@ title: Intelligenzian ryhmämentoroinnin ilmoittautuminen starttaa nyt!
 date: 2019-09-21T17:32:21.106Z
 category: Opiskelu
 cover: mentoring.jpeg
-author: Mari Räsänen
+author: Mari Tähkä
 ---
 
 Hei kognitiotieteen opiskelija! Mikä susta tulee isona?

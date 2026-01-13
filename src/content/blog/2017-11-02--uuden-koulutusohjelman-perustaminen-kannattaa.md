@@ -2,7 +2,7 @@
 title: Uuden koulutusohjelman perustaminen kognitiotieteen ympärille kannattaa
 category: "kognitiotiede"
 cover: tekoalyjafilosofia.jpeg
-author: Mari Räsänen
+author: Mari Tähkä
 ---
 
 Kognitiotieteen opiskelijajärjestö Intelligenzia ry otti tällä viikolla kantaa sen puolesta, että kognitiotieteen koulutuksen sisäänottoa jatkettaisiin humanistisessa tiedekunnassa mahdollisimman pian. Mielestämme koulutuksen tulevaisuuden epävarmuus on jatkunut liian kauan, ja uusien opiskelijoiden puuttuminen on vahingollista tieteenalan jatkuvuudelle. Sisäänoton avaaminen olisi mahdollista perustamalla kognitiotieteelle oma opintosuunta johonkin olemassaolevaan ohjelmaan tai vaihtoehtoisesti kokonaan uuteen digitaalisten ihmistieteiden koulutusohjelmaan.

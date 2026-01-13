@@ -163,3 +163,50 @@ export function getBlogPostsByCategory(category: string): BlogPost[] {
     (post) => post.frontmatter.category?.toLowerCase() === category.toLowerCase()
   );
 }
+
+// Author utilities
+export interface Author {
+  name: string;
+  slug: string;
+  postCount: number;
+}
+
+export function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+export function getAllAuthors(): Author[] {
+  const posts = getAllBlogPosts();
+  const authorMap = new Map<string, number>();
+
+  for (const post of posts) {
+    if (post.frontmatter.author) {
+      const count = authorMap.get(post.frontmatter.author) || 0;
+      authorMap.set(post.frontmatter.author, count + 1);
+    }
+  }
+
+  return Array.from(authorMap.entries())
+    .map(([name, postCount]) => ({
+      name,
+      slug: slugify(name),
+      postCount,
+    }))
+    .sort((a, b) => b.postCount - a.postCount);
+}
+
+export function getAuthorBySlug(slug: string): Author | null {
+  const authors = getAllAuthors();
+  return authors.find((author) => author.slug === slug) || null;
+}
+
+export function getBlogPostsByAuthor(authorName: string): BlogPost[] {
+  return getAllBlogPosts().filter(
+    (post) => post.frontmatter.author === authorName
+  );
+}

@@ -1,5 +1,5 @@
 import { setRequestLocale } from 'next-intl/server';
-import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { getAllBlogPosts, getBlogCategories } from '@/lib/content';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -53,34 +53,49 @@ export default async function BlogListPage({ params }: Props) {
       </div>
 
       {/* Blog Posts Grid */}
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
           <Link key={post.slug} href={`${blogPath}/${post.slug}`}>
-            <Card className="h-full transition-colors hover:bg-muted/50">
-              <CardHeader>
+            <Card className="group h-full overflow-hidden transition-colors hover:bg-muted/50">
+              {/* Cover Image */}
+              {post.frontmatter.cover && (
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src={`/blog/${post.frontmatter.cover}`}
+                    alt={post.frontmatter.title}
+                    fill
+                    className="object-cover grayscale transition-all duration-300 group-hover:scale-105"
+                  />
+                </div>
+              )}
+              <CardHeader className="pb-3">
                 <div className="mb-2 flex items-center gap-4 text-sm text-muted-foreground">
                   <span className="flex items-center gap-1">
                     <Calendar className="h-4 w-4" />
                     {formatDate(post.frontmatter.date, locale)}
                   </span>
+                </div>
+                <CardTitle className="line-clamp-2 text-lg">
+                  {post.frontmatter.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <CardDescription className="mb-3 line-clamp-2 text-sm">
+                  {post.content.slice(0, 120).replace(/[#*_\[\]]/g, '')}...
+                </CardDescription>
+                <div className="flex items-center gap-2">
+                  {post.frontmatter.category && (
+                    <Badge variant="outline" className="text-xs">
+                      {post.frontmatter.category}
+                    </Badge>
+                  )}
                   {post.frontmatter.author && (
-                    <span className="flex items-center gap-1">
-                      <User className="h-4 w-4" />
+                    <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                      <User className="h-3 w-3" />
                       {post.frontmatter.author}
                     </span>
                   )}
                 </div>
-                <CardTitle className="line-clamp-2">{post.frontmatter.title}</CardTitle>
-                {post.frontmatter.category && (
-                  <Badge variant="outline" className="w-fit">
-                    {post.frontmatter.category}
-                  </Badge>
-                )}
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="line-clamp-3">
-                  {post.content.slice(0, 150).replace(/[#*_\[\]]/g, '')}...
-                </CardDescription>
               </CardContent>
             </Card>
           </Link>
@@ -95,7 +110,7 @@ function formatDate(dateString: string, locale: string): string {
     const date = new Date(dateString);
     return date.toLocaleDateString(locale === 'fi' ? 'fi-FI' : 'en-US', {
       year: 'numeric',
-      month: 'long',
+      month: 'short',
       day: 'numeric',
     });
   } catch {

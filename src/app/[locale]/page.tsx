@@ -1,13 +1,42 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { Brain, Users, Calendar, BookOpen, ArrowRight } from 'lucide-react';
+import { getAllBlogPosts } from '@/lib/content';
+import { OrganizationJsonLd, WebSiteJsonLd } from '@/components/json-ld';
+import type { Metadata } from 'next';
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://intelligenzia.fi';
+
+  return {
+    title: locale === 'fi'
+      ? 'Intelligenzia - Kognitiotieteen alumniyhdistys'
+      : 'Intelligenzia - Cognitive Science Alumni Society',
+    description: locale === 'fi'
+      ? 'Intelligenzia ry on kognitiotieteen alumniyhdistys Helsingin yliopistosta. Liity mukaan verkostoitumaan alan ammattilaisten kanssa.'
+      : 'Intelligenzia is a cognitive science alumni society from the University of Helsinki. Join us to network with professionals in the field.',
+    openGraph: {
+      title: 'Intelligenzia',
+      description: locale === 'fi'
+        ? 'Kognitiotieteen alumniyhdistys'
+        : 'Cognitive Science Alumni Society',
+      url: baseUrl,
+      siteName: 'Intelligenzia',
+      locale: locale === 'fi' ? 'fi_FI' : 'en_US',
+      type: 'website',
+    },
+  };
+}
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
@@ -15,9 +44,10 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
+      <OrganizationJsonLd locale={locale} />
+      <WebSiteJsonLd locale={locale} />
       <HeroSection />
-      <FeaturesSection />
-      <CTASection />
+      <MainContent />
     </>
   );
 }
@@ -29,20 +59,20 @@ function HeroSection() {
   const learnMoreHref = locale === 'fi' ? '/kognitiotiede' : '/cognitive-science';
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 py-24 md:py-32">
-      <div className="container mx-auto px-4">
+    <section className="border-b bg-muted/40">
+      <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-background px-4 py-1.5 text-sm">
             <Brain className="h-4 w-4" />
             <span>{t('subtitle')}</span>
           </div>
-          <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-6xl">
+          <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
             {t('title')}
           </h1>
-          <p className="mb-8 text-lg text-muted-foreground md:text-xl">
+          <p className="mb-8 text-lg text-muted-foreground">
             {t('description')}
           </p>
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+          <div className="flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild size="lg">
               <Link href={membershipHref}>
                 {t('cta')}
@@ -55,46 +85,44 @@ function HeroSection() {
           </div>
         </div>
       </div>
-
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute -bottom-1/2 right-0 h-[400px] w-[400px] rounded-full bg-primary/5 blur-3xl" />
-      </div>
     </section>
   );
 }
 
-function FeaturesSection() {
-  const t = useTranslations('membership.benefits');
-  const tHome = useTranslations('home');
+function MainContent() {
   const locale = useLocale();
+  const t = useTranslations('membership');
+  const tBenefits = useTranslations('membership.benefits');
+  const posts = getAllBlogPosts().slice(0, 3);
+  const blogPath = locale === 'fi' ? '/blogi' : '/blog';
+  const membershipHref = locale === 'fi' ? '/jaseneksi' : '/membership';
+  const loginHref = locale === 'fi' ? '/kirjaudu' : '/login';
 
   const features = [
     {
       icon: Users,
-      title: t('networking'),
+      title: tBenefits('networking'),
       description: locale === 'fi'
         ? 'Tapaa alan ammattilaisia ja laajenna verkostoasi.'
         : 'Meet professionals in the field and expand your network.',
     },
     {
       icon: Calendar,
-      title: t('events'),
+      title: tBenefits('events'),
       description: locale === 'fi'
         ? 'Osallistu jäsentapahtumiin ja seminaareihin.'
         : 'Participate in member events and seminars.',
     },
     {
       icon: BookOpen,
-      title: t('newsletter'),
+      title: tBenefits('newsletter'),
       description: locale === 'fi'
         ? 'Pysy ajan tasalla alan kehityksestä.'
         : 'Stay up to date with developments in the field.',
     },
     {
       icon: Brain,
-      title: t('community'),
+      title: tBenefits('community'),
       description: locale === 'fi'
         ? 'Liity aktiiviseen kognitiotieteen yhteisöön.'
         : 'Join an active cognitive science community.',
@@ -102,60 +130,145 @@ function FeaturesSection() {
   ];
 
   return (
-    <section className="py-24">
-      <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold">{t('title')}</h2>
-          <p className="text-muted-foreground">
-            {locale === 'fi'
-              ? 'Miksi liittyä Intelligenzian jäseneksi?'
-              : 'Why join Intelligenzia?'}
-          </p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, index) => (
-            <Card key={index} className="border-0 bg-muted/50">
+    <div className="container mx-auto px-4 py-12">
+      <div className="grid gap-12 lg:grid-cols-3 lg:gap-8">
+        {/* Main column - News + Blog */}
+        <div className="lg:col-span-2 space-y-12">
+          {/* News announcement */}
+          <section>
+            <h2 className="mb-6 text-xl font-semibold">
+              {locale === 'fi' ? 'Ajankohtaista' : 'News'}
+            </h2>
+            <Card>
               <CardHeader>
-                <feature.icon className="mb-2 h-10 w-10 text-primary" />
-                <CardTitle className="text-lg">{feature.title}</CardTitle>
+                <CardTitle>
+                  {locale === 'fi'
+                    ? 'Intelligenzia on nyt kognitiotieteen alumniyhdistys'
+                    : 'Intelligenzia is now a cognitive science alumni society'}
+                </CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription>{feature.description}</CardDescription>
+              <CardContent className="space-y-4 text-muted-foreground">
+                {locale === 'fi' ? (
+                  <p>
+                    Intelligenzia on virallisesti valmistunut! Syyskuussa 2021 voimaan tulleen sääntömuutoksen myötä Intelligenzia ry muuttui kognitiotieteen ainejärjestöstä alumniyhdistykseksi. Päätöksen taustalla oli alumnien toive tiiviimmästä yhteisöstä ja halu säilyttää Intelligenzian tärkeät perinteet.
+                  </p>
+                ) : (
+                  <p>
+                    Intelligenzia has officially graduated! Following the rule change in September 2021, Intelligenzia ry transformed from a student organization into an alumni society. The decision was driven by alumni&apos;s desire for a closer community.
+                  </p>
+                )}
+                <Button asChild variant="outline" size="sm">
+                  <Link href={membershipHref}>
+                    {locale === 'fi' ? 'Lue lisää jäsenyydestä' : 'Learn more about membership'}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </CardContent>
             </Card>
-          ))}
+          </section>
+
+          {/* Blog posts */}
+          <section>
+            <div className="mb-6 flex items-center justify-between">
+              <h2 className="text-xl font-semibold">
+                {locale === 'fi' ? 'Blogista' : 'From the blog'}
+              </h2>
+              <Button asChild variant="ghost" size="sm">
+                <Link href={blogPath}>
+                  {locale === 'fi' ? 'Kaikki' : 'All posts'}
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {posts.map((post) => (
+                <Link key={post.slug} href={`${blogPath}/${post.slug}`}>
+                  <Card className="group h-full overflow-hidden transition-colors hover:bg-muted/50">
+                    {post.frontmatter.cover && (
+                      <div className="relative aspect-video overflow-hidden">
+                        <Image
+                          src={`/blog/${post.frontmatter.cover}`}
+                          alt={post.frontmatter.title}
+                          fill
+                          className="object-cover grayscale transition-all duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                    )}
+                    <CardHeader className="p-4 pb-2">
+                      <p className="mb-1 text-xs text-muted-foreground">
+                        {formatDate(post.frontmatter.date, locale)}
+                        {post.frontmatter.author && ` · ${post.frontmatter.author}`}
+                      </p>
+                      <CardTitle className="line-clamp-2 text-base">
+                        {post.frontmatter.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-4 pt-0">
+                      <CardDescription className="line-clamp-2 text-sm">
+                        {post.content.slice(0, 100).replace(/[#*_\[\]]/g, '')}...
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </section>
         </div>
+
+        {/* Sidebar - Benefits + CTA */}
+        <aside className="space-y-8">
+          {/* Benefits */}
+          <section>
+            <h2 className="mb-4 text-xl font-semibold">{tBenefits('title')}</h2>
+            <div className="space-y-4">
+              {features.map((feature, index) => (
+                <div key={index} className="flex gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-muted">
+                    <feature.icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium">{feature.title}</h3>
+                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* CTA */}
+          <Card className="bg-muted/50">
+            <CardHeader>
+              <CardTitle className="text-lg">{t('title')}</CardTitle>
+              <CardDescription>
+                {locale === 'fi'
+                  ? 'Liity mukaan kognitiotieteen alumniyhteisöön.'
+                  : 'Join the cognitive science alumni community.'}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <Button asChild className="w-full">
+                <Link href={membershipHref}>{t('join')}</Link>
+              </Button>
+              <Button asChild variant="outline" className="w-full">
+                <Link href={loginHref}>{t('login')}</Link>
+              </Button>
+            </CardContent>
+          </Card>
+        </aside>
       </div>
-    </section>
+    </div>
   );
 }
 
-function CTASection() {
-  const t = useTranslations('membership');
-  const locale = useLocale();
-  const membershipHref = locale === 'fi' ? '/jaseneksi' : '/membership';
-  const loginHref = locale === 'fi' ? '/kirjaudu' : '/login';
-
-  return (
-    <section className="bg-muted/50 py-24">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="mb-4 text-3xl font-bold">{t('title')}</h2>
-          <p className="mb-8 text-muted-foreground">
-            {locale === 'fi'
-              ? 'Liity mukaan kognitiotieteen alumniyhteisöön ja verkostoidu alan ammattilaisten kanssa.'
-              : 'Join the cognitive science alumni community and network with professionals in the field.'}
-          </p>
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg">
-              <Link href={membershipHref}>{t('join')}</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href={loginHref}>{t('login')}</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+function formatDate(dateString: string, locale: string): string {
+  try {
+    const date = new Date(dateString);
+    return date.toLocaleDateString(locale === 'fi' ? 'fi-FI' : 'en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
+  } catch {
+    return dateString;
+  }
 }
