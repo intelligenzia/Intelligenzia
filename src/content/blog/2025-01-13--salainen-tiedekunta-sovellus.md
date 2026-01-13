@@ -1,11 +1,9 @@
 ---
-title: Maisteriohjelman haku on auki
+title: Mistä löydän Salaisen Tiedekunnan?
 category: kognitiotiede
-cover: two.jpg
+cover: cover.jpeg
 author: Perttu Lähteenlahti
 ---
-
-# Salainen Tiedekunta – yliopiston kiehtovin salaisuus
 
 Helsingin yliopistolla on tiedekuntia, laitoksia ja tutkimusryhmiä, joista jokaisella on oma historiansa, identiteettinsä ja byrokratiansa. Ja sitten on **Salainen Tiedekunta**.
 
