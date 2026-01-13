@@ -1,0 +1,13 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://intelligenzia.fi/sitemap.xml
+
+# Disallow API routes and auth pages
+Disallow: /api/
+Disallow: /*/kirjaudu/
+Disallow: /*/login/
+Disallow: /*/jasenyyys
+Disallow: /*/my-membership
