@@ -5,7 +5,7 @@ import { Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Brain, Users, Calendar, BookOpen, ArrowRight } from 'lucide-react';
+import { Users, Calendar, BookOpen, ArrowRight, Lightbulb } from 'lucide-react';
 import { getAllBlogPosts } from '@/lib/content';
 import { OrganizationJsonLd, WebSiteJsonLd } from '@/components/json-ld';
 import type { Metadata } from 'next';
@@ -63,7 +63,7 @@ function HeroSection() {
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-background px-4 py-1.5 text-sm">
-            <Brain className="h-4 w-4" />
+            <Image src="/icon.png" alt="" width={16} height={16} className="dark:invert" />
             <span>{t('subtitle')}</span>
           </div>
           <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
@@ -121,7 +121,7 @@ function MainContent() {
         : 'Stay up to date with developments in the field.',
     },
     {
-      icon: Brain,
+      icon: Lightbulb,
       title: tBenefits('community'),
       description: locale === 'fi'
         ? 'Liity aktiiviseen kognitiotieteen yhteisöön.'

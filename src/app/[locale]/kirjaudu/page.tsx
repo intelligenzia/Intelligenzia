@@ -8,7 +8,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Brain, Mail, ArrowLeft } from 'lucide-react';
+import { Mail, ArrowLeft } from 'lucide-react';
+import Image from 'next/image';
 
 export default function LoginPage() {
   const t = useTranslations('auth');
@@ -37,7 +38,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1 text-center">
           <div className="mb-4 flex justify-center">
-            <Brain className="h-12 w-12" />
+            <Image src="/icon.png" alt="Intelligenzia" width={48} height={48} className="dark:invert" />
           </div>
           <CardTitle className="text-2xl">{t('login')}</CardTitle>
           <CardDescription>

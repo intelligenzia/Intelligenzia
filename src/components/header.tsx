@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { LocaleSwitcher } from '@/components/locale-switcher';
-import { Menu, Brain } from 'lucide-react';
+import { Menu } from 'lucide-react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { navItems } from '@/lib/page-mapping';
 
@@ -21,7 +22,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
-          <Brain className="h-6 w-6" />
+          <Image src="/icon.png" alt="Intelligenzia" width={24} height={24} className="dark:invert" />
           <span className="font-semibold">Intelligenzia</span>
         </Link>
 

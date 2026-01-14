@@ -1,7 +1,7 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Brain } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 type Props = {
   params: Promise<{ locale: string }>;

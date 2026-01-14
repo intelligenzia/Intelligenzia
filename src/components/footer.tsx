@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { Brain } from 'lucide-react';
+import Image from 'next/image';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-4">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <Brain className="h-6 w-6" />
+              <Image src="/icon.png" alt="Intelligenzia" width={24} height={24} className="dark:invert" />
               <span className="font-semibold">Intelligenzia</span>
             </Link>
             <p className="text-sm text-muted-foreground">
