@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^5.15.5",
+    "@parcel/watcher": "^2.5.4",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
