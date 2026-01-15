@@ -35,17 +35,48 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const messages = await getMessages();
   const metadata = messages.metadata as { title: string; description: string };
 
+  const siteUrl = 'https://intelligenzia.fi';
+
   return {
     title: {
       default: metadata.title,
       template: `%s | ${metadata.title}`,
     },
     description: metadata.description,
+    keywords: locale === 'fi'
+      ? ['kognitiotiede', 'alumnit', 'Helsingin yliopisto', 'aivotutkimus', 'tekoäly', 'kognitiivinen tiede']
+      : ['cognitive science', 'alumni', 'University of Helsinki', 'brain research', 'AI', 'cognitive science'],
+    authors: [{ name: 'Intelligenzia ry' }],
+    creator: 'Intelligenzia ry',
+    metadataBase: new URL(siteUrl),
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        'fi': '/fi',
+        'en': '/en',
+      },
+    },
     openGraph: {
       title: metadata.title,
       description: metadata.description,
+      url: `${siteUrl}/${locale}`,
+      siteName: 'Intelligenzia',
       locale: locale === 'fi' ? 'fi_FI' : 'en_US',
+      alternateLocale: locale === 'fi' ? 'en_US' : 'fi_FI',
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: metadata.title,
+      description: metadata.description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
     },
   };
 }
