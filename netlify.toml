@@ -1,9 +1,10 @@
 [build]
-  command = "npm run build"
+  command = "bun install && bun run build"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
+  BUN_VERSION = "1"
 
 # Next.js requires the Netlify Next.js Runtime
 [[plugins]]
