@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
-
-export const runtime = 'edge';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 
 export const alt = 'Intelligenzia – Kognitiotieteen alumnijärjestö';
 export const size = {
@@ -10,6 +10,11 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
+  // Read the logo file
+  const logoPath = join(process.cwd(), 'public', 'icon.png');
+  const logoData = await readFile(logoPath);
+  const logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`;
+
   return new ImageResponse(
     (
       <div
@@ -24,7 +29,7 @@ export default async function Image() {
           fontFamily: 'system-ui, sans-serif',
         }}
       >
-        {/* Logo placeholder - brain with circuits */}
+        {/* Logo */}
         <div
           style={{
             display: 'flex',
@@ -33,33 +38,16 @@ export default async function Image() {
             marginBottom: 40,
           }}
         >
-          <svg
-            width="150"
-            height="150"
-            viewBox="0 0 512 512"
-            fill="none"
-            style={{ marginRight: 30 }}
-          >
-            {/* Simplified brain icon */}
-            <circle cx="256" cy="256" r="240" fill="#1a1a1a" />
-            <path
-              d="M180 200 Q200 150 260 160 Q320 170 340 220 Q360 270 340 320 Q320 370 260 380 Q200 390 180 340 Q160 290 180 240 Z"
-              fill="#ffffff"
-            />
-            <path
-              d="M220 180 L220 140 M260 160 L280 120 M300 180 L340 150"
-              stroke="#ffffff"
-              strokeWidth="8"
-            />
-            <circle cx="220" cy="260" r="20" fill="#1a1a1a" />
-            <circle cx="280" cy="240" r="15" fill="#1a1a1a" />
-            <circle cx="260" cy="300" r="18" fill="#1a1a1a" />
-            <path
-              d="M220 260 L280 240 M280 240 L260 300 M260 300 L220 260"
-              stroke="#1a1a1a"
-              strokeWidth="3"
-            />
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={logoBase64}
+            alt="Intelligenzia logo"
+            width={180}
+            height={180}
+            style={{
+              objectFit: 'contain',
+            }}
+          />
         </div>
 
         {/* Title */}

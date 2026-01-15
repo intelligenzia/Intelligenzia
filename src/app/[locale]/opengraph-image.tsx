@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
-
-export const runtime = 'edge';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 
 export const alt = 'Intelligenzia – Kognitiotieteen alumnijärjestö';
 export const size = {
@@ -21,6 +21,11 @@ export default async function Image({ params }: { params: { locale: string } }) 
     ? 'Est. 1989 • University of Helsinki'
     : 'Per. 1989 • Helsingin yliopisto';
 
+  // Read the logo file
+  const logoPath = join(process.cwd(), 'public', 'icon.png');
+  const logoData = await readFile(logoPath);
+  const logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`;
+
   return new ImageResponse(
     (
       <div
@@ -35,7 +40,7 @@ export default async function Image({ params }: { params: { locale: string } }) 
           fontFamily: 'system-ui, sans-serif',
         }}
       >
-        {/* Abstract brain/network visualization */}
+        {/* Logo */}
         <div
           style={{
             display: 'flex',
@@ -44,24 +49,16 @@ export default async function Image({ params }: { params: { locale: string } }) 
             marginBottom: 40,
           }}
         >
-          <svg width="120" height="120" viewBox="0 0 100 100" fill="none">
-            {/* Network nodes representing cognitive science */}
-            <circle cx="50" cy="20" r="8" fill="#1a1a1a" />
-            <circle cx="20" cy="50" r="8" fill="#1a1a1a" />
-            <circle cx="80" cy="50" r="8" fill="#1a1a1a" />
-            <circle cx="35" cy="80" r="8" fill="#1a1a1a" />
-            <circle cx="65" cy="80" r="8" fill="#1a1a1a" />
-            <circle cx="50" cy="50" r="12" fill="#1a1a1a" />
-            {/* Connections */}
-            <line x1="50" y1="20" x2="50" y2="50" stroke="#1a1a1a" strokeWidth="2" />
-            <line x1="20" y1="50" x2="50" y2="50" stroke="#1a1a1a" strokeWidth="2" />
-            <line x1="80" y1="50" x2="50" y2="50" stroke="#1a1a1a" strokeWidth="2" />
-            <line x1="35" y1="80" x2="50" y2="50" stroke="#1a1a1a" strokeWidth="2" />
-            <line x1="65" y1="80" x2="50" y2="50" stroke="#1a1a1a" strokeWidth="2" />
-            <line x1="20" y1="50" x2="35" y2="80" stroke="#1a1a1a" strokeWidth="1.5" />
-            <line x1="80" y1="50" x2="65" y2="80" stroke="#1a1a1a" strokeWidth="1.5" />
-            <line x1="35" y1="80" x2="65" y2="80" stroke="#1a1a1a" strokeWidth="1.5" />
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={logoBase64}
+            alt="Intelligenzia logo"
+            width={180}
+            height={180}
+            style={{
+              objectFit: 'contain',
+            }}
+          />
         </div>
 
         {/* Title */}
