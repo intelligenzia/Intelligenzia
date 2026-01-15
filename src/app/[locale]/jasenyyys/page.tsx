@@ -12,9 +12,10 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { User, Calendar, CreditCard, CheckCircle } from 'lucide-react';
+import { User, Calendar, CreditCard, CheckCircle, ExternalLink } from 'lucide-react';
 import { SignOutButton } from '@/components/sign-out-button';
 import { ManageSubscriptionButton } from '@/components/manage-subscription-button';
+import { EditNameForm } from '@/components/edit-name-form';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -130,12 +131,10 @@ export default async function MembershipDashboardPage({
                 <p className="text-sm text-muted-foreground">{text.email}</p>
                 <p className="font-medium">{session.user.email}</p>
               </div>
-              {session.user.name && (
-                <div>
-                  <p className="text-sm text-muted-foreground">{text.name}</p>
-                  <p className="font-medium">{session.user.name}</p>
-                </div>
-              )}
+              <div>
+                <p className="text-sm text-muted-foreground">{text.name}</p>
+                <EditNameForm currentName={session.user.name || null} locale={locale} />
+              </div>
             </CardContent>
           </Card>
 

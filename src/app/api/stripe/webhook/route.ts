@@ -42,6 +42,7 @@ export async function POST(req: NextRequest) {
       case 'checkout.session.completed': {
         const session = event.data.object as Stripe.Checkout.Session;
         const customerId = session.customer as string;
+        const amountTotal = session.amount_total || 0;
 
         if (session.mode === 'subscription') {
           // Full membership - subscription
@@ -55,6 +56,8 @@ export async function POST(req: NextRequest) {
             data: {
               status: 'ACTIVE',
               type: 'FULL',
+              stripeSubscriptionId: subscriptionId,
+              amountPaid: amountTotal,
               currentPeriodEnd: getSubscriptionPeriodEnd(subscription),
             },
           });
@@ -69,6 +72,7 @@ export async function POST(req: NextRequest) {
             data: {
               status: 'ACTIVE',
               type: 'SUPPORTING',
+              amountPaid: amountTotal,
               currentPeriodEnd: oneYearFromNow,
             },
           });

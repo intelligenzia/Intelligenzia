@@ -131,14 +131,14 @@ export function MembershipCheckout({ locale, isLoggedIn }: Props) {
   }
 
   return (
-    <div className="mx-auto max-w-3xl space-y-8">
+    <div className="mx-auto max-w-4xl space-y-8">
       <RadioGroup
         value={membershipType}
         onValueChange={(value) => setMembershipType(value as 'FULL' | 'SUPPORTING')}
-        className="grid gap-4 md:grid-cols-2"
+        className="grid grid-cols-1 gap-6 sm:grid-cols-2"
       >
         {/* Full Membership Card */}
-        <Label htmlFor="full" className="cursor-pointer">
+        <Label htmlFor="full" className="block cursor-pointer">
           <Card className={`relative h-full transition-all ${membershipType === 'FULL' ? 'border-primary ring-2 ring-primary' : 'hover:border-primary/50'}`}>
             <CardHeader>
               <div className="flex items-center justify-between">
@@ -159,7 +159,7 @@ export function MembershipCheckout({ locale, isLoggedIn }: Props) {
         </Label>
 
         {/* Supporting Membership Card */}
-        <Label htmlFor="supporting" className="cursor-pointer">
+        <Label htmlFor="supporting" className="block cursor-pointer">
           <Card className={`relative h-full transition-all ${membershipType === 'SUPPORTING' ? 'border-primary ring-2 ring-primary' : 'hover:border-primary/50'}`}>
             <CardHeader>
               <div className="flex items-center justify-between">

@@ -8,6 +8,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { UmamiAnalytics } from '@/components/analytics';
+import { auth } from '@/lib/auth';
 import './globals.css';
 
 const geistSans = Geist({
@@ -58,6 +59,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const session = await auth();
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -75,7 +77,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         >
           <NextIntlClientProvider messages={messages}>
             <div className="relative flex min-h-screen flex-col">
-              <Header />
+              <Header user={session?.user} />
               <main className="flex-1">{children}</main>
               <Footer />
             </div>

@@ -35,7 +35,7 @@ export const navItems = {
     { href: '/blogi', labelKey: 'blog' },
   ],
   en: [
-    { href: '/membership', labelKey: 'membership' },
+    { href: '/join', labelKey: 'membership' },
     { href: '/studies', labelKey: 'studies' },
     { href: '/cognitive-science', labelKey: 'cognitiveScience' },
     { href: '/organization', labelKey: 'organization' },

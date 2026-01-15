@@ -14,15 +14,16 @@ Intelligenzia (formerly Anti-Kompleksi, Simpleksi) served as the student organiz
 
 ## Board 2025
 
-The entire board can be reached by email at **hallitys@intelligenzia.fi**
+The entire board can be reached by email at ** hallitus@intelligenzia.fi**
 
 | Role | Name | Email |
 |:-----|:-----|:------|
-| **Chair** | Julia Kylmälä | julia.kylmala@intelligenzia.fi |
-| **Vice Chair** | Johanna Reinikainen | johanna.reinikainen@intelligenzia.fi |
-| **Treasurer** | Perttu Lähteenlahti | perttu@intelligenzia.fi |
-| **Secretary** | Sara Väätäjä | sara.vaataja@intelligenzia.fi |
+| **Puheenjohtaja** | Mari Tähkä | mari@intelligenzia.fi |
+| **Varapuheenjohtaja** | Pietari Nurmi | pietari@intelligenzia.fi |
+| **Rahastonhoitaja** | Perttu Lähteenlahti | perttu@intelligenzia.fi |
+| **Sihteeri** | Sara Väätäjä | sara.vaataja@intelligenzia.fi |
+
 
 ## Contact Information
 
-The board can be reached by email at **hallitys@intelligenzia.fi**
+The board can be reached by email at ** hallitus@intelligenzia.fi**

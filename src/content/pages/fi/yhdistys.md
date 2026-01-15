@@ -14,15 +14,15 @@ Intelligenzia (ent. Anti-Kompleksi, Simpleksi) toimi Helsingin yliopiston kognit
 
 ## Hallitus 2025
 
-Koko hallituksen tavoittaa sähköpostilla **hallitys@intelligenzia.fi**
+Koko hallituksen tavoittaa sähköpostilla ** hallitus@intelligenzia.fi**
 
 | Rooli | Nimi | Sähköposti |
 |:------|:-----|:-----------|
-| **Puheenjohtaja** | Julia Kylmälä | julia.kylmala@intelligenzia.fi |
-| **Varapuheenjohtaja** | Johanna Reinikainen | johanna.reinikainen@intelligenzia.fi |
+| **Puheenjohtaja** | Mari Tähkä | mari@intelligenzia.fi |
+| **Varapuheenjohtaja** | Pietari Nurmi | pietari@intelligenzia.fi |
 | **Rahastonhoitaja** | Perttu Lähteenlahti | perttu@intelligenzia.fi |
 | **Sihteeri** | Sara Väätäjä | sara.vaataja@intelligenzia.fi |
 
 ## Yhteystiedot
 
-Hallituksen tavoittaa sähköpostilla **hallitys@intelligenzia.fi**
+Hallituksen tavoittaa sähköpostilla ** hallitus@intelligenzia.fi**

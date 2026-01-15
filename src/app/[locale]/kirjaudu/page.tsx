@@ -24,7 +24,7 @@ export default function LoginPage() {
     try {
       await signIn('resend', {
         email,
-        callbackUrl: locale === 'fi' ? '/fi/jasenyyys' : '/en/membership',
+        callbackUrl: locale === 'fi' ? '/fi/jasenyyys' : '/en/join',
       });
     } catch (error) {
       console.error('Sign in error:', error);
