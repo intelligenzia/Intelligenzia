@@ -17,6 +17,8 @@ export interface BlogFrontmatter {
   category: string;
   cover?: string;
   description?: string;
+  keywords?: string[];
+  locale?: string;
 }
 
 export interface Page {

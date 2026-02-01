@@ -34,16 +34,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
-  const description = post.content.slice(0, 160).replace(/[#*_\[\]]/g, '');
+  // Use frontmatter description if available, otherwise extract from content
+  const description = post.frontmatter.description ||
+    post.content.slice(0, 160).replace(/[#*_\[\]]/g, '').trim();
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://intelligenzia.fi';
   const ogImage = post.frontmatter.cover
     ? `${baseUrl}/blog/${post.frontmatter.cover}`
     : undefined;
+  const canonicalUrl = locale === 'fi'
+    ? `${baseUrl}/fi/blogi/${slug}`
+    : `${baseUrl}/en/blog/${slug}`;
 
   return {
     title: post.frontmatter.title,
     description,
+    keywords: post.frontmatter.keywords || undefined,
     authors: post.frontmatter.author ? [{ name: post.frontmatter.author }] : undefined,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'fi': `${baseUrl}/fi/blogi/${slug}`,
+        'en': `${baseUrl}/en/blog/${slug}`,
+      },
+    },
     openGraph: {
       title: post.frontmatter.title,
       description,
@@ -52,9 +65,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       authors: post.frontmatter.author ? [post.frontmatter.author] : undefined,
       images: ogImage ? [{ url: ogImage, alt: post.frontmatter.title }] : undefined,
       locale: locale === 'fi' ? 'fi_FI' : 'en_US',
+      url: canonicalUrl,
+      siteName: 'Intelligenzia',
     },
     twitter: {
-      card: ogImage ? 'summary_large_image' : 'summary',
+      card: 'summary_large_image',
       title: post.frontmatter.title,
       description,
       images: ogImage ? [ogImage] : undefined,
