@@ -6,13 +6,17 @@ description: Information about studying cognitive science at the University of H
 
 ## Studies
 
+Cognitive science can be studied at several universities in Finland. This page provides a brief overview – for a comprehensive guide to study opportunities, see [Studying Cognitive Science in Finland](/en/study-cognitive-science-finland).
+
 ### Cognitive Science as a Major
 
 Intelligenzia ry does not provide admission or study counseling for cognitive science, but we're happy to share tips and experiences about studying cognitive science. You can reach us at [hallitus@intelligenzia.fi](mailto:hallitus@intelligenzia.fi)
 
 ### Master's Degree in Cognitive Science
 
-You can complete a Master's degree in cognitive science in the University of Helsinki's Linguistic Diversity and Digital Humanities (LingDig) Master's programme, where cognitive science is one of the available study tracks. The degree is taught in English. You can apply to the programme through the international Master's programme admission in December-January. More information about admission requirements and deadlines can be found on the programme's website.
+You can complete a Master's degree in cognitive science in the [University of Helsinki's](/en/cognitive-science-university-of-helsinki) Linguistic Diversity and Digital Humanities (LingDig) Master's programme, where cognitive science is one of the available study tracks. The degree is taught in English. You can apply to the programme through the international Master's programme admission in December-January. More information about admission requirements and deadlines can be found on the programme's website.
+
+[Aalto University](/en/cognitive-science-aalto-university) also offers opportunities to study cognitive science-related topics, particularly computational neuroscience and human-computer interaction.
 
 If you're already studying in a Bachelor's programme at the University of Helsinki, first check in Sisu whether the LingDig Master's programme is one of your Master's options. In this case, you can continue directly to the LingDig programme after your Bachelor's degree, provided you have completed the required cognitive science courses. More information about choosing a Master's option and selection criteria can be found on the university's website.
 
@@ -21,3 +25,13 @@ If you have questions about cognitive science studies or choosing a Master's opt
 ### Cognitive Science as Elective Studies
 
 Cognitive science can be combined with almost any field and offers depth and perspective to studies in psychology, computer science, linguistics, phonetics, digital humanities, philosophy, mathematics, biology, or even education or bioinformation technology. It provides a broad perspective on the mind and various information processing mechanisms and offers excellent tools for interdisciplinary interaction in working life as well.
+
+Wondering how cognitive science differs from psychology? Read the [comparison between cognitive science and psychology](/en/cognitive-science-vs-psychology).
+
+## Read More
+
+- [Studying Cognitive Science in Finland](/en/study-cognitive-science-finland) – Comprehensive guide to study opportunities
+- [Cognitive Science at University of Helsinki](/en/cognitive-science-university-of-helsinki) – Details about the Helsinki program
+- [Cognitive Science at Aalto University](/en/cognitive-science-aalto-university) – Computational and neuroscientific perspective
+- [Cognitive Science Careers](/en/cognitive-science-careers) – Where do studies lead?
+- [What Is Cognitive Science?](/en/what-is-cognitive-science) – Basic information about the field

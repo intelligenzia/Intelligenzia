@@ -11,6 +11,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'intelligenzia.fi',
       },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+      },
     ],
   },
   // Handle trailing slashes consistently
@@ -34,10 +42,10 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
-      // Old privacy policy -> homepage (or create a new page if needed)
+      // Old privacy policy URL (without locale) -> new page
       {
         source: '/tietosuoja',
-        destination: '/fi',
+        destination: '/fi/tietosuoja',
         permanent: true,
       },
       // Malformed URLs with email addresses in path -> redirect to blog post

@@ -18,7 +18,6 @@ export interface BlogFrontmatter {
   cover?: string;
   description?: string;
   keywords?: string[];
-  locale?: string;
 }
 
 export interface Page {
@@ -68,17 +67,9 @@ export function getAllPages(locale: string): Page[] {
     .filter(Boolean);
 }
 
-// Extract the readable slug from the filename (removes date prefix)
-function getSlugFromFilename(filename: string): string {
-  // Remove .md extension and date prefix (e.g., "2019-12-04--")
-  const withoutExtension = filename.replace(/\.md$/, '');
-  const match = withoutExtension.match(/^\d{4}-\d{2}-\d{2}--(.+)$/);
-  return match ? match[1] : withoutExtension;
-}
-
-// Get all blog post files
-function getBlogFiles(): string[] {
-  const blogDir = path.join(contentDirectory, 'blog');
+// Get all blog post files for a specific locale
+function getBlogFiles(locale: string): string[] {
+  const blogDir = path.join(contentDirectory, 'blog', locale);
 
   if (!fs.existsSync(blogDir)) {
     return [];
@@ -89,43 +80,39 @@ function getBlogFiles(): string[] {
     .filter((file) => file.endsWith('.md'));
 }
 
-// Find the original filename for a given slug
-function findBlogFilename(slug: string): string | null {
-  const files = getBlogFiles();
+// Get slug from filename (just remove .md extension)
+function getSlugFromFilename(filename: string): string {
+  return filename.replace(/\.md$/, '');
+}
 
-  // First, try exact match
+// Find the filename for a given slug in a specific locale
+function findBlogFilename(locale: string, slug: string): string | null {
+  const files = getBlogFiles(locale);
+
   if (files.includes(`${slug}.md`)) {
     return `${slug}.md`;
-  }
-
-  // Then, try to find by slug (without date prefix)
-  for (const file of files) {
-    if (getSlugFromFilename(file) === slug) {
-      return file;
-    }
   }
 
   return null;
 }
 
-export function getBlogPost(slug: string): BlogPost | null {
-  const filename = findBlogFilename(slug);
+export function getBlogPost(locale: string, slug: string): BlogPost | null {
+  const filename = findBlogFilename(locale, slug);
 
   if (!filename) {
     return null;
   }
 
-  const filePath = path.join(contentDirectory, 'blog', filename);
+  const filePath = path.join(contentDirectory, 'blog', locale, filename);
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  // Extract date from filename if not in frontmatter
+  // Format date if it's a Date object
   let date = data.date;
-  if (!date) {
-    const dateMatch = filename.match(/^(\d{4}-\d{2}-\d{2})/);
-    if (dateMatch) {
-      date = dateMatch[1];
-    }
+  if (date instanceof Date) {
+    date = date.toISOString().split('T')[0];
+  } else if (typeof date === 'string' && date.includes('T')) {
+    date = date.split('T')[0];
   }
 
   return {
@@ -138,13 +125,13 @@ export function getBlogPost(slug: string): BlogPost | null {
   };
 }
 
-export function getAllBlogPosts(): BlogPost[] {
-  const files = getBlogFiles();
+export function getAllBlogPosts(locale: string): BlogPost[] {
+  const files = getBlogFiles(locale);
 
   return files
     .map((file) => {
       const slug = getSlugFromFilename(file);
-      return getBlogPost(slug)!;
+      return getBlogPost(locale, slug)!;
     })
     .filter(Boolean)
     .sort((a, b) => {
@@ -154,14 +141,14 @@ export function getAllBlogPosts(): BlogPost[] {
     });
 }
 
-export function getBlogCategories(): string[] {
-  const posts = getAllBlogPosts();
+export function getBlogCategories(locale: string): string[] {
+  const posts = getAllBlogPosts(locale);
   const categories = new Set(posts.map((post) => post.frontmatter.category).filter(Boolean));
   return Array.from(categories);
 }
 
-export function getBlogPostsByCategory(category: string): BlogPost[] {
-  return getAllBlogPosts().filter(
+export function getBlogPostsByCategory(locale: string, category: string): BlogPost[] {
+  return getAllBlogPosts(locale).filter(
     (post) => post.frontmatter.category?.toLowerCase() === category.toLowerCase()
   );
 }
@@ -182,8 +169,8 @@ export function slugify(text: string): string {
     .replace(/(^-|-$)/g, '');
 }
 
-export function getAllAuthors(): Author[] {
-  const posts = getAllBlogPosts();
+export function getAllAuthors(locale: string): Author[] {
+  const posts = getAllBlogPosts(locale);
   const authorMap = new Map<string, number>();
 
   for (const post of posts) {
@@ -202,13 +189,13 @@ export function getAllAuthors(): Author[] {
     .sort((a, b) => b.postCount - a.postCount);
 }
 
-export function getAuthorBySlug(slug: string): Author | null {
-  const authors = getAllAuthors();
+export function getAuthorBySlug(locale: string, slug: string): Author | null {
+  const authors = getAllAuthors(locale);
   return authors.find((author) => author.slug === slug) || null;
 }
 
-export function getBlogPostsByAuthor(authorName: string): BlogPost[] {
-  return getAllBlogPosts().filter(
+export function getBlogPostsByAuthor(locale: string, authorName: string): BlogPost[] {
+  return getAllBlogPosts(locale).filter(
     (post) => post.frontmatter.author === authorName
   );
 }

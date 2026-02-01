@@ -8,22 +8,26 @@ description: What is cognitive science and how is it studied at the University o
 
 Cognitive science is a field that studies information phenomena related to the mind and brain, such as perception, learning, memory, thinking, language, and concepts. What these phenomena have in common is that they can all be considered forms of intelligent information processing.
 
-These traditional research subjects also belong to related fields such as psychology, neuroscience, philosophy, and linguistics. What distinguishes cognitive science is the pursuit of natural scientific and mathematical precision in modeling phenomena. The connection between cognitive science and artificial intelligence and computer science has traditionally been closer than in related fields.
+These traditional research subjects also belong to related fields such as psychology, neuroscience, philosophy, and linguistics. What distinguishes cognitive science is the pursuit of natural scientific and mathematical precision in modeling phenomena. The connection between cognitive science and [artificial intelligence](/en/ai-and-cognitive-science) and computer science has traditionally been closer than in related fields.
 
-Research is based on empirical natural scientific research methods, such as behavioral experiments and neuroscience methods, as well as computational and mathematical modeling.
+Research is based on empirical natural scientific research methods, such as behavioral experiments and [neuroscience](/en/neuroscience-and-cognition) methods, as well as computational and mathematical modeling.
+
+Read more: [What is Cognitive Science?](/en/what-is-cognitive-science) – a comprehensive introduction to the field.
 
 ### Big Questions
 
 Cognitive science also includes many big questions at the intersection of philosophy of mind, philosophy of psychology, and philosophy of AI:
 
 - How does the picture of the external world formed by the human brain differ from objective physical reality? What is their relationship?
-- How are consciousness and mental contents realized in the neurophysiological and computational mechanisms of the brain?
+- How are [consciousness](/en/consciousness-cognitive-science) and mental contents realized in the neurophysiological and computational mechanisms of the brain?
 - How has human evolution led to the human brain developing to process information in this particular way?
 - Where do the limits of human mind or machine cognition lie? Do completely insurmountable limits even exist?
 
+How does cognitive science differ from psychology? Read the [comparison between cognitive science and psychology](/en/cognitive-science-vs-psychology).
+
 ## History
 
-Cognitive science began as a joint educational program of several disciplines in the late 1980s. It has since developed into an independent discipline through the following stages.
+Cognitive science began as a joint educational program of several disciplines in the late 1980s. It has since developed into an independent discipline through the following stages. For broader historical context, see [History of Cognitive Science](/en/history-of-cognitive-science).
 
 ### Timeline
 
@@ -66,3 +70,12 @@ https://www.youtube.com/watch?v=OO9rDhGTWSM
 https://www.youtube.com/watch?v=Su8jWIhw_1I
 
 https://www.youtube.com/watch?v=Y1rKohUkMh0
+
+## Read More
+
+- [Cognitive Science in Finland](/en/cognitive-science-in-finland) – Overview of cognitive science in Finland
+- [Cognitive Science at University of Helsinki](/en/cognitive-science-university-of-helsinki) – Studies and research at University of Helsinki
+- [Cognitive Science at Aalto University](/en/cognitive-science-aalto-university) – Computational and neuroscientific research
+- [Finnish Cognitive Scientists](/en/finnish-cognitive-scientists) – Key researchers
+- [Studying Cognitive Science](/en/study-cognitive-science-finland) – Comprehensive guide to starting your studies
+- [Cognitive Science Careers](/en/cognitive-science-careers) – Career opportunities in the field

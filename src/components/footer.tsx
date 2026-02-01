@@ -1,10 +1,23 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 
 export function Footer() {
   const t = useTranslations('footer');
+  const locale = useLocale();
   const currentYear = new Date().getFullYear();
+
+  const links = locale === 'fi' ? {
+    cognitiveScience: { href: '/kognitiotiede', label: 'Kognitiotiede' },
+    organization: { href: '/yhdistys', label: 'Yhdistys' },
+    membership: { href: '/jaseneksi', label: 'Jäseneksi' },
+    privacy: { href: '/tietosuoja', label: 'Tietosuojaseloste' },
+  } : {
+    cognitiveScience: { href: '/cognitive-science', label: 'Cognitive Science' },
+    organization: { href: '/organization', label: 'Organization' },
+    membership: { href: '/join', label: 'Join Us' },
+    privacy: { href: '/privacy-policy', label: 'Privacy Policy' },
+  };
 
   return (
     <footer className="border-t bg-background">
@@ -16,9 +29,9 @@ export function Footer() {
               <span className="font-semibold">Intelligenzia</span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Kognitiotieteen alumnijärjestö
+              {locale === 'fi' ? 'Kognitiotieteen alumnijärjestö' : 'Cognitive Science Alumni Society'}
               <br />
-              Helsingin yliopisto
+              {locale === 'fi' ? 'Helsingin yliopisto' : 'University of Helsinki'}
             </p>
           </div>
 
@@ -26,18 +39,18 @@ export function Footer() {
             <h3 className="mb-4 font-semibold">{t('about')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="/kognitiotiede" className="hover:text-foreground">
-                  Kognitiotiede
+                <Link href={links.cognitiveScience.href} className="hover:text-foreground">
+                  {links.cognitiveScience.label}
                 </Link>
               </li>
               <li>
-                <Link href="/yhdistys" className="hover:text-foreground">
-                  Yhdistys
+                <Link href={links.organization.href} className="hover:text-foreground">
+                  {links.organization.label}
                 </Link>
               </li>
               <li>
-                <Link href="/jaseneksi" className="hover:text-foreground">
-                  Jäseneksi
+                <Link href={links.membership.href} className="hover:text-foreground">
+                  {links.membership.label}
                 </Link>
               </li>
             </ul>
@@ -54,8 +67,8 @@ export function Footer() {
             <h3 className="mb-4 font-semibold">{t('privacy')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="/tietosuoja" className="hover:text-foreground">
-                  Tietosuojaseloste
+                <Link href={links.privacy.href} className="hover:text-foreground">
+                  {links.privacy.label}
                 </Link>
               </li>
             </ul>

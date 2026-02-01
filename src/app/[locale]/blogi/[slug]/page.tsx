@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { getBlogPost, getAllBlogPosts, slugify } from '@/lib/content';
 import { Markdown } from '@/components/markdown';
+import { TableOfContents } from '@/components/table-of-contents';
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/json-ld';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -15,20 +16,20 @@ type Props = {
 };
 
 export function generateStaticParams() {
-  const posts = getAllBlogPosts();
   const locales = ['fi', 'en'];
 
-  return locales.flatMap((locale) =>
-    posts.map((post) => ({
+  return locales.flatMap((locale) => {
+    const posts = getAllBlogPosts(locale);
+    return posts.map((post) => ({
       locale,
       slug: post.slug,
-    }))
-  );
+    }));
+  });
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params;
-  const post = getBlogPost(slug);
+  const post = getBlogPost(locale, slug);
 
   if (!post) {
     return {};
@@ -81,7 +82,7 @@ export default async function BlogPostPage({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  const post = getBlogPost(slug);
+  const post = getBlogPost(locale, slug);
 
   if (!post) {
     notFound();
@@ -103,56 +104,68 @@ export default async function BlogPostPage({ params }: Props) {
       <ArticleJsonLd post={post} locale={locale} />
       <BreadcrumbJsonLd items={breadcrumbs} />
       <div className="container mx-auto px-4 py-12">
-        <article className="mx-auto max-w-2xl">
-          <Button asChild variant="ghost" className="mb-8">
-            <Link href={blogPath}>
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              {locale === 'fi' ? 'Takaisin blogiin' : 'Back to blog'}
-            </Link>
-          </Button>
+        <div className="relative mx-auto max-w-2xl xl:max-w-3xl">
+          {/* Desktop ToC - positioned absolutely to the right */}
+          <aside className="hidden xl:block absolute left-full ml-8 top-0 w-56">
+            <TableOfContents content={post.content} />
+          </aside>
 
-          {/* Cover Image */}
-          {coverImage && (
-            <div className="relative mb-8 aspect-2/1 overflow-hidden rounded-lg">
-              <Image
-                src={`/blog/${coverImage}`}
-                alt={post.frontmatter.title}
-                fill
-                className="object-cover grayscale"
-                priority
-              />
+          <article>
+            <Button asChild variant="ghost" className="mb-8">
+              <Link href={blogPath}>
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                {locale === 'fi' ? 'Takaisin blogiin' : 'Back to blog'}
+              </Link>
+            </Button>
+
+            {/* Cover Image */}
+            {coverImage && (
+              <div className="relative mb-8 aspect-2/1 overflow-hidden rounded-lg">
+                <Image
+                  src={`/blog/${coverImage}`}
+                  alt={post.frontmatter.title}
+                  fill
+                  className="object-cover grayscale"
+                  priority
+                />
+              </div>
+            )}
+
+            <header className="mb-10">
+              <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1">
+                  <Calendar className="h-4 w-4" />
+                  {formatDate(post.frontmatter.date, locale)}
+                </span>
+                {post.frontmatter.author && (
+                  <Link
+                    href={`${authorsPath}/${slugify(post.frontmatter.author)}`}
+                    className="flex items-center gap-1 hover:text-foreground"
+                  >
+                    <User className="h-4 w-4" />
+                    {post.frontmatter.author}
+                  </Link>
+                )}
+                {post.frontmatter.category && (
+                  <Badge variant="secondary">{post.frontmatter.category}</Badge>
+                )}
+              </div>
+              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                {post.frontmatter.title}
+              </h1>
+            </header>
+
+            {/* Mobile ToC dropdown */}
+            <div className="xl:hidden mb-6">
+              <TableOfContents content={post.content} />
             </div>
-          )}
 
-          <header className="mb-10">
-            <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-              <span className="flex items-center gap-1">
-                <Calendar className="h-4 w-4" />
-                {formatDate(post.frontmatter.date, locale)}
-              </span>
-              {post.frontmatter.author && (
-                <Link
-                  href={`${authorsPath}/${slugify(post.frontmatter.author)}`}
-                  className="flex items-center gap-1 hover:text-foreground"
-                >
-                  <User className="h-4 w-4" />
-                  {post.frontmatter.author}
-                </Link>
-              )}
-              {post.frontmatter.category && (
-                <Badge variant="secondary">{post.frontmatter.category}</Badge>
-              )}
+            {/* Article content with improved typography */}
+            <div className="prose-article">
+              <Markdown content={post.content} />
             </div>
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              {post.frontmatter.title}
-            </h1>
-          </header>
-
-          {/* Article content with improved typography */}
-          <div className="prose-article">
-            <Markdown content={post.content} />
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </>
   );

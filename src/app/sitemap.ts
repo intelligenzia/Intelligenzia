@@ -71,20 +71,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   });
 
-  // Blog posts (same content, both locales)
-  const blogPosts = getAllBlogPosts();
-  for (const post of blogPosts) {
+  // Blog posts - Finnish
+  const fiBlogPosts = getAllBlogPosts('fi');
+  for (const post of fiBlogPosts) {
     const postDate = post.frontmatter.date ? new Date(post.frontmatter.date) : new Date();
-
-    // Finnish blog URL (no prefix)
     entries.push({
       url: `${baseUrl}/blogi/${post.slug}`,
       lastModified: postDate,
       changeFrequency: 'yearly',
       priority: 0.7,
     });
+  }
 
-    // English blog URL (with /en prefix)
+  // Blog posts - English
+  const enBlogPosts = getAllBlogPosts('en');
+  for (const post of enBlogPosts) {
+    const postDate = post.frontmatter.date ? new Date(post.frontmatter.date) : new Date();
     entries.push({
       url: `${baseUrl}/en/blog/${post.slug}`,
       lastModified: postDate,
@@ -93,9 +95,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Author pages
-  const authors = getUniqueAuthors(blogPosts);
-  for (const author of authors) {
+  // Author pages - Finnish
+  const fiAuthors = getUniqueAuthors(fiBlogPosts);
+  for (const author of fiAuthors) {
     const authorSlug = slugify(author);
     entries.push({
       url: `${baseUrl}/kirjoittajat/${authorSlug}`,
@@ -103,6 +105,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     });
+  }
+
+  // Author pages - English
+  const enAuthors = getUniqueAuthors(enBlogPosts);
+  for (const author of enAuthors) {
+    const authorSlug = slugify(author);
     entries.push({
       url: `${baseUrl}/en/authors/${authorSlug}`,
       lastModified: new Date(),

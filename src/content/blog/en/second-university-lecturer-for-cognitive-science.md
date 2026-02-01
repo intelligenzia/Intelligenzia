@@ -1,0 +1,26 @@
+---
+title: Second University Lecturer for Cognitive Science — Rays of Hope for the Future
+date: 2018-03-23
+category: organization
+cover: yliopisto.png
+author: Pietari Nurmi
+description: Good news for cognitive science - a second university lecturer will be hired for the discipline.
+---
+
+The most biting cold of winter is already behind us, and the academic community shaken by the Big Wheel is also stretching its stiff limbs as new practices begin to find their place. In the turmoil of change, a bright spring sun occasionally shines on cognitive science's underbrush: a second university lecturer will be hired for the discipline.
+
+At the turn of the year, the cognitive science discipline, essentially the research staff, moved from the Department of Modern Languages to the newly established Department of Digital Humanities (DDH) along with phonetics. The move was part of the original plan — the Department of Modern Languages was never meant to be cognitive science's final resting place in the Faculty of Arts. Laboratory facilities are currently still at Siltavuorenpenger and the move to the city center campus will happen at the earliest at the turn of the year. The new facilities will probably be located in Topelia together with phonetics and musicology.
+
+In the new system, degree programs are separate from disciplines, and there is currently no separate degree program associated with DDH. Therefore, cognitive science teaching continues to be offered under the LingDA (Linguistic Diversity in the Digital Age) degree program. However, spring brought good news: a second university lecturer will be hired for cognitive science. The position will be opened for applications and the fixed-term lecturer will start in autumn 2018. We see this as a welcome step in the right direction before filling the professorship. The cognitive science professorship is listed in the Department of Modern Languages' personnel plan, from which it will likely also be transferred to DDH's personnel plan. No official decision to open the search has yet been made, but resources are already being sought. A professorship search is a long process and in the best case, a new professor could start only in 2020. The lecturer position now opening for applications will continue at least until the end of 2019.
+
+There are several possible scenarios for the future of cognitive science education. No official decision has been made about admitting new major students, but we dare to be hopeful about this, as there appears to be willingness and interest for this from the faculty leadership level. However, there is no clarity about in what form education would be offered. This is primarily a question of resources. In the Big Wheel model, there are at least three options:
+
+1. Cognitive science is a (master's level) specialization option under LingDA or some other existing degree program. The discipline has a professor and 1-2 university lecturers. The cheapest option.
+2. A new degree program (for example "Digital Humanities") is established at the Department of Digital Humanities, with cognitive science as a specialization option. The discipline has a professor and 1-2 university lecturers.
+3. Cognitive science as an umbrella: a new degree program is established at the Department of Digital Humanities more or less around cognitive science. An interdisciplinary degree program gathers teaching from several related disciplines, with cognitive science serving as a bridge between them. The program includes numerous professors and university lecturers from different fields. As we understand it, hardly anyone wants two new degree programs associated with DDH, so even a program leaning heavily on cognitive science may be launched under some other name.
+
+New degree requirements come into effect in 2020, and during 2019, the need for creating possible new degree programs will be assessed. Therefore, it is important that the future of cognitive science education be finalized and planned already during 2019. Filling the professorship cannot be waited for, but the planning work must be done now.
+
+Intelligenzia strives in every possible way to promote the establishment of a degree program offering its own cognitive science study content. We believe it is essential that students interested in the subject be admitted already to bachelor's level studies. However, a degree program according to the new system will not be established on the basis of one professor and 1-2 lecturers, as currently the indicative minimum intake for degree programs is several dozen students per year. Therefore, the focus must be on cognitive science's role as an umbrella uniting teaching staff from different disciplines.
+
+Next, the intention is to map what kind of interest there is from related fields for running this type of program, and whether the program appears attractive to students as an application target. In our experience, interest in cognitive science and studying it has been great, and with even a small show of activity, everyone interested in the subject can be helpful in their own way. Considering, among other things, Prime Minister Sipilä's recent visions of Finland as a leading country in AI, resources for cognitive science education should be pouring in through doors and windows.

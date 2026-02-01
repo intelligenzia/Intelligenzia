@@ -14,7 +14,7 @@ Intelligenzia (formerly Anti-Kompleksi, Simpleksi) served as the student organiz
 
 ## Board 2025
 
-The entire board can be reached by email at ** hallitus@intelligenzia.fi**
+The entire board can be reached by email at (hallitus@intelligenzia.fi)[mailto:hallitus@intelligenzia.fi]
 
 | Role | Name | Email |
 |:-----|:-----|:------|
@@ -24,6 +24,3 @@ The entire board can be reached by email at ** hallitus@intelligenzia.fi**
 | **Sihteeri** | Sara Väätäjä | sara.vaataja@intelligenzia.fi |
 
 
-## Contact Information
-
-The board can be reached by email at ** hallitus@intelligenzia.fi**

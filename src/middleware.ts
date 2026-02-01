@@ -22,16 +22,13 @@ const legacyBlogSlugs = [
   'salainen-tiedekunta-sovellus',
 ];
 
-// Legacy page paths that need redirects (old paths without locale prefix)
+// Legacy page paths that need redirects
+// NOTE: Paths like /kognitiotiede, /opiskelu, /yhdistys, /jaseneksi, /kirjaudu, /tapahtumat
+// are VALID routes handled by the [slug] page or dedicated pages with localePrefix: 'as-needed'
+// so we should NOT redirect them - next-intl handles the locale prefix automatically
 const legacyPagePaths: Record<string, string> = {
-  '/kognitiotiede': '/fi/kognitiotiede',
-  '/opiskelu': '/fi/opiskelu',
-  '/yhdistys': '/fi/yhdistys',
-  '/tapahtumat': '/fi/tapahtumat',
-  '/jaseneksi': '/fi/jaseneksi',
-  '/kirjaudu': '/fi/kirjaudu',
-  // URL-encoded Finnish characters (ä -> %C3%A4)
-  '/j%C3%A4seneksi': '/fi/jaseneksi',
+  // URL-encoded Finnish characters (ä -> %C3%A4) -> ASCII version
+  '/j%C3%A4seneksi': '/jaseneksi',
 };
 
 // Other legacy paths that need redirects
@@ -41,6 +38,23 @@ const legacyPaths: Record<string, string> = {
   '/search': '/',
   '/category': '/',
 };
+
+// Cross-locale slug mapping: Finnish slug -> English slug
+// Used to redirect /en/kognitiotiede -> /en/cognitive-science
+const fiToEnSlugMapping: Record<string, string> = {
+  kognitiotiede: 'cognitive-science',
+  opiskelu: 'studies',
+  yhdistys: 'organization',
+  tapahtumat: 'events',
+  jaseneksi: 'join',
+  blogi: 'blog',
+};
+
+// Reverse mapping: English slug -> Finnish slug
+// Used to redirect /fi/cognitive-science -> /kognitiotiede
+const enToFiSlugMapping: Record<string, string> = Object.fromEntries(
+  Object.entries(fiToEnSlugMapping).map(([fi, en]) => [en, fi])
+);
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -109,6 +123,33 @@ export default function middleware(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = '/';
     return NextResponse.redirect(url, 308);
+  }
+
+  // Handle cross-locale slug redirects
+  // e.g., /en/kognitiotiede -> /en/cognitive-science
+  // e.g., /fi/cognitive-science -> /cognitive-science (fi is default, no prefix needed)
+  const enMatch = cleanPath.match(/^\/en\/([^/]+)(\/.*)?$/);
+  if (enMatch) {
+    const slug = enMatch[1];
+    const rest = enMatch[2] || '';
+    if (fiToEnSlugMapping[slug]) {
+      const url = request.nextUrl.clone();
+      url.pathname = `/en/${fiToEnSlugMapping[slug]}${rest}`;
+      return NextResponse.redirect(url, 308);
+    }
+  }
+
+  // Handle /fi/ prefix with English slugs -> redirect to Finnish slugs (without /fi/ since it's default)
+  const fiMatch = cleanPath.match(/^\/fi\/([^/]+)(\/.*)?$/);
+  if (fiMatch) {
+    const slug = fiMatch[1];
+    const rest = fiMatch[2] || '';
+    if (enToFiSlugMapping[slug]) {
+      const url = request.nextUrl.clone();
+      // Finnish is default locale, so no /fi/ prefix needed
+      url.pathname = `/${enToFiSlugMapping[slug]}${rest}`;
+      return NextResponse.redirect(url, 308);
+    }
   }
 
   // Default to intl middleware

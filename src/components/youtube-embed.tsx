@@ -16,48 +16,53 @@ export function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
 
   if (isPlaying) {
     return (
-      <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-        <iframe
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-          title={title || 'YouTube video'}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="absolute inset-0 h-full w-full"
-        />
+      <div className="flex flex-col">
+        <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+            title={title || 'YouTube video'}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 h-full w-full"
+          />
+        </div>
+        {title && (
+          <p className="mt-2 text-sm font-medium text-foreground line-clamp-2">{title}</p>
+        )}
       </div>
     );
   }
 
   return (
-    <button
-      onClick={() => setIsPlaying(true)}
-      className="group relative aspect-video w-full overflow-hidden rounded-lg bg-muted"
-      aria-label={`Play video: ${title || 'YouTube video'}`}
-    >
-      <Image
-        src={thumbnailUrl}
-        alt={title || 'Video thumbnail'}
-        fill
-        className="object-cover transition-transform duration-300 group-hover:scale-105"
-        onError={(e) => {
-          const target = e.target as HTMLImageElement;
-          if (target.src !== fallbackThumbnailUrl) {
-            target.src = fallbackThumbnailUrl;
-          }
-        }}
-        unoptimized
-      />
-      <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover:bg-black/30">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-red-600 shadow-lg transition-transform group-hover:scale-110">
-          <Play className="h-8 w-8 fill-white text-white ml-1" />
+    <div className="flex flex-col">
+      <button
+        onClick={() => setIsPlaying(true)}
+        className="group relative aspect-video w-full overflow-hidden rounded-lg bg-muted"
+        aria-label={`Play video: ${title || 'YouTube video'}`}
+      >
+        <Image
+          src={thumbnailUrl}
+          alt={title || 'Video thumbnail'}
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            if (target.src !== fallbackThumbnailUrl) {
+              target.src = fallbackThumbnailUrl;
+            }
+          }}
+          unoptimized
+        />
+        <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover:bg-black/30">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-red-600 shadow-lg transition-transform group-hover:scale-110">
+            <Play className="h-6 w-6 fill-white text-white ml-0.5" />
+          </div>
         </div>
-      </div>
+      </button>
       {title && (
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-          <p className="text-sm font-medium text-white line-clamp-2">{title}</p>
-        </div>
+        <p className="mt-2 text-sm font-medium text-foreground line-clamp-2">{title}</p>
       )}
-    </button>
+    </div>
   );
 }
 

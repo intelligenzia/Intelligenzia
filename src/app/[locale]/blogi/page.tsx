@@ -26,8 +26,8 @@ export default async function BlogListPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const posts = getAllBlogPosts();
-  const categories = getBlogCategories();
+  const posts = getAllBlogPosts(locale);
+  const categories = getBlogCategories(locale);
   const blogPath = locale === 'fi' ? '/blogi' : '/blog';
 
   return (
@@ -56,7 +56,7 @@ export default async function BlogListPage({ params }: Props) {
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
           <Link key={post.slug} href={`${blogPath}/${post.slug}`}>
-            <Card className="group h-full overflow-hidden transition-colors hover:bg-muted/50">
+            <Card className="group h-full overflow-hidden transition-colors hover:bg-muted/50 pt-0">
               {/* Cover Image */}
               {post.frontmatter.cover && (
                 <div className="relative aspect-video overflow-hidden">

@@ -8,22 +8,26 @@ description: Mitä kognitiotiede on ja miten sitä tutkitaan Helsingin yliopisto
 
 Kognitiotiede on tieteenala, joka tutkii mieleen ja aivoihin liittyviä tietoilmiöitä, kuten havaitsemista, oppimista, muistia, ajattelua, kieltä ja käsitteitä. Yhteistä kognitiotieteen tutkimille ilmiöille on, että niitä kaikkia voidaan pitää älykkään informaation prosessoinnin muotoina.
 
-Nämä perinteiset tutkimuskohteet kuuluvat myös lähitieteenalojen kuten psykologian, neurotieteen, filosofian ja kielitieteen tutkimuskohteisiin. Kognitiotieteelle omaleimaista on pyrkimys luonnontieteelliseen ja matemaattiseen täsmällisyyteen ilmiöiden mallintamisessa. Kognitiotieteen yhteys tekoälyyn ja tietojenkäsittelytieteeseen onkin perinteisesti kiinteämpi kuin lähialoilla.
+Nämä perinteiset tutkimuskohteet kuuluvat myös lähitieteenalojen kuten psykologian, neurotieteen, filosofian ja kielitieteen tutkimuskohteisiin. Kognitiotieteelle omaleimaista on pyrkimys luonnontieteelliseen ja matemaattiseen täsmällisyyteen ilmiöiden mallintamisessa. Kognitiotieteen yhteys [tekoälyyn](/tekoaly-ja-kognitiotiede) ja tietojenkäsittelytieteeseen onkin perinteisesti kiinteämpi kuin lähialoilla.
 
-Tutkimus perustuu empiirisiin luonnontieteellisiin tutkimusmenetelmiin, kuten behavioraalisiin kokeisiin ja neurotieteiden metodeihin, sekä laskennalliseen ja matemaattiseen mallintamiseen.
+Tutkimus perustuu empiirisiin luonnontieteellisiin tutkimusmenetelmiin, kuten behavioraalisiin kokeisiin ja [neurotieteiden](/neurotiede-ja-kognitio) metodeihin, sekä laskennalliseen ja matemaattiseen mallintamiseen.
+
+Lue lisää: [Mitä on kognitiotiede?](/mita-on-kognitiotiede) – kattava johdatus alaan.
 
 ### Suuret kysymykset
 
 Kognitiotieteen alaan luetaan myös monet mielenfilosofian, psykologian filosofian ja tekoälyn filosofian välimaastoon asettuvat suuret kysymykset:
 
 - Miten ihmisaivojen muodostama kuva ulkomaailmasta eroaa objektiivisesta fysikaalisesta todellisuudesta? Mikä on näiden suhde?
-- Miten tietoisuus ja mentaaliset sisällöt toteutuvat aivojen hermofysiogisissa ja laskennallisissa mekanismeissa?
+- Miten [tietoisuus](/tietoisuus-kognitiotiede) ja mentaaliset sisällöt toteutuvat aivojen hermofysiogisissa ja laskennallisissa mekanismeissa?
 - Miten ihmisen evoluutio on johtanut siihen, että ihmisaivoista on kehittynyt sellaiset, että ne käsittelevät tietoa juuri tällä tavalla?
 - Missä ihmismielen tai koneen tietokyvyn rajat tulevat vastaan? Onko täysin ylittämättömiä rajoja edes olemassa?
 
+Miten kognitiotiede eroaa psykologiasta? Lue [vertailu kognitiotieteen ja psykologian välillä](/kognitiotiede-vs-psykologia).
+
 ## Historiikki
 
-Kognitiotiede aloitti toimintansa usean oppiaineen yhteisenä koulutusohjelmana 1980-luvun lopulla. Se on sittemmin kehittynyt itsenäiseksi oppiaineeksi seuraavien vaiheiden kautta.
+Kognitiotiede aloitti toimintansa usean oppiaineen yhteisenä koulutusohjelmana 1980-luvun lopulla. Se on sittemmin kehittynyt itsenäiseksi oppiaineeksi seuraavien vaiheiden kautta. Laajemman historiallisen kontekstin löydät sivulta [Kognitiotieteen historia](/kognitiotieteen-historia).
 
 ### Aikajana
 
@@ -66,3 +70,12 @@ https://www.youtube.com/watch?v=OO9rDhGTWSM
 https://www.youtube.com/watch?v=Su8jWIhw_1I
 
 https://www.youtube.com/watch?v=Y1rKohUkMh0
+
+## Lue lisää
+
+- [Kognitiotiede Suomessa](/kognitiotiede-suomessa) – Yleiskuva kognitiotieteen tilasta Suomessa
+- [Kognitiotiede Helsingin yliopistossa](/kognitiotiede-helsingin-yliopisto) – Opiskelu ja tutkimus Helsingin yliopistossa
+- [Kognitiotiede Aalto-yliopistossa](/kognitiotiede-aalto) – Laskennallinen ja neurotieteellinen tutkimus
+- [Suomalaiset kognitiotieteilijät](/suomalaiset-kognitiotieteilijat) – Keskeisiä tutkijoita
+- [Kognitiotieteen opiskelu](/kognitiotieteen-opiskelu) – Kattava opas opiskelun aloittamiseen
+- [Kognitiotieteen urat](/kognitiotieteen-urat) – Uramahdollisuudet alalla

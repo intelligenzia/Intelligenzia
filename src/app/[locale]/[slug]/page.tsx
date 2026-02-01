@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { getPage } from '@/lib/content';
 import { getContentSlug, getPageSlugs, pageMapping } from '@/lib/page-mapping';
 import { Markdown } from '@/components/markdown';
+import { TableOfContents } from '@/components/table-of-contents';
 import type { Metadata } from 'next';
 
 type Props = {
@@ -59,21 +60,34 @@ export default async function ContentPage({ params }: Props) {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <article className="mx-auto max-w-3xl">
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold tracking-tight">
-            {page.frontmatter.title}
-          </h1>
-          {page.frontmatter.description && (
-            <p className="mt-4 text-lg text-muted-foreground">
-              {page.frontmatter.description}
-            </p>
-          )}
-        </header>
-        <div className="prose prose-neutral dark:prose-invert max-w-none">
-          <Markdown content={page.content} />
-        </div>
-      </article>
+      <div className="relative mx-auto max-w-3xl xl:max-w-4xl">
+        {/* Desktop ToC - positioned absolutely to the right */}
+        <aside className="hidden xl:block absolute left-full ml-8 top-0 w-56">
+          <TableOfContents content={page.content} />
+        </aside>
+
+        <article>
+          <header className="mb-8">
+            <h1 className="text-4xl font-bold tracking-tight">
+              {page.frontmatter.title}
+            </h1>
+            {page.frontmatter.description && (
+              <p className="mt-4 text-lg text-muted-foreground">
+                {page.frontmatter.description}
+              </p>
+            )}
+          </header>
+
+          {/* Mobile ToC dropdown */}
+          <div className="xl:hidden">
+            <TableOfContents content={page.content} />
+          </div>
+
+          <div className="prose prose-neutral dark:prose-invert max-w-none">
+            <Markdown content={page.content} />
+          </div>
+        </article>
+      </div>
     </div>
   );
 }

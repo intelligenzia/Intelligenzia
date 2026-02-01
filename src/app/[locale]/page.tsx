@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Users, Calendar, BookOpen, ArrowRight, Lightbulb } from 'lucide-react';
 import { getAllBlogPosts } from '@/lib/content';
 import { OrganizationJsonLd, WebSiteJsonLd } from '@/components/json-ld';
@@ -57,7 +56,7 @@ function MainContent() {
   const locale = useLocale();
   const t = useTranslations('membership');
   const tBenefits = useTranslations('membership.benefits');
-  const posts = getAllBlogPosts().slice(0, 3);
+  const posts = getAllBlogPosts(locale).slice(0, 3);
   const blogPath = locale === 'fi' ? '/blogi' : '/blog';
   const membershipHref = locale === 'fi' ? '/jaseneksi' : '/join';
   const loginHref = locale === 'fi' ? '/kirjaudu' : '/login';
@@ -147,7 +146,7 @@ function MainContent() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {posts.map((post) => (
                 <Link key={post.slug} href={`${blogPath}/${post.slug}`}>
-                  <Card className="group h-full overflow-hidden transition-colors hover:bg-muted/50">
+                  <Card className="group h-full overflow-hidden transition-colors hover:bg-muted/50 pt-0">
                     {post.frontmatter.cover && (
                       <div className="relative aspect-video overflow-hidden">
                         <Image

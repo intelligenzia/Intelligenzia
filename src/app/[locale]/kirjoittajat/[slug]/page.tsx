@@ -14,20 +14,20 @@ type Props = {
 };
 
 export function generateStaticParams() {
-  const authors = getAllAuthors();
   const locales = ['fi', 'en'];
 
-  return locales.flatMap((locale) =>
-    authors.map((author) => ({
+  return locales.flatMap((locale) => {
+    const authors = getAllAuthors(locale);
+    return authors.map((author) => ({
       locale,
       slug: author.slug,
-    }))
-  );
+    }));
+  });
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params;
-  const author = getAuthorBySlug(slug);
+  const author = getAuthorBySlug(locale, slug);
 
   if (!author) {
     return {};
@@ -47,13 +47,13 @@ export default async function AuthorPage({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  const author = getAuthorBySlug(slug);
+  const author = getAuthorBySlug(locale, slug);
 
   if (!author) {
     notFound();
   }
 
-  const posts = getBlogPostsByAuthor(author.name);
+  const posts = getBlogPostsByAuthor(locale, author.name);
   const blogPath = locale === 'fi' ? '/blogi' : '/blog';
   const authorsPath = locale === 'fi' ? '/kirjoittajat' : '/authors';
 
@@ -91,7 +91,7 @@ export default async function AuthorPage({ params }: Props) {
           <div className="grid gap-6 md:grid-cols-2">
             {posts.map((post) => (
               <Link key={post.slug} href={`${blogPath}/${post.slug}`}>
-                <Card className="group h-full overflow-hidden transition-colors hover:bg-muted/50">
+                <Card className="group h-full overflow-hidden transition-colors hover:bg-muted/50 pt-0">
                   {post.frontmatter.cover && (
                     <div className="relative aspect-video overflow-hidden">
                       <Image
