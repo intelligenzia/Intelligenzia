@@ -38,3 +38,31 @@ Kognitiotiede aloitti toimintansa usean oppiaineen yhteisenä koulutusohjelmana 
 - **2018** Kognitiotiede siirtyy digitaalisten ihmistieteiden osastoon.
 - **2019** Tiedekuntaneuvosto päättää kognitiotieteen maisterivaiheen opintosuunnan perustamisesta.
 - **2020** Kognitiotiedettä voi lukea pääaineena LingDig-koulutusohjelmassa.
+
+## Mitä kummaa on kognitiotiede? -videosarja
+
+Intelligenzian järjestämässä "Mitä kummaa on kognitiotiede?" -seminaarisarjassa alan tutkijat esittelevät työnsä ja näkökulmansa kognitiotieteeseen. Alla olevat videot antavat monipuolisen kuvan siitä, mitä kognitiotiede käytännössä on.
+
+### 2019: Huomio, tunteet ja suorituskyky
+
+https://www.youtube.com/watch?v=wGp--YkeItQ
+
+https://www.youtube.com/watch?v=6c1ripw40JQ
+
+https://www.youtube.com/watch?v=5upKDD-rtMg
+
+https://www.youtube.com/watch?v=azUrd2y71bo
+
+### 2018: Kognitiotieteen monet kasvot
+
+https://www.youtube.com/watch?v=xOtUe9axI44
+
+https://www.youtube.com/watch?v=4FYzkvIdrhc
+
+https://www.youtube.com/watch?v=Cb-VhTFR8Ms
+
+https://www.youtube.com/watch?v=OO9rDhGTWSM
+
+https://www.youtube.com/watch?v=Su8jWIhw_1I
+
+https://www.youtube.com/watch?v=Y1rKohUkMh0

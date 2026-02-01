@@ -13,6 +13,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Handle trailing slashes consistently
+  trailingSlash: false,
   async redirects() {
     return [
       // Old /ajankohtaista/ page -> homepage
@@ -30,6 +32,18 @@ const nextConfig: NextConfig = {
       {
         source: '/category/:slug*',
         destination: '/',
+        permanent: true,
+      },
+      // Old privacy policy -> homepage (or create a new page if needed)
+      {
+        source: '/tietosuoja',
+        destination: '/fi',
+        permanent: true,
+      },
+      // Malformed URLs with email addresses in path -> redirect to blog post
+      {
+        source: '/kognitiotieteelle-perustettu-oma-maisteriopintosuunta/:path*',
+        destination: '/fi/blogi/kognitiotieteelle-perustettu-oma-maisteriopintosuunta',
         permanent: true,
       },
       // Legacy blog post URLs (without /blogi/ prefix) -> new format

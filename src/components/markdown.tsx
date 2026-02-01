@@ -2,9 +2,23 @@
 
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { YouTubeEmbed } from './youtube-embed';
 
 interface MarkdownProps {
   content: string;
+}
+
+function extractYouTubeId(url: string): string | null {
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/watch\?.*v=([a-zA-Z0-9_-]{11})/,
+  ];
+
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match) return match[1];
+  }
+  return null;
 }
 
 export function Markdown({ content }: MarkdownProps) {
@@ -42,16 +56,35 @@ export function Markdown({ content }: MarkdownProps) {
             {children}
           </li>
         ),
-        a: ({ href, children }) => (
-          <a
-            href={href}
-            className="font-medium text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
-            target={href?.startsWith('http') ? '_blank' : undefined}
-            rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-          >
-            {children}
-          </a>
-        ),
+        a: ({ href, children }) => {
+          // Check if this is a YouTube link that should be embedded
+          if (href) {
+            const videoId = extractYouTubeId(href);
+            if (videoId) {
+              // If the link text is just the URL, render as embed
+              const childText = typeof children === 'string' ? children :
+                Array.isArray(children) ? children.join('') : '';
+              if (childText === href || childText.includes('youtube.com') || childText.includes('youtu.be')) {
+                return (
+                  <div className="my-6">
+                    <YouTubeEmbed videoId={videoId} />
+                  </div>
+                );
+              }
+            }
+          }
+
+          return (
+            <a
+              href={href}
+              className="font-medium text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
+              target={href?.startsWith('http') ? '_blank' : undefined}
+              rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+            >
+              {children}
+            </a>
+          );
+        },
         blockquote: ({ children }) => (
           <blockquote className="my-6 border-l-4 border-primary/30 pl-6 italic text-foreground/70">
             {children}

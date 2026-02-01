@@ -38,3 +38,31 @@ Cognitive science began as a joint educational program of several disciplines in
 - **2018** Cognitive science moves to the Department of Digital Humanities.
 - **2019** The Faculty Council decides to establish a cognitive science Master's study track.
 - **2020** Cognitive science can be studied as a major in the LingDig programme.
+
+## "What on Earth is Cognitive Science?" Video Series
+
+In the "Mitä kummaa on kognitiotiede?" (What on Earth is Cognitive Science?) seminar series organized by Intelligenzia, researchers in the field present their work and perspectives on cognitive science. The videos below (in Finnish) provide a comprehensive picture of what cognitive science is in practice.
+
+### 2019: Attention, Emotions, and Performance
+
+https://www.youtube.com/watch?v=wGp--YkeItQ
+
+https://www.youtube.com/watch?v=6c1ripw40JQ
+
+https://www.youtube.com/watch?v=5upKDD-rtMg
+
+https://www.youtube.com/watch?v=azUrd2y71bo
+
+### 2018: The Many Faces of Cognitive Science
+
+https://www.youtube.com/watch?v=xOtUe9axI44
+
+https://www.youtube.com/watch?v=4FYzkvIdrhc
+
+https://www.youtube.com/watch?v=Cb-VhTFR8Ms
+
+https://www.youtube.com/watch?v=OO9rDhGTWSM
+
+https://www.youtube.com/watch?v=Su8jWIhw_1I
+
+https://www.youtube.com/watch?v=Y1rKohUkMh0
