@@ -48,6 +48,7 @@ export default async function HomePage({ params }: Props) {
       <WebSiteJsonLd locale={locale} />
       <HeroSection />
       <MainContent />
+      <VocabularySection />
     </>
   );
 }
@@ -234,4 +235,97 @@ function formatDate(dateString: string, locale: string): string {
   } catch {
     return dateString;
   }
+}
+
+function VocabularySection() {
+  const locale = useLocale();
+  const isEnglish = locale === 'en';
+  const vocabularyPath = isEnglish ? '/vocabulary' : '/sanasto';
+
+  const sections = [
+    { slug: 'a-c', label: 'A–C' },
+    { slug: 'd-f', label: 'D–F' },
+    { slug: 'g-i', label: 'G–I' },
+    { slug: 'j-l', label: 'J–L' },
+    { slug: 'm-o', label: 'M–O' },
+    { slug: 'p-r', label: 'P–R' },
+    { slug: 's-u', label: 'S–U' },
+    { slug: isEnglish ? 'v-z' : 'v-o', label: isEnglish ? 'V–Z' : 'V–Ö' },
+  ];
+
+  const featuredTerms = isEnglish
+    ? ['Cognition', 'Consciousness', 'Memory', 'Perception', 'Qualia', 'Representation']
+    : ['Kognitio', 'Tietoisuus', 'Muisti', 'Havainto', 'Kvaliat', 'Representaatio'];
+
+  return (
+    <section className="border-t bg-linear-to-b from-muted/30 to-background">
+      <div className="container mx-auto px-4 py-16">
+        <div className="mx-auto max-w-4xl text-center">
+          {/* Header */}
+          <div className="mb-8">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+              {isEnglish ? 'Learning Resource' : 'Oppimateriaali'}
+            </div>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              {isEnglish ? 'Cognitive Science Glossary' : 'Kognitiotieteen sanasto'}
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              {isEnglish
+                ? 'Over 100 key terms from psychology, neuroscience, AI, and philosophy of mind — explained clearly in Finnish and English.'
+                : 'Yli 100 keskeistä käsitettä psykologiasta, neurotieteestä, tekoälystä ja mielenfilosofiasta — selkeästi selitettynä suomeksi ja englanniksi.'}
+            </p>
+          </div>
+
+          {/* Featured terms */}
+          <div className="mb-8 flex flex-wrap justify-center gap-2">
+            {featuredTerms.map((term) => (
+              <span
+                key={term}
+                className="rounded-full border border-border bg-background px-3 py-1 text-sm"
+              >
+                {term}
+              </span>
+            ))}
+            <span className="rounded-full border border-dashed border-muted-foreground/50 px-3 py-1 text-sm text-muted-foreground">
+              +100 {isEnglish ? 'more' : 'lisää'}
+            </span>
+          </div>
+
+          {/* Section navigation */}
+          <div className="mb-8 flex flex-wrap justify-center gap-2">
+            {sections.map((section) => (
+              <Link
+                key={section.slug}
+                href={`${vocabularyPath}/${section.slug}`}
+                className="rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium transition-colors hover:border-primary hover:bg-accent"
+              >
+                {section.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <Button asChild size="lg">
+            <Link href={vocabularyPath}>
+              {isEnglish ? 'Explore the Glossary' : 'Tutustu sanastoon'}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
 }

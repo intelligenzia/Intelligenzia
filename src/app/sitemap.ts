@@ -119,6 +119,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
+  // Vocabulary (Sanasto) pages - Finnish
+  entries.push({
+    url: `${baseUrl}/sanasto`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  });
+
+  const fiVocabularySlugs = ['a-c', 'd-f', 'g-i', 'j-l', 'm-o', 'p-r', 's-u', 'v-o'];
+  for (const slug of fiVocabularySlugs) {
+    entries.push({
+      url: `${baseUrl}/sanasto/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    });
+  }
+
+  // Vocabulary pages - English
+  entries.push({
+    url: `${baseUrl}/en/vocabulary`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  });
+
+  const enVocabularySlugs = ['a-c', 'd-f', 'g-i', 'j-l', 'm-o', 'p-r', 's-u', 'v-z'];
+  for (const slug of enVocabularySlugs) {
+    entries.push({
+      url: `${baseUrl}/en/vocabulary/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    });
+  }
+
   return entries;
 }
 
