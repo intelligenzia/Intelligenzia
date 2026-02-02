@@ -16,11 +16,28 @@ import { User, Calendar, CreditCard, CheckCircle, ExternalLink } from 'lucide-re
 import { SignOutButton } from '@/components/sign-out-button';
 import { ManageSubscriptionButton } from '@/components/manage-subscription-button';
 import { EditNameForm } from '@/components/edit-name-form';
+import type { Metadata } from 'next';
 
 type Props = {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ success?: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+
+  if (locale === 'en') {
+    return {
+      title: 'My Membership – Intelligenzia',
+      description: 'Manage your Intelligenzia membership, view your status, and update your information.',
+    };
+  }
+
+  return {
+    title: 'Jäsenyyteni – Intelligenzia',
+    description: 'Hallinnoi Intelligenzia-jäsenyyttäsi, tarkastele tilaa ja päivitä tietojasi.',
+  };
+}
 
 export default async function MembershipDashboardPage({
   params,

@@ -1,11 +1,30 @@
 import { setRequestLocale } from 'next-intl/server';
 import { auth } from '@/lib/auth';
 import { MembershipCheckout } from '@/components/membership-checkout';
+import type { Metadata } from 'next';
 
 type Props = {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ cancelled?: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+
+  if (locale === 'en') {
+    return {
+      title: 'Become a Member – Intelligenzia',
+      description:
+        'Join Intelligenzia and connect with the cognitive science alumni community. Support research, networking, and events in cognitive science.',
+    };
+  }
+
+  return {
+    title: 'Liity jäseneksi – Intelligenzia',
+    description:
+      'Liity Intelligenzian jäseneksi ja verkostoidu kognitiotieteen alumnien kanssa. Tue tutkimusta, verkostoitumista ja tapahtumia.',
+  };
+}
 
 export default async function JoinMembershipPage({ params, searchParams }: Props) {
   const { locale } = await params;
