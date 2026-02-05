@@ -92,7 +92,24 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/cognitive-science-courses',
-        destination: '/fi/blogi/cognitive-science-courses',
+        destination: '/en/blog/cognitive-science-courses',
+        permanent: true,
+      },
+      // English page without locale prefix
+      {
+        source: '/cognitive-science-vs-psychology',
+        destination: '/en/cognitive-science-vs-psychology',
+        permanent: true,
+      },
+      // Wrong locale for English blog posts
+      {
+        source: '/fi/blogi/cognitive-science-to-faculty-of-arts',
+        destination: '/en/blog/cognitive-science-to-faculty-of-arts',
+        permanent: true,
+      },
+      {
+        source: '/fi/blogi/thank-you-kompleksi',
+        destination: '/en/blog/thank-you-kompleksi',
         permanent: true,
       },
       {
@@ -133,6 +150,51 @@ const nextConfig: NextConfig = {
       {
         source: '/salainen-tiedekunta-sovellus',
         destination: '/fi/blogi/salainen-tiedekunta-sovellus',
+        permanent: true,
+      },
+      // Legacy page URLs without locale prefix
+      {
+        source: '/kognitiotieteen-urat',
+        destination: '/fi/kognitiotieteen-urat',
+        permanent: true,
+      },
+      {
+        source: '/yhdistys',
+        destination: '/fi/yhdistys',
+        permanent: true,
+      },
+      {
+        source: '/opiskelu',
+        destination: '/fi/opiskelu',
+        permanent: true,
+      },
+      {
+        source: '/kognitiotiede',
+        destination: '/fi/kognitiotiede',
+        permanent: true,
+      },
+      // Legacy blog URLs without locale (using /blogi/ instead of /fi/blogi/)
+      {
+        source: '/blogi/:slug',
+        destination: '/fi/blogi/:slug',
+        permanent: true,
+      },
+      // Legacy author URLs without locale
+      {
+        source: '/kirjoittajat/:slug',
+        destination: '/fi/kirjoittajat/:slug',
+        permanent: true,
+      },
+      // Trailing slash versions of blog posts
+      {
+        source: '/fi/blogi/:slug/',
+        destination: '/fi/blogi/:slug',
+        permanent: true,
+      },
+      // URL with encoded ä character (jäsenyys)
+      {
+        source: '/intelligenzian-j%C3%A4senyys-avautuu-kaikille-opiskelijoille',
+        destination: '/fi/blogi/intelligenzian-jasenyys-avautuu-kaikille-opiskelijoille',
         permanent: true,
       },
     ];
