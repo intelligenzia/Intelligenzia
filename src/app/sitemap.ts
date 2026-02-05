@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1.0,
   });
 
-  // Finnish content pages (no prefix)
+  // Finnish content pages (default locale, no prefix)
   const fiPageSlugs = Object.keys(pageMapping.fi || {});
   for (const slug of fiPageSlugs) {
     entries.push({
