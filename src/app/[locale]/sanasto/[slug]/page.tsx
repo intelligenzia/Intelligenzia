@@ -1,8 +1,10 @@
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { getPage } from '@/lib/content';
+import { vocabularyTerms } from '@/lib/vocabulary-data';
 import { Markdown } from '@/components/markdown';
 import { TableOfContents } from '@/components/table-of-contents';
+import { DefinedTermSetJsonLd } from '@/components/json-ld';
 import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
 
@@ -69,7 +71,20 @@ export default async function VocabularyPage({ params }: Props) {
   const prevSlug = currentIndex > 0 ? validSlugs[currentIndex - 1] : null;
   const nextSlug = currentIndex < validSlugs.length - 1 ? validSlugs[currentIndex + 1] : null;
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://intelligenzia.fi';
+  const sectionTerms = vocabularyTerms.filter((t) => t.slug === slug);
+
   return (
+    <>
+      <DefinedTermSetJsonLd
+        name={`Kognitiotieteen sanasto: ${sectionTitles[slug]}`}
+        url={`${baseUrl}/sanasto/${slug}`}
+        terms={sectionTerms.map((t) => ({
+          name: t.finnish,
+          alternateName: t.english,
+          description: t.description,
+        }))}
+      />
     <div className="container mx-auto px-4 py-12">
       <div className="relative mx-auto max-w-3xl xl:max-w-4xl">
         {/* Desktop ToC - positioned absolutely to the right */}
@@ -137,5 +152,6 @@ export default async function VocabularyPage({ params }: Props) {
         </article>
       </div>
     </div>
+    </>
   );
 }

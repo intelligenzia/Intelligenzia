@@ -25,6 +25,8 @@ Kognitiotieteen alaan luetaan myös monet mielenfilosofian, psykologian filosofi
 
 Miten kognitiotiede eroaa psykologiasta? Lue [vertailu kognitiotieteen ja psykologian välillä](/kognitiotiede-vs-psykologia).
 
+Kiinnostaako mihin kognitiotieteilijät työllistyvät? Tutustu [kognitiotieteen urapolkuihin ja työmahdollisuuksiin](/kognitiotieteen-urat).
+
 ## Historiikki
 
 Kognitiotiede aloitti toimintansa usean oppiaineen yhteisenä koulutusohjelmana 1980-luvun lopulla. Se on sittemmin kehittynyt itsenäiseksi oppiaineeksi seuraavien vaiheiden kautta. Laajemman historiallisen kontekstin löydät sivulta [Kognitiotieteen historia](/kognitiotieteen-historia).

@@ -9,5 +9,5 @@ Sitemap: https://intelligenzia.fi/sitemap.xml
 Disallow: /api/
 Disallow: /*/kirjaudu/
 Disallow: /*/login/
-Disallow: /*/jasenyyys
+Disallow: /*/jasenyys
 Disallow: /*/my-membership

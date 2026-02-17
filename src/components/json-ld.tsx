@@ -188,3 +188,37 @@ export function FAQPageJsonLd({ items }: FAQPageJsonLdProps) {
     />
   );
 }
+
+interface DefinedTermItem {
+  name: string;
+  alternateName?: string;
+  description: string;
+}
+
+interface DefinedTermSetJsonLdProps {
+  name: string;
+  terms: DefinedTermItem[];
+  url: string;
+}
+
+export function DefinedTermSetJsonLd({ name, terms, url }: DefinedTermSetJsonLdProps) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    name,
+    url,
+    hasDefinedTerm: terms.map((term) => ({
+      '@type': 'DefinedTerm',
+      name: term.name,
+      ...(term.alternateName ? { alternateName: term.alternateName } : {}),
+      description: term.description,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}

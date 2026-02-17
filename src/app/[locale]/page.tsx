@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: baseUrl,
       siteName: 'Intelligenzia',
       locale: locale === 'fi' ? 'fi_FI' : 'en_US',
+      alternateLocale: locale === 'fi' ? 'en_US' : 'fi_FI',
       type: 'website',
     },
   };

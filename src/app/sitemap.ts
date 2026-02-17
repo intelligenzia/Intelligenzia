@@ -1,91 +1,128 @@
+import { execSync } from 'child_process';
+import path from 'path';
 import type { MetadataRoute } from 'next';
 import { getAllBlogPosts } from '@/lib/content';
-import { pageMapping } from '@/lib/page-mapping';
+import { pageMapping, fiToEnPageSlug, enToFiPageSlug } from '@/lib/page-mapping';
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://intelligenzia.fi';
+const contentDir = path.join(process.cwd(), 'src/content');
+
+function getGitLastModified(filePath: string): Date {
+  try {
+    const date = execSync(`git log -1 --format=%cI -- "${filePath}"`, {
+      encoding: 'utf8',
+      cwd: process.cwd(),
+    }).trim();
+    if (date) return new Date(date);
+    return new Date('2025-01-01');
+  } catch {
+    return new Date('2025-01-01');
+  }
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
-  // Home pages
+  // Home pages (paired)
   entries.push({
     url: baseUrl,
-    lastModified: new Date(),
+    lastModified: getGitLastModified(path.join(process.cwd(), 'src/app/[locale]/page.tsx')),
     changeFrequency: 'weekly',
     priority: 1.0,
-  });
-  entries.push({
-    url: `${baseUrl}/en`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 1.0,
+    alternates: {
+      languages: {
+        fi: baseUrl,
+        en: `${baseUrl}/en`,
+      },
+    },
   });
 
   // Finnish content pages (default locale, no prefix)
   const fiPageSlugs = Object.keys(pageMapping.fi || {});
   for (const slug of fiPageSlugs) {
+    const filePath = path.join(contentDir, 'pages', 'fi', `${slug}.md`);
+    const enSlug = fiToEnPageSlug[slug];
+    const alternates: Record<string, string> = { fi: `${baseUrl}/${slug}` };
+    if (enSlug) {
+      alternates.en = `${baseUrl}/en/${enSlug}`;
+    }
     entries.push({
       url: `${baseUrl}/${slug}`,
-      lastModified: new Date(),
+      lastModified: getGitLastModified(filePath),
       changeFrequency: 'monthly',
       priority: 0.8,
+      alternates: { languages: alternates },
     });
   }
 
   // English content pages (with /en prefix)
   const enPageSlugs = Object.keys(pageMapping.en || {});
   for (const slug of enPageSlugs) {
+    const filePath = path.join(contentDir, 'pages', 'en', `${slug}.md`);
+    const fiSlug = enToFiPageSlug[slug];
+    // Skip if this page already has its alternate covered by the Finnish entry
+    if (fiSlug) continue;
+    // English-only pages (no Finnish counterpart)
     entries.push({
       url: `${baseUrl}/en/${slug}`,
-      lastModified: new Date(),
+      lastModified: getGitLastModified(filePath),
       changeFrequency: 'monthly',
       priority: 0.8,
     });
   }
 
-  // Membership pages
+  // Membership pages (paired)
   entries.push({
     url: `${baseUrl}/jaseneksi`,
-    lastModified: new Date(),
+    lastModified: getGitLastModified(path.join(process.cwd(), 'src/app/[locale]/jaseneksi/page.tsx')),
     changeFrequency: 'monthly',
     priority: 0.9,
-  });
-  entries.push({
-    url: `${baseUrl}/en/join`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.9,
+    alternates: {
+      languages: {
+        fi: `${baseUrl}/jaseneksi`,
+        en: `${baseUrl}/en/join`,
+      },
+    },
   });
 
-  // Blog listing pages
+  // Blog listing pages (paired)
   entries.push({
     url: `${baseUrl}/blogi`,
-    lastModified: new Date(),
+    lastModified: getGitLastModified(path.join(process.cwd(), 'src/app/[locale]/blogi/page.tsx')),
     changeFrequency: 'weekly',
     priority: 0.9,
-  });
-  entries.push({
-    url: `${baseUrl}/en/blog`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.9,
+    alternates: {
+      languages: {
+        fi: `${baseUrl}/blogi`,
+        en: `${baseUrl}/en/blog`,
+      },
+    },
   });
 
   // Blog posts - Finnish
   const fiBlogPosts = getAllBlogPosts('fi');
+  const enBlogPosts = getAllBlogPosts('en');
+  const enBlogSlugs = new Set(enBlogPosts.map((p) => p.slug));
+  const fiBlogSlugs = new Set(fiBlogPosts.map((p) => p.slug));
+
   for (const post of fiBlogPosts) {
     const postDate = post.frontmatter.date ? new Date(post.frontmatter.date) : new Date();
+    const alternates: Record<string, string> = { fi: `${baseUrl}/blogi/${post.slug}` };
+    if (enBlogSlugs.has(post.slug)) {
+      alternates.en = `${baseUrl}/en/blog/${post.slug}`;
+    }
     entries.push({
       url: `${baseUrl}/blogi/${post.slug}`,
       lastModified: postDate,
       changeFrequency: 'yearly',
       priority: 0.7,
+      alternates: { languages: alternates },
     });
   }
 
-  // Blog posts - English
-  const enBlogPosts = getAllBlogPosts('en');
+  // Blog posts - English (only those without Finnish counterpart)
   for (const post of enBlogPosts) {
+    if (fiBlogSlugs.has(post.slug)) continue;
     const postDate = post.frontmatter.date ? new Date(post.frontmatter.date) : new Date();
     entries.push({
       url: `${baseUrl}/en/blog/${post.slug}`,
@@ -101,7 +138,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const authorSlug = slugify(author);
     entries.push({
       url: `${baseUrl}/kirjoittajat/${authorSlug}`,
-      lastModified: new Date(),
+      lastModified: getGitLastModified(path.join(process.cwd(), 'src/app/[locale]/kirjoittajat/[slug]/page.tsx')),
       changeFrequency: 'monthly',
       priority: 0.6,
     });
@@ -113,47 +150,51 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const authorSlug = slugify(author);
     entries.push({
       url: `${baseUrl}/en/authors/${authorSlug}`,
-      lastModified: new Date(),
+      lastModified: getGitLastModified(path.join(process.cwd(), 'src/app/[locale]/authors/[slug]/page.tsx')),
       changeFrequency: 'monthly',
       priority: 0.6,
     });
   }
 
-  // Vocabulary (Sanasto) pages - Finnish
+  // Vocabulary (Sanasto) pages - paired
+  const fiVocabularySlugs = ['a-c', 'd-f', 'g-i', 'j-l', 'm-o', 'p-r', 's-u', 'v-o'];
+  const enVocabularySlugs = ['a-c', 'd-f', 'g-i', 'j-l', 'm-o', 'p-r', 's-u', 'v-z'];
+
+  // Vocabulary index pages (paired)
   entries.push({
     url: `${baseUrl}/sanasto`,
-    lastModified: new Date(),
+    lastModified: getGitLastModified(path.join(process.cwd(), 'src/app/[locale]/sanasto/page.tsx')),
     changeFrequency: 'monthly',
     priority: 0.8,
+    alternates: {
+      languages: {
+        fi: `${baseUrl}/sanasto`,
+        en: `${baseUrl}/en/vocabulary`,
+      },
+    },
   });
 
-  const fiVocabularySlugs = ['a-c', 'd-f', 'g-i', 'j-l', 'm-o', 'p-r', 's-u', 'v-o'];
+  // Vocabulary section pages - Finnish (with alternates for shared slugs)
   for (const slug of fiVocabularySlugs) {
+    const filePath = path.join(contentDir, 'pages', 'fi', 'sanasto', `sanasto-${slug}.md`);
+    // Map fi slug to en slug (most are shared except v-o -> v-z)
+    const enSlug = slug === 'v-o' ? 'v-z' : slug;
     entries.push({
       url: `${baseUrl}/sanasto/${slug}`,
-      lastModified: new Date(),
+      lastModified: getGitLastModified(filePath),
       changeFrequency: 'monthly',
       priority: 0.7,
+      alternates: {
+        languages: {
+          fi: `${baseUrl}/sanasto/${slug}`,
+          en: `${baseUrl}/en/vocabulary/${enSlug}`,
+        },
+      },
     });
   }
 
-  // Vocabulary pages - English
-  entries.push({
-    url: `${baseUrl}/en/vocabulary`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.8,
-  });
-
-  const enVocabularySlugs = ['a-c', 'd-f', 'g-i', 'j-l', 'm-o', 'p-r', 's-u', 'v-z'];
-  for (const slug of enVocabularySlugs) {
-    entries.push({
-      url: `${baseUrl}/en/vocabulary/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    });
-  }
+  // English vocabulary section pages are already covered by alternates above
+  // No need for separate entries (they'd be duplicates in Google's eyes)
 
   return entries;
 }

@@ -43,8 +43,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? `${baseUrl}/blog/${post.frontmatter.cover}`
     : undefined;
   const canonicalUrl = locale === 'fi'
-    ? `${baseUrl}/fi/blogi/${slug}`
+    ? `${baseUrl}/blogi/${slug}`
     : `${baseUrl}/en/blog/${slug}`;
+
+  // Only add hreflang alternates when the translation actually exists
+  const languages: Record<string, string> = {};
+  if (locale === 'fi') {
+    languages['fi'] = `${baseUrl}/blogi/${slug}`;
+    const enPost = getBlogPost('en', slug);
+    if (enPost) {
+      languages['en'] = `${baseUrl}/en/blog/${slug}`;
+    }
+  } else {
+    languages['en'] = `${baseUrl}/en/blog/${slug}`;
+    const fiPost = getBlogPost('fi', slug);
+    if (fiPost) {
+      languages['fi'] = `${baseUrl}/blogi/${slug}`;
+    }
+  }
 
   return {
     title: post.frontmatter.title,
@@ -53,10 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     authors: post.frontmatter.author ? [{ name: post.frontmatter.author }] : undefined,
     alternates: {
       canonical: canonicalUrl,
-      languages: {
-        'fi': `${baseUrl}/fi/blogi/${slug}`,
-        'en': `${baseUrl}/en/blog/${slug}`,
-      },
+      languages,
     },
     openGraph: {
       title: post.frontmatter.title,
