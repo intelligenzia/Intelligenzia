@@ -1,7 +1,7 @@
 ---
-title: Kognitiotiede
+title: "Kognitiotiede – Mitä se on ja mihin sillä työllistyy?"
 menuTitle: Kognitiotiede
-description: Mitä kognitiotiede on ja miten sitä tutkitaan Helsingin yliopistossa.
+description: Kattava opas kognitiotieteeseen — mitä se tutkii, miten sitä opiskellaan Helsingin yliopistossa ja millaisiin uriin se johtaa.
 ---
 
 ## Mitä on kognitiotiede?

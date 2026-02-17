@@ -1,7 +1,7 @@
 ---
-title: Cognitive Science vs. Psychology
+title: "Cognitive Science vs Psychology: Key Differences Explained"
 menuTitle: CogSci vs. Psychology
-description: What's the difference between cognitive science and psychology? A comparison that clarifies the differences and similarities between these related fields.
+description: How does cognitive science differ from psychology? We break down the methodologies, career paths, and research focus of each field — plus where they overlap.
 ---
 
 "What's the difference between cognitive science and psychology?" is one of the most common questions cognitive scientists hear. Short answer: they're close relatives studying the same phenomena from different perspectives and with different emphases.

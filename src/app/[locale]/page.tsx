@@ -20,16 +20,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: locale === 'fi'
-      ? 'Intelligenzia - Kognitiotieteen alumniyhdistys'
-      : 'Intelligenzia - Cognitive Science Alumni Society',
+      ? 'Intelligenzia – Kognitiotieteen alumniyhdistys | Helsingin yliopisto'
+      : 'Intelligenzia – Cognitive Science Alumni Society | University of Helsinki',
     description: locale === 'fi'
-      ? 'Intelligenzia ry on kognitiotieteen alumniyhdistys Helsingin yliopistosta. Liity mukaan verkostoitumaan alan ammattilaisten kanssa.'
-      : 'Intelligenzia is a cognitive science alumni society from the University of Helsinki. Join us to network with professionals in the field.',
+      ? 'Intelligenzia ry kokoaa yhteen kognitiotieteen ammattilaiset ja opiskelijat. Verkostoidu, löydä uramahdollisuuksia ja pysy ajan tasalla alan kehityksestä.'
+      : 'Intelligenzia brings together cognitive science professionals and students. Network, discover career opportunities, and stay up to date with the field.',
     openGraph: {
-      title: 'Intelligenzia',
+      title: locale === 'fi'
+        ? 'Intelligenzia – Kognitiotieteen alumniyhdistys'
+        : 'Intelligenzia – Cognitive Science Alumni Society',
       description: locale === 'fi'
-        ? 'Kognitiotieteen alumniyhdistys'
-        : 'Cognitive Science Alumni Society',
+        ? 'Kognitiotieteen ammattilaiset ja opiskelijat yhdessä — verkostoidu ja löydä uramahdollisuuksia.'
+        : 'Cognitive science professionals and students together — network and discover career opportunities.',
       url: baseUrl,
       siteName: 'Intelligenzia',
       locale: locale === 'fi' ? 'fi_FI' : 'en_US',

@@ -1,10 +1,10 @@
 ---
-title: Psykologian siirtyminen lääketieteelliseen tiedekuntaan ja miten tämä vaikuttaa kognitiotieteeseen
+title: "Psykologia ja kognitiotiede – Miten psykologian siirto vaikuttaa?"
 date: 2016-01-01
 category: kognitiotiede
 cover: two.jpg
 author: Perttu Lähteenlahti
-description: Analyysi psykologian oppiaineen siirtymisestä lääketieteelliseen tiedekuntaan ja sen vaikutuksista kognitiotieteeseen.
+description: Psykologian oppiaine siirtyy lääketieteelliseen tiedekuntaan Helsingin yliopistossa. Mitä tämä tarkoittaa kognitiotieteelle ja opiskelijoille?
 ---
 
 Tänään järjestetyssä psykologian oppiaineryhmän kokouksessa käytiin lävitse huhuja mahdollisesta psykologian oppiaineen siirtymisestä lääketieteellisen tiedekunnan alaisuuteen. Laitoksen henkilökunnan suhtautuminen olisi yleisesti ottaen positiivinen ja siirtyminen nähtiin mahdollisuutena vahvistaa psykologian oppiainetta sekä tarjota parempaa koulutusta lääketieteelliseen opetukseen ja tutkimukseen. Voidaan kuitenkin sanoa, että näin massiivinen muutos jättää jälkeensä myös suuren epätietoisuuden aallokon, josta esimerkiksi kognitiotiede voi tulevaisuudessa kärsiä.

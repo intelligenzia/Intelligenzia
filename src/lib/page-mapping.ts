@@ -57,6 +57,43 @@ export function getContentSlug(locale: string, urlSlug: string): string | null {
   return pageMapping[locale]?.[urlSlug] || null;
 }
 
+// Cross-locale slug mapping: Finnish URL slug -> English URL slug
+// Used for generating hreflang alternates
+export const fiToEnPageSlug: Record<string, string> = {
+  opiskelu: 'studies',
+  kognitiotiede: 'cognitive-science',
+  yhdistys: 'organization',
+  tapahtumat: 'events',
+  tietosuoja: 'privacy-policy',
+  'kognitiotiede-suomessa': 'cognitive-science-in-finland',
+  'kognitiotieteen-historia': 'history-of-cognitive-science',
+  'mita-on-kognitiotiede': 'what-is-cognitive-science',
+  'suomalaiset-kognitiotieteilijat': 'finnish-cognitive-scientists',
+  'kognitiotiede-helsingin-yliopisto': 'cognitive-science-university-of-helsinki',
+  'kognitiotiede-aalto': 'cognitive-science-aalto-university',
+  'kognitiivinen-psykologia': 'cognitive-psychology',
+  'neurotiede-ja-kognitio': 'neuroscience-and-cognition',
+  'tietoisuus-kognitiotiede': 'consciousness-cognitive-science',
+  'tekoaly-ja-kognitiotiede': 'ai-and-cognitive-science',
+  'kognitiotieteen-opiskelu': 'study-cognitive-science-finland',
+  'kognitiotieteen-urat': 'cognitive-science-careers',
+  'kognitiotieteen-kasitteet': 'cognitive-science-concepts',
+  'kognitiotiede-vs-psykologia': 'cognitive-science-vs-psychology',
+};
+
+// Reverse mapping: English URL slug -> Finnish URL slug
+export const enToFiPageSlug: Record<string, string> = Object.fromEntries(
+  Object.entries(fiToEnPageSlug).map(([fi, en]) => [en, fi])
+);
+
+// Get the alternate locale slug for a given slug
+export function getAlternateSlug(locale: string, slug: string): string | null {
+  if (locale === 'fi') {
+    return fiToEnPageSlug[slug] || null;
+  }
+  return enToFiPageSlug[slug] || null;
+}
+
 // Navigation items with locale-specific URLs
 export const navItems = {
   fi: [

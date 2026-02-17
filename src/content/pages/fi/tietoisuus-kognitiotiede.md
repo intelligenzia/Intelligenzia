@@ -1,7 +1,7 @@
 ---
-title: Tietoisuus ja kognitiotiede
+title: "Tietoisuus ja kognitiotiede – Fenomenaalinen tietoisuus selitettynä"
 menuTitle: Tietoisuus
-description: Tietoisuuden tutkimus kognitiotieteessä ja filosofiassa. Mitä tietoisuus on, miksi se on vaikea ongelma ja miten sitä tutkitaan.
+description: Mitä tietoisuus tarkoittaa kognitiotieteen näkökulmasta? Fenomenaalinen tietoisuus, tietoisuuden vaikea ongelma ja nykytutkimus selkeästi selitettynä.
 ---
 
 Tietoisuus on yksi tieteen ja filosofian suurimmista mysteereistä. Miksi meillä on subjektiivinen kokemus maailmasta? Miksi punaisen näkeminen tuntuu joltakin? Miksi emme ole vain tietoa prosessoivia koneita ilman sisäistä kokemusta?

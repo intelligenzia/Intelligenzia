@@ -1,7 +1,7 @@
 ---
-title: Opiskelu
+title: "Kognitiotieteen opiskelu – Helsingin yliopisto ja muut vaihtoehdot"
 menuTitle: Opiskelu
-description: Tietoa kognitiotieteen opiskelusta Helsingin yliopistossa.
+description: Kaikki kognitiotieteen opiskelusta Suomessa — pääainehaku, maisteriohjelma, LingDig-koulutusohjelma ja Aalto-yliopiston tarjonta.
 ---
 
 ## Opiskelu

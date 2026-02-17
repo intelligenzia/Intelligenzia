@@ -1,7 +1,7 @@
 ---
-title: Kognitiotieteilijän ura
+title: "Kognitiotiede työllistyminen – Urapolut ja työmahdollisuudet"
 menuTitle: Uramahdollisuudet
-description: Millaisia uramahdollisuuksia kognitiotiede tarjoaa. Työpaikat, alat ja taidot, joita työnantajat arvostavat.
+description: Mihin kognitiotieteellä työllistyy? UX-suunnittelu, data-analyysi, tekoäly ja konsultointi — kognitiotieteilijän urapolut ja työnantajien arvostamat taidot.
 ---
 
 Kognitiotiede ei ole vain akateeminen erikoisala – se on monipuolinen pohja uralle, joka voi viedä moniin suuntiin. Kognitiotieteilijöitä työskentelee tutkimuksessa, teknologiayrityksissä, konsultoinnissa, koulutuksessa ja monilla muilla aloilla.

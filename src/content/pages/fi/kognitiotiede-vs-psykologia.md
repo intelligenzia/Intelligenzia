@@ -1,7 +1,7 @@
 ---
-title: Kognitiotiede vs. psykologia
+title: "Kognitiotiede vs. psykologia – Keskeiset erot selitettynä"
 menuTitle: Kognitiotiede vs. psykologia
-description: Mitä eroa on kognitiotieteellä ja psykologialla? Vertailu, joka selventää näiden läheisten alojen eroja ja yhtäläisyyksiä.
+description: Mitä eroa on kognitiotieteellä ja psykologialla? Vertailu joka selventää metodit, urapolut ja tutkimuskohteet — sekä missä alat menevät päällekkäin.
 ---
 
 "Mitä eroa kognitiotieteellä ja psykologialla on?" on yksi yleisimpiä kysymyksiä, joita kognitiotieteilijät kuulevat. Lyhyt vastaus: ne ovat läheisiä sukulaisia, jotka tutkivat samoja ilmiöitä eri näkökulmista ja eri painotuksin.

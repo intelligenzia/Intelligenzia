@@ -1,5 +1,12 @@
 {
   "mcpServers": {
+    "google-search-console": {
+      "command": "/Users/perttu/Projects/mcp-gsc/.venv/bin/python",
+      "args": ["/Users/perttu/Projects/mcp-gsc/gsc_server.py"],
+      "env": {
+        "GSC_OAUTH_CLIENT_SECRETS_FILE": "/Users/perttu/Projects/mcp-gsc/client_secrets.json"
+      }
+    },
     "supabase": {
       "type": "http",
       "url": "https://mcp.supabase.com/mcp"
