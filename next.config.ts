@@ -101,7 +101,23 @@ const nextConfig: NextConfig = {
         destination: '/en/cognitive-science-vs-psychology',
         permanent: true,
       },
-      // Wrong locale for English blog posts
+      // Finnish blog slugs incorrectly under /en/blog/ -> correct English slug
+      {
+        source: '/en/blog/mita-kognitiotiede-voi-antaa-digihumanismille',
+        destination: '/en/blog/what-cognitive-science-can-offer-digital-humanities',
+        permanent: true,
+      },
+      {
+        source: '/en/blog/kognitiotieteelle-perustettu-oma-maisteriopintosuunta',
+        destination: '/en/blog/cognitive-science-masters-track-established',
+        permanent: true,
+      },
+      {
+        source: '/en/blog/kognitiotiede-humanistiseen',
+        destination: '/en/blog/cognitive-science-to-faculty-of-arts',
+        permanent: true,
+      },
+      // English blog slugs incorrectly under /fi/blogi/
       {
         source: '/fi/blogi/cognitive-science-to-faculty-of-arts',
         destination: '/en/blog/cognitive-science-to-faculty-of-arts',
