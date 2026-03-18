@@ -27,14 +27,13 @@ const legacyBlogSlugs = [
 // are VALID routes handled by the [slug] page or dedicated pages with localePrefix: 'as-needed'
 // so we should NOT redirect them - next-intl handles the locale prefix automatically
 const legacyPagePaths: Record<string, string> = {
-  // URL-encoded Finnish characters (ä -> %C3%A4) -> ASCII version
+  // URL-encoded Finnish characters (ä -> %C3%A4) -> ASCII version (no /fi/ prefix needed)
   '/j%C3%A4seneksi': '/jaseneksi',
 };
 
 // Other legacy paths that need redirects
 const legacyPaths: Record<string, string> = {
   '/ajankohtaista': '/',
-  '/tietosuoja': '/fi',
   '/search': '/',
   '/category': '/',
 };
@@ -75,7 +74,7 @@ export default function middleware(request: NextRequest) {
         decodedPath === `/${slug.replace('jasenyys', 'jäsenyys')}` ||
         decodedPath.startsWith(`/${slug.replace('jasenyys', 'jäsenyys')}/`)) {
       const url = request.nextUrl.clone();
-      url.pathname = `/fi/blogi/${slug}`;
+      url.pathname = `/blogi/${slug}`;
       return NextResponse.redirect(url, 308);
     }
   }
@@ -93,13 +92,13 @@ export default function middleware(request: NextRequest) {
     // Check jäseneksi with Finnish ä
     if (decodedCleanPath === '/jäseneksi') {
       const url = request.nextUrl.clone();
-      url.pathname = '/fi/jaseneksi';
+      url.pathname = '/jaseneksi';
       return NextResponse.redirect(url, 308);
     }
     // Check intelligenzian-jäsenyys-avautuu... with Finnish ä
     if (decodedCleanPath.includes('intelligenzian-jäsenyys-avautuu')) {
       const url = request.nextUrl.clone();
-      url.pathname = '/fi/blogi/intelligenzian-jasenyys-avautuu-kaikille-opiskelijoille';
+      url.pathname = '/blogi/intelligenzian-jasenyys-avautuu-kaikille-opiskelijoille';
       return NextResponse.redirect(url, 308);
     }
   }
