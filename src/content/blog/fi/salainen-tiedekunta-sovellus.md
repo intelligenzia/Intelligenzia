@@ -5,6 +5,7 @@ category: kognitiotiede
 cover: cover.jpeg
 author: Perttu Lähteenlahti
 description: Tietoa Salaisen tiedekunnan sovelluksesta.
+alternateSlug: secret-faculty-app
 ---
 
 Salaisella tiedekunnalla on oma sovellus.

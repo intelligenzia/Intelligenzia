@@ -10,6 +10,7 @@ keywords:
   - tapahtumat
   - kognitiotiede
   - alumni
+alternateSlug: member-survey-2026
 ---
 
 Helmikuussa Intelligenzian hallitus lähetti jäsenistölle kyselyn Intelligenzian tulevaisuuden suunnasta. Halusimme tietää, millaista toimintaa konnarit kaipaavat ja minkälaisiin tapahtumiin he osallistuisivat. Tässä on yhteenveto tuloksista.

@@ -55,6 +55,32 @@ const enToFiSlugMapping: Record<string, string> = Object.fromEntries(
   Object.entries(fiToEnSlugMapping).map(([fi, en]) => [en, fi])
 );
 
+// Blog slug cross-locale mapping (Finnish slug -> English slug)
+// Kept in sync with alternateSlug frontmatter in blog posts
+const fiBlogToEnBlog: Record<string, string> = {
+  'avoin-kirje-dekaanille': 'open-letter-to-dean',
+  'tiedote-kognitiotieteilijoille': 'announcement-for-cognitive-scientists',
+  'psykologia-ja-kognitiotiede': 'psychology-and-cognitive-science',
+  'tiedote-kognitiotieteen-tilasta': 'cognitive-science-status-update',
+  'mita-kognitiotiede-voi-antaa-digihumanismille': 'what-cognitive-science-can-offer-digital-humanities',
+  'intelligenzian-ryhmamentorointi': 'intelligenzias-group-mentoring',
+  'kilpikonnari-kiittaa': 'thank-you-kompleksi',
+  'haikugeneraattori': 'haiku-generator',
+  'kognitiotiede-humanistiseen': 'cognitive-science-to-faculty-of-arts',
+  'uuden-koulutusohjelman-perustaminen-kannattaa': 'establishing-new-degree-program-worthwhile',
+  'intelligenzian-jasenyys-avautuu-kaikille-opiskelijoille': 'intelligenzias-membership-opens-to-all-students',
+  'kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta': 'second-university-lecturer-for-cognitive-science',
+  'kognitiotieteelle-perustettu-oma-maisteriopintosuunta': 'cognitive-science-masters-track-established',
+  'maisteriohjelman-haku-on-auki': 'masters-program-application-open',
+  'salainen-tiedekunta-sovellus': 'secret-faculty-app',
+  'kognitiotieteen-opiskelu-suomessa': 'studying-cognitive-science-in-finland',
+  'jasenkysely-2026': 'member-survey-2026',
+};
+
+const enBlogToFiBlog: Record<string, string> = Object.fromEntries(
+  Object.entries(fiBlogToEnBlog).map(([fi, en]) => [en, fi])
+);
+
 const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
@@ -122,6 +148,29 @@ export default function middleware(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = '/';
     return NextResponse.redirect(url, 308);
+  }
+
+  // Handle cross-locale blog slug redirects
+  // e.g., /en/blog/jasenkysely-2026 -> /en/blog/member-survey-2026
+  const enBlogMatch = cleanPath.match(/^\/en\/blog\/([^/]+)$/);
+  if (enBlogMatch) {
+    const slug = enBlogMatch[1];
+    if (fiBlogToEnBlog[slug]) {
+      const url = request.nextUrl.clone();
+      url.pathname = `/en/blog/${fiBlogToEnBlog[slug]}`;
+      return NextResponse.redirect(url, 308);
+    }
+  }
+
+  // /blogi/english-slug -> /blogi/finnish-slug
+  const fiBlogMatch = cleanPath.match(/^(?:\/fi)?\/blogi\/([^/]+)$/);
+  if (fiBlogMatch) {
+    const slug = fiBlogMatch[1];
+    if (enBlogToFiBlog[slug]) {
+      const url = request.nextUrl.clone();
+      url.pathname = `/blogi/${enBlogToFiBlog[slug]}`;
+      return NextResponse.redirect(url, 308);
+    }
   }
 
   // Handle cross-locale slug redirects

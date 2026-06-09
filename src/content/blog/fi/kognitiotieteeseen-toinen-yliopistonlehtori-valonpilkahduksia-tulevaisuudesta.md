@@ -5,6 +5,7 @@ category: yhdistys
 cover: yliopisto.png
 author: Pietari Nurmi
 description: Kognitiotieteeseen palkataan toinen yliopistonlehtori - hyviä uutisia oppiaineen tulevaisuudesta.
+alternateSlug: second-university-lecturer-for-cognitive-science
 ---
 
 Talven purevin kylmyys alkaa jo olla takana päin, ja myös Ison Pyörän vavisuttama yliopistoyhteisö venyttelee kankeita jäseniään uusien käytänteiden alkaessa pikkuhiljaa löytää paikkaansa. Muutoksen myllerryksessä kuulas kevätaurinko paistaa välillä kognitiotieteenkin risukasaan: tieteenalalle nimittäin palkataan toinen yliopistonlehtori.

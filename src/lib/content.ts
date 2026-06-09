@@ -18,6 +18,7 @@ export interface BlogFrontmatter {
   cover?: string;
   description?: string;
   keywords?: string[];
+  alternateSlug?: string;
 }
 
 export interface Page {

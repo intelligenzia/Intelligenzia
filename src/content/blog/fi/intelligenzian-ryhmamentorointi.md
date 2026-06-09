@@ -5,6 +5,7 @@ category: Opiskelu
 cover: mentoring.jpeg
 author: Mari Tähkä
 description: Ilmoittaudu Intelligenzian ryhmämentorointiin ja saa tietoa kognitiotieteen työmahdollisuuksista ja urapoluista.
+alternateSlug: intelligenzias-group-mentoring
 ---
 
 Hei kognitiotieteen opiskelija! Mikä susta tulee isona?

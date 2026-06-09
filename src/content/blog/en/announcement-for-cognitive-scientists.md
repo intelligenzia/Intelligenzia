@@ -5,6 +5,7 @@ category: cognitive-science
 cover: penkere.jpeg
 author: Perttu Lähteenlahti
 description: Cognitive science as part of the faculty restructuring and the Big Wheel reform at the University of Helsinki.
+alternateSlug: tiedote-kognitiotieteilijoille
 ---
 
 ### Cognitive Science as Part of Faculty Restructuring and the Big Wheel

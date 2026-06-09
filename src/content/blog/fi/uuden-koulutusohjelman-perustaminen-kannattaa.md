@@ -5,6 +5,7 @@ category: kognitiotiede
 cover: tekoalyjafilosofia.jpeg
 author: Mari Tähkä
 description: Intelligenzian kannanotto kognitiotieteen koulutuksen jatkamisen puolesta humanistisessa tiedekunnassa.
+alternateSlug: establishing-new-degree-program-worthwhile
 ---
 
 Kognitiotieteen opiskelijajärjestö Intelligenzia ry otti tällä viikolla kantaa sen puolesta, että kognitiotieteen koulutuksen sisäänottoa jatkettaisiin humanistisessa tiedekunnassa mahdollisimman pian. Mielestämme koulutuksen tulevaisuuden epävarmuus on jatkunut liian kauan, ja uusien opiskelijoiden puuttuminen on vahingollista tieteenalan jatkuvuudelle. Sisäänoton avaaminen olisi mahdollista perustamalla kognitiotieteelle oma opintosuunta johonkin olemassaolevaan ohjelmaan tai vaihtoehtoisesti kokonaan uuteen digitaalisten ihmistieteiden koulutusohjelmaan.

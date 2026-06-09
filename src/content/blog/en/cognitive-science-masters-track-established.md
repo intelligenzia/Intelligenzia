@@ -5,6 +5,7 @@ category: cognitive-science
 cover: cover.jpeg
 author: Perttu Lähteenlahti
 description: Cognitive science can be applied to study in 2020 - the faculty council decided to establish a cognitive science specialization track.
+alternateSlug: kognitiotieteelle-perustettu-oma-maisteriopintosuunta
 ---
 
 Intelligenzia can finally joyfully announce that it is possible to apply to study cognitive science again in 2020! The Faculty Council decided this spring to establish a cognitive science specialization track in the new English-language Master's Programme in Linguistic Diversity and Digital Humanities, which begins in autumn 2020. This has been eagerly awaited, as the intake of cognitive science students has been suspended since 2016 due to university reforms. The discipline moved from the Faculty of Behavioural Sciences to the Faculty of Arts as part of this reform in 2018. Currently, one can only apply to the cognitive science master's program if studying at the University of Helsinki's Faculty of Arts, and teaching is limited.

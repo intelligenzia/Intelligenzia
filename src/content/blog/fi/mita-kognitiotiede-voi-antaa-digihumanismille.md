@@ -5,6 +5,7 @@ category: kognitiotiede
 cover: cover.jpeg
 author: Jussi Palomäki
 description: Kognitiotiede ja sen väki, konnarit, ovat muuttamassa osaksi Humanistisen tiedekunnan "Linguistic Diversity in the Digital Age" -koulutusohjelmaa.
+alternateSlug: what-cognitive-science-can-offer-digital-humanities
 ---
 
 Kognitiotiede ja sen väki, konnarit, ovat muuttamassa osaksi Humanistisen tiedekunnan "Linguistic Diversity in the Digital Age" –koulutusohjelmaa. Kyseinen ohjelma kuuluu niin kutsuttuun digihumanismin tutkimusperinteeseen. Tämä kirjoitus on suunnattu sekä muille konnareille että tuleville digihumanistikollegoillemme.

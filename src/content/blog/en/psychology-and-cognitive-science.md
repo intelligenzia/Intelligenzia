@@ -5,6 +5,7 @@ category: cognitive-science
 cover: two.jpg
 author: Perttu Lähteenlahti
 description: Analysis of the psychology department's transfer to the Faculty of Medicine and its implications for cognitive science at the University of Helsinki.
+alternateSlug: psykologia-ja-kognitiotiede
 ---
 
 Today's psychology subject group meeting reviewed rumors about a possible transfer of the psychology discipline to the Faculty of Medicine. The department staff's attitude would generally be positive, and the transfer was seen as an opportunity to strengthen the psychology discipline and provide better education for medical teaching and research. However, it can be said that such a massive change will also leave behind a significant wave of uncertainty, from which cognitive science may suffer in the future.

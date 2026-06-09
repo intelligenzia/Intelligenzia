@@ -5,6 +5,7 @@ category: cognitive-science
 cover: penkere.jpeg
 author: Mari Tähkä
 description: Update on cognitive science's situation at the University of Helsinki and the effects of the Big Wheel reform on the discipline's future.
+alternateSlug: tiedote-kognitiotieteen-tilasta
 ---
 
 The future placement of cognitive science has been open since spring 2015, when the transfer of psychology and logopedics to the Faculty of Medicine began to be prepared. Unfortunately, the situation has still not clarified. Negotiations have been conducted especially toward the Faculty of Science, but no official decision has been made. Decisions are urgent because Big Wheel education reform proposals are already being prepared in every faculty, and cognitive science currently doesn't belong to any of them.

@@ -5,6 +5,7 @@ category: kognitiotiede
 cover: two.jpg
 author: Silva Perander
 description: Haku LingDig-maisteriohjelmaan on auki - kognitiotiedettä voi hakea opiskelemaan ensimmäistä kertaa vuoden 2015 jälkeen.
+alternateSlug: masters-program-application-open
 ---
 
 Haku maisteriohjelmaan LingDig (Linguistic Diversity and Digital Humanities) on nyt auki! Kognitiotiede on yksi ohjelman erikoistumislinjoista, eli kognitiotiedettä on nyt mahdollista hakea opiskelemaan Helsingin yliopistossa ensimmäistä kertaa vuoden 2015 jälkeen.

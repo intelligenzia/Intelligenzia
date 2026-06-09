@@ -2,6 +2,7 @@
 
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
+import { useAlternatePath } from '@/components/alternate-path-context';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -17,8 +18,17 @@ export function LocaleSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
 
+  // Check for alternate paths (e.g., blog posts with different slugs per locale)
+  const enAlt = useAlternatePath('en');
+  const fiAlt = useAlternatePath('fi');
+
   function onSelectChange(newLocale: Locale) {
-    router.replace(pathname, { locale: newLocale });
+    const altPath = newLocale === 'en' ? enAlt : fiAlt;
+    if (altPath) {
+      router.replace(altPath, { locale: newLocale });
+    } else {
+      router.replace(pathname, { locale: newLocale });
+    }
   }
 
   return (

@@ -10,6 +10,7 @@ keywords:
   - events
   - cognitive science
   - alumni
+alternateSlug: jasenkysely-2026
 ---
 
 In February, we sent a survey to Intelligenzia's members asking about the future direction of the association. We wanted to know what kind of activities people want and which events they'd attend. Here are the results.

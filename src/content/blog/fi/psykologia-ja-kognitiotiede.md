@@ -5,6 +5,7 @@ category: kognitiotiede
 cover: two.jpg
 author: Perttu Lähteenlahti
 description: Psykologian oppiaine siirtyy lääketieteelliseen tiedekuntaan Helsingin yliopistossa. Mitä tämä tarkoittaa kognitiotieteelle ja opiskelijoille?
+alternateSlug: psychology-and-cognitive-science
 ---
 
 Tänään järjestetyssä psykologian oppiaineryhmän kokouksessa käytiin lävitse huhuja mahdollisesta psykologian oppiaineen siirtymisestä lääketieteellisen tiedekunnan alaisuuteen. Laitoksen henkilökunnan suhtautuminen olisi yleisesti ottaen positiivinen ja siirtyminen nähtiin mahdollisuutena vahvistaa psykologian oppiainetta sekä tarjota parempaa koulutusta lääketieteelliseen opetukseen ja tutkimukseen. Voidaan kuitenkin sanoa, että näin massiivinen muutos jättää jälkeensä myös suuren epätietoisuuden aallokon, josta esimerkiksi kognitiotiede voi tulevaisuudessa kärsiä.

@@ -5,6 +5,7 @@ category: Opiskelu
 cover: sarjakuva.jpeg
 author: Pietari Nurmi
 description: Kognitiotieteen ja psykologian ainejärjestöjen yhteistyö ja Kompleksin 70-vuotisjuhlat.
+alternateSlug: thank-you-kompleksi
 ---
 
 Kognitiotieteen siirryttyä humanistiseen tiedekuntaan vuodenvaihteessa psykologian oppiaine siirtyi lääketieteelliseen tiedekuntaan. Siirtymät ovat tässä vaiheessa vielä hallinnollisia eli molempien aineiden opiskelijat hengailevat edelleen enimmäkseen Siltavuorenpenkereellä yhteisen katon alla. Varsinainen "asumusero" on edessä viimeistään loppukesästä ennen uuden lukuvuoden alkua. Kognitiotieteen ainejärjestö Intelligenzian ja psykologian ainejärjestö Kompleksin välit ovat olleet tähän asti lämpimät: yhteisiä tapahtumia on järjestetty lähielon aikana paljon ja opiskelijat tapaavat edelleen toisiaan jatkuvasti yhteisillä kursseilla ja niiden ulkopuolellakin. Lähitulevaisuudessa ainejärjestöjen suhteesta tulee fyysisesti kaukosuhde, mutta yhteistyö varmasti jatkuu tulevaisuudessakin.

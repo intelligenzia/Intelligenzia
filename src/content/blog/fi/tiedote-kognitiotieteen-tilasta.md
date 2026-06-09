@@ -5,6 +5,7 @@ category: kognitiotiede
 cover: penkere.jpeg
 author: Mari Tähkä
 description: Tiedote kognitiotieteen tilanteesta Helsingin yliopistossa ja Ison pyörän vaikutuksista oppiaineen tulevaisuuteen.
+alternateSlug: cognitive-science-status-update
 ---
 
 Kognitiotieteen tuleva sijoittuminen on ollut avoinna jo keväästä 2015, kun psykologian ja logopedian muuttoa lääketieteelliseen tiedekuntaan alettiin valmistella. Valitettavasti tilanne ei ole edelleenkään selkiytynyt. Neuvotteluja on käyty erityisesti matemaattis-luonnontieteellisen tiedekunnan suuntaan, mutta virallista päätöstä ei ole tehty. Päätöksillä on kiire, koska Iso pyörä -koulutusuudistuksen mukaiset esitykset ovat jokaisessa tiedekunnassa jo valmisteilla, eikä kognitiotiede tällä hetkellä kuulu niistä mihinkään.

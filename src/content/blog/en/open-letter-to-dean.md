@@ -5,6 +5,7 @@ category: cognitive-science
 cover: one.jpg
 author: Perttu Lähteenlahti
 description: Initiative to ensure the continuity of cognitive science as a discipline during the ongoing faculty restructuring at the University of Helsinki.
+alternateSlug: avoin-kirje-dekaanille
 ---
 
 Initiative to ensure the continuity of cognitive science as a discipline during the ongoing faculty restructuring

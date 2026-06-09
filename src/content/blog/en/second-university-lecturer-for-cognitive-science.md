@@ -5,6 +5,7 @@ category: organization
 cover: yliopisto.png
 author: Pietari Nurmi
 description: Good news for cognitive science - a second university lecturer will be hired for the discipline.
+alternateSlug: kognitiotieteeseen-toinen-yliopistonlehtori-valonpilkahduksia-tulevaisuudesta
 ---
 
 The most biting cold of winter is already behind us, and the academic community shaken by the Big Wheel is also stretching its stiff limbs as new practices begin to find their place. In the turmoil of change, a bright spring sun occasionally shines on cognitive science's underbrush: a second university lecturer will be hired for the discipline.

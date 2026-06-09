@@ -9,3 +9,11 @@
 # Next.js requires the Netlify Next.js Runtime
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Force canonical host: www.intelligenzia.fi -> intelligenzia.fi (301)
+# Consolidates ranking signals that were splitting across both hostnames.
+[[redirects]]
+  from = "https://www.intelligenzia.fi/*"
+  to = "https://intelligenzia.fi/:splat"
+  status = 301
+  force = true

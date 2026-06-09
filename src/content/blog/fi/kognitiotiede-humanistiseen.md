@@ -5,6 +5,7 @@ category: kognitiotiede
 cover: yliopisto.png
 author: Pietari Nurmi
 description: Kognitiotieteen tilanne 31.10.2016 - siirtyminen humanistiseen tiedekuntaan ja LingDA-ohjelmaan.
+alternateSlug: cognitive-science-to-faculty-of-arts
 ---
 
 ## Kognitiotieteen tilanne 31.10.2016

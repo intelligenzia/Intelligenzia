@@ -5,6 +5,7 @@ category: Anniversary gifts
 cover: yliopisto.png
 author: Pietari Nurmi
 description: A haiku generator created in honor of Kompleksi's 70th anniversary.
+alternateSlug: haikugeneraattori
 ---
 
 [Happy 70th Birthday to Kompleksi!](https://kompleksi-haikugeneraattori.herokuapp.com)

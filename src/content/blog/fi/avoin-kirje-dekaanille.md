@@ -5,6 +5,7 @@ category: kognitiotiede
 cover: one.jpg
 author: Perttu Lähteenlahti
 description: Aloite kognitiotieteen oppiaineen ja tieteenalan jatkuvuuden takaamiseksi käynnissä olevassa tiedekuntamuutoksessa.
+alternateSlug: open-letter-to-dean
 ---
 
 Aloite kognitiotieteen oppiaineen ja tieteenalan jatkuvuuden takaamiseksi käynnissä olevassa tiedekuntamuutoksessa

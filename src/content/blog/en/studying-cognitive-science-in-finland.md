@@ -16,6 +16,7 @@ keywords:
   - user experience
   - UX
   - Finland higher education
+alternateSlug: kognitiotieteen-opiskelu-suomessa
 ---
 
 Cognitive science is an interdisciplinary field that combines psychology, computer science, philosophy, neuroscience, and linguistics to study the mechanisms of the mind and cognition. In Finland, you can study cognitive science at two universities: the **University of Helsinki** and the **University of Jyväskylä**.

@@ -5,6 +5,7 @@ category: cognitive-science
 cover: two.jpg
 author: Silva Perander
 description: Application to the LingDig master's program is open - cognitive science can be applied to study for the first time since 2015.
+alternateSlug: maisteriohjelman-haku-on-auki
 ---
 
 Application to the master's program LingDig (Linguistic Diversity and Digital Humanities) is now open! Cognitive science is one of the program's specialization tracks, meaning it is now possible to apply to study cognitive science at the University of Helsinki for the first time since 2015.

@@ -5,6 +5,7 @@ category: cognitive-science
 cover: yliopisto.png
 author: Pietari Nurmi
 description: Cognitive science's situation on 31.10.2016 - transfer to the Faculty of Arts and the LingDA program.
+alternateSlug: kognitiotiede-humanistiseen
 ---
 
 ## Cognitive Science's Situation 31.10.2016

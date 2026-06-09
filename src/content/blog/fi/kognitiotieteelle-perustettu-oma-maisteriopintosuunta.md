@@ -5,6 +5,7 @@ category: kognitiotiede
 cover: cover.jpeg
 author: Perttu Lähteenlahti
 description: Kognitiotiedettä voi hakea opiskelemaan vuonna 2020 - tiedekuntaneuvosto päätti perustaa kognitiotieteelle oman opintosuunnan.
+alternateSlug: cognitive-science-masters-track-established
 ---
 
 Intelligenzia voi viimein ilolla tiedottaa, että kognitiotiedettä on mahdollista jälleen hakea opiskelemaan vuonna 2020! Tiedekuntaneuvosto päätti tänä keväänä perustaa kognitiotieteelle oman opintosuunnan uuteen englanninkieliseen Kielellisen diversiteetin ja digitaalisten ihmistieteiden maisteriohjelmaan, joka alkaa 2020 syksyllä. Tätä on hartaasti odotettu, sillä kognitiotieteen opiskelijoiden sisäänotto on ollut lakkautettuna vuodesta 2016 yliopistouudistusten vuoksi. Oppiaine siirtyi kyseisen uudistuksen yhteydessä Käyttäytymistieteellisestä tiedekunnasta Humanistiseen tiedekuntaan vuonna 2018. Nykyisellään kognitiotieteen maisteriohjelmaan voi hakea ainoastaan, jos opiskelee Helsingin yliopiston humanistisessa tiedekunnassa, minkä lisäksi opetusta järjestetään rajallisesti.

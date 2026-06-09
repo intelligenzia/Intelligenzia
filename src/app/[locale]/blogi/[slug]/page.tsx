@@ -6,6 +6,7 @@ import { getBlogPost, getAllBlogPosts, slugify } from '@/lib/content';
 import { Markdown } from '@/components/markdown';
 import { TableOfContents } from '@/components/table-of-contents';
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/json-ld';
+import { AlternatePathProvider } from '@/components/alternate-path-context';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, User, ArrowLeft } from 'lucide-react';
@@ -47,18 +48,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : `${baseUrl}/en/blog/${slug}`;
 
   // Only add hreflang alternates when the translation actually exists
+  const alternateSlug = post.frontmatter.alternateSlug;
   const languages: Record<string, string> = {};
   if (locale === 'fi') {
     languages['fi'] = `${baseUrl}/blogi/${slug}`;
-    const enPost = getBlogPost('en', slug);
-    if (enPost) {
-      languages['en'] = `${baseUrl}/en/blog/${slug}`;
+    if (alternateSlug) {
+      languages['en'] = `${baseUrl}/en/blog/${alternateSlug}`;
     }
   } else {
     languages['en'] = `${baseUrl}/en/blog/${slug}`;
-    const fiPost = getBlogPost('fi', slug);
-    if (fiPost) {
-      languages['fi'] = `${baseUrl}/blogi/${slug}`;
+    if (alternateSlug) {
+      languages['fi'] = `${baseUrl}/blogi/${alternateSlug}`;
     }
   }
 
@@ -112,8 +112,17 @@ export default async function BlogPostPage({ params }: Props) {
     { name: post.frontmatter.title, url: locale === 'fi' ? `${baseUrl}/blogi/${post.slug}` : `${baseUrl}/en/blog/${post.slug}` },
   ];
 
+  // Build alternate paths for the locale switcher
+  const altSlug = post.frontmatter.alternateSlug;
+  const alternatePaths: Partial<Record<string, string>> = {};
+  if (locale === 'fi' && altSlug) {
+    alternatePaths['en'] = `/blog/${altSlug}`;
+  } else if (locale === 'en' && altSlug) {
+    alternatePaths['fi'] = `/blogi/${altSlug}`;
+  }
+
   return (
-    <>
+    <AlternatePathProvider paths={alternatePaths}>
       <ArticleJsonLd post={post} locale={locale} />
       <BreadcrumbJsonLd items={breadcrumbs} />
       <div className="container mx-auto px-4 py-12">
@@ -180,7 +189,7 @@ export default async function BlogPostPage({ params }: Props) {
           </article>
         </div>
       </div>
-    </>
+    </AlternatePathProvider>
   );
 }
 

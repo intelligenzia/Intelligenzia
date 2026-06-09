@@ -5,6 +5,7 @@ category: Studies
 cover: mentoring.jpeg
 author: Mari Tähkä
 description: Sign up for Intelligenzia's group mentoring and learn about cognitive science career opportunities and paths.
+alternateSlug: intelligenzian-ryhmamentorointi
 ---
 
 Hey cognitive science student! What do you want to be when you grow up?

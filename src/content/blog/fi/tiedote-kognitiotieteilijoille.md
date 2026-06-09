@@ -5,6 +5,7 @@ category: kognitiotiede
 cover: penkere.jpeg
 author: Perttu Lähteenlahti
 description: Kognitiotiede osana tiedekuntamuutosta ja Isoa pyörää - tietoa kognitiotieteen tilanteesta Helsingin yliopistossa.
+alternateSlug: announcement-for-cognitive-scientists
 ---
 
 ### Kognitiotiede osana tiedekuntamuutosta ja Isoa pyörää

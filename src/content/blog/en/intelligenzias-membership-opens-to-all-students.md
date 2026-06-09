@@ -5,6 +5,7 @@ category: organization
 cover: hallitus2018.jpeg
 author: Pietari Nurmi
 description: Intelligenzia's new rules open membership to all students interested in cognitive science.
+alternateSlug: intelligenzian-jasenyys-avautuu-kaikille-opiskelijoille
 ---
 
 Due to the university's degree structure reform, Intelligenzia decided to update its rules in 2017. According to the old rules of the association, only University of Helsinki cognitive science major students could be full voting members. Others interested in cognitive science could join as supporting members.

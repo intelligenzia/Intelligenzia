@@ -16,6 +16,7 @@ keywords:
   - käyttäjäkokemus
   - UX
   - kognitiivinen tiede
+alternateSlug: studying-cognitive-science-in-finland
 ---
 
 Kognitiotiede on monitieteinen ala, joka yhdistää psykologian, tietojenkäsittelytieteen, filosofian, neurotieteen ja kielitieteen tutkiakseen mielen ja ajattelun mekanismeja. Suomessa kognitiotiedettä voi opiskella kahdessa yliopistossa: **Helsingin yliopistossa** ja **Jyväskylän yliopistossa**.

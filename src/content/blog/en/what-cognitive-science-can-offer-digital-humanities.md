@@ -5,6 +5,7 @@ category: cognitive-science
 cover: cover.jpeg
 author: Jussi Palomäki
 description: Cognitive science and its people are moving to become part of the Faculty of Arts' "Linguistic Diversity in the Digital Age" degree program.
+alternateSlug: mita-kognitiotiede-voi-antaa-digihumanismille
 ---
 
 Cognitive science and its people, known as "konnarit" (cognitive science students), are moving to become part of the Faculty of Arts' "Linguistic Diversity in the Digital Age" degree program. This program belongs to the so-called digital humanities research tradition. This writing is aimed at both other cognitive scientists and our future digital humanities colleagues.

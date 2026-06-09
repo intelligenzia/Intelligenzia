@@ -5,6 +5,7 @@ category: yhdistys
 cover: hallitus2018.jpeg
 author: Pietari Nurmi
 description: Intelligenzian uudet säännöt avaavat jäsenyyden kaikille kognitiotieteestä kiinnostuneille opiskelijoille.
+alternateSlug: intelligenzias-membership-opens-to-all-students
 ---
 
 Yliopiston tutkintorakenteen muutoksen vuoksi Intelligenzia päätti uudistaa sääntöjään vuonna 2017. Yhdistyksen vanhojen sääntöjen mukaan varsinaisia äänivaltaisia jäseniä ovat voineet olla vain Helsingin yliopiston kognitiotieteen pääaineopiskelijat. Muut kognitiotieteestä kiinnostuneet ovat voineet liittyä kannatusjäseniksi yhdistykseen.

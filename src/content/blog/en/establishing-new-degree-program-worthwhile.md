@@ -5,6 +5,7 @@ category: cognitive-science
 cover: tekoalyjafilosofia.jpeg
 author: Mari Tähkä
 description: Intelligenzia's statement in favor of continuing cognitive science education intake at the Faculty of Arts.
+alternateSlug: uuden-koulutusohjelman-perustaminen-kannattaa
 ---
 
 The cognitive science student organization Intelligenzia ry this week made a statement in favor of continuing the intake of cognitive science education at the Faculty of Arts as soon as possible. In our opinion, the uncertainty about the future of education has continued for too long, and the absence of new students is harmful to the continuity of the discipline. Opening admission would be possible by establishing a cognitive science specialization track in an existing program or alternatively in an entirely new digital humanities degree program.
