@@ -4,6 +4,7 @@ import { prisma } from './prisma';
 import { stripe, siteOrigin } from './stripe';
 import { sendEmail, membershipConfirmationEmail, type ConfirmationKind } from './email';
 import { invoicePeriod, recordPeriod } from './membership-periods';
+import { loadSuppressions } from './account';
 import {
   formatDate,
   localePath,
@@ -94,6 +95,11 @@ export async function fulfillCheckoutSession(sessionId: string): Promise<Fulfill
   // One-off payments without metadata are event tickets: not ours.
   const isMembership = !!meta.membershipType || session.mode === 'subscription';
   if (session.status !== 'complete' || !email || !isMembership) {
+    return { status: 'not_paid' };
+  }
+  // A payment from before the person had their account deleted must not
+  // bring it back (e.g. revisiting an old thank-you link).
+  if ((await loadSuppressions())(email, new Date(session.created * 1000))) {
     return { status: 'not_paid' };
   }
   // Delayed methods (e.g. bank debits) complete before the money arrives;

@@ -1,6 +1,8 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
+import { SocialIcon } from '@/components/social-icon';
+import { socialChannels } from '@/lib/social';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -33,6 +35,21 @@ export function Footer() {
               <br />
               {locale === 'fi' ? 'Helsingin yliopisto' : 'University of Helsinki'}
             </p>
+            <ul className="-ml-2 flex gap-1">
+              {socialChannels.map((c) => (
+                <li key={c.id}>
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Intelligenzia: ${c.name}`}
+                    className="flex h-10 w-10 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    <SocialIcon id={c.id} className="h-5 w-5" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div>

@@ -11,6 +11,7 @@ import { User, CreditCard, CheckCircle, AlertTriangle } from 'lucide-react';
 import { SignOutButton } from '@/components/sign-out-button';
 import { ManageSubscriptionButton } from '@/components/manage-subscription-button';
 import { EditNameForm } from '@/components/edit-name-form';
+import { AccountPrivacy } from '@/components/account-privacy';
 import type { Metadata } from 'next';
 import { noIndex } from '@/lib/seo';
 import {
@@ -322,6 +323,12 @@ export default async function MembershipDashboardPage({ params, searchParams }: 
             </ul>
           </section>
         )}
+
+        <AccountPrivacy
+          locale={locale}
+          email={session.user.email ?? ''}
+          recurring={(state.kind === 'active' && state.recurring) || state.kind === 'payment_issue'}
+        />
 
         {/* Actions */}
         <div className="mt-8 flex flex-col-reverse items-start justify-between gap-4 sm:flex-row sm:items-center">

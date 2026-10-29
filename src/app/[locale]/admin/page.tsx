@@ -11,6 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Users, TrendingUp, ExternalLink, UserCheck, UserX } from 'lucide-react';
 import { YearlyStatsChart } from '@/components/admin/yearly-stats-chart';
 import { YearFilter } from '@/components/admin/year-filter';
+import { DeleteMemberButton } from '@/components/admin/delete-member-button';
 import { StripeSyncButton } from '@/components/admin/stripe-sync-button';
 
 type Props = {
@@ -414,6 +415,9 @@ export default async function AdminPage({ params, searchParams }: Props) {
                       <th className="py-3 px-2 text-left text-sm font-medium">Tila</th>
                       <th className="py-3 px-2 text-left text-sm font-medium">Rekisteröitynyt</th>
                       <th className="py-3 px-2 text-left text-sm font-medium">Stripe</th>
+                      <th className="py-3 px-2 text-left text-sm font-medium">
+                        <span className="sr-only">Poista</span>
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -452,6 +456,11 @@ export default async function AdminPage({ params, searchParams }: Props) {
                             </Button>
                           ) : (
                             <span className="text-muted-foreground">-</span>
+                          )}
+                        </td>
+                        <td className="py-3 px-2">
+                          {user.id !== session.user.id && (
+                            <DeleteMemberButton userId={user.id} label={user.email ?? user.name ?? 'käyttäjä'} />
                           )}
                         </td>
                       </tr>

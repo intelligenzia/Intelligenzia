@@ -1,5 +1,5 @@
 import { useTranslations, useLocale } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
+import { getLocale, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
@@ -8,6 +8,8 @@ import { vocabularyTerms } from '@/lib/vocabulary-data';
 import { FULL_PRICE, MIN_SUPPORTING_PRICE } from '@/lib/membership';
 import { OrganizationJsonLd, WebSiteJsonLd } from '@/components/json-ld';
 import HeroSection from '@/components/hero-section';
+import { SocialIcon } from '@/components/social-icon';
+import { latestVideos, SEMINAR_SERIES, socialChannels } from '@/lib/social';
 import {
   DISCIPLINES,
   INTERDISCIPLINES,
@@ -59,6 +61,7 @@ export default async function HomePage({ params }: Props) {
       <HeroSection />
       <FieldSection />
       <WritingSection />
+      <ChannelsSection />
       <GlossarySection />
       <MembershipSection />
     </div>
@@ -243,6 +246,103 @@ function WritingSection() {
             ))}
           </ul>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * Where the society is outside the site: the latest YouTube uploads as real
+ * thumbnails, and the three channels as links with what each is for.
+ */
+async function ChannelsSection() {
+  const locale = await getLocale();
+  const isEnglish = locale === 'en';
+  const videos = await latestVideos(6);
+  const youtube = socialChannels.find((c) => c.id === 'youtube')!;
+
+  return (
+    <section className="border-b">
+      <div className="container mx-auto grid gap-12 px-4 py-20 md:py-28 lg:grid-cols-12 lg:gap-12">
+        <div className="flex flex-col gap-8 lg:col-span-4">
+          <h2 className="display-lg text-[clamp(2.25rem,4.4vw,3.75rem)] text-balance">
+            {isEnglish ? 'Find us elsewhere' : 'Löydät meidät myös'}
+          </h2>
+          <ul className="border-t">
+            {socialChannels.map((c) => (
+              <li key={c.id} className="border-b">
+                <a
+                  href={c.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-4 py-5"
+                >
+                  <SocialIcon id={c.id} className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
+                  <span className="flex min-w-0 flex-col gap-1">
+                    <span className="flex items-baseline gap-2">
+                      <span className="font-display text-lg font-semibold group-hover:text-primary">{c.name}</span>
+                      <span className="truncate font-mono text-xs text-muted-foreground">{c.handle}</span>
+                    </span>
+                    <span className="font-serif text-[15px] text-pretty text-muted-foreground">
+                      {isEnglish ? c.about.en : c.about.fi}
+                    </span>
+                  </span>
+                  <ArrowUpRight className="ml-auto mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary motion-reduce:transition-none" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {videos.length > 0 && (
+          <div className="lg:col-span-8">
+            {/* The uploads are 2018-2019 recordings: small thumbnails, the
+                seminar year up front, the talk as the title. */}
+            <ul className="grid border-t sm:grid-cols-2 sm:gap-x-8">
+              {videos.map((v) => (
+                <li key={v.id} className="border-b">
+                  <a
+                    href={`https://www.youtube.com/watch?v=${v.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start gap-4 py-4"
+                  >
+                    <div className="relative aspect-video w-32 shrink-0 overflow-hidden bg-muted sm:w-36">
+                      <Image
+                        src={`https://i.ytimg.com/vi/${v.id}/mqdefault.jpg`}
+                        alt=""
+                        fill
+                        sizes="144px"
+                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none"
+                      />
+                    </div>
+                    <span className="flex min-w-0 flex-col gap-1">
+                      <span className="font-mono text-xs text-primary tabular-nums">
+                        {v.year}
+                        {/* The seminar is named in the channel line; name other series. */}
+                        {v.series && v.series !== SEMINAR_SERIES && (
+                          <span className="text-muted-foreground"> · {v.series}</span>
+                        )}
+                      </span>
+                      <span className="font-display text-base leading-snug font-semibold text-balance group-hover:text-primary">
+                        {v.talk}
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a
+              href={youtube.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 font-display text-[15px] font-semibold text-primary underline-offset-4 hover:underline"
+            >
+              {isEnglish ? 'All videos on YouTube' : 'Kaikki videot YouTubessa'}
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -22,7 +22,7 @@ export function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
       <div className="flex flex-col">
         <div className="relative aspect-video w-full overflow-hidden bg-muted">
           <iframe
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+            src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`}
             title={label}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

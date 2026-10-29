@@ -4,6 +4,7 @@ import { prisma } from './prisma';
 import { stripe, FULL_MEMBERSHIP_PRICE_ID, SUPPORTING_MEMBERSHIP_PRODUCT_ID } from './stripe';
 import { subscriptionPeriodEnd, subscriptionStatus } from './membership-sync';
 import { addYear, invoicePeriod, recordPeriod, type PeriodInput } from './membership-periods';
+import { loadSuppressions } from './account';
 
 type Candidate = {
   email: string;
@@ -30,6 +31,8 @@ export type BackfillResult = {
   periods: number;
   periodsByYear: Record<string, number>;
   skipped: number;
+  /** Payments of people who had their account deleted (GDPR), left out. */
+  suppressed: number;
   /** One-off payments not recognised as membership, for a human to check.
    *  Grouped by year and product/description; no personal data. */
   unmatched: { year: number; label: string; amount: number; count: number }[];
@@ -72,10 +75,17 @@ export async function backfillFromStripe({ dryRun = false } = {}): Promise<Backf
     periods: 0,
     periodsByYear: {},
     skipped: 0,
+    suppressed: 0,
     unmatched: [],
     errors: [],
   };
   const now = new Date();
+  const isSuppressed = await loadSuppressions();
+  const suppressed = (email: string, at: Date) => {
+    if (!isSuppressed(email, at)) return false;
+    result.suppressed++;
+    return true;
+  };
   const byEmail = new Map<string, Candidate>();
   const periods: Period[] = [];
   const unmatched = new Map<string, { year: number; label: string; amount: number; count: number }>();
@@ -106,6 +116,7 @@ export async function backfillFromStripe({ dryRun = false } = {}): Promise<Backf
       result.skipped++;
       continue;
     }
+    if (suppressed(email, new Date(sub.start_date * 1000))) continue;
     if (!('deleted' in customer)) subCustomer.set(customer.id, customer);
     result.subscriptions++;
     offer({
@@ -133,6 +144,7 @@ export async function backfillFromStripe({ dryRun = false } = {}): Promise<Backf
       result.skipped++;
       continue;
     }
+    if (suppressed(email, new Date(invoice.created * 1000))) continue;
     periods.push({
       email,
       name: invoice.customer_name ?? customer?.name ?? null,
@@ -196,6 +208,7 @@ export async function backfillFromStripe({ dryRun = false } = {}): Promise<Backf
       result.skipped++;
       continue;
     }
+    if (suppressed(email, new Date(session.created * 1000))) continue;
     result.oneOffPayments++;
     const paidAt = new Date(session.created * 1000);
     const start = session.metadata?.periodStart ? new Date(session.metadata.periodStart) : paidAt;
@@ -251,6 +264,7 @@ export async function backfillFromStripe({ dryRun = false } = {}): Promise<Backf
       result.skipped++;
       continue;
     }
+    if (suppressed(email, new Date(charge.created * 1000))) continue;
     result.legacyCharges++;
     const paidAt = new Date(charge.created * 1000);
     const end = addYear(paidAt);

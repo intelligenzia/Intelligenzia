@@ -81,6 +81,15 @@ model MembershipPeriod {
   @@index([startsAt, endsAt])
 }
 
+/// Suppression list for accounts deleted on request (GDPR erasure). Holds
+/// only a SHA-256 of the email, so the Stripe import doesn't re-create the
+/// member from old payments. Payments made after deletedAt are a rejoin.
+model DeletedAccount {
+  id        String   @id @default(cuid())
+  emailHash String   @unique
+  deletedAt DateTime @default(now())
+}
+
 enum MembershipType {
   FULL // Varsinainen jäsen
   SUPPORTING // Kannatusjäsen

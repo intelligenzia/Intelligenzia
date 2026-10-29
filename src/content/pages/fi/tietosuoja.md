@@ -26,47 +26,55 @@ Henkilötietoja käsitellään yhdistyksen jäsenyyden hallinnointiin ja yhteyde
 
 Keräämme ja käsittelemme seuraavia henkilötietoja:
 
-- Nimi
-- Sähköpostiosoite
-- Jäsenyyden alkamispäivä
-- Jäsenmaksutiedot
+- Nimi ja sähköpostiosoite
+- Jäsenyyden tyyppi, tila ja voimassaoloaika
+- Jäsenyyshistoria: maksetut jäsenvuodet ja niiden summat
+- Stripen asiakas- ja maksutunnisteet (ei korttitietoja)
+- Kirjautumisistunnot ja kertakäyttöiset kirjautumislinkit
+
+Korttitietoja ei tallenneta yhdistyksen järjestelmiin, vaan ne käsittelee Stripe.
 
 ## Tietojen säilytysaika
 
-Jäsentietoja säilytetään jäsenyyden voimassaoloajan ja sen jälkeen kirjanpitolainsäädännön edellyttämän ajan (6 vuotta tilikauden päättymisestä).
+- Jäsenrekisterin tietoja säilytetään jäsenyyden ajan ja sen jälkeen, kunnes poistat tilisi tai pyydät tietojesi poistamista.
+- Maksutapahtumat säilyvät Stripessä ja yhdistyksen kirjanpidossa kirjanpitolain edellyttämän ajan (6 vuotta tilikauden päättymisestä), myös tilin poistamisen jälkeen.
+- Kertakäyttöiset kirjautumislinkit vanhenevat 24 tunnissa ja kirjautumisistunnot 30 päivässä.
 
-## Tietojen luovutus ja siirto
+## Tietojen käsittelijät ja siirrot
 
-Henkilötietoja ei luovuteta kolmansille osapuolille markkinointitarkoituksiin. Tietoja voidaan luovuttaa:
+Henkilötietoja ei luovuteta kolmansille osapuolille markkinointitarkoituksiin. Käytämme seuraavia palveluntarjoajia, jotka käsittelevät tietoja yhdistyksen lukuun:
 
-- Viranomaisille lakisääteisten velvoitteiden täyttämiseksi
-- Maksunvälityspalveluille (Stripe) jäsenmaksujen käsittelyä varten
+- **Stripe**: jäsenmaksujen käsittely ([tietosuojakäytäntö](https://stripe.com/privacy))
+- **Netlify**: sivuston ja jäsenrekisterin tietokannan ylläpito ([tietosuojakäytäntö](https://www.netlify.com/privacy/))
+- **Resend**: kirjautumislinkkien ja jäsenyysvahvistusten lähettäminen ([tietosuojakäytäntö](https://resend.com/legal/privacy-policy))
+- **Umami**: evästeetön kävijätilastointi, joka ei tallenna henkilötietoja ([tietosuojakäytäntö](https://umami.is/privacy))
 
-Stripe käsittelee maksutietoja omien tietosuojakäytäntöjensä mukaisesti. Lisätietoja: [Stripe Privacy Policy](https://stripe.com/privacy)
+Osa palveluntarjoajista sijaitsee Yhdysvalloissa. Siirrot perustuvat EU:n ja Yhdysvaltojen väliseen tietosuojakehykseen tai Euroopan komission vakiosopimuslausekkeisiin. Tietoja voidaan luovuttaa viranomaisille lakisääteisten velvoitteiden täyttämiseksi.
 
 ## Rekisterin suojaus
 
-Rekisterin tiedot on suojattu asianmukaisin teknisin ja organisatorisin toimenpitein. Pääsy tietoihin on rajattu vain niille henkilöille, joiden työtehtävät sitä edellyttävät.
+Tiedot säilytetään salatuissa yhteyksissä käytettävässä tietokannassa. Pääsy jäsenrekisteriin on vain yhdistyksen hallituksen nimeämillä ylläpitäjillä, ja kirjautuminen tapahtuu kertakäyttöisellä sähköpostilinkillä.
 
 ## Rekisteröidyn oikeudet
 
-Rekisteröidyllä on oikeus:
+Sinulla on oikeus:
 
-- **Tarkastusoikeus**: Saada tietää, mitä henkilötietoja hänestä on tallennettu
-- **Oikeus tietojen oikaisuun**: Pyytää virheellisten tietojen korjaamista
-- **Oikeus tietojen poistamiseen**: Pyytää tietojensa poistamista (huomioiden lakisääteiset säilytysvelvoitteet)
-- **Oikeus käsittelyn rajoittamiseen**: Pyytää henkilötietojen käsittelyn rajoittamista
-- **Vastustamisoikeus**: Vastustaa henkilötietojen käsittelyä
-- **Oikeus peruuttaa suostumus**: Peruuttaa antamansa suostumus milloin tahansa
+- **Tarkastaa tietosi**: saada tietää, mitä tietoja sinusta on tallennettu
+- **Siirtää tietosi**: saada tietosi koneluettavassa muodossa
+- **Oikaista tietosi**: korjata virheelliset tiedot
+- **Poistaa tietosi**: poistaa tilisi ja tietosi (kirjanpidon säilytysvelvoite huomioiden)
+- **Rajoittaa käsittelyä** ja **vastustaa käsittelyä**
+- **Peruuttaa suostumuksesi** milloin tahansa
+- **Tehdä valituksen** tietosuojavaltuutetun toimistolle ([tietosuoja.fi](https://tietosuoja.fi))
 
-Oikeuksien käyttämistä koskevat pyynnöt tulee lähettää osoitteeseen hallitus@intelligenzia.fi.
+Voit käyttää oikeuksiasi itse [Jäsenyyteni-sivulla](/jasenyys): siellä voit muokata nimeäsi, ladata kaikki tietosi JSON-tiedostona ja poistaa tilisi. Tilin poistaminen päättää jäsenyyden ja perii vuosittain uusiutuvan jäsenmaksun. Muut pyynnöt voit lähettää osoitteeseen hallitus@intelligenzia.fi, ja vastaamme kuukauden kuluessa.
 
 ## Evästeet
 
-Verkkosivustomme käyttää teknisesti välttämättömiä evästeitä, jotka mahdollistavat sivuston perustoiminnot kuten kirjautumisen. Emme käytä kolmannen osapuolen seuranta- tai analytiikkaevästeitä.
+Sivusto käyttää vain teknisesti välttämätöntä evästettä kirjautumisen ylläpitämiseen. Kävijätilastointi (Umami) ei käytä evästeitä. Sivuilla olevat YouTube-videot latautuvat vasta, kun painat toistopainiketta, ja ne toistetaan YouTuben yksityisyyttä parantavassa tilassa.
 
 ## Muutokset tietosuojaselosteeseen
 
-Pidätämme oikeuden päivittää tätä tietosuojaselostetta. Olennaisista muutoksista ilmoitetaan jäsenille sähköpostitse.
+Päivitämme tätä tietosuojaselostetta tarvittaessa. Olennaisista muutoksista ilmoitetaan jäsenille sähköpostitse.
 
-Päivitetty viimeksi: Helmikuu 2025
+Päivitetty viimeksi: lokakuu 2026

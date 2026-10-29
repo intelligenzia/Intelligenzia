@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/lib/content';
+import { socialChannels } from '@/lib/social';
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://intelligenzia.fi';
 
@@ -19,7 +20,7 @@ export function OrganizationJsonLd({ locale }: OrganizationJsonLdProps) {
         ? 'Kognitiotieteen alumniyhdistys Helsingin yliopistosta'
         : 'Cognitive science alumni society from the University of Helsinki',
     foundingDate: '1989',
-    sameAs: [],
+    sameAs: socialChannels.map((c) => c.url),
   };
 
   return (
