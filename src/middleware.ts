@@ -46,6 +46,7 @@ const fiToEnSlugMapping: Record<string, string> = {
   yhdistys: 'organization',
   tapahtumat: 'events',
   jaseneksi: 'join',
+  jasenyys: 'my-membership',
   blogi: 'blog',
 };
 

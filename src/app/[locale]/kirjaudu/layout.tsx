@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { noIndex } from '@/lib/seo';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -10,13 +11,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (locale === 'en') {
     return {
-      title: 'Sign In – Intelligenzia',
+      title: 'Sign In',
+      robots: noIndex,
       description: 'Sign in to your Intelligenzia account with a secure magic link.',
     };
   }
 
   return {
-    title: 'Kirjaudu sisään – Intelligenzia',
+    title: 'Kirjaudu sisään',
+    robots: noIndex,
     description: 'Kirjaudu Intelligenzia-tilillesi turvallisella sähköpostilinkillä.',
   };
 }

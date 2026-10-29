@@ -1,37 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { Suspense } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { signIn } from 'next-auth/react';
+import { useSearchParams } from 'next/navigation';
 import { Link } from '@/i18n/navigation';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
+import { MagicLinkForm, safeCallback } from '@/components/magic-link-form';
+import { localePath, routeFor } from '@/lib/membership';
 
+// useSearchParams needs a Suspense boundary to keep the page prerenderable.
 export default function LoginPage() {
+  return (
+    <Suspense>
+      <LoginForm />
+    </Suspense>
+  );
+}
+
+function LoginForm() {
   const t = useTranslations('auth');
   const locale = useLocale();
-  const [email, setEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    try {
-      await signIn('resend', {
-        email,
-        callbackUrl: locale === 'fi' ? '/fi/jasenyyys' : '/en/join',
-      });
-    } catch (error) {
-      console.error('Sign in error:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const fi = locale === 'fi';
+  const searchParams = useSearchParams();
+  const callbackUrl = safeCallback(searchParams.get('callbackUrl'), locale);
+  const fromJoin = callbackUrl.startsWith(localePath(locale, 'join'));
 
   return (
     <div className="container mx-auto flex min-h-[80vh] items-center justify-center px-4 py-12">
@@ -42,41 +36,37 @@ export default function LoginPage() {
           </div>
           <CardTitle className="text-2xl">{t('login')}</CardTitle>
           <CardDescription>
-            {locale === 'fi'
-              ? 'Kirjaudu sisään sähköpostilinkillä'
-              : 'Sign in with a magic link sent to your email'}
+            {fromJoin
+              ? fi
+                ? 'Kirjaudu, niin voimme uusia nykyisen jäsenyytesi. Ei salasanoja: lähetämme kertakäyttöisen linkin.'
+                : "Sign in so we can renew your existing membership. No password: we'll email you a one-time link."
+              : fi
+                ? 'Ei salasanoja: lähetämme sähköpostiisi kertakäyttöisen kirjautumislinkin.'
+                : "No password: we'll email you a one-time sign-in link."}
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="email">{t('email')}</Label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="sinun@email.fi"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10"
-                  required
-                />
-              </div>
-            </div>
-            <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? (
-                locale === 'fi' ? 'Lähetetään...' : 'Sending...'
-              ) : (
-                t('sendMagicLink')
-              )}
-            </Button>
-          </form>
+          <MagicLinkForm
+            locale={locale}
+            callbackUrl={callbackUrl}
+            defaultEmail={searchParams.get('email') ?? ''}
+          />
 
-          <div className="mt-6 text-center text-sm text-muted-foreground">
+          <p className="mt-6 text-center text-sm text-muted-foreground">
+            {fi
+              ? 'Käytä samaa osoitetta, jolla maksoit jäsenmaksun.'
+              : 'Use the address you paid your membership with.'}
+          </p>
+
+          <div className="mt-6 flex flex-col items-center gap-2 text-sm text-muted-foreground">
+            {!fromJoin && (
+              <Link href={routeFor(locale, 'join')} className="hover:text-foreground">
+                {fi ? 'Et ole vielä jäsen? Liity ilman kirjautumista' : 'Not a member yet? Join without signing in'}
+              </Link>
+            )}
             <Link href="/" className="inline-flex items-center hover:text-foreground">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              {locale === 'fi' ? 'Takaisin etusivulle' : 'Back to home'}
+              {fi ? 'Takaisin etusivulle' : 'Back to home'}
             </Link>
           </div>
         </CardContent>

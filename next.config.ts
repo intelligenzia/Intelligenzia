@@ -25,6 +25,11 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
   async redirects() {
     return [
+      // Member dashboard used to live at a misspelt slug; old bookmarks and
+      // in-flight Stripe return URLs still point there.
+      { source: '/jasenyyys', destination: '/jasenyys', permanent: true },
+      { source: '/fi/jasenyyys', destination: '/jasenyys', permanent: true },
+      { source: '/en/jasenyyys', destination: '/en/my-membership', permanent: true },
       // Old /ajankohtaista/ page -> homepage
       {
         source: '/ajankohtaista',

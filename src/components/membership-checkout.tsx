@@ -1,26 +1,53 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Users, Heart, Check, Loader2 } from 'lucide-react';
+import { Users, Heart, Check, Minus, Loader2, ArrowRight, Lock } from 'lucide-react';
+import {
+  CONTACT_EMAIL,
+  FULL_PRICE,
+  MAX_SUPPORTING_PRICE,
+  MIN_SUPPORTING_PRICE,
+  SUPPORTING_PRESETS,
+  type MembershipType,
+} from '@/lib/membership';
+
+/** Per-option availability, worked out on the server for signed-in members. */
+export type CheckoutOptions = Partial<Record<MembershipType, { disabled?: boolean; note?: string }>>;
 
 type Props = {
   locale: string;
-  isLoggedIn: boolean;
+  options?: CheckoutOptions;
+  initialType?: MembershipType;
+  initialAmount?: number;
+  signedIn?: boolean;
 };
 
-const FULL_PRICE = 10; // €10/year
-const MIN_SUPPORTING_PRICE = 10; // Minimum €10
-
-export function MembershipCheckout({ locale, isLoggedIn }: Props) {
-  const router = useRouter();
-  const [membershipType, setMembershipType] = useState<'FULL' | 'SUPPORTING'>('FULL');
-  const [customAmount, setCustomAmount] = useState<number>(MIN_SUPPORTING_PRICE);
+export function MembershipCheckout({ locale, options = {}, initialType, initialAmount, signedIn }: Props) {
+  const available = (type: MembershipType) => !options[type]?.disabled;
+  const [membershipType, setMembershipType] = useState<MembershipType>(() => {
+    const wanted = initialType ?? 'FULL';
+    if (available(wanted)) return wanted;
+    return wanted === 'FULL' ? 'SUPPORTING' : 'FULL';
+  });
+  // Kept as the raw input string so typing "25" isn't clamped to 10 after
+  // the first keystroke; validated on submit instead.
+  const [amountInput, setAmountInput] = useState<string>(
+    String(
+      initialAmount && Number.isInteger(initialAmount) && initialAmount >= MIN_SUPPORTING_PRICE
+        ? initialAmount
+        : MIN_SUPPORTING_PRICE
+    )
+  );
+  const customAmount = Number(amountInput);
+  const amountValid =
+    Number.isInteger(customAmount) &&
+    customAmount >= MIN_SUPPORTING_PRICE &&
+    customAmount <= MAX_SUPPORTING_PRICE;
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -33,21 +60,26 @@ export function MembershipCheckout({ locale, isLoggedIn }: Props) {
       price: 'Jäsenmaksu',
       perYear: '/ vuosi',
       customAmount: 'Valitse summa',
-      minimumAmount: `Vähintään ${MIN_SUPPORTING_PRICE} €`,
-      benefits: 'Sisältää:',
+      minimumAmount: `Vähintään ${MIN_SUPPORTING_PRICE} €. Isompi summa tukee yhdistyksen toimintaa.`,
+      invalidAmount: `Anna kokonaisluku väliltä ${MIN_SUPPORTING_PRICE}–${MAX_SUPPORTING_PRICE} €.`,
+      alreadyMember: 'Sinulla on jo voimassa oleva jäsenyys. Hallinnoi sitä Jäsenyyteni-sivulla.',
+      renewalNotOpen: 'Jäsenyytesi on vielä pitkään voimassa, joten sitä ei voi vielä uusia.',
+      genericError: `Maksun aloittaminen epäonnistui. Yritä uudelleen, tai kirjoita ${CONTACT_EMAIL}.`,
       benefitsList: [
         'Verkostoituminen alan ammattilaisten kanssa',
         'Pääsy jäsentapahtumiin',
         'Jäsenkirje ja ajankohtaiset uutiset',
         'Aktiivinen alumniyhteisö',
       ],
+      votingRight: 'Äänioikeus yhdistyksen kokouksissa',
+      noVotingRight: 'Ei äänioikeutta',
       joinButton: 'Siirry maksamaan',
-      loginFirst: 'Kirjaudu ensin',
-      loginDescription: 'Sinun täytyy kirjautua sisään ennen jäsenyyden ostamista.',
-      loginButton: 'Kirjaudu sisään',
-      payWhatYouWant: 'Valitse itse summasi',
-      recurring: 'Uusiutuu vuosittain',
-      oneTime: 'Kertamaksu (1 vuosi)',
+      loading: 'Avataan maksua…',
+      fromPrice: 'alk.',
+      recurring: 'Uusiutuu vuosittain, peru milloin vain',
+      oneTime: 'Kertamaksu, voimassa vuoden',
+      reassurance: 'Maksu Stripen kautta. Kirjautumista ei tarvita: saat vahvistuksen sähköpostiisi.',
+      reassuranceSignedIn: 'Maksu Stripen kautta. Saat vahvistuksen sähköpostiisi.',
     },
     en: {
       fullTitle: 'Full Member',
@@ -57,29 +89,34 @@ export function MembershipCheckout({ locale, isLoggedIn }: Props) {
       price: 'Membership fee',
       perYear: '/ year',
       customAmount: 'Choose amount',
-      minimumAmount: `Minimum ${MIN_SUPPORTING_PRICE} €`,
-      benefits: 'Includes:',
+      minimumAmount: `At least ${MIN_SUPPORTING_PRICE} €. Anything above supports the society's work.`,
+      invalidAmount: `Enter a whole number between ${MIN_SUPPORTING_PRICE} and ${MAX_SUPPORTING_PRICE} €.`,
+      alreadyMember: 'You already have a valid membership. Manage it on the My Membership page.',
+      renewalNotOpen: "Your membership is valid for a while yet, so it can't be renewed already.",
+      genericError: `Could not start the payment. Please try again, or write to ${CONTACT_EMAIL}.`,
       benefitsList: [
         'Network with professionals in the field',
         'Access to member events',
         'Newsletter and current news',
         'Active alumni community',
       ],
-      joinButton: 'Proceed to payment',
-      loginFirst: 'Log in first',
-      loginDescription: 'You need to log in before purchasing a membership.',
-      loginButton: 'Log in',
-      payWhatYouWant: 'Pay what you want',
-      recurring: 'Renews annually',
-      oneTime: 'One-time payment (1 year)',
+      votingRight: 'Voting rights at society meetings',
+      noVotingRight: 'No voting rights',
+      joinButton: 'Continue to payment',
+      loading: 'Opening payment…',
+      fromPrice: 'from',
+      recurring: 'Renews yearly, cancel any time',
+      oneTime: 'One-time payment, valid for a year',
+      reassurance: "Payment by Stripe. No account needed: we'll email your confirmation.",
+      reassuranceSignedIn: "Payment by Stripe. We'll email your confirmation.",
     },
   };
 
   const text = t[locale as 'fi' | 'en'];
 
   const handleCheckout = async () => {
-    if (!isLoggedIn) {
-      router.push(locale === 'fi' ? '/fi/kirjaudu' : '/en/login');
+    if (membershipType === 'SUPPORTING' && !amountValid) {
+      setError(text.invalidAmount);
       return;
     }
 
@@ -93,90 +130,106 @@ export function MembershipCheckout({ locale, isLoggedIn }: Props) {
         body: JSON.stringify({
           membershipType,
           locale,
-          customAmount: membershipType === 'SUPPORTING' ? customAmount * 100 : undefined, // Convert to cents
+          amount: membershipType === 'SUPPORTING' ? customAmount : undefined,
         }),
       });
 
-      const data = await response.json();
+      const data = await response.json().catch(() => ({}));
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to create checkout session');
+      if (response.status === 409) {
+        setError(data.error === 'renewal_not_open' ? text.renewalNotOpen : text.alreadyMember);
+        setIsLoading(false);
+        return;
+      }
+      if (!response.ok || !data.url) {
+        throw new Error(data.error);
       }
 
       // Redirect to Stripe Checkout
       window.location.href = data.url;
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong');
+    } catch {
+      setError(text.genericError);
       setIsLoading(false);
     }
   };
 
-  if (!isLoggedIn) {
+  const optionCard = (type: MembershipType, children: React.ReactNode) => {
+    const disabled = !available(type);
+    const selected = membershipType === type;
+    const id = type === 'FULL' ? 'full' : 'supporting';
     return (
-      <Card className="mx-auto max-w-md">
-        <CardHeader className="text-center">
-          <CardTitle>{text.loginFirst}</CardTitle>
-          <CardDescription>{text.loginDescription}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Button
-            className="w-full"
-            onClick={() => router.push(locale === 'fi' ? '/fi/kirjaudu' : '/en/login')}
-          >
-            {text.loginButton}
-          </Button>
-        </CardContent>
-      </Card>
+      <Label htmlFor={id} className={`block ${disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer'}`}>
+        <Card
+          className={`relative h-full transition-colors ${
+            selected ? 'border-primary ring-1 ring-primary' : disabled ? '' : 'hover:border-primary/50'
+          }`}
+        >
+          {children}
+          {options[type]?.note && (
+            <p className="mx-6 -mt-2 mb-6 rounded-sm bg-muted px-3 py-2 font-mono text-xs">
+              {options[type]?.note}
+            </p>
+          )}
+        </Card>
+      </Label>
     );
-  }
+  };
 
   return (
     <div className="mx-auto max-w-4xl space-y-8">
       <RadioGroup
         value={membershipType}
-        onValueChange={(value) => setMembershipType(value as 'FULL' | 'SUPPORTING')}
+        onValueChange={(value) => {
+          setMembershipType(value as MembershipType);
+          setError(null);
+        }}
         className="grid grid-cols-1 gap-6 sm:grid-cols-2"
       >
-        {/* Full Membership Card */}
-        <Label htmlFor="full" className="block cursor-pointer">
-          <Card className={`relative h-full transition-all ${membershipType === 'FULL' ? 'border-primary ring-2 ring-primary' : 'hover:border-primary/50'}`}>
+        {optionCard(
+          'FULL',
+          <>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <Users className="h-8 w-8 text-primary" />
-                <RadioGroupItem value="FULL" id="full" />
+                <Users className="h-7 w-7 text-primary" />
+                <RadioGroupItem value="FULL" id="full" disabled={!available('FULL')} />
               </div>
-              <CardTitle className="mt-4">{text.fullTitle}</CardTitle>
-              <CardDescription>{text.fullDescription}</CardDescription>
+              <CardTitle className="display-md mt-4 text-2xl">{text.fullTitle}</CardTitle>
+              <CardDescription className="font-serif">{text.fullDescription}</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-4">
-                <span className="text-3xl font-bold">{FULL_PRICE} €</span>
-                <span className="text-muted-foreground">{text.perYear}</span>
+              <div className="mb-1 flex items-baseline gap-1.5">
+                <span className="display-lg text-4xl tabular-nums">{FULL_PRICE} €</span>
+                <span className="font-mono text-xs text-muted-foreground">{text.perYear}</span>
               </div>
-              <p className="text-xs text-muted-foreground">{text.recurring}</p>
+              <p className="mb-5 font-mono text-xs text-muted-foreground">{text.recurring}</p>
+              <BenefitList items={[...text.benefitsList, text.votingRight]} />
             </CardContent>
-          </Card>
-        </Label>
+          </>
+        )}
 
-        {/* Supporting Membership Card */}
-        <Label htmlFor="supporting" className="block cursor-pointer">
-          <Card className={`relative h-full transition-all ${membershipType === 'SUPPORTING' ? 'border-primary ring-2 ring-primary' : 'hover:border-primary/50'}`}>
+        {optionCard(
+          'SUPPORTING',
+          <>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <Heart className="h-8 w-8 text-primary" />
-                <RadioGroupItem value="SUPPORTING" id="supporting" />
+                <Heart className="h-7 w-7 text-primary" />
+                <RadioGroupItem value="SUPPORTING" id="supporting" disabled={!available('SUPPORTING')} />
               </div>
-              <CardTitle className="mt-4">{text.supportingTitle}</CardTitle>
-              <CardDescription>{text.supportingDescription}</CardDescription>
+              <CardTitle className="display-md mt-4 text-2xl">{text.supportingTitle}</CardTitle>
+              <CardDescription className="font-serif">{text.supportingDescription}</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-4">
-                <span className="text-3xl font-bold">{text.payWhatYouWant}</span>
+              {/* Kept price-shaped so the two cards actually compare — a
+                  sentence here breaks the scan. */}
+              <div className="mb-1 flex items-baseline gap-1.5">
+                <span className="font-mono text-xs text-muted-foreground">{text.fromPrice}</span>
+                <span className="display-lg text-4xl tabular-nums">{MIN_SUPPORTING_PRICE} €</span>
               </div>
-              <p className="text-xs text-muted-foreground">{text.oneTime}</p>
+              <p className="mb-5 font-mono text-xs text-muted-foreground">{text.oneTime}</p>
+              <BenefitList items={text.benefitsList} muted={text.noVotingRight} />
             </CardContent>
-          </Card>
-        </Label>
+          </>
+        )}
       </RadioGroup>
 
       {/* Custom Amount Input for Supporting Membership */}
@@ -187,25 +240,33 @@ export function MembershipCheckout({ locale, isLoggedIn }: Props) {
             <CardDescription>{text.minimumAmount}</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <div className="relative flex-1">
                 <Input
                   type="number"
                   min={MIN_SUPPORTING_PRICE}
+                  max={MAX_SUPPORTING_PRICE}
                   step="1"
-                  value={customAmount}
-                  onChange={(e) => setCustomAmount(Math.max(MIN_SUPPORTING_PRICE, parseInt(e.target.value) || MIN_SUPPORTING_PRICE))}
+                  inputMode="numeric"
+                  aria-label={text.customAmount}
+                  aria-invalid={!amountValid}
+                  value={amountInput}
+                  onChange={(e) => setAmountInput(e.target.value)}
                   className="pr-8 text-2xl font-bold"
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">€</span>
               </div>
-              <div className="flex gap-2">
-                {[10, 20, 50, 100].map((amount) => (
+              {!amountValid && (
+                <p className="text-sm text-destructive sm:hidden">{text.invalidAmount}</p>
+              )}
+              <div className="flex flex-wrap gap-2">
+                {SUPPORTING_PRESETS.map((amount) => (
                   <Button
                     key={amount}
+                    type="button"
                     variant={customAmount === amount ? 'default' : 'outline'}
                     size="sm"
-                    onClick={() => setCustomAmount(amount)}
+                    onClick={() => setAmountInput(String(amount))}
                   >
                     {amount} €
                   </Button>
@@ -216,49 +277,61 @@ export function MembershipCheckout({ locale, isLoggedIn }: Props) {
         </Card>
       )}
 
-      {/* Benefits */}
-      <Card>
-        <CardHeader>
-          <CardTitle>{text.benefits}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            {text.benefitsList.map((benefit, index) => (
-              <li key={index} className="flex items-center gap-2">
-                <Check className="h-5 w-5 text-green-500" />
-                <span>{benefit}</span>
-              </li>
-            ))}
-          </ul>
-        </CardContent>
-      </Card>
-
       {/* Error Message */}
       {error && (
-        <div className="rounded-md bg-destructive/10 p-4 text-destructive">
+        <div role="alert" className="rounded-sm bg-destructive/10 p-4 font-serif text-destructive">
           {error}
         </div>
       )}
 
-      {/* Checkout Button */}
-      <Button
-        size="lg"
-        className="w-full"
-        onClick={handleCheckout}
-        disabled={isLoading}
-      >
-        {isLoading ? (
-          <>
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            {locale === 'fi' ? 'Ladataan...' : 'Loading...'}
-          </>
-        ) : (
-          <>
-            {text.joinButton} →{' '}
-            {membershipType === 'FULL' ? `${FULL_PRICE} €` : `${customAmount} €`}
-          </>
-        )}
-      </Button>
+      <div className="space-y-3">
+        <Button
+          size="lg"
+          className="w-full"
+          onClick={handleCheckout}
+          disabled={isLoading}
+          data-umami-event="membership-checkout"
+          data-umami-event-type={membershipType}
+        >
+          {isLoading ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              {text.loading}
+            </>
+          ) : (
+            <>
+              {text.joinButton}
+              <ArrowRight className="mx-1 h-4 w-4" />
+              <span className="tabular-nums">
+                {membershipType === 'FULL' ? `${FULL_PRICE} €` : `${amountValid ? customAmount : MIN_SUPPORTING_PRICE} €`}
+              </span>
+            </>
+          )}
+        </Button>
+        <p className="flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
+          <Lock className="h-3 w-3 shrink-0" />
+          {signedIn ? text.reassuranceSignedIn : text.reassurance}
+        </p>
+      </div>
     </div>
+  );
+}
+
+function BenefitList({ items, muted }: { items: string[]; muted?: string }) {
+  return (
+    <ul className="space-y-1.5">
+      {items.map((benefit) => (
+        <li key={benefit} className="flex items-start gap-2">
+          <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-green" />
+          <span className="font-serif text-sm leading-snug">{benefit}</span>
+        </li>
+      ))}
+      {muted && (
+        <li className="flex items-start gap-2 text-muted-foreground">
+          <Minus className="mt-0.5 h-4 w-4 shrink-0" />
+          <span className="font-serif text-sm leading-snug">{muted}</span>
+        </li>
+      )}
+    </ul>
   );
 }

@@ -1,37 +1,40 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { headers } from 'next/headers';
-import { stripe } from '@/lib/stripe';
-import { prisma } from '@/lib/prisma';
 import Stripe from 'stripe';
+import { stripe } from '@/lib/stripe';
+import { fulfillCheckoutSession, syncSubscription } from '@/lib/membership-sync';
 
-// Helper to get current_period_end from subscription
-function getSubscriptionPeriodEnd(subscription: Stripe.Subscription): Date {
-  // In newer Stripe SDK, current_period_end is on subscription items
-  const firstItem = subscription.items.data[0];
-  if (firstItem?.current_period_end) {
-    return new Date(firstItem.current_period_end * 1000);
-  }
-  // Fallback: use billing_cycle_anchor + 1 year as approximation
-  return new Date((subscription.billing_cycle_anchor + 365 * 24 * 60 * 60) * 1000);
+// Subscribe the endpoint to exactly these events in the Stripe dashboard.
+// Everything else is acknowledged and ignored.
+//
+// Each handler re-reads the object from Stripe instead of trusting the
+// payload, so events arriving out of order (or from an endpoint pinned to an
+// older API version) still converge on the current state.
+
+function invoiceSubscriptionId(invoice: Stripe.Invoice): string | null {
+  const fromParent = invoice.parent?.subscription_details?.subscription;
+  const legacy = (invoice as unknown as { subscription?: string | { id: string } | null })
+    .subscription;
+  const fromLines = invoice.lines?.data?.find((line) => line.subscription)?.subscription;
+  const id = fromParent ?? legacy ?? fromLines;
+  if (!id) return null;
+  return typeof id === 'string' ? id : id.id;
 }
 
 export async function POST(req: NextRequest) {
-  const body = await req.text();
-  const headersList = await headers();
-  const signature = headersList.get('stripe-signature');
+  const secret = process.env.STRIPE_WEBHOOK_SECRET;
+  if (!secret) {
+    console.error('Stripe webhook: STRIPE_WEBHOOK_SECRET is not set');
+    return NextResponse.json({ error: 'Webhook not configured' }, { status: 500 });
+  }
 
+  const signature = req.headers.get('stripe-signature');
   if (!signature) {
     return NextResponse.json({ error: 'No signature' }, { status: 400 });
   }
 
   let event: Stripe.Event;
-
   try {
-    event = stripe.webhooks.constructEvent(
-      body,
-      signature,
-      process.env.STRIPE_WEBHOOK_SECRET!
-    );
+    event = stripe.webhooks.constructEvent(await req.text(), signature, secret);
   } catch (err) {
     console.error('Webhook signature verification failed:', err);
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 });
@@ -39,132 +42,34 @@ export async function POST(req: NextRequest) {
 
   try {
     switch (event.type) {
-      case 'checkout.session.completed': {
-        const session = event.data.object as Stripe.Checkout.Session;
-        const customerId = session.customer as string;
-        const amountTotal = session.amount_total || 0;
-
-        if (session.mode === 'subscription') {
-          // Full membership - subscription
-          const subscriptionId = session.subscription as string;
-          const subscription = await stripe.subscriptions.retrieve(subscriptionId, {
-            expand: ['items.data'],
-          }) as Stripe.Subscription;
-
-          await prisma.membership.update({
-            where: { stripeCustomerId: customerId },
-            data: {
-              status: 'ACTIVE',
-              type: 'FULL',
-              stripeSubscriptionId: subscriptionId,
-              amountPaid: amountTotal,
-              currentPeriodEnd: getSubscriptionPeriodEnd(subscription),
-            },
-          });
-        } else if (session.mode === 'payment') {
-          // Supporting membership - one-time payment
-          // Set membership to active for 1 year from now
-          const oneYearFromNow = new Date();
-          oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
-
-          await prisma.membership.update({
-            where: { stripeCustomerId: customerId },
-            data: {
-              status: 'ACTIVE',
-              type: 'SUPPORTING',
-              amountPaid: amountTotal,
-              currentPeriodEnd: oneYearFromNow,
-            },
-          });
-        }
+      case 'checkout.session.completed':
+      case 'checkout.session.async_payment_succeeded':
+        await fulfillCheckoutSession(event.data.object.id);
         break;
-      }
 
-      case 'customer.subscription.updated': {
-        const subscription = event.data.object as Stripe.Subscription;
-        const customerId = subscription.customer as string;
-
-        const status =
-          subscription.status === 'active'
-            ? 'ACTIVE'
-            : subscription.status === 'past_due'
-              ? 'EXPIRED'
-              : subscription.status === 'canceled'
-                ? 'CANCELLED'
-                : 'PENDING';
-
-        await prisma.membership.update({
-          where: { stripeCustomerId: customerId },
-          data: {
-            status,
-            currentPeriodEnd: getSubscriptionPeriodEnd(subscription),
-          },
-        });
+      case 'checkout.session.async_payment_failed':
+        console.warn(`Checkout ${event.data.object.id}: delayed payment failed`);
         break;
-      }
 
-      case 'customer.subscription.deleted': {
-        const subscription = event.data.object as Stripe.Subscription;
-        const customerId = subscription.customer as string;
-
-        await prisma.membership.update({
-          where: { stripeCustomerId: customerId },
-          data: {
-            status: 'CANCELLED',
-          },
-        });
+      case 'customer.subscription.updated':
+      case 'customer.subscription.deleted':
+        await syncSubscription(event.data.object.id);
         break;
-      }
 
+      case 'invoice.paid':
+      case 'invoice.payment_succeeded':
       case 'invoice.payment_failed': {
-        const invoice = event.data.object as Stripe.Invoice;
-        const customerId = invoice.customer as string;
-
-        if (customerId) {
-          await prisma.membership.update({
-            where: { stripeCustomerId: customerId },
-            data: {
-              status: 'EXPIRED',
-            },
-          });
-        }
-        break;
-      }
-
-      case 'invoice.payment_succeeded': {
-        // Handle successful invoice payment (subscription renewal)
-        const invoice = event.data.object as Stripe.Invoice;
-        const customerId = invoice.customer as string;
-
-        // Get subscription ID from line items
-        const subscriptionLineItem = invoice.lines?.data?.find(
-          (line) => line.subscription
-        );
-        const subscriptionId = subscriptionLineItem?.subscription;
-
-        if (subscriptionId && customerId && typeof subscriptionId === 'string') {
-          const subscription = await stripe.subscriptions.retrieve(subscriptionId, {
-            expand: ['items.data'],
-          }) as Stripe.Subscription;
-
-          await prisma.membership.update({
-            where: { stripeCustomerId: customerId },
-            data: {
-              status: 'ACTIVE',
-              currentPeriodEnd: getSubscriptionPeriodEnd(subscription),
-            },
-          });
-        }
+        const subscriptionId = invoiceSubscriptionId(event.data.object);
+        if (subscriptionId) await syncSubscription(subscriptionId);
         break;
       }
     }
 
     return NextResponse.json({ received: true });
   } catch (error) {
-    console.error('Webhook handler error:', error);
-    return NextResponse.json(
-      { error: 'Webhook handler failed' },
-      { status: 500 }
-    );
+    // 500 makes Stripe retry with backoff, which is what we want for a
+    // transient database or API failure.
+    console.error(`Webhook ${event.type} (${event.id}) failed:`, error);
+    return NextResponse.json({ error: 'Webhook handler failed' }, { status: 500 });
   }
 }

@@ -1,4 +1,6 @@
+import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
+import { noIndex } from '@/lib/seo';
 import { setRequestLocale } from 'next-intl/server';
 import { auth } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
@@ -14,6 +16,8 @@ type Props = {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ year?: string }>;
 };
+
+export const metadata: Metadata = { title: 'Admin', robots: noIndex };
 
 export default async function AdminPage({ params, searchParams }: Props) {
   const { locale } = await params;
@@ -104,7 +108,11 @@ export default async function AdminPage({ params, searchParams }: Props) {
   // Calculate stats (for filtered data)
   const totalMembers = memberships.length;
   const activeMembers = memberships.filter((m) => m.status === 'ACTIVE').length;
-  const totalRevenue = memberships.reduce((sum, m) => sum + (m.amountPaid || 1000), 0);
+  // Rows without amountPaid predate it being recorded and were €10; PENDING
+  // rows are abandoned checkouts that never paid anything.
+  const paid = (m: { amountPaid: number | null; status: string }) =>
+    m.amountPaid ?? (m.status === 'PENDING' ? 0 : 1000);
+  const totalRevenue = memberships.reduce((sum, m) => sum + paid(m), 0);
 
   const fullMembers = memberships.filter((m) => m.type === 'FULL' && m.status === 'ACTIVE').length;
   const supportingMembers = memberships.filter((m) => m.type === 'SUPPORTING' && m.status === 'ACTIVE').length;
@@ -141,9 +149,9 @@ export default async function AdminPage({ params, searchParams }: Props) {
 
     // Add revenue to the payment year
     if (yearlyStats[paymentYear]) {
-      yearlyStats[paymentYear].revenue += m.amountPaid || 1000;
+      yearlyStats[paymentYear].revenue += paid(m);
     } else if (yearlyStats[startYear]) {
-      yearlyStats[startYear].revenue += m.amountPaid || 1000;
+      yearlyStats[startYear].revenue += paid(m);
     }
   });
 
@@ -154,7 +162,7 @@ export default async function AdminPage({ params, searchParams }: Props) {
       case 'ACTIVE':
         return <Badge className="bg-green-500">Aktiivinen</Badge>;
       case 'PENDING':
-        return <Badge variant="secondary">Odottaa</Badge>;
+        return <Badge variant="secondary">Maksu kesken</Badge>;
       case 'EXPIRED':
         return <Badge variant="destructive">Vanhentunut</Badge>;
       case 'CANCELLED':
@@ -326,7 +334,7 @@ export default async function AdminPage({ params, searchParams }: Props) {
                           <td className="py-3 px-2">{getTypeBadge(membership.type)}</td>
                           <td className="py-3 px-2">{getStatusBadge(membership.status)}</td>
                           <td className="py-3 px-2">
-                            {membership.amountPaid ? formatCurrency(membership.amountPaid) : '10 €'}
+                            {membership.amountPaid ? formatCurrency(membership.amountPaid) : membership.status === 'PENDING' ? '-' : '10 €'}
                           </td>
                           <td className="py-3 px-2">{formatDate(membership.currentPeriodEnd)}</td>
                           <td className="py-3 px-2">{formatDate(membership.createdAt)}</td>

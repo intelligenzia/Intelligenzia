@@ -1,2 +1,2 @@
 // English alias for the Finnish join membership page
-export { default } from '../jaseneksi/page';
+export { default, generateMetadata } from '../jaseneksi/page';

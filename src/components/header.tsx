@@ -29,18 +29,19 @@ type HeaderProps = {
 
 export function Header({ user }: HeaderProps) {
   const t = useTranslations('nav');
+  const tAuth = useTranslations('auth');
   const pathname = usePathname();
   const locale = useLocale() as 'fi' | 'en';
   const items = navItems[locale];
   const loginHref = locale === 'fi' ? '/kirjaudu' : '/login';
-  const membershipHref = locale === 'fi' ? '/jasenyyys' : '/my-membership';
+  const membershipHref = locale === 'fi' ? '/jasenyys' : '/my-membership';
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/icon.png" alt="Intelligenzia" width={24} height={24} className="dark:invert" />
-          <span className="font-semibold">Intelligenzia</span>
+          <span className="display-md text-lg">Intelligenzia</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -77,14 +78,14 @@ export function Header({ user }: HeaderProps) {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56">
                 <div className="px-2 py-1.5">
-                  <p className="text-sm font-medium">{user.name || 'Käyttäjä'}</p>
+                  <p className="text-sm font-medium">{user.name || tAuth('account')}</p>
                   <p className="text-xs text-muted-foreground">{user.email}</p>
                 </div>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
                   <Link href={membershipHref} className="cursor-pointer">
                     <Settings className="mr-2 h-4 w-4" />
-                    {locale === 'fi' ? 'Jäsenyys' : 'Membership'}
+                    {t('myMembership')}
                   </Link>
                 </DropdownMenuItem>
                 {user.role === 'ADMIN' && (
@@ -101,7 +102,7 @@ export function Header({ user }: HeaderProps) {
                   className="cursor-pointer text-destructive focus:text-destructive"
                 >
                   <LogOut className="mr-2 h-4 w-4" />
-                  {locale === 'fi' ? 'Kirjaudu ulos' : 'Sign out'}
+                  {tAuth('logout')}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -116,7 +117,7 @@ export function Header({ user }: HeaderProps) {
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon">
                 <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
+                <span className="sr-only">{t('menu')}</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px]">
@@ -145,7 +146,7 @@ export function Header({ user }: HeaderProps) {
                       href={membershipHref}
                       className="text-lg font-medium text-muted-foreground transition-colors hover:text-primary"
                     >
-                      {locale === 'fi' ? 'Jäsenyys' : 'Membership'}
+                      {t('myMembership')}
                     </Link>
                     {user.role === 'ADMIN' && (
                       <Link
@@ -161,7 +162,7 @@ export function Header({ user }: HeaderProps) {
                       className="mt-2"
                     >
                       <LogOut className="mr-2 h-4 w-4" />
-                      {locale === 'fi' ? 'Kirjaudu ulos' : 'Sign out'}
+                      {tAuth('logout')}
                     </Button>
                   </>
                 ) : (

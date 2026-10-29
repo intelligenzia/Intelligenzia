@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
-import { stripe } from '@/lib/stripe';
+import { stripe, siteOrigin } from '@/lib/stripe';
 import { prisma } from '@/lib/prisma';
+import { localePath } from '@/lib/membership';
 
 export async function POST(req: NextRequest) {
   try {
@@ -30,13 +31,12 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Determine return URL based on locale
-    const returnPath = locale === 'fi' ? 'jasenyyys' : 'my-membership';
-
-    // Create a billing portal session
+    // Create a billing portal session. Live mode refuses this until the
+    // portal settings have been saved once in the Stripe dashboard.
     const portalSession = await stripe.billingPortal.sessions.create({
       customer: membership.stripeCustomerId,
-      return_url: `${process.env.NEXTAUTH_URL}/${locale}/${returnPath}`,
+      locale,
+      return_url: `${siteOrigin()}${localePath(locale, 'dashboard')}`,
     });
 
     return NextResponse.json({ url: portalSession.url });

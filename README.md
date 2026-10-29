@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Intelligenzia
 
-## Getting Started
+Website for Intelligenzia ry — a bilingual (Finnish / English) cognitive-science
+association site with a blog, content pages, a vocabulary glossary, and a Stripe-backed
+membership system.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router) + **React 19**
+- **next-intl** for i18n — Finnish (default, unprefixed) and English (`/en`)
+- **Tailwind CSS v4** + Radix UI / shadcn components
+- **Prisma** + **PostgreSQL** (Supabase) for users and memberships
+- **NextAuth v5** (database sessions) with magic-link sign-in via **Resend**
+- **Stripe** for full (annual subscription) and supporting (pay-what-you-want) memberships
+- Content authored as Markdown/MDX under `src/content`
+- Deployed on **Netlify** (`@netlify/plugin-nextjs`)
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install          # installs deps and runs `prisma generate`
+cp .env.example .env # then fill in the values
+bun run dev          # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Requires a running Postgres database (see `DATABASE_URL`). Apply the schema with:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+bunx prisma db push   # or: bunx prisma migrate dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment
 
-## Learn More
+See [.env.example](.env.example) for the full list. Key groups:
 
-To learn more about Next.js, take a look at the following resources:
+- **Database** — `DATABASE_URL` (Supabase pooler for prod, direct connection for local)
+- **Auth** — `NEXTAUTH_URL`, `NEXTAUTH_SECRET`, `AUTH_RESEND_KEY`, `FROM_EMAIL`
+- **Stripe** — secret/publishable keys, `STRIPE_WEBHOOK_SECRET`, and the price/product IDs
+- **Analytics** — `NEXT_PUBLIC_UMAMI_*`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+  app/[locale]/        Localized routes (Finnish + English page dirs)
+  app/api/             Route handlers: auth, stripe (checkout/portal/webhook), user
+  content/             Markdown blog posts and pages, per locale
+  lib/                 content loader, prisma, stripe, auth helpers
+  i18n/                next-intl routing + request config
+  messages/            UI translation strings (fi.json, en.json)
+  middleware.ts        Locale handling + legacy-URL redirects
+prisma/schema.prisma   User / Session / Membership models
+```
 
-## Deploy on Vercel
+## Membership flow
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Join** (`/jaseneksi`, `/en/join`): pick full (€10/yr subscription) or supporting
+   (one-off, pay what you want). No account needed; signed-in members get renewal and
+   upgrade options worked out by `planCheckout()` in [src/lib/membership.ts](src/lib/membership.ts).
+2. **Pay** on Stripe Checkout, which collects the email and full name.
+3. **Thanks** (`/jaseneksi/kiitos`): runs `fulfillCheckoutSession()` and shows the result.
+   The webhook runs the same idempotent function, so whichever arrives first records the
+   membership and sends the one confirmation email.
+4. **My membership** (`/jasenyys`): magic-link sign-in with the email used to pay.
+   Full members manage card, receipts and renewal in the Stripe billing portal.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Rules: supporting memberships can be renewed 60 days before they end (the new year starts
+from the old end date). Supporting -> full is allowed any time; billing starts when the paid
+period ends. A live subscription can't be bought twice.
+
+## Stripe webhooks
+
+Fulfilment and subscription sync live in [src/lib/membership-sync.ts](src/lib/membership-sync.ts);
+the endpoint is [src/app/api/stripe/webhook/route.ts](src/app/api/stripe/webhook/route.ts).
+For local testing:
+
+```bash
+stripe listen --forward-to localhost:3000/api/stripe/webhook
+```
+
+## Scripts
+
+- `bun run dev` — dev server
+- `bun run build` — `prisma generate` + `next build`
+- `bun run start` — production server
+- `bun run lint` — ESLint
+
+## Deployment
+
+Deployed to Netlify; configuration in [netlify.toml](netlify.toml). Set the same
+environment variables in the Netlify dashboard, and point a Stripe production webhook
+at `https://intelligenzia.fi/api/stripe/webhook`.
+
+Production checklist for memberships:
+
+- [ ] Netlify env: `DATABASE_URL`, `NEXTAUTH_URL`, `NEXTAUTH_SECRET`, `AUTH_RESEND_KEY`,
+      `FROM_EMAIL`, `STRIPE_SECRET_KEY` (live), `STRIPE_WEBHOOK_SECRET` (live endpoint),
+      `STRIPE_FULL_MEMBERSHIP_PRICE_ID`, `STRIPE_SUPPORTING_MEMBERSHIP_PRODUCT_ID`
+- [ ] Stripe webhook subscribed to the events listed in `.env.example`
+- [ ] Stripe → Settings → Billing → Customer portal: save the configuration once in live
+      mode (allow cancel, update payment method, invoice history); the portal errors until then
+- [ ] Stripe → Settings → Customer emails: turn on receipts for successful payments
+- [ ] Stripe → Settings → Payment methods: enable the wallets you want (Apple Pay, Google
+      Pay, MobilePay); checkout offers whatever is enabled
+- [ ] Resend: `FROM_EMAIL` domain verified (SPF/DKIM), or magic links land in spam
