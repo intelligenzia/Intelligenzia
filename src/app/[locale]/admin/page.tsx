@@ -11,6 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Users, TrendingUp, ExternalLink, UserCheck, UserX } from 'lucide-react';
 import { YearlyStatsChart } from '@/components/admin/yearly-stats-chart';
 import { YearFilter } from '@/components/admin/year-filter';
+import { StripeSyncButton } from '@/components/admin/stripe-sync-button';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -207,6 +208,7 @@ export default async function AdminPage({ params, searchParams }: Props) {
           <p className="text-muted-foreground">Jäsenhallinta ja tilastot</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
+          <StripeSyncButton />
           <YearFilter years={availableYears} currentYear={selectedYear} />
         </div>
       </header>

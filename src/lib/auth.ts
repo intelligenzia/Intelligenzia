@@ -58,6 +58,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         // With the database session strategy the adapter already loads the full
         // user row, so `role` is available here without an extra query.
         session.user.role = (user as { role?: 'USER' | 'ADMIN' }).role ?? 'USER';
+        // Bootstrap admins by email so a fresh database isn't locked out.
+        const admins = (process.env.ADMIN_EMAILS ?? '')
+          .split(',')
+          .map((e) => e.trim().toLowerCase())
+          .filter(Boolean);
+        if (user.email && admins.includes(user.email.toLowerCase())) {
+          session.user.role = 'ADMIN';
+        }
       }
       return session;
     },

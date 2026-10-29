@@ -31,7 +31,7 @@ export type FulfillResult =
 
 // Stripe moved current_period_end onto subscription items; webhook endpoints
 // pinned to an older API version still send it on the subscription.
-function subscriptionPeriodEnd(sub: Stripe.Subscription): Date | null {
+export function subscriptionPeriodEnd(sub: Stripe.Subscription): Date | null {
   const end =
     sub.items?.data[0]?.current_period_end ??
     (sub as unknown as { current_period_end?: number }).current_period_end;
@@ -39,7 +39,7 @@ function subscriptionPeriodEnd(sub: Stripe.Subscription): Date | null {
 }
 
 /** null: first payment still in flight, leave the row alone. */
-function subscriptionStatus(status: Stripe.Subscription.Status): MembershipStatus | null {
+export function subscriptionStatus(status: Stripe.Subscription.Status): MembershipStatus | null {
   switch (status) {
     case 'active':
     case 'trialing':
