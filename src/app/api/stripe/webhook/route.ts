@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { stripe } from '@/lib/stripe';
 import { fulfillCheckoutSession, syncSubscription } from '@/lib/membership-sync';
+import { recordInvoicePeriod } from '@/lib/membership-periods';
 
 // Subscribe the endpoint to exactly these events in the Stripe dashboard.
 // Everything else is acknowledged and ignored.
@@ -61,6 +62,10 @@ export async function POST(req: NextRequest) {
       case 'invoice.payment_failed': {
         const subscriptionId = invoiceSubscriptionId(event.data.object);
         if (subscriptionId) await syncSubscription(subscriptionId);
+        // Each paid renewal is one more year in the member's history.
+        if (subscriptionId && event.type !== 'invoice.payment_failed') {
+          await recordInvoicePeriod(await stripe.invoices.retrieve(event.data.object.id!));
+        }
         break;
       }
     }

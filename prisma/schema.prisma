@@ -20,16 +20,17 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String             @id @default(cuid())
   name          String?
-  email         String?   @unique
+  email         String?            @unique
   emailVerified DateTime?
   image         String?
-  role          UserRole  @default(USER)
+  role          UserRole           @default(USER)
   sessions      Session[]
   membership    Membership?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  periods       MembershipPeriod[]
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
 }
 
 enum UserRole {
@@ -54,20 +55,40 @@ model Membership {
   status               MembershipStatus @default(PENDING)
   stripeCustomerId     String?          @unique
   stripeSubscriptionId String?
-  amountPaid           Int?             // Amount in cents
+  amountPaid           Int? // Amount in cents
   currentPeriodEnd     DateTime?
   createdAt            DateTime         @default(now())
   updatedAt            DateTime         @updatedAt
 }
 
+/// One paid membership year: the history behind the single Membership row.
+/// Each row is one Stripe payment (subscription invoice, one-off checkout or
+/// a legacy charge), so re-importing is idempotent on stripePaymentId.
+model MembershipPeriod {
+  id               String         @id @default(cuid())
+  userId           String
+  user             User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type             MembershipType
+  startsAt         DateTime
+  endsAt           DateTime
+  amountPaid       Int? // Amount in cents
+  source           String // invoice | checkout | charge
+  stripePaymentId  String         @unique
+  stripeCustomerId String?
+  createdAt        DateTime       @default(now())
+
+  @@index([userId])
+  @@index([startsAt, endsAt])
+}
+
 enum MembershipType {
-  FULL       // Varsinainen jäsen
+  FULL // Varsinainen jäsen
   SUPPORTING // Kannatusjäsen
 }
 
 enum MembershipStatus {
-  PENDING    // Waiting for board approval
-  ACTIVE     // Approved and paid
-  EXPIRED    // Membership period ended
-  CANCELLED  // User cancelled
+  PENDING // Waiting for board approval
+  ACTIVE // Approved and paid
+  EXPIRED // Membership period ended
+  CANCELLED // User cancelled
 }

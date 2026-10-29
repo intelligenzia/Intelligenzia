@@ -67,6 +67,11 @@ export default async function MembershipDashboardPage({ params, searchParams }: 
     where: { userId: session.user.id },
   });
   const state = membershipState(membership);
+  const periods = await prisma.membershipPeriod.findMany({
+    where: { userId: session.user.id },
+    orderBy: { startsAt: 'desc' },
+    select: { id: true, type: true, startsAt: true, endsAt: true },
+  });
 
   // Whether a subscription is set to stop at period end lives only in
   // Stripe. Ask, but never let a Stripe hiccup break the page.
@@ -300,6 +305,23 @@ export default async function MembershipDashboardPage({ params, searchParams }: 
             </CardContent>
           </Card>
         </div>
+
+        {/* Every paid membership year, imported from Stripe. */}
+        {periods.length > 0 && (
+          <section className="mt-10">
+            <h2 className="display-md text-xl">{fi ? 'Jäsenyyshistoria' : 'Membership history'}</h2>
+            <ul className="mt-4 border-t">
+              {periods.map((p) => (
+                <li key={p.id} className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b py-3">
+                  <span className="font-medium">{typeLabels[p.type][fi ? 'fi' : 'en']}</span>
+                  <span className="font-mono text-sm text-muted-foreground tabular-nums">
+                    {formatDate(p.startsAt, locale)} – {formatDate(p.endsAt, locale)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* Actions */}
         <div className="mt-8 flex flex-col-reverse items-start justify-between gap-4 sm:flex-row sm:items-center">

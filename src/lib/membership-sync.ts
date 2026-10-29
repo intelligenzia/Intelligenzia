@@ -3,6 +3,7 @@ import type { MembershipStatus } from '@prisma/client';
 import { prisma } from './prisma';
 import { stripe, siteOrigin } from './stripe';
 import { sendEmail, membershipConfirmationEmail, type ConfirmationKind } from './email';
+import { invoicePeriod, recordPeriod } from './membership-periods';
 import {
   formatDate,
   localePath,
@@ -81,7 +82,7 @@ async function resolveUser(userId: string | undefined, email: string, name: stri
  */
 export async function fulfillCheckoutSession(sessionId: string): Promise<FulfillResult> {
   const session = await stripe.checkout.sessions.retrieve(sessionId, {
-    expand: ['subscription'],
+    expand: ['subscription', 'subscription.latest_invoice'],
   });
   const meta = session.metadata ?? {};
   const locale = meta.locale === 'en' ? 'en' : 'fi';
@@ -190,6 +191,46 @@ export async function fulfillCheckoutSession(sessionId: string): Promise<Fulfill
 
     return { duplicate: false as const, changed: !unchanged, target, kind };
   });
+
+  // Keep the year-by-year history in step with the current state.
+  if (!outcome.duplicate) {
+    try {
+      const invoice =
+        subscription?.latest_invoice && typeof subscription.latest_invoice !== 'string'
+          ? subscription.latest_invoice
+          : null;
+      const period = invoice ? invoicePeriod(invoice) : null;
+      if (invoice?.id && period) {
+        await recordPeriod({
+          userId: user.id,
+          type: 'FULL',
+          startsAt: period.start,
+          endsAt: period.end,
+          amountPaid: invoice.amount_paid,
+          source: 'invoice',
+          stripePaymentId: invoice.id,
+          stripeCustomerId: customerId,
+        });
+      } else if (!subscription && outcome.target.currentPeriodEnd) {
+        const end = outcome.target.currentPeriodEnd;
+        const start = new Date(end);
+        start.setFullYear(start.getFullYear() - 1);
+        await recordPeriod({
+          userId: user.id,
+          type: 'SUPPORTING',
+          startsAt: start,
+          endsAt: end,
+          amountPaid: session.amount_total,
+          source: 'checkout',
+          stripePaymentId: session.id,
+          stripeCustomerId: customerId,
+        });
+      }
+    } catch (err) {
+      // History is reconstructible from Stripe; never fail the checkout on it.
+      console.error('[membership] recording period failed:', err);
+    }
+  }
 
   if (outcome.duplicate) {
     console.error(

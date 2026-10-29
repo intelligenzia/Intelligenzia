@@ -71,14 +71,31 @@ export default async function AdminPage({ params, searchParams }: Props) {
     },
   });
 
+  // Paid membership years, imported from Stripe. When present they are the
+  // source of truth for "who was a member in year X"; the single Membership
+  // row only knows the current state and the first start date.
+  const periods = await prisma.membershipPeriod.findMany({
+    select: { userId: true, startsAt: true, endsAt: true, amountPaid: true },
+  });
+  const hasHistory = periods.length > 0;
+  const yearBounds = (y: number) => [new Date(y, 0, 1), new Date(y, 11, 31, 23, 59, 59)] as const;
+  const membersInYear = (y: number) => {
+    const [start, end] = yearBounds(y);
+    return new Set(periods.filter((p) => p.startsAt <= end && p.endsAt >= start).map((p) => p.userId));
+  };
+
   // Get available years for filter (from 2020 to current year)
   const currentYear = new Date().getFullYear();
-  const availableYears = Array.from({ length: currentYear - 2020 + 1 }, (_, i) => currentYear - i);
+  const firstYear = Math.min(2020, ...periods.map((p) => p.startsAt.getFullYear()));
+  const availableYears = Array.from({ length: currentYear - firstYear + 1 }, (_, i) => currentYear - i);
 
   // Filter memberships by year if selected
   // A membership is included if it was active during the selected year
   // (period started before year end AND period ended after year start)
-  const memberships = selectedYear
+  const selectedMembers = selectedYear && hasHistory ? membersInYear(selectedYear) : null;
+  const memberships = selectedMembers
+    ? allMemberships.filter((m) => selectedMembers.has(m.userId))
+    : selectedYear
     ? allMemberships.filter(m => {
         const yearStart = new Date(selectedYear, 0, 1);
         const yearEnd = new Date(selectedYear, 11, 31, 23, 59, 59);
@@ -94,6 +111,7 @@ export default async function AdminPage({ params, searchParams }: Props) {
     ? allUsers.filter(u => {
         const userYear = new Date(u.createdAt).getFullYear();
         if (userYear === selectedYear) return true;
+        if (selectedMembers) return selectedMembers.has(u.id);
         // Also include if membership was active during that year
         if (u.membership) {
           const yearStart = new Date(selectedYear, 0, 1);
@@ -113,7 +131,11 @@ export default async function AdminPage({ params, searchParams }: Props) {
   // rows are abandoned checkouts that never paid anything.
   const paid = (m: { amountPaid: number | null; status: string }) =>
     m.amountPaid ?? (m.status === 'PENDING' ? 0 : 1000);
-  const totalRevenue = memberships.reduce((sum, m) => sum + paid(m), 0);
+  const totalRevenue = hasHistory
+    ? periods
+        .filter((p) => !selectedYear || p.startsAt.getFullYear() === selectedYear)
+        .reduce((sum, p) => sum + (p.amountPaid ?? 0), 0)
+    : memberships.reduce((sum, m) => sum + paid(m), 0);
 
   const fullMembers = memberships.filter((m) => m.type === 'FULL' && m.status === 'ACTIVE').length;
   const supportingMembers = memberships.filter((m) => m.type === 'SUPPORTING' && m.status === 'ACTIVE').length;
@@ -126,13 +148,21 @@ export default async function AdminPage({ params, searchParams }: Props) {
   // Revenue is distributed across the years the membership was active
   const yearlyStats: Record<number, { year: number; members: number; revenue: number }> = {};
 
-  // Initialize all years from 2020 to current
-  for (let y = 2020; y <= currentYear; y++) {
+  // Initialize all years from the first recorded one to current
+  for (let y = firstYear; y <= currentYear; y++) {
     yearlyStats[y] = { year: y, members: 0, revenue: 0 };
   }
 
-  // For each membership, add to each year it was active
-  allMemberships.forEach(m => {
+  if (hasHistory) {
+    for (let y = firstYear; y <= currentYear; y++) yearlyStats[y].members = membersInYear(y).size;
+    for (const p of periods) {
+      const y = p.startsAt.getFullYear();
+      if (yearlyStats[y]) yearlyStats[y].revenue += p.amountPaid ?? 0;
+    }
+  }
+
+  // Without imported history, estimate from each membership's span.
+  if (!hasHistory) allMemberships.forEach(m => {
     const periodStart = new Date(m.createdAt);
     const periodEnd = m.currentPeriodEnd ? new Date(m.currentPeriodEnd) : new Date();
     const startYear = periodStart.getFullYear();
@@ -142,7 +172,7 @@ export default async function AdminPage({ params, searchParams }: Props) {
     const paymentYear = endYear > 0 ? endYear - 1 : startYear;
 
     // Count member in each year their membership was active
-    for (let y = Math.max(startYear, 2020); y <= Math.min(endYear, currentYear); y++) {
+    for (let y = Math.max(startYear, firstYear); y <= Math.min(endYear, currentYear); y++) {
       if (yearlyStats[y]) {
         yearlyStats[y].members += 1;
       }
