@@ -33,6 +33,46 @@ export interface BlogPost {
   content: string;
 }
 
+/**
+ * A readable summary for a post.
+ *
+ * Prefers the author's own `description`. Falling back to the body means
+ * turning Markdown into a sentence rather than slicing raw source: strip the
+ * structural syntax, take whole words, and cut at a sentence boundary where one
+ * is close to the limit.
+ */
+export function getExcerpt(post: BlogPost, maxLength = 160): string {
+  if (post.frontmatter.description) return post.frontmatter.description;
+
+  const plain = post.content
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/^\s*#{1,6}\s+.*$/gm, ' ')
+    .replace(/^\s*>\s?/gm, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/^https?:\/\/\S+$/gm, ' ')
+    .replace(/^\s*[-*+]\s+/gm, ' ')
+    .replace(/[*_`]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (plain.length <= maxLength) return plain;
+
+  const window = plain.slice(0, maxLength + 1);
+
+  // Prefer ending on a sentence if one lands in the last third of the window.
+  const sentenceEnd = Math.max(
+    window.lastIndexOf('. '),
+    window.lastIndexOf('! '),
+    window.lastIndexOf('? '),
+  );
+  if (sentenceEnd > maxLength * 0.6) return window.slice(0, sentenceEnd + 1);
+
+  const lastSpace = window.lastIndexOf(' ');
+  return `${window.slice(0, lastSpace > 0 ? lastSpace : maxLength).trimEnd()}…`;
+}
+
 export function getPage(locale: string, slug: string): Page | null {
   const filePath = path.join(contentDirectory, 'pages', locale, `${slug}.md`);
 

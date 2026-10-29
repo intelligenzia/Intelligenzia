@@ -174,7 +174,7 @@ export default async function ContentPage({ params }: Props) {
             <TableOfContents content={page.content} />
           </div>
 
-          <div className="prose prose-neutral dark:prose-invert max-w-none">
+          <div className="article-body">
             <Markdown content={page.content} />
           </div>
         </article>

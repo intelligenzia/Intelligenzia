@@ -154,25 +154,27 @@ export default async function BlogPostPage({ params }: Props) {
             )}
 
             <header className="mb-10">
-              <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                <span className="flex items-center gap-1">
-                  <Calendar className="h-4 w-4" />
+              <div className="mb-4 flex flex-wrap items-center gap-4 font-mono text-xs text-muted-foreground">
+                <span className="flex items-center gap-1.5">
+                  <Calendar className="h-3.5 w-3.5" />
                   {formatDate(post.frontmatter.date, locale)}
                 </span>
                 {post.frontmatter.author && (
                   <Link
                     href={`${authorsPath}/${slugify(post.frontmatter.author)}`}
-                    className="flex items-center gap-1 hover:text-foreground"
+                    className="flex items-center gap-1.5 hover:text-foreground"
                   >
-                    <User className="h-4 w-4" />
+                    <User className="h-3.5 w-3.5" />
                     {post.frontmatter.author}
                   </Link>
                 )}
                 {post.frontmatter.category && (
-                  <Badge variant="secondary">{post.frontmatter.category}</Badge>
+                  <Badge variant="secondary" className="font-mono text-[10.5px]">
+                    {post.frontmatter.category}
+                  </Badge>
                 )}
               </div>
-              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              <h1 className="display-lg text-[clamp(2rem,5vw,3rem)]">
                 {post.frontmatter.title}
               </h1>
             </header>
@@ -183,7 +185,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
 
             {/* Article content with improved typography */}
-            <div className="prose-article">
+            <div className="article-body">
               <Markdown content={post.content} />
             </div>
           </article>

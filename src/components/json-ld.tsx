@@ -13,12 +13,12 @@ export function OrganizationJsonLd({ locale }: OrganizationJsonLdProps) {
     name: 'Intelligenzia ry',
     alternateName: 'Intelligenzia',
     url: baseUrl,
-    logo: `${baseUrl}/logo.png`,
+    logo: `${baseUrl}/icon.png`,
     description:
       locale === 'fi'
         ? 'Kognitiotieteen alumniyhdistys Helsingin yliopistosta'
         : 'Cognitive science alumni society from the University of Helsinki',
-    foundingDate: '2003',
+    foundingDate: '1989',
     sameAs: [],
   };
 
@@ -88,7 +88,7 @@ export function ArticleJsonLd({ post, locale }: ArticleJsonLdProps) {
       name: 'Intelligenzia ry',
       logo: {
         '@type': 'ImageObject',
-        url: `${baseUrl}/logo.png`,
+        url: `${baseUrl}/icon.png`,
       },
     },
     mainEntityOfPage: {
@@ -139,7 +139,7 @@ interface PersonJsonLdProps {
   locale: string;
 }
 
-export function PersonJsonLd({ name, locale }: PersonJsonLdProps) {
+export function PersonJsonLd({ name }: PersonJsonLdProps) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',

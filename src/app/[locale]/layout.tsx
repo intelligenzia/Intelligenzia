@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Archivo, Source_Serif_4, JetBrains_Mono } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -11,14 +11,29 @@ import { UmamiAnalytics } from '@/components/analytics';
 import { auth } from '@/lib/auth';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-sans',
+// Display + UI. The width axis is the identity gesture: condensed (~76) for
+// display, normal (100) for nav, buttons and labels — one family, two roles.
+const archivo = Archivo({
+  variable: '--ff-display',
   subsets: ['latin'],
+  axes: ['wdth'],
+  display: 'swap',
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-mono',
+// Long-form body. Optical sizing and proper Finnish diacritics for the ~130KB
+// of essays and glossary definitions that Geist was previously setting.
+const sourceSerif = Source_Serif_4({
+  variable: '--ff-serif',
   subsets: ['latin'],
+  axes: ['opsz'],
+  display: 'swap',
+});
+
+// Utility: English glossary terms, dates, counts, metadata.
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--ff-mono',
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 export function generateStaticParams() {
@@ -49,13 +64,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     authors: [{ name: 'Intelligenzia ry' }],
     creator: 'Intelligenzia ry',
     metadataBase: new URL(siteUrl),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        'fi': '/fi',
-        'en': '/en',
-      },
-    },
+    // No `alternates` here on purpose: an inherited canonical pointed every
+    // page without its own at the homepage. Pages set theirs via
+    // localizedAlternates().
     openGraph: {
       title: metadata.title,
       description: metadata.description,
@@ -98,7 +109,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <UmamiAnalytics />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${archivo.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"

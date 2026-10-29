@@ -49,7 +49,6 @@ export default async function Image({ params }: { params: { locale: string } }) 
             marginBottom: 40,
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={logoBase64}
             alt="Intelligenzia logo"

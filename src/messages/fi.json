@@ -12,17 +12,37 @@
     "organization": "Yhdistys",
     "events": "Tapahtumat",
     "blog": "Blogi",
+    "glossary": "Sanasto",
     "login": "Kirjaudu",
-    "myMembership": "Jäsenyyteni"
+    "myMembership": "Jäsenyyteni",
+    "menu": "Valikko"
   },
   "home": {
     "hero": {
-      "title": "Intelligenzia",
-      "subtitle": "Kognitiotieteen alumnijärjestö",
-      "description": "Yhdistämme kognitiotieteen opiskelijat, tutkijat ja alan ammattilaiset vuodesta 1989.",
-      "cta": "Liity jäseneksi",
-      "learnMore": "Lue lisää"
-    }
+      "eyebrow": "Perustettu 1989 · Helsingin yliopisto",
+      "title": "Kognitiotieteen alumniyhdistys",
+      "description": "Intelligenzia ry kokoaa yhteen Helsingin yliopistossa kognitiotiedettä opiskelleet ja alalla työskentelevät. Järjestämme tapahtumia, ylläpidämme alumniverkostoa ja julkaisemme kognitiotieteen sanastoa.",
+      "ctaJoin": "Liity jäseneksi",
+      "ctaJoinMeta": "{price} €/vuosi",
+      "ctaGlossary": "Selaa sanastoa",
+      "ctaGlossaryMeta": "{count} käsitettä"
+    },
+    "field": {
+      "eyebrow": "Ala",
+      "title": "Mitä on kognitiotiede?",
+      "body1": "Kognitiotiede tutkii mieltä ja sen toimintaa: havaitsemista, muistia, kieltä, oppimista ja päättelyä. Se ei ole yksi tieteenala vaan kuuden alan yhteinen kysymys: miten mieli käsittelee tietoa?",
+      "body2": "Ala syntyi 1950-luvulla, kun psykologit, kielitieteilijät ja tietojenkäsittelytieteilijät huomasivat tutkivansa samaa asiaa eri menetelmin. Helsingin yliopistossa kognitiotiedettä on voinut opiskella vuodesta 1989.",
+      "readMore": "Lue lisää alasta"
+    },
+    "news": "Ajankohtaista",
+    "fromBlog": "Blogista",
+    "allPosts": "Kaikki"
+  },
+  "hexagon": {
+    "aria": "Kognitiotieteen kuusikulmio: kuusi tieteenalaa ja niitä yhdistävät tieteidenväliset alat.",
+    "hint": "Osoita tai valitse tieteenala nähdäksesi sen rajapinnat.",
+    "interfaces": "{count} rajapintaa",
+    "filterAll": "Kaikki alat"
   },
   "membership": {
     "title": "Liity jäseneksi",
@@ -52,6 +72,7 @@
   "auth": {
     "login": "Kirjaudu sisään",
     "logout": "Kirjaudu ulos",
+    "account": "Tili",
     "email": "Sähköposti",
     "sendMagicLink": "Lähetä kirjautumislinkki",
     "checkEmail": "Tarkista sähköpostisi",

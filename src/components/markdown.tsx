@@ -143,12 +143,12 @@ export function Markdown({ content }: MarkdownProps) {
             remarkPlugins={[remarkGfm]}
             components={{
               h1: ({ children }) => (
-                <h1 className="mb-6 text-3xl font-bold tracking-tight">{children}</h1>
+                <h1 className="display-lg mb-6 text-4xl">{children}</h1>
               ),
               h2: ({ children }) => {
                 const id = generateId(children);
                 return (
-                  <h2 id={id} className="mb-4 mt-10 text-2xl font-semibold tracking-tight scroll-mt-24">
+                  <h2 id={id} className="display-md mt-12 mb-4 scroll-mt-24 text-[1.75rem]">
                     {children}
                   </h2>
                 );
@@ -156,25 +156,27 @@ export function Markdown({ content }: MarkdownProps) {
               h3: ({ children }) => {
                 const id = generateId(children);
                 return (
-                  <h3 id={id} className="mb-3 mt-8 text-xl font-semibold scroll-mt-24">{children}</h3>
+                  <h3 id={id} className="display-md mt-9 mb-3 scroll-mt-24 text-xl">
+                    {children}
+                  </h3>
                 );
               },
               h4: ({ children }) => (
-                <h4 className="mb-2 mt-6 text-lg font-semibold">{children}</h4>
+                <h4 className="mt-7 mb-2 font-display text-lg font-semibold">{children}</h4>
               ),
               p: ({ children }) => (
-                <p className="mb-6 text-base leading-relaxed text-foreground/80">
+                <p className="mb-6 max-w-[66ch] font-serif text-[1.09375rem] leading-[1.64]">
                   {children}
                 </p>
               ),
               ul: ({ children }) => (
-                <ul className="mb-6 ml-6 list-disc space-y-2">{children}</ul>
+                <ul className="mb-6 ml-6 max-w-[66ch] list-disc space-y-2">{children}</ul>
               ),
               ol: ({ children }) => (
-                <ol className="mb-6 ml-6 list-decimal space-y-2">{children}</ol>
+                <ol className="mb-6 ml-6 max-w-[66ch] list-decimal space-y-2">{children}</ol>
               ),
               li: ({ children }) => (
-                <li className="text-base leading-relaxed text-foreground/80 pl-1">
+                <li className="pl-1 font-serif text-[1.09375rem] leading-[1.64]">
                   {children}
                 </li>
               ),
@@ -208,23 +210,25 @@ export function Markdown({ content }: MarkdownProps) {
                 );
               },
               blockquote: ({ children }) => (
-                <blockquote className="my-6 border-l-4 border-primary/30 pl-6 italic text-foreground/70">
+                <blockquote className="my-7 max-w-[62ch] border-l-2 border-primary pl-6 font-serif text-[1.09375rem] leading-[1.6] text-muted-foreground italic">
                   {children}
                 </blockquote>
               ),
               table: ({ children }) => (
-                <div className="my-6 overflow-x-auto rounded-lg border">
+                <div className="my-7 overflow-x-auto rounded-sm border">
                   <table className="w-full border-collapse">{children}</table>
                 </div>
               ),
               thead: ({ children }) => (
-                <thead className="border-b bg-muted/50">{children}</thead>
+                <thead className="border-b bg-muted">{children}</thead>
               ),
               th: ({ children }) => (
-                <th className="p-3 text-left font-semibold">{children}</th>
+                <th className="p-3 text-left font-display text-sm font-semibold">
+                  {children}
+                </th>
               ),
               td: ({ children }) => (
-                <td className="border-b p-3 text-foreground/80">{children}</td>
+                <td className="border-b p-3 font-serif text-base">{children}</td>
               ),
               strong: ({ children }) => (
                 <strong className="font-semibold text-foreground">{children}</strong>
@@ -232,12 +236,12 @@ export function Markdown({ content }: MarkdownProps) {
               em: ({ children }) => (
                 <em className="italic">{children}</em>
               ),
-              hr: () => <hr className="my-10 border-border" />,
+              hr: () => <hr className="my-10 max-w-[66ch] border-border" />,
               code: ({ children, className }) => {
                 const isInline = !className;
                 if (isInline) {
                   return (
-                    <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-sm text-foreground">
+                    <code className="rounded-sm bg-muted px-1.5 py-0.5 font-mono text-[0.85em] text-foreground">
                       {children}
                     </code>
                   );
@@ -247,7 +251,7 @@ export function Markdown({ content }: MarkdownProps) {
                 );
               },
               pre: ({ children }) => (
-                <pre className="my-6 overflow-x-auto rounded-lg bg-muted p-4 font-mono text-sm">
+                <pre className="my-7 overflow-x-auto rounded-sm bg-muted p-4 font-mono text-sm">
                   {children}
                 </pre>
               ),

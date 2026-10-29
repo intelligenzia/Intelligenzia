@@ -12,17 +12,37 @@
     "organization": "Organization",
     "events": "Events",
     "blog": "Blog",
+    "glossary": "Glossary",
     "login": "Log in",
-    "myMembership": "My Membership"
+    "myMembership": "My Membership",
+    "menu": "Menu"
   },
   "home": {
     "hero": {
-      "title": "Intelligenzia",
-      "subtitle": "Cognitive Science Alumni Society",
-      "description": "Connecting cognitive science students, researchers, and professionals since 1989.",
-      "cta": "Become a Member",
-      "learnMore": "Learn More"
-    }
+      "eyebrow": "Founded 1989 · University of Helsinki",
+      "title": "The cognitive science alumni society",
+      "description": "Intelligenzia brings together people who studied cognitive science at the University of Helsinki and those now working in the field. We run events, keep the alumni network going, and publish a glossary of the field.",
+      "ctaJoin": "Become a member",
+      "ctaJoinMeta": "€{price}/year",
+      "ctaGlossary": "Browse the glossary",
+      "ctaGlossaryMeta": "{count} terms"
+    },
+    "field": {
+      "eyebrow": "The field",
+      "title": "What is cognitive science?",
+      "body1": "Cognitive science studies the mind and how it works: perception, memory, language, learning, and reasoning. It isn't one discipline but a question six of them share: how does the mind process information?",
+      "body2": "The field began in the 1950s, when psychologists, linguists, and computer scientists found they were studying the same thing by different methods. Cognitive science has been taught at the University of Helsinki since 1989.",
+      "readMore": "Read more about the field"
+    },
+    "news": "News",
+    "fromBlog": "From the blog",
+    "allPosts": "All posts"
+  },
+  "hexagon": {
+    "aria": "The cognitive science hexagon: six disciplines and the interdisciplines between them.",
+    "hint": "Point at or select a discipline to see its interfaces.",
+    "interfaces": "{count} interfaces",
+    "filterAll": "All disciplines"
   },
   "membership": {
     "title": "Become a Member",
@@ -45,13 +65,14 @@
       "newsletter": "Newsletter and current news",
       "community": "Active alumni community"
     },
-    "join": "Join Now",
+    "join": "Become a member",
     "alreadyMember": "Already a member?",
     "login": "Log in"
   },
   "auth": {
     "login": "Log in",
     "logout": "Log out",
+    "account": "Account",
     "email": "Email",
     "sendMagicLink": "Send magic link",
     "checkEmail": "Check your email",

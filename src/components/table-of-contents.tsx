@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ChevronDown, List } from 'lucide-react';
 
@@ -40,13 +40,10 @@ function extractHeadings(content: string): TocItem[] {
 
 export function TableOfContents({ content }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>('');
-  const [headings, setHeadings] = useState<TocItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const extracted = extractHeadings(content);
-    setHeadings(extracted);
-  }, [content]);
+  // Headings are pure derived state from `content`; compute during render.
+  const headings = useMemo(() => extractHeadings(content), [content]);
 
   useEffect(() => {
     if (headings.length === 0) return;

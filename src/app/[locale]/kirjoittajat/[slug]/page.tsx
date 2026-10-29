@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, ArrowLeft, User, FileText } from 'lucide-react';
 import type { Metadata } from 'next';
+import { localizedAlternates } from '@/lib/seo';
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -40,6 +41,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: locale === 'fi'
       ? `${author.name} on kirjoittanut ${author.postCount} blogikirjoitusta Intelligenzian blogiin.`
       : `${author.name} has written ${author.postCount} blog posts for Intelligenzia.`,
+
+    // Author slugs are per-locale, so only the current page is declared.
+    alternates: localizedAlternates(
+      locale,
+      locale === 'fi' ? { fi: `/kirjoittajat/${slug}` } : { en: `/authors/${slug}` },
+    ),
   };
 }
 
@@ -55,7 +62,6 @@ export default async function AuthorPage({ params }: Props) {
 
   const posts = getBlogPostsByAuthor(locale, author.name);
   const blogPath = locale === 'fi' ? '/blogi' : '/blog';
-  const authorsPath = locale === 'fi' ? '/kirjoittajat' : '/authors';
 
   return (
     <div className="container mx-auto px-4 py-12">

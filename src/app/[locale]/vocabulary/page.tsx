@@ -2,6 +2,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { VocabularySearch } from '@/components/vocabulary-search';
 import type { Metadata } from 'next';
+import { localizedAlternates } from '@/lib/seo';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -33,6 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'artificial intelligence',
       'philosophy of mind',
     ],
+    alternates: localizedAlternates('en', { fi: '/sanasto', en: '/vocabulary' }),
   };
 }
 

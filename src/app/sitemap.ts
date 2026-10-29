@@ -156,9 +156,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Vocabulary (Sanasto) pages - paired
+  // Vocabulary (Sanasto) pages. English section slugs are derived from the
+  // Finnish ones inline below (only v-o -> v-z differs).
   const fiVocabularySlugs = ['a-c', 'd-f', 'g-i', 'j-l', 'm-o', 'p-r', 's-u', 'v-o'];
-  const enVocabularySlugs = ['a-c', 'd-f', 'g-i', 'j-l', 'm-o', 'p-r', 's-u', 'v-z'];
 
   // Vocabulary index pages (paired)
   entries.push({

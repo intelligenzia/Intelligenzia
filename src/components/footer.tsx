@@ -26,9 +26,9 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/icon.png" alt="Intelligenzia" width={24} height={24} className="dark:invert" />
-              <span className="font-semibold">Intelligenzia</span>
+              <span className="display-md text-lg">Intelligenzia</span>
             </Link>
-            <p className="text-sm text-muted-foreground">
+            <p className="font-serif text-sm text-muted-foreground">
               {locale === 'fi' ? 'Kognitiotieteen alumnijärjestö' : 'Cognitive Science Alumni Society'}
               <br />
               {locale === 'fi' ? 'Helsingin yliopisto' : 'University of Helsinki'}
@@ -36,7 +36,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 font-semibold">{t('about')}</h3>
+            <h3 className="eyebrow mb-4">{t('about')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link href={links.cognitiveScience.href} className="hover:text-foreground">
@@ -57,14 +57,21 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 font-semibold">{t('contact')}</h3>
+            <h3 className="eyebrow mb-4">{t('contact')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>hallitus@intelligenzia.fi</li>
+              <li>
+                <a
+                  href="mailto:hallitus@intelligenzia.fi"
+                  className="font-mono text-xs hover:text-foreground"
+                >
+                  hallitus@intelligenzia.fi
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="mb-4 font-semibold">{t('privacy')}</h3>
+            <h3 className="eyebrow mb-4">{t('privacy')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link href={links.privacy.href} className="hover:text-foreground">
@@ -75,7 +82,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
+        <div className="mt-8 border-t pt-8 text-center font-mono text-xs text-muted-foreground">
           <p>
             &copy; {currentYear} Intelligenzia ry. {t('rights')}
           </p>

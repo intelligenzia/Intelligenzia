@@ -7,6 +7,7 @@ import { TableOfContents } from '@/components/table-of-contents';
 import { DefinedTermSetJsonLd } from '@/components/json-ld';
 import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
+import { localizedAlternates } from '@/lib/seo';
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -32,6 +33,13 @@ export function generateStaticParams() {
   }));
 }
 
+/** The last section is V–Ö in Finnish and V–Z in English; the rest match. */
+function sectionAlternates(slug: string) {
+  const fiSlug = slug === 'v-z' ? 'v-o' : slug;
+  const enSlug = slug === 'v-o' ? 'v-z' : slug;
+  return localizedAlternates('fi', { fi: `/sanasto/${fiSlug}`, en: `/vocabulary/${enSlug}` });
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
 
@@ -44,12 +52,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!page) {
     return {
       title: `Sanasto ${sectionTitles[slug]} | Kognitiotieteen sanasto`,
+      alternates: sectionAlternates(slug),
     };
   }
 
   return {
     title: page.frontmatter.title,
     description: page.frontmatter.description,
+    alternates: sectionAlternates(slug),
   };
 }
 
@@ -114,7 +124,7 @@ export default async function VocabularyPage({ params }: Props) {
             <TableOfContents content={page.content} />
           </div>
 
-          <div className="prose prose-neutral max-w-none dark:prose-invert">
+          <div className="article-body">
             <Markdown content={page.content} />
           </div>
 

@@ -21,10 +21,12 @@ export function VocabularySearch({ locale = 'fi' }: VocabularySearchProps) {
   const isEnglish = locale === 'en';
   const basePath = isEnglish ? '/vocabulary' : '/sanasto';
 
-  // Search when query changes
-  useEffect(() => {
-    if (query.length >= 2) {
-      const searchResults = searchVocabulary(query);
+  // Search as the user types. Runs in the change handler rather than an effect
+  // so it doesn't trigger a cascading render.
+  const handleQueryChange = useCallback((value: string) => {
+    setQuery(value);
+    if (value.length >= 2) {
+      const searchResults = searchVocabulary(value);
       setResults(searchResults.slice(0, 8)); // Limit to 8 results
       setIsOpen(searchResults.length > 0);
       setSelectedIndex(-1);
@@ -32,7 +34,7 @@ export function VocabularySearch({ locale = 'fi' }: VocabularySearchProps) {
       setResults([]);
       setIsOpen(false);
     }
-  }, [query]);
+  }, []);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -102,7 +104,7 @@ export function VocabularySearch({ locale = 'fi' }: VocabularySearchProps) {
               : 'Etsi käsitettä suomeksi tai englanniksi...'
           }
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => handleQueryChange(e.target.value)}
           onKeyDown={handleKeyDown}
           onFocus={() => results.length > 0 && setIsOpen(true)}
           className="w-full"
