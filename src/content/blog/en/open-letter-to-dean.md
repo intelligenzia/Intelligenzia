@@ -1,7 +1,7 @@
 ---
 title: Open Letter to the Dean of the Faculty of Behavioural Sciences
 date: 2015-09-21
-category: cognitive-science
+category: Cognitive science
 cover: one.jpg
 author: Perttu Lähteenlahti
 description: Initiative to ensure the continuity of cognitive science as a discipline during the ongoing faculty restructuring at the University of Helsinki.

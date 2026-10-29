@@ -13,21 +13,13 @@ export default function HeroSection() {
 
   return (
     <section className="relative isolate overflow-hidden border-b">
-      {/* Ambient wash behind the object: the brand red, barely there. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_70%_at_78%_45%,color-mix(in_oklch,var(--primary)_9%,transparent),transparent_70%)]"
-      />
-
       <div className="container mx-auto grid min-h-[calc(100dvh-4rem)] items-center gap-6 px-4 pt-14 pb-10 md:pt-20 lg:max-h-[960px] lg:grid-cols-12 lg:gap-0 lg:py-16">
         <div className="relative z-10 flex flex-col items-start gap-7 lg:col-span-6">
-          <p className="eyebrow">{t('eyebrow')}</p>
-
           <h1 className="display-hero max-w-[12ch] text-[clamp(2.75rem,6vw,5.75rem)] [text-wrap:initial]">
             {t('title')}
           </h1>
 
-          <p className="max-w-[46ch] text-lg leading-relaxed text-muted-foreground">
+          <p className="max-w-[46ch] text-lg leading-relaxed text-pretty text-muted-foreground">
             {t('description')}
           </p>
 

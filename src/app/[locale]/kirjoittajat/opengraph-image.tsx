@@ -8,5 +8,6 @@ export default async function Image() {
   return generateOgImage({
     title: 'Kirjoittajat',
     description: 'Intelligenzian blogin kirjoittajat – kognitiotieteen asiantuntijoita ja alumneja.',
+    section: 'Blogi',
   });
 }

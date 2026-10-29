@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { useLocale } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { ChevronDown, List } from 'lucide-react';
 
@@ -29,7 +30,8 @@ function extractHeadings(content: string): TocItem[] {
 
   while ((match = headingRegex.exec(content)) !== null) {
     const level = match[1].length;
-    const text = match[2].trim();
+    // Strip inline markdown so "### **Name**" lists as "Name".
+    const text = match[2].replace(/[*_`]/g, '').trim();
     const id = generateId(text);
 
     headings.push({ id, text, level });
@@ -39,6 +41,7 @@ function extractHeadings(content: string): TocItem[] {
 }
 
 export function TableOfContents({ content }: TableOfContentsProps) {
+  const locale = useLocale();
   const [activeId, setActiveId] = useState<string>('');
   const [isOpen, setIsOpen] = useState(false);
 
@@ -89,6 +92,7 @@ export function TableOfContents({ content }: TableOfContentsProps) {
   }
 
   const activeHeading = headings.find(h => h.id === activeId);
+  const tocLabel = locale === 'fi' ? 'Sisällys' : 'Contents';
 
   return (
     <>
@@ -101,7 +105,7 @@ export function TableOfContents({ content }: TableOfContentsProps) {
           <span className="flex items-center gap-2 text-muted-foreground">
             <List className="h-4 w-4" />
             <span className="text-foreground">
-              {activeHeading?.text || 'Sisällys'}
+              {activeHeading?.text || tocLabel}
             </span>
           </span>
           <ChevronDown className={cn(
@@ -141,7 +145,7 @@ export function TableOfContents({ content }: TableOfContentsProps) {
       <nav className="hidden xl:block w-56">
         <div className="sticky top-24">
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Sisällys
+            {tocLabel}
           </p>
           <ul className="space-y-1 text-[13px] leading-snug">
             {headings.map((heading) => (

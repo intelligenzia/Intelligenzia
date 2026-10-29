@@ -1,7 +1,7 @@
 ---
 title: Intelligenzia's Membership Opens to All Students
 date: 2018-01-11
-category: organization
+category: Society
 cover: hallitus2018.jpeg
 author: Pietari Nurmi
 description: Intelligenzia's new rules open membership to all students interested in cognitive science.

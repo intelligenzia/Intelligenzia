@@ -1,7 +1,7 @@
 ---
 title: Studying Cognitive Science in Finland
 date: 2025-02-01
-category: cognitive-science
+category: Cognitive science
 cover: yliopisto.png
 author: Intelligenzia
 description: A comprehensive guide to cognitive science study opportunities in Finland. The University of Helsinki and University of Jyväskylä offer unique master's programs in cognitive science.

@@ -38,6 +38,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   return generateOgImage({
     title,
     description,
+    section: 'Glossary',
   });
 }
 

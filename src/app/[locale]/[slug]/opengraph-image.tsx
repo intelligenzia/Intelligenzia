@@ -18,6 +18,7 @@ export default async function Image({ params }: { params: Promise<{ locale: stri
   return generateOgImage({
     title,
     description,
+    section: sectionFor(locale, slug),
   });
 }
 
@@ -31,4 +32,19 @@ export function generateStaticParams() {
   }
 
   return params;
+}
+
+/** Footer label: the society's own pages get their name, the rest are field explainers. */
+function sectionFor(locale: string, slug: string): string {
+  const own: Record<string, string> = {
+    yhdistys: 'Yhdistys',
+    organization: 'Organization',
+    opiskelu: 'Opiskelu',
+    studies: 'Studies',
+    tapahtumat: 'Tapahtumat',
+    events: 'Events',
+    tietosuoja: 'Tietosuoja',
+    'privacy-policy': 'Privacy',
+  };
+  return own[slug] ?? (locale === 'fi' ? 'Kognitiotiede' : 'Cognitive science');
 }

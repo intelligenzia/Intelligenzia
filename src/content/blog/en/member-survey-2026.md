@@ -1,7 +1,7 @@
 ---
 title: "Member survey results: what do cognitive scientists want in 2026?"
 date: 2026-03-18
-category: association
+category: Society
 cover: social.jpg
 author: Perttu Lähteenlahti
 description: We asked our members what kind of activities Intelligenzia should organize. Here are the results and our plans for 2026.

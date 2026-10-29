@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { Play } from 'lucide-react';
 import { useState } from 'react';
+import { useLocale } from 'next-intl';
 
 interface YouTubeEmbedProps {
   videoId: string;
@@ -11,16 +12,18 @@ interface YouTubeEmbedProps {
 
 export function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const fi = useLocale() === 'fi';
+  const label = title || (fi ? 'YouTube-video' : 'YouTube video');
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   const fallbackThumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
   if (isPlaying) {
     return (
       <div className="flex flex-col">
-        <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+        <div className="relative aspect-video w-full overflow-hidden bg-muted">
           <iframe
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-            title={title || 'YouTube video'}
+            title={label}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="absolute inset-0 h-full w-full"
@@ -37,14 +40,14 @@ export function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
     <div className="flex flex-col">
       <button
         onClick={() => setIsPlaying(true)}
-        className="group relative aspect-video w-full overflow-hidden rounded-lg bg-muted"
-        aria-label={`Play video: ${title || 'YouTube video'}`}
+        className="group relative aspect-video w-full overflow-hidden bg-muted"
+        aria-label={`${fi ? 'Toista video' : 'Play video'}: ${label}`}
       >
         <Image
           src={thumbnailUrl}
-          alt={title || 'Video thumbnail'}
+          alt=""
           fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          className="object-cover transition-transform duration-300 group-hover:scale-[1.03] motion-reduce:transition-none"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             if (target.src !== fallbackThumbnailUrl) {
@@ -54,8 +57,8 @@ export function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
           unoptimized
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover:bg-black/30">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-red-600 shadow-lg transition-transform group-hover:scale-110">
-            <Play className="h-6 w-6 fill-white text-white ml-0.5" />
+          <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-primary text-primary-foreground transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none">
+            <Play className="ml-0.5 h-5 w-5 fill-current" />
           </div>
         </div>
       </button>

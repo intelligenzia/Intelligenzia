@@ -1,7 +1,7 @@
 ---
 title: Cognitive Science Master's Track Established — Applications Open 2020
 date: 2019-05-12
-category: cognitive-science
+category: Cognitive science
 cover: cover.jpeg
 author: Perttu Lähteenlahti
 description: Cognitive science can be applied to study in 2020 - the faculty council decided to establish a cognitive science specialization track.

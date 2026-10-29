@@ -1,7 +1,7 @@
 ---
 title: Tiedote kognitiotieteilijöille 8.12.2015
 date: 2015-12-08
-category: kognitiotiede
+category: Kognitiotiede
 cover: penkere.jpeg
 author: Perttu Lähteenlahti
 description: Kognitiotiede osana tiedekuntamuutosta ja Isoa pyörää - tietoa kognitiotieteen tilanteesta Helsingin yliopistossa.

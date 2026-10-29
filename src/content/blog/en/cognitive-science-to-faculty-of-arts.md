@@ -1,7 +1,7 @@
 ---
 title: Cognitive Science to the Faculty of Arts 2017
 date: 2017-10-05
-category: cognitive-science
+category: Cognitive science
 cover: yliopisto.png
 author: Pietari Nurmi
 description: Cognitive science's situation on 31.10.2016 - transfer to the Faculty of Arts and the LingDA program.

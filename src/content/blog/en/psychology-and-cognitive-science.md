@@ -1,7 +1,7 @@
 ---
 title: Psychology's Transfer to the Faculty of Medicine and How This Affects Cognitive Science
 date: 2016-01-01
-category: cognitive-science
+category: Cognitive science
 cover: two.jpg
 author: Perttu Lähteenlahti
 description: Analysis of the psychology department's transfer to the Faculty of Medicine and its implications for cognitive science at the University of Helsinki.

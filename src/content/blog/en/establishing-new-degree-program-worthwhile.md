@@ -1,7 +1,7 @@
 ---
 title: Establishing a New Degree Program Around Cognitive Science is Worthwhile
 date: 2017-11-02
-category: cognitive-science
+category: Cognitive science
 cover: tekoalyjafilosofia.jpeg
 author: Mari Tähkä
 description: Intelligenzia's statement in favor of continuing cognitive science education intake at the Faculty of Arts.

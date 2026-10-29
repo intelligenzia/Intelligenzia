@@ -1,7 +1,7 @@
 ---
 title: Kognitiotiede humanistiseen tiedekuntaan 2017
 date: 2017-10-05
-category: kognitiotiede
+category: Kognitiotiede
 cover: yliopisto.png
 author: Pietari Nurmi
 description: Kognitiotieteen tilanne 31.10.2016 - siirtyminen humanistiseen tiedekuntaan ja LingDA-ohjelmaan.

@@ -1,7 +1,7 @@
 ---
 title: Uuden koulutusohjelman perustaminen kognitiotieteen ympärille kannattaa
 date: 2017-11-02
-category: kognitiotiede
+category: Kognitiotiede
 cover: tekoalyjafilosofia.jpeg
 author: Mari Tähkä
 description: Intelligenzian kannanotto kognitiotieteen koulutuksen jatkamisen puolesta humanistisessa tiedekunnassa.

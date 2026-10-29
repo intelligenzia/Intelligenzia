@@ -36,7 +36,7 @@ export function LocaleSwitcher() {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon">
           <Globe className="h-[1.2rem] w-[1.2rem]" />
-          <span className="sr-only">Switch language</span>
+          <span className="sr-only">{locale === 'fi' ? 'Vaihda kieli' : 'Switch language'}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

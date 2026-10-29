@@ -1,7 +1,7 @@
 ---
 title: Intelligenzia ry's Announcement on the Status of Cognitive Science at the University of Helsinki
 date: 2016-02-06
-category: cognitive-science
+category: Cognitive science
 cover: penkere.jpeg
 author: Mari Tähkä
 description: Update on cognitive science's situation at the University of Helsinki and the effects of the Big Wheel reform on the discipline's future.

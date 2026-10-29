@@ -1,7 +1,7 @@
 ---
 title: Master's Program Application is Open
 date: 2019-12-04
-category: cognitive-science
+category: Cognitive science
 cover: two.jpg
 author: Silva Perander
 description: Application to the LingDig master's program is open - cognitive science can be applied to study for the first time since 2015.

@@ -8,5 +8,6 @@ export default async function Image() {
   return generateOgImage({
     title: 'Blogi',
     description: 'Intelligenzian blogi – kirjoituksia kognitiotieteestä, tekoälystä ja mielen tutkimuksesta.',
+    section: 'Blogi',
   });
 }

@@ -1,7 +1,7 @@
 ---
 title: Second University Lecturer for Cognitive Science — Rays of Hope for the Future
 date: 2018-03-23
-category: organization
+category: Society
 cover: yliopisto.png
 author: Pietari Nurmi
 description: Good news for cognitive science - a second university lecturer will be hired for the discipline.

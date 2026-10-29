@@ -8,5 +8,6 @@ export default async function Image() {
   return generateOgImage({
     title: 'Authors',
     description: 'Intelligenzia blog authors – cognitive science experts and alumni.',
+    section: 'Blog',
   });
 }

@@ -12,9 +12,9 @@ Yhdistys toimii yhdyssiteenä mm. kognitiotieteen opiskelijoiden, alumnien, tutk
 
 Intelligenzia (ent. Anti-Kompleksi, Simpleksi) toimi Helsingin yliopiston kognitiotieteen opiskelijoiden ainejärjestönä vuodesta 1988 vuoteen 2021, jolloin järjestö muutettiin ensisijaisesti alumnijärjestöksi.
 
-## Hallitus 2025
+## Hallitus 2026
 
-The entire board can be reached by email at [hallitus@intelligenzia.fi](mailto:hallitus@intelligenzia.fi)
+Koko hallituksen tavoittaa osoitteesta [hallitus@intelligenzia.fi](mailto:hallitus@intelligenzia.fi).
 
 | Rooli | Nimi | Sähköposti |
 |:------|:-----|:-----------|

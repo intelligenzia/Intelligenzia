@@ -1,5 +1,5 @@
 import { generateOgImage, ogImageSize, ogImageContentType } from '@/lib/og-image';
-import { getBlogPost, getAllBlogPosts } from '@/lib/content';
+import { getBlogPost, getAllBlogPosts, getExcerpt } from '@/lib/content';
 
 export const alt = 'Intelligenzia blog';
 export const size = ogImageSize;
@@ -11,11 +11,13 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   const post = getBlogPost('en', slug);
 
   const title = post?.frontmatter.title || slug;
-  const description = post?.frontmatter.description || `${post?.frontmatter.author || 'Intelligenzia'} • ${post?.frontmatter.category || 'Blog'}`;
+  const description = post?.frontmatter.description || (post ? getExcerpt(post, 160) : undefined);
 
   return generateOgImage({
     title,
     description,
+    section: 'Blog',
+    image: post?.frontmatter.cover ? `/blog/${post.frontmatter.cover}` : undefined,
   });
 }
 

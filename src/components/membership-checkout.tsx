@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Users, Heart, Check, Minus, Loader2, ArrowRight, Lock } from 'lucide-react';
+import { Check, Minus, Loader2, ArrowRight, Lock } from 'lucide-react';
 import {
   CONTACT_EMAIL,
   FULL_PRICE,
@@ -189,11 +189,10 @@ export function MembershipCheckout({ locale, options = {}, initialType, initialA
           'FULL',
           <>
             <CardHeader>
-              <div className="flex items-center justify-between">
-                <Users className="h-7 w-7 text-primary" />
+              <div className="flex items-start justify-between gap-4">
+                <CardTitle className="display-md text-2xl">{text.fullTitle}</CardTitle>
                 <RadioGroupItem value="FULL" id="full" disabled={!available('FULL')} />
               </div>
-              <CardTitle className="display-md mt-4 text-2xl">{text.fullTitle}</CardTitle>
               <CardDescription className="font-serif">{text.fullDescription}</CardDescription>
             </CardHeader>
             <CardContent>
@@ -211,11 +210,10 @@ export function MembershipCheckout({ locale, options = {}, initialType, initialA
           'SUPPORTING',
           <>
             <CardHeader>
-              <div className="flex items-center justify-between">
-                <Heart className="h-7 w-7 text-primary" />
+              <div className="flex items-start justify-between gap-4">
+                <CardTitle className="display-md text-2xl">{text.supportingTitle}</CardTitle>
                 <RadioGroupItem value="SUPPORTING" id="supporting" disabled={!available('SUPPORTING')} />
               </div>
-              <CardTitle className="display-md mt-4 text-2xl">{text.supportingTitle}</CardTitle>
               <CardDescription className="font-serif">{text.supportingDescription}</CardDescription>
             </CardHeader>
             <CardContent>
@@ -295,7 +293,7 @@ export function MembershipCheckout({ locale, options = {}, initialType, initialA
         >
           {isLoading ? (
             <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              <Loader2 className="mr-2 h-4 w-4 animate-spin motion-reduce:animate-none" />
               {text.loading}
             </>
           ) : (

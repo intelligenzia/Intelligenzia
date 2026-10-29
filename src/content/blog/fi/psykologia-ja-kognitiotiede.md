@@ -1,7 +1,7 @@
 ---
 title: "Psykologia ja kognitiotiede – Miten psykologian siirto vaikuttaa?"
 date: 2016-01-01
-category: kognitiotiede
+category: Kognitiotiede
 cover: two.jpg
 author: Perttu Lähteenlahti
 description: Psykologian oppiaine siirtyy lääketieteelliseen tiedekuntaan Helsingin yliopistossa. Mitä tämä tarkoittaa kognitiotieteelle ja opiskelijoille?

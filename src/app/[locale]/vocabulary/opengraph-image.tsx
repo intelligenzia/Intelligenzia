@@ -8,5 +8,6 @@ export default async function Image() {
   return generateOgImage({
     title: 'Cognitive Science Glossary',
     description: 'Over 100 key terms from psychology, neuroscience, AI, and philosophy of mind.',
+    section: 'Glossary',
   });
 }

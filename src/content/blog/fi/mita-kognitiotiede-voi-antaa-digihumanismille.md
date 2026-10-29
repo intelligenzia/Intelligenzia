@@ -1,7 +1,7 @@
 ---
 title: Mitä kognitiotiede voi antaa digihumanismille?
 date: 2016-11-03
-category: kognitiotiede
+category: Kognitiotiede
 cover: cover.jpeg
 author: Jussi Palomäki
 description: Kognitiotiede ja sen väki, konnarit, ovat muuttamassa osaksi Humanistisen tiedekunnan "Linguistic Diversity in the Digital Age" -koulutusohjelmaa.

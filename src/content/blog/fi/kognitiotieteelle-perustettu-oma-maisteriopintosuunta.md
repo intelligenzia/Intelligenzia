@@ -1,7 +1,7 @@
 ---
 title: Kognitiotieteelle perustettu oma maisteriopintosuunta — haku aukeaa 2020
 date: 2019-05-12
-category: kognitiotiede
+category: Kognitiotiede
 cover: cover.jpeg
 author: Perttu Lähteenlahti
 description: Kognitiotiedettä voi hakea opiskelemaan vuonna 2020 - tiedekuntaneuvosto päätti perustaa kognitiotieteelle oman opintosuunnan.

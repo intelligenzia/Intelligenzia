@@ -8,5 +8,6 @@ export default async function Image() {
   return generateOgImage({
     title: 'Blog',
     description: 'Intelligenzia blog – articles on cognitive science, AI, and the study of the mind.',
+    section: 'Blog',
   });
 }

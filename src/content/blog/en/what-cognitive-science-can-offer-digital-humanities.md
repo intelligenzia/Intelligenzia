@@ -1,7 +1,7 @@
 ---
 title: What Can Cognitive Science Offer Digital Humanities?
 date: 2016-11-03
-category: cognitive-science
+category: Cognitive science
 cover: cover.jpeg
 author: Jussi Palomäki
 description: Cognitive science and its people are moving to become part of the Faculty of Arts' "Linguistic Diversity in the Digital Age" degree program.

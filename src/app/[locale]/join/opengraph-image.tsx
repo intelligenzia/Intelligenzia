@@ -8,5 +8,7 @@ export default async function Image() {
   return generateOgImage({
     title: 'Join Intelligenzia',
     description: 'Become a member and connect with cognitive science professionals.',
+    section: 'Membership',
+    image: '/blog/yhdistys.jpg',
   });
 }

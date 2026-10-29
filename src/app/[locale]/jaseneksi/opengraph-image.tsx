@@ -8,5 +8,7 @@ export default async function Image() {
   return generateOgImage({
     title: 'Liity jäseneksi',
     description: 'Liity Intelligenzian jäseneksi ja verkostoidu kognitiotieteen ammattilaisten kanssa.',
+    section: 'Jäsenyys',
+    image: '/blog/yhdistys.jpg',
   });
 }

@@ -40,9 +40,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = post.frontmatter.description ||
     post.content.slice(0, 160).replace(/[#*_\[\]]/g, '').trim();
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://intelligenzia.fi';
-  const ogImage = post.frontmatter.cover
-    ? `${baseUrl}/blog/${post.frontmatter.cover}`
-    : undefined;
   const canonicalUrl = locale === 'fi'
     ? `${baseUrl}/blogi/${slug}`
     : `${baseUrl}/en/blog/${slug}`;
@@ -71,13 +68,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: canonicalUrl,
       languages,
     },
+    // og:image comes from the sibling opengraph-image.tsx (title card with
+    // the cover photo); Twitter falls back to it.
     openGraph: {
       title: post.frontmatter.title,
       description,
       type: 'article',
       publishedTime: post.frontmatter.date,
       authors: post.frontmatter.author ? [post.frontmatter.author] : undefined,
-      images: ogImage ? [{ url: ogImage, alt: post.frontmatter.title }] : undefined,
       locale: locale === 'fi' ? 'fi_FI' : 'en_US',
       url: canonicalUrl,
       siteName: 'Intelligenzia',
@@ -86,7 +84,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: post.frontmatter.title,
       description,
-      images: ogImage ? [ogImage] : undefined,
     },
   };
 }

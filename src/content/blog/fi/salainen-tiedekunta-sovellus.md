@@ -1,7 +1,7 @@
 ---
 title: Mistä löydän Salaisen Tiedekunnan?
 date: 2025-01-13
-category: kognitiotiede
+category: Kognitiotiede
 cover: cover.jpeg
 author: Perttu Lähteenlahti
 description: Tietoa Salaisen tiedekunnan sovelluksesta.

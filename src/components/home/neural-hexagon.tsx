@@ -207,7 +207,9 @@ export default function NeuralHexagon({ className }: { className?: string }) {
       renderer.domElement.style.height = `${height}px`;
       camera.aspect = width / height;
       // Pull back on narrow containers so the outward labels stay in frame.
-      camera.position.z = 12 * Math.max(1, 1.45 / Math.max(camera.aspect, 0.6));
+      // Phones need more room: the outward labels are wide relative to the canvas.
+      const room = width < 640 ? 1.7 : 1.1;
+      camera.position.z = 12 * Math.max(1, room / Math.max(camera.aspect, 0.6));
       camera.updateProjectionMatrix();
     };
 

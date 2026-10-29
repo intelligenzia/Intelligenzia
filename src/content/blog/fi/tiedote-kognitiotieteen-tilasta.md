@@ -1,7 +1,7 @@
 ---
 title: Intelligenzia ry:n tiedote Helsingin yliopiston kognitiotieteen tilasta
 date: 2016-02-06
-category: kognitiotiede
+category: Kognitiotiede
 cover: penkere.jpeg
 author: Mari Tähkä
 description: Tiedote kognitiotieteen tilanteesta Helsingin yliopistossa ja Ison pyörän vaikutuksista oppiaineen tulevaisuuteen.

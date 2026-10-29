@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Intelligenzia – Kognitiotieteen alumnijärjestö",
+    "title": "Intelligenzia – Kognitiotieteen alumniyhdistys",
     "description": "Intelligenzia ry on kognitiotieteen alumnien vuonna 1989 perustettu yhdistys Helsingin yliopistossa."
   },
   "nav": {
@@ -36,7 +36,7 @@
     },
     "news": "Ajankohtaista",
     "fromBlog": "Blogista",
-    "allPosts": "Kaikki"
+    "allPosts": "Kaikki kirjoitukset"
   },
   "hexagon": {
     "aria": "Kognitiotieteen kuusikulmio: kuusi tieteenalaa ja niitä yhdistävät tieteidenväliset alat.",

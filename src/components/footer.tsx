@@ -29,7 +29,7 @@ export function Footer() {
               <span className="display-md text-lg">Intelligenzia</span>
             </Link>
             <p className="font-serif text-sm text-muted-foreground">
-              {locale === 'fi' ? 'Kognitiotieteen alumnijärjestö' : 'Cognitive Science Alumni Society'}
+              {locale === 'fi' ? 'Kognitiotieteen alumniyhdistys' : 'Cognitive Science Alumni Society'}
               <br />
               {locale === 'fi' ? 'Helsingin yliopisto' : 'University of Helsinki'}
             </p>

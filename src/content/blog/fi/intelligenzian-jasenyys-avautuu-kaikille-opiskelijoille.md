@@ -1,7 +1,7 @@
 ---
 title: Intelligenzian jäsenyys avautuu kaikille opiskelijoille
 date: 2018-01-11
-category: yhdistys
+category: Yhdistys
 cover: hallitus2018.jpeg
 author: Pietari Nurmi
 description: Intelligenzian uudet säännöt avaavat jäsenyyden kaikille kognitiotieteestä kiinnostuneille opiskelijoille.

@@ -1,7 +1,7 @@
 ---
 title: Announcement for Cognitive Scientists 8.12.2015
 date: 2015-12-08
-category: cognitive-science
+category: Cognitive science
 cover: penkere.jpeg
 author: Perttu Lähteenlahti
 description: Cognitive science as part of the faculty restructuring and the Big Wheel reform at the University of Helsinki.

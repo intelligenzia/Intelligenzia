@@ -5,6 +5,7 @@ import { getContentSlug, getPageSlugs, pageMapping, getAlternateSlug } from '@/l
 import { Markdown } from '@/components/markdown';
 import { TableOfContents } from '@/components/table-of-contents';
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/json-ld';
+import { SloanHexagon } from '@/components/sloan-hexagon';
 import type { Metadata } from 'next';
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://intelligenzia.fi';
@@ -159,15 +160,21 @@ export default async function ContentPage({ params }: Props) {
 
         <article>
           <header className="mb-8">
-            <h1 className="text-4xl font-bold tracking-tight">
+            <h1 className="display-lg text-[clamp(2.25rem,5vw,3.5rem)]">
               {page.frontmatter.title}
             </h1>
             {page.frontmatter.description && (
-              <p className="mt-4 text-lg text-muted-foreground">
+              <p className="mt-4 max-w-[60ch] text-lg leading-relaxed text-pretty text-muted-foreground">
                 {page.frontmatter.description}
               </p>
             )}
           </header>
+
+          {/* The field overview gets the interactive Sloan hexagon: it is the
+              map the page's prose describes. */}
+          {(slug === 'kognitiotiede' || slug === 'cognitive-science') && (
+            <SloanHexagon className="mb-12 max-w-xl" />
+          )}
 
           {/* Mobile ToC dropdown */}
           <div className="xl:hidden">

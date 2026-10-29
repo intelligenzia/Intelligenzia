@@ -1,7 +1,7 @@
 ---
 title: Maisteriohjelman haku on auki
 date: 2019-12-04
-category: kognitiotiede
+category: Kognitiotiede
 cover: two.jpg
 author: Silva Perander
 description: Haku LingDig-maisteriohjelmaan on auki - kognitiotiedettä voi hakea opiskelemaan ensimmäistä kertaa vuoden 2015 jälkeen.

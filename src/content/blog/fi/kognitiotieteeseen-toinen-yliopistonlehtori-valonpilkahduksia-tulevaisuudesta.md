@@ -1,7 +1,7 @@
 ---
 title: Kognitiotieteeseen toinen yliopistonlehtori — valonpilkahduksia tulevaisuudesta
 date: 2018-03-23
-category: yhdistys
+category: Yhdistys
 cover: yliopisto.png
 author: Pietari Nurmi
 description: Kognitiotieteeseen palkataan toinen yliopistonlehtori - hyviä uutisia oppiaineen tulevaisuudesta.

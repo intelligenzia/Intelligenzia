@@ -1,7 +1,7 @@
 ---
 title: Avoin Kirje Käyttäytymistieteellisen Tiedekunnan Dekaanille
 date: 2015-09-21
-category: kognitiotiede
+category: Kognitiotiede
 cover: one.jpg
 author: Perttu Lähteenlahti
 description: Aloite kognitiotieteen oppiaineen ja tieteenalan jatkuvuuden takaamiseksi käynnissä olevassa tiedekuntamuutoksessa.

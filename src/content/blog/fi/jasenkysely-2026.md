@@ -1,7 +1,7 @@
 ---
 title: "Jäsenkyselyn tulokset: mitä konnarit haluavat vuonna 2026?"
 date: 2026-03-18
-category: yhdistys
+category: Yhdistys
 cover: social.jpg
 author: Perttu Lähteenlahti
 description: Kysyimme jäsenistöltä millaista toimintaa Intelligenzia järjestää jatkossa. Tässä tulokset ja suunnitelmat vuodelle 2026.

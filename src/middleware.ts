@@ -87,6 +87,13 @@ const intlMiddleware = createMiddleware(routing);
 export default function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
+  // Next emits og:image URLs with the locale prefix (/fi/…/opengraph-image).
+  // Serve them directly: as-needed routing would 307 the Finnish ones, and
+  // some link-preview scrapers don't follow redirects for images.
+  if (/^\/(fi|en)(\/.*)?\/(opengraph|twitter)-image/.test(pathname)) {
+    return NextResponse.next();
+  }
+
   // Remove trailing slash for comparison
   const cleanPath = pathname.endsWith('/') && pathname !== '/'
     ? pathname.slice(0, -1)

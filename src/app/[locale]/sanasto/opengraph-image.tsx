@@ -8,5 +8,6 @@ export default async function Image() {
   return generateOgImage({
     title: 'Kognitiotieteen sanasto',
     description: 'Yli 100 keskeistä käsitettä psykologiasta, neurotieteestä, tekoälystä ja mielenfilosofiasta.',
+    section: 'Sanasto',
   });
 }

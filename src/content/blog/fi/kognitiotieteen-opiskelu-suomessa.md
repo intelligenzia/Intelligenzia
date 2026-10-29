@@ -1,7 +1,7 @@
 ---
 title: Kognitiotieteen opiskelu Suomessa
 date: 2025-02-01
-category: kognitiotiede
+category: Kognitiotiede
 cover: yliopisto.png
 author: Intelligenzia
 description: Kattava opas kognitiotieteen opiskelumahdollisuuksiin Suomessa. Helsingin yliopisto ja Jyväskylän yliopisto tarjoavat ainutlaatuisia maisteriohjelmia kognitiotieteessä.
