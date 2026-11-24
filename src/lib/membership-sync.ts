@@ -3,8 +3,10 @@ import type { MembershipStatus } from '@prisma/client';
 import { prisma } from './prisma';
 import { stripe, siteOrigin } from './stripe';
 import { sendEmail, membershipConfirmationEmail, type ConfirmationKind } from './email';
-import { invoicePeriod, recordPeriod } from './membership-periods';
+import { invoicePeriod, recordPeriod, subscriptionPeriodEnd } from './membership-periods';
 import { loadSuppressions } from './account';
+import { isClaudeMetadata } from './claude-plans';
+import { isClaudeSubscription } from './claude-stripe';
 import {
   formatDate,
   localePath,
@@ -31,14 +33,8 @@ export type FulfillResult =
       locale: string;
     };
 
-// Stripe moved current_period_end onto subscription items; webhook endpoints
-// pinned to an older API version still send it on the subscription.
-export function subscriptionPeriodEnd(sub: Stripe.Subscription): Date | null {
-  const end =
-    sub.items?.data[0]?.current_period_end ??
-    (sub as unknown as { current_period_end?: number }).current_period_end;
-  return end ? new Date(end * 1000) : null;
-}
+// Lives with the other Stripe period helpers; re-exported for old callers.
+export { subscriptionPeriodEnd } from './membership-periods';
 
 /** null: first payment still in flight, leave the row alone. */
 export function subscriptionStatus(status: Stripe.Subscription.Status): MembershipStatus | null {
@@ -90,10 +86,12 @@ export async function fulfillCheckoutSession(sessionId: string): Promise<Fulfill
   const email = session.customer_details?.email?.trim().toLowerCase();
 
   // Sessions this site created carry membershipType. The account's old
-  // Payment Link for membership carries nothing, but the only recurring
-  // price on the account is the membership, so any subscription counts.
+  // Payment Link for membership carries nothing; apart from the Claude
+  // add-on (marked addon=claude) the only recurring price on the account is
+  // the membership, so any other subscription counts.
   // One-off payments without metadata are event tickets: not ours.
-  const isMembership = !!meta.membershipType || session.mode === 'subscription';
+  const isMembership =
+    !isClaudeMetadata(meta) && (!!meta.membershipType || session.mode === 'subscription');
   if (session.status !== 'complete' || !email || !isMembership) {
     return { status: 'not_paid' };
   }
@@ -321,6 +319,10 @@ async function sendConfirmation(opts: {
 /** Re-reads a subscription from Stripe and mirrors its state onto the row. */
 export async function syncSubscription(subscriptionId: string): Promise<void> {
   const sub = await stripe.subscriptions.retrieve(subscriptionId);
+  // Never let the add-on touch the membership row, least of all through the
+  // link-by-customer fallback below: the member's Claude subscription shares
+  // their Stripe customer.
+  if (isClaudeSubscription(sub)) return;
   const status = subscriptionStatus(sub.status);
   if (!status) return;
 

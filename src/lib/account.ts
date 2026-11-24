@@ -1,6 +1,8 @@
 import { createHash } from 'crypto';
 import { prisma } from './prisma';
 import { stripe } from './stripe';
+import { endClaudeForErasure } from './claude-sync';
+import { deleteAddressForErasure } from './workspace-sync';
 
 /** Stable, non-reversible key for the suppression list. */
 export function emailHash(email: string): string {
@@ -30,6 +32,9 @@ export async function exportAccount(userId: string) {
     where: { id: userId },
     include: {
       membership: true,
+      claude: true,
+      workspace: true,
+      profileImage: true,
       periods: { orderBy: { startsAt: 'asc' } },
       sessions: { select: { expires: true } },
     },
@@ -57,6 +62,24 @@ export async function exportAccount(userId: string) {
       stripeCustomerId: user.membership.stripeCustomerId,
       stripeSubscriptionId: user.membership.stripeSubscriptionId,
     },
+    claudeSubscription: user.claude && {
+      tier: user.claude.tier,
+      status: user.claude.status,
+      currentPeriodEnd: user.claude.currentPeriodEnd,
+      cancelAtPeriodEnd: user.claude.cancelAtPeriodEnd,
+      startedAt: user.claude.createdAt,
+      stripeCustomerId: user.claude.stripeCustomerId,
+      stripeSubscriptionId: user.claude.stripeSubscriptionId,
+    },
+    intelligenziaEmail: user.workspace && {
+      address: user.workspace.email,
+      state: user.workspace.state,
+      createdAt: user.workspace.createdAt,
+      suspendedAt: user.workspace.suspendedAt,
+    },
+    profileImage: user.profileImage
+      ? `data:${user.profileImage.mimeType};base64,${Buffer.from(user.profileImage.data).toString('base64')}`
+      : null,
     membershipYears: user.periods.map((p) => ({
       type: p.type,
       startsAt: p.startsAt,
@@ -75,7 +98,9 @@ export class AccountDeletionError extends Error {}
  * Erases a person from the site (GDPR art. 17) and ends their membership:
  * stops any recurring payment first, so nobody is charged for an account
  * that no longer exists, then deletes the user, which cascades to sessions,
- * membership and membership years. Stripe keeps its payment records, which
+ * membership, membership years, profile picture and the Claude add-on. The
+ * Claude subscription is stopped and the @intelligenzia.fi address deleted
+ * first. Stripe keeps its payment records, which
  * the Accounting Act requires; the suppression entry keeps the Stripe import
  * from bringing the member back.
  */
@@ -98,6 +123,14 @@ export async function deleteAccount(userId: string): Promise<void> {
       throw new AccountDeletionError('subscription_cancel_failed');
     }
   }
+
+  try {
+    await endClaudeForErasure(user.id);
+  } catch (err) {
+    console.error(`[account] could not stop the Claude subscription of ${user.id}:`, err);
+    throw new AccountDeletionError('subscription_cancel_failed');
+  }
+  await deleteAddressForErasure(user.id);
 
   await prisma.$transaction(async (tx) => {
     if (user.email) {

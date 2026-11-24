@@ -2,7 +2,17 @@ import { CONTACT_EMAIL } from './membership';
 
 const FROM = process.env.FROM_EMAIL || 'Intelligenzia <noreply@intelligenzia.fi>';
 
-type Email = { to: string; subject: string; text: string; html: string };
+export type Email = { to: string; subject: string; text: string; html: string };
+
+/** Sends, logging instead of throwing: for emails that follow something already recorded. */
+export async function sendQuietly(to: string | null | undefined, email: Omit<Email, 'to'>): Promise<void> {
+  if (!to) return;
+  try {
+    await sendEmail({ to, ...email });
+  } catch (err) {
+    console.error(`[email] "${email.subject}" to ${to} failed:`, err);
+  }
+}
 
 /** Sends through Resend's REST API, the same key the magic-link provider uses. */
 export async function sendEmail(email: Email, apiKey = process.env.AUTH_RESEND_KEY): Promise<void> {
@@ -114,6 +124,154 @@ export function membershipConfirmationEmail(opts: {
       ],
       button: { label, href: opts.manageUrl },
       footer,
+    }),
+  };
+}
+
+const boardFooter = (fi: boolean) =>
+  fi
+    ? `Kysyttävää? Vastaa hallitukselle osoitteeseen <a href="mailto:${CONTACT_EMAIL}" style="color:#6b6b6b">${CONTACT_EMAIL}</a>.`
+    : `Questions? Write to the board at <a href="mailto:${CONTACT_EMAIL}" style="color:#6b6b6b">${CONTACT_EMAIL}</a>.`;
+
+const greet = (fi: boolean, name: string | null) => {
+  const first = name?.split(' ')[0];
+  return first ? (fi ? `Hei ${first},` : `Hi ${first},`) : fi ? 'Hei,' : 'Hi,';
+};
+
+function simple(opts: {
+  fi: boolean;
+  heading: string;
+  name: string | null;
+  paragraphs: string[];
+  button?: { label: string; href: string };
+}): Omit<Email, 'to'> {
+  const greeting = greet(opts.fi, opts.name);
+  return {
+    subject: opts.heading,
+    text: [opts.heading, '', greeting, ...opts.paragraphs, '', opts.button?.href ?? '', '', CONTACT_EMAIL]
+      .filter((l, i, a) => !(l === '' && a[i - 1] === ''))
+      .join('\n'),
+    html: layout({
+      heading: opts.heading,
+      paragraphs: [escape(greeting), ...opts.paragraphs.map(escape)],
+      button: opts.button,
+      footer: boardFooter(opts.fi),
+    }),
+  };
+}
+
+/** To the member, when their @intelligenzia.fi account has been created. */
+export function workspaceWelcomeEmail(opts: {
+  locale: string;
+  name: string | null;
+  address: string;
+  temporaryPassword: string;
+  manageUrl: string;
+}): Omit<Email, 'to'> {
+  const fi = opts.locale !== 'en';
+  return simple({
+    fi,
+    name: opts.name,
+    heading: fi ? `${opts.address} on valmis` : `${opts.address} is ready`,
+    paragraphs: fi
+      ? [
+          `Uusi sähköpostiosoitteesi on ${opts.address}. Kirjaudu osoitteessa mail.google.com tällä väliaikaisella salasanalla: ${opts.temporaryPassword}`,
+          'Google pyytää vaihtamaan salasanan ensimmäisellä kirjautumisella. Osoite on käytössäsi niin kauan kuin jäsenyytesi on voimassa.',
+        ]
+      : [
+          `Your new email address is ${opts.address}. Sign in at mail.google.com with this temporary password: ${opts.temporaryPassword}`,
+          "Google asks you to change the password the first time you sign in. The address is yours for as long as your membership is valid.",
+        ],
+    button: { label: fi ? 'Jäsenyyteni' : 'My membership', href: opts.manageUrl },
+  });
+}
+
+/** To the member, when their membership ended and the address was suspended. */
+export function workspaceSuspendedEmail(opts: {
+  locale: string;
+  name: string | null;
+  address: string;
+  deleteOn: string;
+  renewUrl: string;
+}): Omit<Email, 'to'> {
+  const fi = opts.locale !== 'en';
+  return simple({
+    fi,
+    name: opts.name,
+    heading: fi ? `${opts.address} on jäädytetty` : `${opts.address} is suspended`,
+    paragraphs: fi
+      ? [
+          `Intelligenzia-jäsenyytesi on päättynyt, joten @intelligenzia.fi-osoitteesi on jäädytetty. Se poistetaan sisältöineen ${opts.deleteOn}.`,
+          'Kun uusit jäsenyyden ennen sitä, saat saman osoitteen takaisin Jäsenyyteni-sivulta.',
+        ]
+      : [
+          `Your Intelligenzia membership has ended, so your @intelligenzia.fi address is suspended. It will be deleted with its contents on ${opts.deleteOn}.`,
+          'Renew your membership before then to get the same address back from the My Membership page.',
+        ],
+    button: { label: fi ? 'Uusi jäsenyys' : 'Renew membership', href: opts.renewUrl },
+  });
+}
+
+/** To the member, once their Claude subscription is paid. */
+export function claudeWelcomeEmail(opts: {
+  locale: string;
+  name: string | null;
+  tierLabel: string;
+  address: string;
+  manageUrl: string;
+}): Omit<Email, 'to'> {
+  const fi = opts.locale !== 'en';
+  return simple({
+    fi,
+    name: opts.name,
+    heading: fi ? `${opts.tierLabel} on tilattu` : `${opts.tierLabel} is on its way`,
+    paragraphs: fi
+      ? [
+          'Kiitos tilauksesta. Maksusi on vastaanotettu.',
+          `Hallitus lisää osoitteesi ${opts.address} Intelligenzian Claude-organisaatioon, ja kutsu tulee siihen osoitteeseen. Kirjaudu Claudeen sillä.`,
+          'Voit vaihtaa maksutavan tai lopettaa tilauksen Jäsenyyteni-sivulla.',
+        ]
+      : [
+          'Thanks for subscribing. Your payment has been received.',
+          `The board adds ${opts.address} to Intelligenzia's Claude organisation, and the invitation arrives at that address. Use it to sign in to Claude.`,
+          'You can change your card or cancel on the My Membership page.',
+        ],
+    button: { label: fi ? 'Jäsenyyteni' : 'My membership', href: opts.manageUrl },
+  });
+}
+
+/** To the member, when their membership ended and Claude will stop with it. */
+export function claudeEndingEmail(opts: {
+  locale: string;
+  name: string | null;
+  tierLabel: string;
+  until: string | null;
+  renewUrl: string;
+}): Omit<Email, 'to'> {
+  const fi = opts.locale !== 'en';
+  const when = opts.until ? (fi ? ` ${opts.until}` : ` on ${opts.until}`) : '';
+  return simple({
+    fi,
+    name: opts.name,
+    heading: fi ? 'Claude-tilauksesi päättyy' : 'Your Claude subscription is ending',
+    paragraphs: [
+      fi
+        ? `Intelligenzia-jäsenyytesi on päättynyt. ${opts.tierLabel} kuuluu vain jäsenille, joten se päättyy nykyisen laskutuskauden lopussa${when}, eikä sitä veloiteta enää. Kun uusit jäsenyyden, voit tilata Clauden uudelleen.`
+        : `Your Intelligenzia membership has ended. ${opts.tierLabel} is for members only, so it stops at the end of the current billing period${when} and won't be charged again. Renew your membership to subscribe again.`,
+    ],
+    button: { label: fi ? 'Uusi jäsenyys' : 'Renew membership', href: opts.renewUrl },
+  });
+}
+
+/** To the board: something to do by hand. Always in Finnish. */
+export function boardEmail(opts: { subject: string; lines: string[] }): Omit<Email, 'to'> {
+  return {
+    subject: opts.subject,
+    text: opts.lines.join('\n\n'),
+    html: layout({
+      heading: opts.subject,
+      paragraphs: opts.lines.map(escape),
+      footer: 'Automaattinen viesti intelligenzia.fi-sivustolta.',
     }),
   };
 }

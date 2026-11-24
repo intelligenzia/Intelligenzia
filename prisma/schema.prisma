@@ -29,6 +29,9 @@ model User {
   sessions      Session[]
   membership    Membership?
   periods       MembershipPeriod[]
+  claude        ClaudeSubscription?
+  workspace     WorkspaceAccount?
+  profileImage  ProfileImage?
   createdAt     DateTime           @default(now())
   updatedAt     DateTime           @updatedAt
 }
@@ -100,4 +103,70 @@ enum MembershipStatus {
   ACTIVE // Approved and paid
   EXPIRED // Membership period ended
   CANCELLED // User cancelled
+}
+
+/// The Claude add-on: a monthly Stripe subscription, separate from the
+/// membership and its fee. Only members with an active membership and an
+/// @intelligenzia.fi address can start one; Claude signs in with that address.
+model ClaudeSubscription {
+  id                   String       @id @default(cuid())
+  userId               String       @unique
+  user                 User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tier                 ClaudeTier
+  status               ClaudeStatus @default(PENDING)
+  stripeCustomerId     String?
+  stripeSubscriptionId String?      @unique
+  currentPeriodEnd     DateTime?
+  /// Set when the member (or the daily check) stopped renewal.
+  cancelAtPeriodEnd    Boolean      @default(false)
+  locale               String       @default("fi")
+  createdAt            DateTime     @default(now())
+  updatedAt            DateTime     @updatedAt
+}
+
+enum ClaudeTier {
+  STANDARD
+  PREMIUM
+}
+
+enum ClaudeStatus {
+  PENDING // Checkout started, first payment not in yet
+  ACTIVE // Paid up
+  PAST_DUE // Renewal charge failed, Stripe is retrying
+  CANCELLED // Ended
+}
+
+/// A member's @intelligenzia.fi Google Workspace account: a membership
+/// benefit. The member chooses the part before the @. Suspended when the
+/// membership ends, deleted after the grace period. A failed or deleted
+/// account leaves no row, so the address is free for anyone again.
+model WorkspaceAccount {
+  id          String         @id @default(cuid())
+  userId      String         @unique
+  user        User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  email       String         @unique
+  state       WorkspaceState
+  error       String?
+  suspendedAt DateTime?
+  locale      String         @default("fi")
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+}
+
+enum WorkspaceState {
+  REQUESTED // Google isn't configured; the board creates it by hand
+  BUSY // A Google call is in flight; claimed so two runs can't both act
+  ACTIVE
+  SUSPENDED // Membership ended; deleted (row and all) after the grace period
+}
+
+/// The member's profile picture, resized in the browser before upload.
+/// Kept in the database rather than a file store: one small image per member.
+model ProfileImage {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mimeType  String
+  data      Bytes
+  updatedAt DateTime @updatedAt
 }

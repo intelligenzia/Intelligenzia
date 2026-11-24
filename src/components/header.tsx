@@ -14,6 +14,8 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Menu, User, LogOut, Settings } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { initials } from '@/components/profile-image';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { navItems } from '@/lib/page-mapping';
@@ -23,6 +25,7 @@ type HeaderProps = {
   user?: {
     name?: string | null;
     email?: string | null;
+    image?: string | null;
     role?: 'USER' | 'ADMIN';
   } | null;
 };
@@ -70,7 +73,14 @@ export function Header({ user }: HeaderProps) {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="hidden gap-2 md:flex">
-                  <User className="h-4 w-4" />
+                  {user.image ? (
+                    <Avatar className="size-6">
+                      <AvatarImage src={user.image} alt="" className="object-cover" />
+                      <AvatarFallback className="text-[10px]">{initials(user.name, user.email)}</AvatarFallback>
+                    </Avatar>
+                  ) : (
+                    <User className="h-4 w-4" />
+                  )}
                   <span className="max-w-[150px] truncate">
                     {user.name || user.email?.split('@')[0]}
                   </span>

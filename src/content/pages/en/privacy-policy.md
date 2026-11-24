@@ -16,9 +16,9 @@ Intelligenzia ry Member Register
 
 ## Purpose and Legal Basis for Processing Personal Data
 
-Personal data is processed for managing association membership and communication with members. The legal basis for processing is:
+Personal data is processed for managing association membership, communicating with members and providing member benefits: the @intelligenzia.fi email address and the Claude add-on. The legal basis for processing is:
 
-- Performance of membership agreement (member register)
+- Performance of membership agreement (member register and member benefits)
 - Consent of the data subject (marketing communications)
 - Legal obligation (maintaining member register as required by the Finnish Associations Act)
 
@@ -31,6 +31,10 @@ We collect and process the following personal data:
 - Membership history: paid membership years and their amounts
 - Stripe customer and payment identifiers (no card details)
 - Sign-in sessions and one-time sign-in links
+- Your profile picture, if you add one
+- Your @intelligenzia.fi email address and its status, if you take one. The Google Workspace account also holds your name, your own email address as its recovery address, and the messages and files you keep in it.
+- The Claude add-on's tier, status and billing period and the Stripe subscription ID, if you subscribe
+- A hash (SHA-256) of a deleted account's email address, so old payments don't bring a deleted member back into the register
 
 Card details are never stored in the society's systems; they are handled by Stripe.
 
@@ -39,6 +43,10 @@ Card details are never stored in the society's systems; they are handled by Stri
 - Member register data is kept for the duration of the membership and afterwards until you delete your account or ask us to delete your data.
 - Payment transactions are kept by Stripe and in the society's bookkeeping for the period required by the Finnish Accounting Act (6 years from the end of the financial year), also after an account is deleted.
 - One-time sign-in links expire in 24 hours and sign-in sessions in 30 days.
+- Your profile picture is kept until you remove it or delete your account.
+- Your @intelligenzia.fi address is suspended when your membership ends and deleted with its contents 30 days later, unless you renew before then. Deleting your account deletes the address straight away.
+- Claude subscription details are kept with your account. Your conversations in Claude itself are kept by Anthropic under its own terms; the association can't see them.
+- The email hash of a deleted account is kept permanently. The address can't be worked out from it.
 
 ## Processors and Transfers
 
@@ -46,7 +54,9 @@ Personal data is not disclosed to third parties for marketing purposes. We use t
 
 - **Stripe**: membership payments ([privacy policy](https://stripe.com/privacy))
 - **Netlify**: hosting the website and the member register database ([privacy policy](https://www.netlify.com/privacy/))
-- **Resend**: sending sign-in links and membership confirmations ([privacy policy](https://resend.com/legal/privacy-policy))
+- **Resend**: sending sign-in links, membership confirmations and messages about member benefits ([privacy policy](https://resend.com/legal/privacy-policy))
+- **Google**: @intelligenzia.fi email addresses (Google Workspace) ([privacy policy](https://policies.google.com/privacy))
+- **Anthropic**: the Claude add-on. Anthropic receives your @intelligenzia.fi address and name when you're added to the association's Claude organisation ([privacy policy](https://www.anthropic.com/legal/privacy))
 - **Umami**: cookieless visitor statistics that store no personal data ([privacy policy](https://umami.is/privacy))
 
 Some of these providers are based in the United States. Transfers rely on the EU-U.S. Data Privacy Framework or the European Commission's Standard Contractual Clauses. Data may be disclosed to authorities to fulfil legal obligations.
@@ -67,7 +77,7 @@ You have the right to:
 - **Withdraw consent** at any time
 - **Lodge a complaint** with the Finnish Data Protection Ombudsman ([tietosuoja.fi/en](https://tietosuoja.fi/en))
 
-You can exercise these rights yourself on the [My Membership page](/en/my-membership): edit your name, download all your data as a JSON file and delete your account. Deleting your account ends your membership and cancels any yearly renewing payment. Other requests can be sent to hallitus@intelligenzia.fi, and we reply within one month.
+You can exercise these rights yourself on the [My Membership page](/en/my-membership): edit your name, add or remove a profile picture, download all your data as a JSON file and delete your account. Deleting your account ends your membership, cancels any yearly renewing payment and Claude subscription, and deletes your @intelligenzia.fi address. Other requests can be sent to hallitus@intelligenzia.fi, and we reply within one month.
 
 ## Cookies
 
@@ -77,4 +87,4 @@ The website only uses a strictly necessary cookie to keep you signed in. Visitor
 
 We update this privacy policy when needed. Members are notified of material changes by email.
 
-Last updated: October 2026
+Last updated: November 2026

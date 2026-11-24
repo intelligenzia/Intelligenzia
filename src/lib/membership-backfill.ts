@@ -3,7 +3,8 @@ import type { MembershipStatus, MembershipType } from '@prisma/client';
 import { prisma } from './prisma';
 import { stripe, FULL_MEMBERSHIP_PRICE_ID, SUPPORTING_MEMBERSHIP_PRODUCT_ID } from './stripe';
 import { subscriptionPeriodEnd, subscriptionStatus } from './membership-sync';
-import { addYear, invoicePeriod, recordPeriod, type PeriodInput } from './membership-periods';
+import { addYear, invoicePeriod, invoiceSubscriptionId, recordPeriod, type PeriodInput } from './membership-periods';
+import { isClaudeInvoice, isClaudeSubscription } from './claude-stripe';
 import { loadSuppressions } from './account';
 
 type Candidate = {
@@ -106,9 +107,15 @@ export async function backfillFromStripe({ dryRun = false } = {}): Promise<Backf
   };
 
   // 1. Subscriptions: the current state of every recurring membership. Every
-  //    recurring price on the account is the membership.
+  //    recurring price on the account is the membership, except the Claude
+  //    add-on, which has its own table.
   const subCustomer = new Map<string, Stripe.Customer>();
+  const claudeSubscriptions = new Set<string>();
   for await (const sub of stripe.subscriptions.list({ status: 'all', limit: 100, expand: ['data.customer'] })) {
+    if (isClaudeSubscription(sub)) {
+      claudeSubscriptions.add(sub.id);
+      continue;
+    }
     const customer = sub.customer as Stripe.Customer | Stripe.DeletedCustomer;
     const email = 'email' in customer ? norm(customer.email) : null;
     const status = subscriptionStatus(sub.status);
@@ -135,6 +142,8 @@ export async function backfillFromStripe({ dryRun = false } = {}): Promise<Backf
   // 2. Paid subscription invoices: one row per membership year, including
   //    the years before the current one.
   for await (const invoice of stripe.invoices.list({ status: 'paid', limit: 100 })) {
+    const subscriptionId = invoiceSubscriptionId(invoice);
+    if (isClaudeInvoice(invoice) || (subscriptionId && claudeSubscriptions.has(subscriptionId))) continue;
     const period = invoicePeriod(invoice);
     if (!period || !invoice.id) continue;
     const customerId = idOf(invoice.customer);

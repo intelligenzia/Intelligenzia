@@ -32,6 +32,8 @@ const routes = {
   login: { fi: '/kirjaudu', en: '/login' },
   verify: { fi: '/kirjaudu/tarkista', en: '/login/verify' },
   confirm: { fi: '/kirjaudu/vahvista', en: '/login/confirm' },
+  // Members only: the Claude add-on's details and terms.
+  claude: { fi: '/jasenyys/claude', en: '/my-membership/claude' },
 } as const;
 
 export type MembershipRoute = keyof typeof routes;

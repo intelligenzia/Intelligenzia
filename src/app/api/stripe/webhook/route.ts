@@ -2,7 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { stripe } from '@/lib/stripe';
 import { fulfillCheckoutSession, syncSubscription } from '@/lib/membership-sync';
-import { recordInvoicePeriod } from '@/lib/membership-periods';
+import { invoiceSubscriptionId, recordInvoicePeriod } from '@/lib/membership-periods';
+import { syncClaudeCheckout, syncClaudeSubscription } from '@/lib/claude-sync';
+import { isClaudeInvoice, isClaudeSubscription } from '@/lib/claude-stripe';
+import { isClaudeMetadata } from '@/lib/claude-plans';
 
 // Subscribe the endpoint to exactly these events in the Stripe dashboard.
 // Everything else is acknowledged and ignored.
@@ -11,15 +14,9 @@ import { recordInvoicePeriod } from '@/lib/membership-periods';
 // payload, so events arriving out of order (or from an endpoint pinned to an
 // older API version) still converge on the current state.
 
-function invoiceSubscriptionId(invoice: Stripe.Invoice): string | null {
-  const fromParent = invoice.parent?.subscription_details?.subscription;
-  const legacy = (invoice as unknown as { subscription?: string | { id: string } | null })
-    .subscription;
-  const fromLines = invoice.lines?.data?.find((line) => line.subscription)?.subscription;
-  const id = fromParent ?? legacy ?? fromLines;
-  if (!id) return null;
-  return typeof id === 'string' ? id : id.id;
-}
+// The Claude add-on shares the account. Its objects carry metadata
+// addon=claude (or a Claude price) and go to claude-sync; everything else is
+// the membership, as before.
 
 export async function POST(req: NextRequest) {
   const secret = process.env.STRIPE_WEBHOOK_SECRET;
@@ -45,7 +42,11 @@ export async function POST(req: NextRequest) {
     switch (event.type) {
       case 'checkout.session.completed':
       case 'checkout.session.async_payment_succeeded':
-        await fulfillCheckoutSession(event.data.object.id);
+        if (isClaudeMetadata(event.data.object.metadata)) {
+          await syncClaudeCheckout(event.data.object.id);
+        } else {
+          await fulfillCheckoutSession(event.data.object.id);
+        }
         break;
 
       case 'checkout.session.async_payment_failed':
@@ -54,16 +55,29 @@ export async function POST(req: NextRequest) {
 
       case 'customer.subscription.updated':
       case 'customer.subscription.deleted':
-        await syncSubscription(event.data.object.id);
+        if (isClaudeSubscription(event.data.object)) {
+          await syncClaudeSubscription(event.data.object.id);
+        } else {
+          await syncSubscription(event.data.object.id);
+        }
         break;
 
       case 'invoice.paid':
       case 'invoice.payment_succeeded':
       case 'invoice.payment_failed': {
         const subscriptionId = invoiceSubscriptionId(event.data.object);
-        if (subscriptionId) await syncSubscription(subscriptionId);
+        if (!subscriptionId) break;
+        // Old invoices may lack the metadata snapshot: ask the subscription.
+        const claude =
+          isClaudeInvoice(event.data.object) ||
+          isClaudeSubscription(await stripe.subscriptions.retrieve(subscriptionId));
+        if (claude) {
+          await syncClaudeSubscription(subscriptionId);
+          break;
+        }
+        await syncSubscription(subscriptionId);
         // Each paid renewal is one more year in the member's history.
-        if (subscriptionId && event.type !== 'invoice.payment_failed') {
+        if (event.type !== 'invoice.payment_failed') {
           await recordInvoicePeriod(await stripe.invoices.retrieve(event.data.object.id!));
         }
         break;

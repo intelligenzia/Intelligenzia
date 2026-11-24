@@ -1,6 +1,27 @@
 import type Stripe from 'stripe';
 import type { MembershipType, Prisma } from '@prisma/client';
 import { prisma } from './prisma';
+import { isClaudeInvoice } from './claude-stripe';
+
+// Stripe moved current_period_end onto subscription items; webhook endpoints
+// pinned to an older API version still send it on the subscription.
+export function subscriptionPeriodEnd(sub: Stripe.Subscription): Date | null {
+  const end =
+    sub.items?.data[0]?.current_period_end ??
+    (sub as unknown as { current_period_end?: number }).current_period_end;
+  return end ? new Date(end * 1000) : null;
+}
+
+/** The subscription an invoice bills, across Stripe API versions. */
+export function invoiceSubscriptionId(invoice: Stripe.Invoice): string | null {
+  const fromParent = invoice.parent?.subscription_details?.subscription;
+  const legacy = (invoice as unknown as { subscription?: string | { id: string } | null })
+    .subscription;
+  const fromLines = invoice.lines?.data?.find((line) => line.subscription)?.subscription;
+  const id = fromParent ?? legacy ?? fromLines;
+  if (!id) return null;
+  return typeof id === 'string' ? id : id.id;
+}
 
 export type PeriodInput = {
   userId: string;
@@ -47,6 +68,8 @@ export function invoicePeriod(invoice: Stripe.Invoice): { start: Date; end: Date
 
 /** Records the year a paid subscription invoice covers. Used by the webhook. */
 export async function recordInvoicePeriod(invoice: Stripe.Invoice): Promise<void> {
+  // A Claude month is not a membership year.
+  if (isClaudeInvoice(invoice)) return;
   const period = invoicePeriod(invoice);
   const customerId =
     typeof invoice.customer === 'string' ? invoice.customer : (invoice.customer?.id ?? null);

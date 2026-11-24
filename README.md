@@ -68,6 +68,31 @@ Rules: supporting memberships can be renewed 60 days before they end (the new ye
 from the old end date). Supporting -> full is allowed any time; billing starts when the paid
 period ends. A live subscription can't be bought twice.
 
+## Member benefits
+
+The member page (`/jasenyys`) has a **Jäsenedut** section that only appears for signed-in
+members with an active membership (or a benefit they still hold). None of it is advertised
+on public pages.
+
+- **@intelligenzia.fi email** ([src/lib/workspace-sync.ts](src/lib/workspace-sync.ts)): the
+  member picks the part before the @ (checked live against reserved names and Google) and
+  gets a Google Workspace account there; a temporary password goes to their own email. When
+  the membership ends the daily job suspends it, and deletes it 30 days later; renewing in
+  time brings it back. Without the Google variables the board gets an email to create it
+  by hand.
+- **Claude add-on** (Standard 12 €/kk, Premium 50 €/kk): needs the address above, which Claude
+  signs in with. Stripe objects carry `metadata.addon = "claude"`, which keeps them apart from
+  the membership in the webhook and the Stripe import. The board gets an email for every seat
+  to add, change or remove in the Claude organisation, which is done by hand. Terms at
+  `/jasenyys/claude`.
+- **Telegram group**: the invite link from `TELEGRAM_GROUP_URL`.
+- **Profile picture**: cropped and shrunk in the browser, kept in the database
+  (`ProfileImage`), visible only to the member.
+
+The daily job (`netlify/functions/claude-maintenance.mts` → `/api/claude/maintenance`) stops
+Claude renewal and suspends addresses for members whose membership has ended, and deletes
+addresses past the grace period.
+
 ## Stripe webhooks
 
 Fulfilment and subscription sync live in [src/lib/membership-sync.ts](src/lib/membership-sync.ts);

@@ -16,9 +16,9 @@ Intelligenzia ry:n jäsenrekisteri
 
 ## Henkilötietojen käsittelyn tarkoitus ja oikeusperuste
 
-Henkilötietoja käsitellään yhdistyksen jäsenyyden hallinnointiin ja yhteydenpitoon jäsenten kanssa. Käsittelyn oikeusperuste on:
+Henkilötietoja käsitellään yhdistyksen jäsenyyden hallinnointiin, yhteydenpitoon jäsenten kanssa sekä jäsenetujen järjestämiseen: @intelligenzia.fi-sähköpostiosoite ja Claude-lisäpalvelu. Käsittelyn oikeusperuste on:
 
-- Jäsenyyssopimuksen täytäntöönpano (jäsenrekisteri)
+- Jäsenyyssopimuksen täytäntöönpano (jäsenrekisteri ja jäsenedut)
 - Rekisteröidyn suostumus (markkinointiviestintä)
 - Lakisääteinen velvoite (yhdistyslain mukainen jäsenluettelon ylläpito)
 
@@ -31,6 +31,10 @@ Keräämme ja käsittelemme seuraavia henkilötietoja:
 - Jäsenyyshistoria: maksetut jäsenvuodet ja niiden summat
 - Stripen asiakas- ja maksutunnisteet (ei korttitietoja)
 - Kirjautumisistunnot ja kertakäyttöiset kirjautumislinkit
+- Profiilikuva, jos lisäät sellaisen
+- @intelligenzia.fi-sähköpostiosoitteesi ja sen tila, jos otat osoitteen käyttöön. Google Workspace -tiliin tallentuvat lisäksi nimesi ja oma sähköpostiosoitteesi palautusosoitteena sekä tilille itse tallentamasi viestit ja tiedostot.
+- Claude-lisäpalvelun taso, tila ja laskutuskausi sekä Stripen tilaustunniste, jos tilaat palvelun
+- Poistetun tilin sähköpostiosoitteen tiiviste (SHA-256), jotta vanhat maksut eivät palauta poistettua jäsentä rekisteriin
 
 Korttitietoja ei tallenneta yhdistyksen järjestelmiin, vaan ne käsittelee Stripe.
 
@@ -39,6 +43,10 @@ Korttitietoja ei tallenneta yhdistyksen järjestelmiin, vaan ne käsittelee Stri
 - Jäsenrekisterin tietoja säilytetään jäsenyyden ajan ja sen jälkeen, kunnes poistat tilisi tai pyydät tietojesi poistamista.
 - Maksutapahtumat säilyvät Stripessä ja yhdistyksen kirjanpidossa kirjanpitolain edellyttämän ajan (6 vuotta tilikauden päättymisestä), myös tilin poistamisen jälkeen.
 - Kertakäyttöiset kirjautumislinkit vanhenevat 24 tunnissa ja kirjautumisistunnot 30 päivässä.
+- Profiilikuva säilyy, kunnes poistat sen tai tilisi.
+- @intelligenzia.fi-osoite jäädytetään, kun jäsenyys päättyy, ja poistetaan sisältöineen 30 päivän kuluttua, ellei jäsenyyttä uusita sitä ennen. Tilin poistaminen poistaa osoitteen heti.
+- Claude-tilauksen tiedot säilyvät tilisi mukana. Itse Claude-palvelun keskusteluja säilyttää Anthropic omien ehtojensa mukaan, eikä yhdistys näe niitä.
+- Poistetun tilin sähköpostitiiviste säilytetään pysyvästi. Siitä ei voi päätellä osoitetta takaisin.
 
 ## Tietojen käsittelijät ja siirrot
 
@@ -46,7 +54,9 @@ Henkilötietoja ei luovuteta kolmansille osapuolille markkinointitarkoituksiin. 
 
 - **Stripe**: jäsenmaksujen käsittely ([tietosuojakäytäntö](https://stripe.com/privacy))
 - **Netlify**: sivuston ja jäsenrekisterin tietokannan ylläpito ([tietosuojakäytäntö](https://www.netlify.com/privacy/))
-- **Resend**: kirjautumislinkkien ja jäsenyysvahvistusten lähettäminen ([tietosuojakäytäntö](https://resend.com/legal/privacy-policy))
+- **Resend**: kirjautumislinkkien, jäsenyysvahvistusten ja jäsenetuihin liittyvien viestien lähettäminen ([tietosuojakäytäntö](https://resend.com/legal/privacy-policy))
+- **Google**: @intelligenzia.fi-sähköpostiosoitteet (Google Workspace) ([tietosuojakäytäntö](https://policies.google.com/privacy))
+- **Anthropic**: Claude-lisäpalvelu. Anthropic saa @intelligenzia.fi-osoitteesi ja nimesi, kun sinut lisätään yhdistyksen Claude-organisaatioon ([tietosuojakäytäntö](https://www.anthropic.com/legal/privacy))
 - **Umami**: evästeetön kävijätilastointi, joka ei tallenna henkilötietoja ([tietosuojakäytäntö](https://umami.is/privacy))
 
 Osa palveluntarjoajista sijaitsee Yhdysvalloissa. Siirrot perustuvat EU:n ja Yhdysvaltojen väliseen tietosuojakehykseen tai Euroopan komission vakiosopimuslausekkeisiin. Tietoja voidaan luovuttaa viranomaisille lakisääteisten velvoitteiden täyttämiseksi.
@@ -67,7 +77,7 @@ Sinulla on oikeus:
 - **Peruuttaa suostumuksesi** milloin tahansa
 - **Tehdä valituksen** tietosuojavaltuutetun toimistolle ([tietosuoja.fi](https://tietosuoja.fi))
 
-Voit käyttää oikeuksiasi itse [Jäsenyyteni-sivulla](/jasenyys): siellä voit muokata nimeäsi, ladata kaikki tietosi JSON-tiedostona ja poistaa tilisi. Tilin poistaminen päättää jäsenyyden ja perii vuosittain uusiutuvan jäsenmaksun. Muut pyynnöt voit lähettää osoitteeseen hallitus@intelligenzia.fi, ja vastaamme kuukauden kuluessa.
+Voit käyttää oikeuksiasi itse [Jäsenyyteni-sivulla](/jasenyys): siellä voit muokata nimeäsi, lisätä tai poistaa profiilikuvan, ladata kaikki tietosi JSON-tiedostona ja poistaa tilisi. Tilin poistaminen päättää jäsenyyden, peruu vuosittain uusiutuvan jäsenmaksun ja Claude-tilauksen sekä poistaa @intelligenzia.fi-osoitteesi. Muut pyynnöt voit lähettää osoitteeseen hallitus@intelligenzia.fi, ja vastaamme kuukauden kuluessa.
 
 ## Evästeet
 
@@ -77,4 +87,4 @@ Sivusto käyttää vain teknisesti välttämätöntä evästettä kirjautumisen 
 
 Päivitämme tätä tietosuojaselostetta tarvittaessa. Olennaisista muutoksista ilmoitetaan jäsenille sähköpostitse.
 
-Päivitetty viimeksi: lokakuu 2026
+Päivitetty viimeksi: marraskuu 2026

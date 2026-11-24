@@ -12,6 +12,14 @@ import { SignOutButton } from '@/components/sign-out-button';
 import { ManageSubscriptionButton } from '@/components/manage-subscription-button';
 import { EditNameForm } from '@/components/edit-name-form';
 import { AccountPrivacy } from '@/components/account-privacy';
+import { ClaudeCard } from '@/components/claude-card';
+import { WorkspaceCard } from '@/components/workspace-card';
+import { TelegramCard } from '@/components/telegram-card';
+import { ProfileImage } from '@/components/profile-image';
+import { workspaceDomain } from '@/lib/google-workspace';
+import { canClaimAddress, suggestLocalPart } from '@/lib/workspace-plans';
+import { syncClaudeCheckout } from '@/lib/claude-sync';
+import { canStartClaude } from '@/lib/claude-plans';
 import type { Metadata } from 'next';
 import { noIndex } from '@/lib/seo';
 import {
@@ -28,7 +36,7 @@ import {
 
 type Props = {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ success?: string }>;
+  searchParams: Promise<{ success?: string; claude_session?: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -53,7 +61,7 @@ type Tone = 'ok' | 'warn' | 'muted';
 
 export default async function MembershipDashboardPage({ params, searchParams }: Props) {
   const { locale } = await params;
-  const { success } = await searchParams;
+  const { success, claude_session: claudeSession } = await searchParams;
   setRequestLocale(locale);
   const fi = locale === 'fi';
   const l = fi ? 'fi' : 'en';
@@ -68,6 +76,23 @@ export default async function MembershipDashboardPage({ params, searchParams }: 
     where: { userId: session.user.id },
   });
   const state = membershipState(membership);
+
+  // Back from a Claude checkout: record it now rather than wait for the
+  // webhook. Idempotent, and only for the member who paid.
+  if (claudeSession?.startsWith('cs_')) {
+    try {
+      await syncClaudeCheckout(claudeSession, session.user.id);
+    } catch (err) {
+      console.warn('Dashboard: could not sync Claude checkout', err);
+    }
+  }
+  const [claude, workspace, me] = await Promise.all([
+    prisma.claudeSubscription.findUnique({ where: { userId: session.user.id } }),
+    prisma.workspaceAccount.findUnique({ where: { userId: session.user.id } }),
+    prisma.user.findUnique({ where: { id: session.user.id }, select: { image: true } }),
+  ]);
+  const isMember = canClaimAddress(state);
+
   const periods = await prisma.membershipPeriod.findMany({
     where: { userId: session.user.id },
     orderBy: { startsAt: 'desc' },
@@ -294,6 +319,12 @@ export default async function MembershipDashboardPage({ params, searchParams }: 
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
+              <ProfileImage
+                locale={locale}
+                image={me?.image ?? null}
+                name={session.user.name ?? null}
+                email={session.user.email ?? null}
+              />
               <div>
                 <p className="text-sm text-muted-foreground">{text.email}</p>
                 <p className="break-all font-medium">{session.user.email}</p>
@@ -306,6 +337,32 @@ export default async function MembershipDashboardPage({ params, searchParams }: 
             </CardContent>
           </Card>
         </div>
+
+        {/* Members only: nothing here renders for someone without an active
+            membership, except benefits they still hold (a suspended address,
+            a running Claude subscription). */}
+        {(isMember || workspace || claude) && (
+          <section className="mt-10">
+            <h2 className="display-md text-xl">{fi ? 'Jäsenedut' : 'Member benefits'}</h2>
+            <div className="mt-4 grid gap-6">
+              <WorkspaceCard
+                locale={locale}
+                workspace={workspace}
+                canClaim={isMember}
+                domain={workspaceDomain()}
+                suggestion={suggestLocalPart(session.user.name, session.user.email ?? '')}
+              />
+              <ClaudeCard
+                locale={locale}
+                claude={claude}
+                workspace={workspace}
+                canStart={canStartClaude(state)}
+                returned={!!claudeSession}
+              />
+              {isMember && <TelegramCard locale={locale} />}
+            </div>
+          </section>
+        )}
 
         {/* Every paid membership year, imported from Stripe. */}
         {periods.length > 0 && (
@@ -328,6 +385,7 @@ export default async function MembershipDashboardPage({ params, searchParams }: 
           locale={locale}
           email={session.user.email ?? ''}
           recurring={(state.kind === 'active' && state.recurring) || state.kind === 'payment_issue'}
+          claude={(!!claude && claude.status !== 'CANCELLED') || !!workspace}
         />
 
         {/* Actions */}

@@ -23,3 +23,11 @@ export function siteOrigin(): string {
     'https://intelligenzia.fi';
   return new URL(url).origin;
 }
+
+// Claude add-on: monthly prices, one per tier. Optional like the membership
+// prices; without them checkout describes the tiers inline. Set them anyway:
+// a tier changed in the billing portal is recognised by its price.
+export const CLAUDE_PRICE_IDS = {
+  STANDARD: process.env.STRIPE_CLAUDE_STANDARD_PRICE_ID || undefined,
+  PREMIUM: process.env.STRIPE_CLAUDE_PREMIUM_PRICE_ID || undefined,
+};

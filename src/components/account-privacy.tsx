@@ -12,6 +12,8 @@ type Props = {
   email: string;
   /** Has a renewing subscription that deletion will cancel. */
   recurring: boolean;
+  /** Has a Claude subscription or @intelligenzia.fi account to remove. */
+  claude?: boolean;
 };
 
 /**
@@ -19,7 +21,7 @@ type Props = {
  * the account. Deletion is two steps (open, then type your email) so it
  * can't happen from a stray click.
  */
-export function AccountPrivacy({ locale, email, recurring }: Props) {
+export function AccountPrivacy({ locale, email, recurring, claude }: Props) {
   const fi = locale === 'fi';
   const [open, setOpen] = useState(false);
   const [typed, setTyped] = useState('');
@@ -112,6 +114,13 @@ export function AccountPrivacy({ locale, email, recurring }: Props) {
             {recurring && (
               <li>
                 {fi ? 'Vuosittain uusiutuva jäsenmaksu perutaan.' : 'Your yearly renewing payment is cancelled.'}
+              </li>
+            )}
+            {claude && (
+              <li>
+                {fi
+                  ? 'Claude-tilaus lopetetaan, ja @intelligenzia.fi-osoitteesi poistetaan heti.'
+                  : 'Your Claude subscription is cancelled and your @intelligenzia.fi address is deleted straight away.'}
               </li>
             )}
             <li>
